@@ -73,24 +73,49 @@ function initScrollAnimations() {
   elements.forEach(el => observer.observe(el));
 }
 
-/* ── WhatsApp Flotante ── */
-function initWhatsApp() {
-  const btn = $('.whatsapp-float');
-  if (!btn) return;
+/* ── WhatsApp — mensaje contextual según página ── */
+function getWAMessage() {
   const page = window.location.pathname;
-  let msg = 'Hola, me gustaría solicitar un presupuesto para instalación de aire acondicionado en Barcelona.';
-  if (page.includes('split')) msg = 'Hola, me interesa la instalación de un Split 1x1 en Barcelona. ¿Pueden darme un presupuesto?';
-  else if (page.includes('multisplit')) msg = 'Hola, me interesa la instalación de un sistema Multisplit. ¿Pueden darme un presupuesto?';
-  else if (page.includes('conductos')) msg = 'Hola, me interesa el aire acondicionado por conductos. ¿Pueden darme información?';
-  else if (page.includes('subvenciones')) msg = 'Hola, me gustaría información sobre las subvenciones disponibles para instalar aire acondicionado.';
-  else if (page.includes('daikin')) msg = 'Hola, me interesa instalar un equipo Daikin en Barcelona. ¿Pueden darme un presupuesto?';
-  else if (page.includes('mitsubishi')) msg = 'Hola, me interesa instalar un equipo Mitsubishi Electric en Barcelona. ¿Pueden darme un presupuesto?';
-  const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
-  btn.setAttribute('href', url);
-  btn.setAttribute('target', '_blank');
-  btn.setAttribute('rel', 'noopener noreferrer');
-  btn.addEventListener('click', () => {
-    trackEvent('whatsapp_click', { page: page });
+  // Servicios
+  if (page.includes('split'))        return 'Hola, me interesa la instalación de un Split 1×1 en Barcelona. ¿Pueden darme un presupuesto?';
+  if (page.includes('multisplit'))   return 'Hola, me interesa la instalación de un sistema Multisplit. ¿Pueden darme un presupuesto?';
+  if (page.includes('conductos'))    return 'Hola, me interesa el aire acondicionado por conductos. ¿Pueden darme información y presupuesto?';
+  if (page.includes('subvenciones')) return 'Hola, me gustaría información sobre las subvenciones disponibles para instalar aire acondicionado.';
+  if (page.includes('precios'))      return 'Hola, he visto vuestros precios y me gustaría solicitar un presupuesto personalizado.';
+  // Marcas
+  if (page.includes('daikin'))       return 'Hola, me interesa instalar un equipo Daikin en Barcelona. ¿Pueden darme un presupuesto?';
+  if (page.includes('mitsubishi'))   return 'Hola, me interesa instalar un equipo Mitsubishi Electric en Barcelona. ¿Pueden darme un presupuesto?';
+  if (page.includes('fujitsu'))      return 'Hola, me interesa instalar un equipo Fujitsu en Barcelona. ¿Pueden darme un presupuesto?';
+  if (page.includes('samsung'))      return 'Hola, me interesa instalar un equipo Samsung en Barcelona. ¿Pueden darme un presupuesto?';
+  if (page.includes('lg'))           return 'Hola, me interesa instalar un equipo LG en Barcelona. ¿Pueden darme un presupuesto?';
+  if (page.includes('hisense'))      return 'Hola, me interesa instalar un equipo Hisense en Barcelona. ¿Pueden darme un presupuesto?';
+  if (page.includes('panasonic'))    return 'Hola, me interesa instalar un equipo Panasonic en Barcelona. ¿Pueden darme un presupuesto?';
+  if (page.includes('toshiba'))      return 'Hola, me interesa instalar un equipo Toshiba en Barcelona. ¿Pueden darme un presupuesto?';
+  if (page.includes('haier'))        return 'Hola, me interesa instalar un equipo Haier en Barcelona. ¿Pueden darme un presupuesto?';
+  if (page.includes('midea'))        return 'Hola, me interesa instalar un equipo Midea en Barcelona. ¿Pueden darme un presupuesto?';
+  if (page.includes('dicore'))       return 'Hola, me interesa instalar un equipo Dicore en Barcelona. ¿Pueden darme un presupuesto?';
+  if (page.includes('marca-blanca')) return 'Hola, me interesa información sobre aire acondicionado marca blanca. ¿Pueden darme un presupuesto?';
+  // Zonas
+  if (page.includes('hospitalet'))   return "Hola, me gustaría un presupuesto para instalar aire acondicionado en L'Hospitalet de Llobregat.";
+  if (page.includes('badalona'))     return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en Badalona.';
+  if (page.includes('sant-cugat'))   return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en Sant Cugat del Vallès.';
+  if (page.includes('cornella'))     return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en Cornellà de Llobregat.';
+  if (page.includes('terrassa'))     return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en Terrassa.';
+  if (page.includes('sabadell'))     return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en Sabadell.';
+  if (page.includes('eixample'))     return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en el Eixample de Barcelona.';
+  if (page.includes('gracia'))       return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en el barrio de Gràcia, Barcelona.';
+  // Default
+  return 'Hola, estoy interesado en instalar aire acondicionado en Barcelona. ¿Pueden darme más información?';
+}
+
+function initWhatsApp() {
+  const page = window.location.pathname;
+  const msg = getWAMessage();
+  const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+  // Actualiza TODOS los links de WhatsApp de la página
+  document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    link.href = waUrl;
+    link.addEventListener('click', () => trackEvent('whatsapp_click', { page }));
   });
 }
 
@@ -563,12 +588,12 @@ document.addEventListener('DOMContentLoaded', () => {
   animateCounters();
   detectZoneFromURL();
 
-  // EmailJS init
+  // EmailJS init — reemplazar 'YOUR_EMAILJS_PUBLIC_KEY' con tu clave pública de emailjs.com
   if (typeof emailjs !== 'undefined') {
     emailjs.init('YOUR_EMAILJS_PUBLIC_KEY');
-  
+  }
+
   renderDynPrices();
-}
 });
 
 /* ════════════════════════════════════════════════
