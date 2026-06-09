@@ -19,8 +19,9 @@ const PRECIOS = {
       features: [
         'Equipo inverter A++',
         'Instalación completa',
-        'Certificado RITE incluido',
-        'Garantía 5 años',
+        'Informe técnico de instalación',
+        'Garantía 3 años fabricante',
+        'Garantía 3 años instalación',
         'Soporte post-instalación'
       ]
     },
@@ -34,10 +35,10 @@ const PRECIOS = {
       features: [
         'Equipo inverter A+++',
         'Instalación completa',
-        'Certificado RITE incluido',
-        'Garantía 5 años',
-        'Soporte prioritario 24h',
-        'Limpieza de filtros (1 año)'
+        'Informe técnico de instalación',
+        'Garantía 3 años fabricante',
+        'Garantía 3 años instalación',
+        'Soporte prioritario 24h'
       ]
     },
     {
@@ -50,8 +51,9 @@ const PRECIOS = {
       features: [
         'Equipo inverter A++',
         'Instalación completa',
-        'Certificado RITE incluido',
-        'Garantía 5 años',
+        'Informe técnico de instalación',
+        'Garantía 3 años fabricante',
+        'Garantía 3 años instalación',
         'Soporte post-instalación'
       ]
     }
@@ -68,39 +70,38 @@ const PRECIOS = {
         'Instalación del equipo',
         'Carga de gas refrigerante',
         'Prueba de funcionamiento',
-        'Certificado RITE',
-        'Garantía de instalación 2 años'
+        'Informe técnico de instalación',
+        'Garantía 3 años instalación'
       ]
     },
     {
       name: 'Solo instalación · Completa',
-      desc: 'Incluye tuberías, soportes y pasatubos',
+      desc: 'Instalación completa con acabado cuidado',
       from: 'Más recomendado',
       price: 399,
       featured: true,
       badge: 'Recomendado',
       features: [
-        'Todo lo anterior',
-        'Tuberías hasta 5 metros',
-        'Soportes y anclajes',
-        'Pasatubos y sellado',
+        'Todo lo de la básica',
         'Limpieza de zona de trabajo',
-        'Garantía de instalación 3 años'
+        'Informe técnico detallado',
+        'Garantía 3 años instalación',
+        'Soporte post-instalación'
       ]
     },
     {
       name: 'Solo instalación · Premium',
-      desc: 'Instalación con canaleta decorativa incluida',
+      desc: 'Instalación con acabado y estética premium',
       from: 'Precio desde',
       price: 499,
       featured: false,
       badge: null,
       features: [
-        'Todo lo anterior',
+        'Todo lo de la completa',
         'Canaleta decorativa blanca',
-        'Tuberías hasta 8 metros',
-        'Acabado premium',
-        'Garantía de instalación 5 años'
+        'Acabado premium cuidado',
+        'Garantía 3 años instalación',
+        'Soporte prioritario'
       ]
     }
   ],
@@ -115,8 +116,9 @@ const PRECIOS = {
       features: [
         '2 habitaciones climatizadas',
         'Instalación completa',
-        'Certificado RITE',
-        'Garantía 5 años',
+        'Informe técnico de instalación',
+        'Garantía 3 años fabricante',
+        'Garantía 3 años instalación',
         'Control independiente por zona'
       ]
     },
@@ -130,10 +132,10 @@ const PRECIOS = {
       features: [
         '3 habitaciones climatizadas',
         'Instalación completa',
-        'Certificado RITE',
-        'Garantía 5 años',
-        'Control independiente por zona',
-        'App de control incluida'
+        'Informe técnico de instalación',
+        'Garantía 3 años fabricante',
+        'Garantía 3 años instalación',
+        'Control independiente por zona'
       ]
     },
     {
@@ -146,10 +148,10 @@ const PRECIOS = {
       features: [
         '4 habitaciones climatizadas',
         'Instalación completa',
-        'Certificado RITE',
-        'Garantía 5 años',
-        'Control independiente por zona',
-        'App de control incluida'
+        'Informe técnico de instalación',
+        'Garantía 3 años fabricante',
+        'Garantía 3 años instalación',
+        'Control independiente por zona'
       ]
     }
   ]
@@ -326,4 +328,5 @@ document.addEventListener('DOMContentLoaded', () => {
     injectServiceSchema('Instalación Multisplit Barcelona', 'Instalación de sistemas multisplit en Barcelona. Climatiza varias habitaciones con una sola unidad exterior.', 399);
   } else if (path.includes('conductos')) {
     injectServiceSchema('Aire Acondicionado por Conductos Barcelona', 'Instalación de aire acondicionado por conductos en Barcelona. Climatización invisible y silenciosa.', 990);
-}););
+  }
+});

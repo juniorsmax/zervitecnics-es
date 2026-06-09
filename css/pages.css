@@ -238,6 +238,28 @@
 }
 .legal-content table tr:hover td { background: var(--gray-50); }
 
+/* ── Service cards en páginas de zona ── */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform .2s, box-shadow .2s;
+  color: var(--navy);
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+.service-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
 /* ── Responsive pages ── */
 @media (max-width: 768px) {
   .service-detail-grid { grid-template-columns: 1fr; gap: 32px; }
