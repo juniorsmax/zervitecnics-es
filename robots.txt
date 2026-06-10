@@ -4,4 +4,4 @@ Disallow: /pages/privacidad.html
 Disallow: /pages/cookies.html
 Disallow: /pages/aviso-legal.html
 
-Sitemap: https://www.zervitecnics.com/sitemap.xml
+Sitemap: https://juniorsmax.github.io/zervitecnics-web/sitemap.xml
