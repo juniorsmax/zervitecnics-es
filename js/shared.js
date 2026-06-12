@@ -77,8 +77,8 @@ function initScrollAnimations() {
 function getWAMessage() {
   const page = window.location.pathname;
   // Servicios
-  if (page.includes('split'))        return 'Hola, me interesa la instalación de un Split 1×1 en Barcelona. ¿Pueden darme un presupuesto?';
   if (page.includes('multisplit'))   return 'Hola, me interesa la instalación de un sistema Multisplit. ¿Pueden darme un presupuesto?';
+  if (page.includes('split'))        return 'Hola, me interesa la instalación de un Split 1×1 en Barcelona. ¿Pueden darme un presupuesto?';
   if (page.includes('conductos'))    return 'Hola, me interesa el aire acondicionado por conductos. ¿Pueden darme información y presupuesto?';
   if (page.includes('subvenciones')) return 'Hola, me gustaría información sobre las subvenciones disponibles para instalar aire acondicionado.';
   if (page.includes('precios'))      return 'Hola, he visto vuestros precios y me gustaría solicitar un presupuesto personalizado.';
@@ -417,7 +417,7 @@ function injectLocalBusinessSchema() {
     "name": "Zervitecnics Barcelona",
     "alternateName": "Aires Zervitecnics",
     "description": "Empresa especializada en instalación de aire acondicionado en Barcelona. Técnico HVAC certificado con carnet de gases fluorados y habilitación RITE.",
-    "url": "https://www.zervitecnics.com",
+    "url": "https://juniorsmax.github.io/zervitecnics-web/",
     "telephone": PHONE_RAW,
     "email": "info@zervitecnics.com",
     "address": {
@@ -456,8 +456,8 @@ function injectLocalBusinessSchema() {
     "priceRange": "€€",
     "currenciesAccepted": "EUR",
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-    "image": "https://www.zervitecnics.com/img/logo_zervitecnics.png",
-    "logo": "https://www.zervitecnics.com/img/logo_zervitecnics.png",
+    "image": "https://juniorsmax.github.io/zervitecnics-web/img/logo_zervitecnics.png",
+    "logo": "https://juniorsmax.github.io/zervitecnics-web/img/logo_zervitecnics.png",
     "sameAs": [
       "https://www.instagram.com/zervitecnics",
       "https://www.facebook.com/zervitecnics"

@@ -322,10 +322,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Detectar página actual e inyectar schema Service
   const path = window.location.pathname;
-  if (path.includes('split')) {
-    injectServiceSchema('Instalación Split 1x1 Barcelona', 'Instalación profesional de aire acondicionado split 1x1 en Barcelona. Técnico certificado.', 299);
-  } else if (path.includes('multisplit')) {
+  if (path.includes('multisplit')) {
     injectServiceSchema('Instalación Multisplit Barcelona', 'Instalación de sistemas multisplit en Barcelona. Climatiza varias habitaciones con una sola unidad exterior.', 399);
+  } else if (path.includes('split')) {
+    injectServiceSchema('Instalación Split 1x1 Barcelona', 'Instalación profesional de aire acondicionado split 1x1 en Barcelona. Técnico certificado.', 299);
   } else if (path.includes('conductos')) {
     injectServiceSchema('Aire Acondicionado por Conductos Barcelona', 'Instalación de aire acondicionado por conductos en Barcelona. Climatización invisible y silenciosa.', 990);
   }
