@@ -56,6 +56,22 @@ const PRECIOS = {
         'Garantía 3 años instalación',
         'Soporte post-instalación'
       ]
+    },
+    {
+      name: 'Split 1×1 · 6 kW',
+      desc: 'Espacios de 50–70 m² (≈5.000 frigorías)',
+      from: 'Precio desde',
+      price: 1699,
+      featured: false,
+      badge: null,
+      features: [
+        'Equipo inverter A++',
+        'Instalación completa',
+        'Informe técnico de instalación',
+        'Garantía 3 años fabricante',
+        'Garantía 3 años instalación',
+        'Soporte post-instalación'
+      ]
     }
   ],
   instalacion: [

@@ -799,7 +799,7 @@ input, textarea, select { font-family: inherit; }
 .price-tab.active { background: var(--white); color: var(--navy); box-shadow: var(--shadow-sm); }
 
 .price-panel { display: none; animation: fadeInUp .4s ease; }
-.price-panel.active { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.price-panel.active { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
 .price-card {
