@@ -7,8 +7,7 @@
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta name="theme-color" content="#1E90FF">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://api.emailjs.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; frame-src https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- SEO -->
@@ -37,7 +36,7 @@
   <link rel="stylesheet" href="css/shared.css">
 
   <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js" integrity="sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS" crossorigin="anonymous" defer></script>
 
   <style>
     /* ── Hero Section ── */
@@ -604,8 +603,6 @@
 </head>
 <body>
 
-<!-- ── GTM noscript ── -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF473QQQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ── Urgency Bar ── -->
 <div class="urgency-bar" role="alert">
@@ -756,6 +753,10 @@
         </div>
 
         <form id="budget-form" novalidate aria-label="Formulario de presupuesto">
+          <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+            <label for="f-website">No rellenar este campo</label>
+            <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <!-- Paso 1 -->
           <div id="form-step-1">
             <div class="form-group">
@@ -880,9 +881,13 @@
                 Solicitar presupuesto gratis
               </button>
             </div>
-            <p style="font-size:.75rem;color:var(--gray-400);text-align:center;margin-top:12px">
-              Al enviar aceptas nuestra <a href="pages/privacidad.html" style="color:var(--blue)">política de privacidad</a>
-            </p>
+            <div class="form-group" style="margin-top:12px">
+              <label style="display:flex;gap:8px;align-items:flex-start;font-size:.8rem;color:var(--gray-500);cursor:pointer;font-weight:400">
+                <input type="checkbox" id="f-rgpd" style="margin-top:2px;flex:0 0 auto;width:16px;height:16px;accent-color:var(--blue)">
+                <span>He leído y acepto la <a href="pages/privacidad.html" style="color:var(--blue)" target="_blank" rel="noopener">política de privacidad</a> *</span>
+              </label>
+              <div class="form-error" id="f-rgpd-err" role="alert"></div>
+            </div>
           </div>
         </form>
 
@@ -1579,7 +1584,7 @@
       </div>
       <div class="footer-contact-item">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        <div><a href="mailto:info@zervitecnics.com" style="color:rgba(255,255,255,.6)">info@zervitecnics.com</a></div>
+        <div><a href="#contacto" data-eu="info" data-ed="zervitecnics.com" style="color:rgba(255,255,255,.6)">info [arroba] zervitecnics.com</a></div>
       </div>
       <div class="footer-contact-item">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -1667,6 +1672,10 @@
     <div class="modal-sub">Respuesta en menos de 2 horas · Sin compromiso</div>
 
     <div id="modal-form-wrap">
+      <div style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+        <label for="m-website">No rellenar este campo</label>
+        <input type="text" id="m-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
       <!-- PASO 1 -->
       <div class="fpanel active" id="modal-panel1">
         <div class="form-group">
@@ -1706,6 +1715,10 @@
           <label for="m-notes">Observaciones <small style="color:#6B7A8D">(opcional)</small></label>
           <textarea id="m-notes" placeholder="Ej: salón 30m², tengo preinstalación..."></textarea>
         </div>
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:.78rem;color:#6B7A8D;cursor:pointer;margin-bottom:12px">
+          <input type="checkbox" id="m-rgpd" style="margin-top:2px;flex:0 0 auto;width:16px;height:16px;accent-color:#1E90FF">
+          <span>He leído y acepto la <a href="pages/privacidad.html" style="color:#1E90FF" target="_blank" rel="noopener">política de privacidad</a> *</span>
+        </label>
         <button type="button" class="btn btn-primary" style="width:100%" onclick="modalSubmit()">
           → Solicitar presupuesto gratis
         </button>
@@ -1771,10 +1784,16 @@ function modalSelTipo(btn, tipo) {
 }
 
 async function modalSubmit() {
+  if (document.getElementById('m-website')?.value) return;
   if (!modalTipo) {
     alert('Por favor selecciona el tipo de instalación.');
     return;
   }
+  if (!document.getElementById('m-rgpd')?.checked) {
+    document.getElementById('modal-result').innerHTML = '<p style="color:#E53E3E;font-size:.85rem;margin-top:8px">Debes aceptar la política de privacidad.</p>';
+    return;
+  }
+  document.getElementById('modal-result').innerHTML = '';
   const btn = event.target;
   btn.disabled = true;
   btn.textContent = 'Enviando...';
@@ -1793,14 +1812,8 @@ async function modalSubmit() {
     if (typeof emailjs !== 'undefined') {
       await emailjs.send('service_dgblntm', 'template_gws4txt', params);
     }
-    document.getElementById('modal-form-wrap').innerHTML = `
-      <div style="padding:28px 16px;text-align:center">
-        <div style="font-size:2.5rem;margin-bottom:12px">✅</div>
-        <div style="font-family:var(--font-title,sans-serif);font-size:1.1rem;font-weight:700;color:var(--navy,#0B1E3D);margin-bottom:8px">¡Presupuesto solicitado!</div>
-        <p style="font-size:.9rem;color:#6B7A8D;line-height:1.6">Te contactamos en menos de 2 horas.<br>Si es urgente llámanos directamente.</p>
-        <a href="tel:+34693123456" class="btn btn-primary" style="margin-top:20px;display:inline-flex">📞 Llamar ahora</a>
-      </div>`;
-    if (typeof MetricsManager !== 'undefined') MetricsManager.trackFormSubmit('modal-sticky', params.zone);
+    if (typeof trackEvent === 'function') trackEvent('form_submit', { zona: params.zone, tipo: modalTipo, source: 'modal-sticky' });
+    window.location.href = 'gracias.html';
   } catch(e) {
     btn.disabled = false;
     btn.textContent = '→ Solicitar presupuesto gratis';

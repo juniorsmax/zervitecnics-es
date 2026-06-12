@@ -319,13 +319,13 @@ function initForm() {
   if (!form) return;
   const step1 = $('#form-step-1', form);
   const step2 = $('#form-step-2', form);
-  const success = $('#form-success');
   const btnNext = $('#btn-next', form);
   const btnBack = $('#btn-back', form);
   const dot1 = $('#dot-1');
   const dot2 = $('#dot-2');
 
   let formStarted = false;
+  const formLoadedAt = Date.now();
 
   function validateStep1() {
     let ok = true;
@@ -371,6 +371,22 @@ function initForm() {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Anti-spam: honeypot relleno o envío en menos de 3s = bot
+    if (document.getElementById('f-website')?.value) return;
+    if (Date.now() - formLoadedAt < 3000) return;
+
+    const rgpd = document.getElementById('f-rgpd');
+    const rgpdErr = document.getElementById('f-rgpd-err');
+    if (rgpd && !rgpd.checked) {
+      if (rgpdErr) {
+        rgpdErr.textContent = 'Debes aceptar la política de privacidad.';
+        rgpdErr.classList.add('visible');
+      }
+      return;
+    }
+    if (rgpdErr) rgpdErr.classList.remove('visible');
+
     const btn = form.querySelector('[type="submit"]');
     btn.disabled = true;
     btn.textContent = 'Enviando...';
@@ -388,14 +404,22 @@ function initForm() {
         await emailjs.send('service_dgblntm', 'template_gws4txt', data);
       }
       trackEvent('form_submit', { zona: data.zona, tipo: data.tipo });
-      form.style.display = 'none';
-      if (success) success.classList.add('visible');
+      window.location.href = 'gracias.html';
     } catch(err) {
       console.error('EmailJS error:', err);
       btn.disabled = false;
       btn.textContent = 'Solicitar presupuesto';
       alert('Error al enviar. Por favor llámenos al ' + PHONE);
     }
+  });
+}
+
+/* ── Emails ofuscados (anti-scraping) ── */
+function deobfuscateEmails() {
+  document.querySelectorAll('a[data-eu][data-ed]').forEach(a => {
+    const addr = a.dataset.eu + '@' + a.dataset.ed;
+    a.href = 'mailto:' + addr;
+    a.textContent = addr;
   });
 }
 
@@ -582,6 +606,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTracking();
   initPriceTabs();
   initForm();
+  deobfuscateEmails();
   protectImages();
   injectLocalBusinessSchema();
   injectFAQSchema();
