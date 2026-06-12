@@ -542,7 +542,14 @@ function detectZoneFromURL() {
     'sant-cugat': { name: 'Sant Cugat del Vallès', transport: 25, time: '50 min' },
     'cornella': { name: 'Cornellà de Llobregat', transport: 20, time: '40 min' },
     'terrassa': { name: 'Terrassa', transport: 35, time: '55 min' },
-    'sabadell': { name: 'Sabadell', transport: 30, time: '50 min' }
+    'sabadell': { name: 'Sabadell', transport: 30, time: '50 min' },
+    'sarria': { name: 'Sarrià-Sant Gervasi', transport: 0, time: '35 min' },
+    'sants': { name: 'Sants-Montjuïc', transport: 0, time: '30 min' },
+    'les-corts': { name: 'Les Corts', transport: 0, time: '30 min' },
+    'castelldefels': { name: 'Castelldefels', transport: 30, time: '45 min' },
+    'nou-barris': { name: 'Nou Barris', transport: 0, time: '35 min' },
+    'sant-andreu': { name: 'Sant Andreu', transport: 0, time: '35 min' },
+    'sant-marti': { name: 'Sant Martí', transport: 0, time: '30 min' }
   };
   const path = window.location.pathname;
   for (const [key, data] of Object.entries(zones)) {
