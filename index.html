@@ -1809,6 +1809,10 @@ async function modalSubmit() {
     document.getElementById('modal-result').innerHTML = '<p style="color:#E53E3E;font-size:.85rem;margin-top:8px">Debes aceptar la política de privacidad.</p>';
     return;
   }
+  if (typeof window.formRateLimited === 'function' && window.formRateLimited()) {
+    document.getElementById('modal-result').innerHTML = '<p style="color:var(--red,#E53E3E);font-size:.85rem;margin-top:8px">Ya hemos recibido tu solicitud hace un momento. Te contactaremos pronto.</p>';
+    return;
+  }
   document.getElementById('modal-result').innerHTML = '';
   const btn = event.target;
   btn.disabled = true;
@@ -1828,9 +1832,11 @@ async function modalSubmit() {
     if (typeof emailjs !== 'undefined') {
       await emailjs.send('service_dgblntm', 'template_gws4txt', params);
     }
+    if (typeof window.markFormSubmitted === 'function') window.markFormSubmitted();
     if (typeof trackEvent === 'function') trackEvent('form_submit', { zona: params.zone, tipo: modalTipo, source: 'modal-sticky' });
     window.location.href = 'gracias.html';
   } catch(e) {
+    if (typeof trackEvent === 'function') trackEvent('form_error', { source: 'modal-sticky', message: (e && e.text) || String(e) });
     btn.disabled = false;
     btn.textContent = '→ Solicitar presupuesto gratis';
     document.getElementById('modal-result').innerHTML = '<p style="color:var(--red,#E53E3E);font-size:.85rem;margin-top:8px">Error al enviar. Llámanos directamente.</p>';

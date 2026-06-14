@@ -1,8 +1,4 @@
 /* ============================================================
-
-// ── GA4 — Reemplaza G-XXXXXXXXXX con tu ID real de Google Analytics 4
-// Para obtenerlo: analytics.google.com → Admin → Flujos de datos → ID de medición
-const GA4_ID = 'G-XXXXXXXXXX'; // TODO: actualizar con ID real
    ZERVITECNICS BARCELONA — shared.js
    Lógica compartida: header, cookies, WhatsApp, animaciones,
    analytics, seguridad, schema.org
@@ -27,6 +23,21 @@ const COOKIE_VERSION = '1.2';
 /* ── Utilidades ── */
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+
+/* ── Rate limit de formularios (cliente) ──
+   Evita reenvíos rápidos que agotarían la cuota de EmailJS. */
+const SUBMIT_COOLDOWN_MS = 60000;
+function formRateLimited() {
+  try {
+    const last = parseInt(localStorage.getItem('sz_last_submit') || '0', 10);
+    return Date.now() - last < SUBMIT_COOLDOWN_MS;
+  } catch (e) { return false; }
+}
+function markFormSubmitted() {
+  try { localStorage.setItem('sz_last_submit', String(Date.now())); } catch (e) {}
+}
+window.formRateLimited = formRateLimited;
+window.markFormSubmitted = markFormSubmitted;
 
 /* ── Header Scroll Effect ── */
 function initHeader() {
@@ -387,6 +398,12 @@ function initForm() {
     }
     if (rgpdErr) rgpdErr.classList.remove('visible');
 
+    // Rate limit: 1 envío por minuto (protege la cuota de EmailJS)
+    if (formRateLimited()) {
+      alert('Ya hemos recibido tu solicitud hace un momento. Te contactaremos pronto. Si es urgente, llámanos al ' + PHONE);
+      return;
+    }
+
     const btn = form.querySelector('[type="submit"]');
     btn.disabled = true;
     btn.textContent = 'Enviando...';
@@ -403,10 +420,12 @@ function initForm() {
       if (typeof emailjs !== 'undefined') {
         await emailjs.send('service_dgblntm', 'template_gws4txt', data);
       }
+      markFormSubmitted();
       trackEvent('form_submit', { zona: data.zona, tipo: data.tipo });
       window.location.href = 'gracias.html';
     } catch(err) {
       console.error('EmailJS error:', err);
+      trackEvent('form_error', { source: 'hero-form', message: (err && err.text) || String(err) });
       btn.disabled = false;
       btn.textContent = 'Solicitar presupuesto';
       alert('Error al enviar. Por favor llámenos al ' + PHONE);
