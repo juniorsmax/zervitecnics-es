@@ -482,24 +482,43 @@ function initForm() {
     try {
       const token = await getRecaptchaToken('hero_form');
       data['g-recaptcha-response'] = token;
-      console.log('[Zervitecnics] reCAPTCHA token obtenido:', token ? `${token.slice(0,20)}... (len=${token.length})` : 'VACÍO');
+      // DIAGNÓSTICO TEMPORAL: visible en móvil
+      alert(
+        '🔍 DIAGNÓSTICO — antes de enviar:\n\n' +
+        '• Service: ' + EMAILJS_SERVICE_ID + '\n' +
+        '• Template: ' + EMAILJS_TEMPLATE_ID + '\n' +
+        '• Public key: ' + EMAILJS_PUBLIC_KEY + '\n' +
+        '• reCAPTCHA token: ' + (token ? `OK (longitud ${token.length}, empieza ${token.slice(0,15)}…)` : 'VACÍO ❌') + '\n' +
+        '• SDK EmailJS cargado: ' + (typeof emailjs !== 'undefined' ? 'sí' : 'NO ❌') + '\n\n' +
+        'Pulsa OK para intentar el envío.'
+      );
       console.log('[Zervitecnics] Enviando a EmailJS:', { service: EMAILJS_SERVICE_ID, template: EMAILJS_TEMPLATE_ID, params: data });
       if (typeof emailjs === 'undefined') {
         throw new Error('EmailJS SDK no cargado (revisa CSP / bloqueador de scripts)');
       }
       const resp = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data);
       console.log('[Zervitecnics] EmailJS OK:', resp);
+      alert('✅ EmailJS respondió OK:\n' + JSON.stringify(resp, null, 2));
       markFormSubmitted();
       trackEvent('form_submit', { zona: data.zona, tipo: data.tipo });
       window.location.href = 'gracias.html';
     } catch(err) {
       const status = err && (err.status || err.code) || '?';
       const text = (err && (err.text || err.message)) || String(err);
+      let fullJson = '';
+      try { fullJson = JSON.stringify(err, Object.getOwnPropertyNames(err || {}), 2); }
+      catch(e) { fullJson = String(err); }
       console.error('[Zervitecnics] EmailJS ERROR:', { status, text, full: err });
       trackEvent('form_error', { source: 'hero-form', status, message: text });
       btn.disabled = false;
       btn.textContent = 'Solicitar presupuesto';
-      alert(`Error al enviar (${status}): ${text}\n\nPor favor llámenos al ${PHONE} o avisa para reportar el problema.`);
+      alert(
+        '❌ ERROR ENVÍO EMAILJS\n\n' +
+        '• Status: ' + status + '\n' +
+        '• Texto: ' + text + '\n\n' +
+        '— Objeto completo —\n' + fullJson.slice(0, 600) + '\n\n' +
+        'Llámanos al ' + PHONE
+      );
     }
   });
 }
