@@ -13,6 +13,31 @@
   }
 })();
 
+/* ── Captura global de errores JS → dataLayer (visible en GA4) ──
+   Throttled: máx 5 eventos por sesión para no inflar GA. */
+(function initErrorTracking() {
+  let count = 0;
+  const MAX = 5;
+  function push(kind, detail) {
+    if (count++ >= MAX) return;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'js_error',
+      error_kind: kind,
+      error_msg: String(detail.msg || '').slice(0, 250),
+      error_src: String(detail.src || '').slice(0, 250),
+      error_line: detail.line || 0,
+      error_url: location.pathname,
+    });
+  }
+  window.addEventListener('error', (e) => {
+    push('error', { msg: e.message, src: e.filename, line: e.lineno });
+  });
+  window.addEventListener('unhandledrejection', (e) => {
+    push('promise', { msg: (e.reason && (e.reason.message || e.reason)) || 'unhandled' });
+  });
+})();
+
 /* ── Constantes globales ── */
 const PHONE = '625 215 983';
 const PHONE_RAW = '+34625215983';
@@ -50,16 +75,33 @@ const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
 /* ── Rate limit de formularios (cliente) ──
-   Evita reenvíos rápidos que agotarían la cuota de EmailJS. */
+   3 capas (no a prueba de balas — defensa real va en EmailJS panel):
+     1) cooldown 60s en localStorage (persistente)
+     2) cooldown 30s en sessionStorage (sobrevive a borrar localStorage en misma pestaña)
+     3) tope 3 envíos por sesión */
 const SUBMIT_COOLDOWN_MS = 60000;
+const SESSION_COOLDOWN_MS = 30000;
+const MAX_SESSION_SUBMITS = 3;
 function formRateLimited() {
   try {
+    const now = Date.now();
     const last = parseInt(localStorage.getItem('sz_last_submit') || '0', 10);
-    return Date.now() - last < SUBMIT_COOLDOWN_MS;
+    if (now - last < SUBMIT_COOLDOWN_MS) return true;
+    const lastSession = parseInt(sessionStorage.getItem('sz_last_submit') || '0', 10);
+    if (now - lastSession < SESSION_COOLDOWN_MS) return true;
+    const sessionCount = parseInt(sessionStorage.getItem('sz_submit_count') || '0', 10);
+    if (sessionCount >= MAX_SESSION_SUBMITS) return true;
+    return false;
   } catch (e) { return false; }
 }
 function markFormSubmitted() {
-  try { localStorage.setItem('sz_last_submit', String(Date.now())); } catch (e) {}
+  try {
+    const now = String(Date.now());
+    localStorage.setItem('sz_last_submit', now);
+    sessionStorage.setItem('sz_last_submit', now);
+    const c = parseInt(sessionStorage.getItem('sz_submit_count') || '0', 10) + 1;
+    sessionStorage.setItem('sz_submit_count', String(c));
+  } catch (e) {}
 }
 window.formRateLimited = formRateLimited;
 window.markFormSubmitted = markFormSubmitted;
