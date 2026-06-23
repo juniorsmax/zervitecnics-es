@@ -13,22 +13,6 @@
   }
 })();
 
-/* ── DIAG TEMPORAL: indicador de versión visible 4s en la esquina ──
-   Sirve para que el usuario sepa si su navegador tiene la última versión.
-   Quitar cuando el formulario funcione. */
-const ZRV_VERSION = 'v20260624a';
-(function showVersionBadge() {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', showVersionBadge);
-    return;
-  }
-  const b = document.createElement('div');
-  b.textContent = '⚙ ' + ZRV_VERSION;
-  b.style.cssText = 'position:fixed;bottom:8px;left:8px;background:#00C896;color:#fff;font:600 11px -apple-system,sans-serif;padding:4px 8px;border-radius:6px;z-index:99999;opacity:.9;box-shadow:0 2px 6px rgba(0,0,0,.2);pointer-events:none;';
-  document.body.appendChild(b);
-  setTimeout(() => { b.style.transition = 'opacity .4s'; b.style.opacity = '0'; }, 4000);
-  setTimeout(() => b.remove(), 4600);
-})();
 
 /* ── Captura global de errores JS → dataLayer (visible en GA4) ──
    Throttled: máx 5 eventos por sesión para no inflar GA. */
@@ -496,26 +480,24 @@ function initForm() {
       observaciones: document.getElementById('f-obs')?.value || '',
     };
 
+    // reCAPTCHA v3 como guard local solamente: si no se obtiene token,
+    // el script de Google probablemente fue bloqueado o el usuario es un bot
+    // que no ejecuta JS de Google → aborta. NO se envía a EmailJS porque su
+    // servicio espera v2 y rechaza tokens v3 con "The bot is detected".
+    const token = await getRecaptchaToken('hero_form');
+    if (!token) {
+      trackEvent('form_error', { source: 'hero-form', status: 'recaptcha_local', message: 'token vacío' });
+      btn.disabled = false;
+      btn.textContent = 'Solicitar presupuesto';
+      alert('No hemos podido verificar que eres humano. Recarga la página o llámanos al ' + PHONE + '.');
+      return;
+    }
+
     try {
-      const token = await getRecaptchaToken('hero_form');
-      data['g-recaptcha-response'] = token;
-      // DIAGNÓSTICO TEMPORAL: visible en móvil
-      alert(
-        '🔍 DIAGNÓSTICO — antes de enviar:\n\n' +
-        '• Service: ' + EMAILJS_SERVICE_ID + '\n' +
-        '• Template: ' + EMAILJS_TEMPLATE_ID + '\n' +
-        '• Public key: ' + EMAILJS_PUBLIC_KEY + '\n' +
-        '• reCAPTCHA token: ' + (token ? `OK (longitud ${token.length}, empieza ${token.slice(0,15)}…)` : 'VACÍO ❌') + '\n' +
-        '• SDK EmailJS cargado: ' + (typeof emailjs !== 'undefined' ? 'sí' : 'NO ❌') + '\n\n' +
-        'Pulsa OK para intentar el envío.'
-      );
-      console.log('[Zervitecnics] Enviando a EmailJS:', { service: EMAILJS_SERVICE_ID, template: EMAILJS_TEMPLATE_ID, params: data });
       if (typeof emailjs === 'undefined') {
         throw new Error('EmailJS SDK no cargado (revisa CSP / bloqueador de scripts)');
       }
-      const resp = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data);
-      console.log('[Zervitecnics] EmailJS OK:', resp);
-      alert('✅ EmailJS respondió OK:\n' + JSON.stringify(resp, null, 2));
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data);
       markFormSubmitted();
       trackEvent('form_submit', { zona: data.zona, tipo: data.tipo });
       window.location.href = 'gracias.html';
@@ -530,11 +512,9 @@ function initForm() {
       btn.disabled = false;
       btn.textContent = 'Solicitar presupuesto';
       alert(
-        '❌ ERROR ENVÍO EMAILJS\n\n' +
-        '• Status: ' + status + '\n' +
-        '• Texto: ' + text + '\n\n' +
-        '— Objeto completo —\n' + fullJson.slice(0, 600) + '\n\n' +
-        'Llámanos al ' + PHONE
+        '❌ Error al enviar (' + status + '): ' + text + '\n\n' +
+        '— Detalle —\n' + fullJson.slice(0, 400) + '\n\n' +
+        'Por favor llámenos al ' + PHONE
       );
     }
   });

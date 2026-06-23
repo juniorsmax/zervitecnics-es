@@ -66,7 +66,7 @@
   <!-- /ZRV-FONTS -->
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/shared.css?v=20260624a">
+  <link rel="stylesheet" href="css/shared.css?v=20260624b">
 
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js" integrity="sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS" crossorigin="anonymous" defer></script>
@@ -1672,8 +1672,8 @@
 </div>
 
 <!-- ── Scripts ── -->
-<script src="js/shared.js?v=20260624a"></script>
-<script src="js/pages.js?v=20260624a"></script>
+<script src="js/shared.js?v=20260624b"></script>
+<script src="js/pages.js?v=20260624b"></script>
 
 <script>
   // Responsive form grid
@@ -1863,47 +1863,35 @@ async function modalSubmit() {
     observaciones: obs ? `[Origen: modal-sticky] ${obs}` : '[Origen: modal-sticky]',
   };
 
-  let modalToken = '';
-  try {
-    if (typeof window.getRecaptchaToken === 'function') {
-      modalToken = await window.getRecaptchaToken('modal_form');
-      params['g-recaptcha-response'] = modalToken;
+  // reCAPTCHA v3 = guard local. NO se envía a EmailJS (incompatible con v2
+  // configurado en su panel — devuelve "The bot is detected").
+  if (typeof window.getRecaptchaToken === 'function') {
+    const modalToken = await window.getRecaptchaToken('modal_form');
+    if (!modalToken) {
+      btn.disabled = false;
+      btn.textContent = '→ Solicitar presupuesto gratis';
+      document.getElementById('modal-result').innerHTML = '<p style="color:var(--red,#E53E3E);font-size:.8rem;margin-top:8px">No hemos podido verificar que eres humano. Recarga la página o llámanos al 625 215 983.</p>';
+      return;
     }
-    alert(
-      '🔍 DIAGNÓSTICO modal — antes de enviar:\n\n' +
-      '• Service: ' + (window.EMAILJS_SERVICE_ID || 'service_tfuzhfr') + '\n' +
-      '• Template: ' + (window.EMAILJS_TEMPLATE_ID || 'template_wcjvjy3') + '\n' +
-      '• reCAPTCHA token: ' + (modalToken ? 'OK (longitud ' + modalToken.length + ')' : 'VACÍO ❌') + '\n' +
-      '• SDK EmailJS cargado: ' + (typeof emailjs !== 'undefined' ? 'sí' : 'NO ❌') + '\n\n' +
-      'Pulsa OK para intentar el envío.'
-    );
+  }
+
+  try {
     if (typeof emailjs === 'undefined') {
       throw new Error('EmailJS SDK no cargado (revisa CSP / bloqueador de scripts)');
     }
-    const resp = await emailjs.send(window.EMAILJS_SERVICE_ID || 'service_tfuzhfr', window.EMAILJS_TEMPLATE_ID || 'template_wcjvjy3', params);
-    alert('✅ EmailJS respondió OK:\n' + JSON.stringify(resp, null, 2));
+    await emailjs.send(window.EMAILJS_SERVICE_ID || 'service_tfuzhfr', window.EMAILJS_TEMPLATE_ID || 'template_wcjvjy3', params);
     if (typeof window.markFormSubmitted === 'function') window.markFormSubmitted();
     if (typeof trackEvent === 'function') trackEvent('form_submit', { zona: params.zona, tipo: modalTipo, source: 'modal-sticky' });
     window.location.href = 'gracias.html';
   } catch(e) {
     const status = e && (e.status || e.code) || '?';
     const text = (e && (e.text || e.message)) || String(e);
-    let fullJson = '';
-    try { fullJson = JSON.stringify(e, Object.getOwnPropertyNames(e || {}), 2); }
-    catch(_) { fullJson = String(e); }
     console.error('[Zervitecnics modal] EmailJS ERROR:', { status, text, full: e });
     if (typeof trackEvent === 'function') trackEvent('form_error', { source: 'modal-sticky', status, message: text });
     btn.disabled = false;
     btn.textContent = '→ Solicitar presupuesto gratis';
-    alert(
-      '❌ ERROR ENVÍO EMAILJS (modal)\n\n' +
-      '• Status: ' + status + '\n' +
-      '• Texto: ' + text + '\n\n' +
-      '— Objeto completo —\n' + fullJson.slice(0, 600) + '\n\n' +
-      'Llámanos al 625 215 983'
-    );
     const safe = String(text).replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
-    document.getElementById('modal-result').innerHTML = `<p style="color:var(--red,#E53E3E);font-size:.8rem;margin-top:8px;line-height:1.4"><strong>Error ${status}:</strong> ${safe}</p>`;
+    document.getElementById('modal-result').innerHTML = `<p style="color:var(--red,#E53E3E);font-size:.8rem;margin-top:8px;line-height:1.4"><strong>Error ${status}:</strong> ${safe}<br><span style="color:#6B7A8D">Llámanos al 625 215 983</span></p>`;
   }
 }
 
