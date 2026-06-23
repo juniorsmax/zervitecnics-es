@@ -67,8 +67,8 @@ El GTM ya está integrado con el ID `GTM-TF473QQQ`. Para usar tu propio:
 ### 3. Teléfono y datos de contacto
 
 Busca y reemplaza en todos los archivos:
-- `693 123 456` → tu número real
-- `+34693123456` → tu número en formato internacional
+- `625 215 983` → tu número real
+- `+34625215983` → tu número en formato internacional
 - `info@zervitecnics.com` → tu email real
 - `www.zervitecnics.com` → tu dominio real
 

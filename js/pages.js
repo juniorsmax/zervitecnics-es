@@ -209,7 +209,7 @@ function injectServiceSchema(serviceName, description, price) {
     "provider": {
       "@type": "LocalBusiness",
       "name": "Zervitecnics Barcelona",
-      "telephone": "+34693123456",
+      "telephone": "+34625215983",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Barcelona",

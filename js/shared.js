@@ -14,11 +14,36 @@
 })();
 
 /* ── Constantes globales ── */
-const PHONE = '693 123 456';
-const PHONE_RAW = '+34693123456';
-const WA_NUMBER = '34693123456';
+const PHONE = '625 215 983';
+const PHONE_RAW = '+34625215983';
+const WA_NUMBER = '34625215983';
 const BUSINESS_NAME = 'Zervitecnics Barcelona';
-const COOKIE_VERSION = '1.2';
+const COOKIE_VERSION = '1.3';
+
+/* ── IDs analytics / antibot ── */
+const GTM_ID = 'GTM-P6C8L3VX';
+const GA4_ID = 'G-N4C8H8KMFD';
+const CLARITY_ID = 'xbowxa66oa';
+const RECAPTCHA_SITE_KEY = '6LcESzAtAAAAAEhvnT0Zmh07PJUOkjYiC0qeed4S';
+const EMAILJS_PUBLIC_KEY = 'PEZWRWdtVVWVZhI9R';
+const EMAILJS_SERVICE_ID = 'service_tfuzhfr';
+const EMAILJS_TEMPLATE_ID = 'template_wcjvjy3';
+window.RECAPTCHA_SITE_KEY = RECAPTCHA_SITE_KEY;
+window.EMAILJS_SERVICE_ID = EMAILJS_SERVICE_ID;
+window.EMAILJS_TEMPLATE_ID = EMAILJS_TEMPLATE_ID;
+
+/* ── reCAPTCHA v3: ejecuta y devuelve token, o '' si falla ── */
+async function getRecaptchaToken(action) {
+  try {
+    if (typeof grecaptcha === 'undefined' || !grecaptcha.execute) return '';
+    await new Promise(r => grecaptcha.ready(r));
+    return await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: action || 'submit' });
+  } catch (e) {
+    console.warn('reCAPTCHA error', e);
+    return '';
+  }
+}
+window.getRecaptchaToken = getRecaptchaToken;
 
 /* ── Utilidades ── */
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
@@ -253,31 +278,27 @@ function saveConsent(data) {
 }
 
 function applyConsent(data) {
-  if (data.analytics) {
-    loadGTM();
-  }
   window.szConsent = data;
-}
-
-function loadGTM() {
-  if (window.gtmLoaded) return;
-  window.gtmLoaded = true;
   window.dataLayer = window.dataLayer || [];
   function gtag(){ window.dataLayer.push(arguments); }
-  gtag('consent', 'update', {
-    'analytics_storage': 'granted',
-    'ad_storage': 'granted'
-  });
-  // GTM
-  (function(w,d,s,l,i){
-    w[l]=w[l]||[];
-    w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-    var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-    j.async=true;
-    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-    f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TF473QQQ');
+  if (data.analytics) {
+    gtag('consent', 'update', {
+      'analytics_storage': 'granted',
+      'ad_storage': 'granted'
+    });
+    loadClarity();
+  }
+}
+
+/* ── Microsoft Clarity (carga tras consent) ── */
+function loadClarity() {
+  if (window.clarityLoaded || !CLARITY_ID) return;
+  window.clarityLoaded = true;
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window,document,'clarity','script',CLARITY_ID);
 }
 
 /* ── Analytics Tracking ── */
@@ -417,8 +438,10 @@ function initForm() {
     };
 
     try {
+      const token = await getRecaptchaToken('hero_form');
+      data['g-recaptcha-response'] = token;
       if (typeof emailjs !== 'undefined') {
-        await emailjs.send('service_dgblntm', 'template_gws4txt', data);
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data);
       }
       markFormSubmitted();
       trackEvent('form_submit', { zona: data.zona, tipo: data.tipo });
@@ -462,7 +485,7 @@ function injectLocalBusinessSchema() {
     "description": "Empresa especializada en instalación de aire acondicionado en Barcelona. Técnico HVAC certificado con carnet de gases fluorados y habilitación RITE.",
     "url": "https://juniorsmax.github.io/zervitecnics-web/",
     "telephone": PHONE_RAW,
-    "email": "info@zervitecnics.com",
+    "email": "formularios.zervitecnics@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Barcelona",
@@ -609,17 +632,6 @@ function animateCounters() {
   counters.forEach(c => observer.observe(c));
 }
 
-/* ── Consent Mode inicial (antes de cargar GTM) ── */
-(function initConsentMode() {
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ window.dataLayer.push(arguments); }
-  gtag('consent', 'default', {
-    'analytics_storage': 'denied',
-    'ad_storage': 'denied',
-    'wait_for_update': 500
-  });
-})();
-
 /* ── Init ── */
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
@@ -639,9 +651,9 @@ document.addEventListener('DOMContentLoaded', () => {
   animateCounters();
   detectZoneFromURL();
 
-  // EmailJS init — reemplazar 'YOUR_EMAILJS_PUBLIC_KEY' con tu clave pública de emailjs.com
+  // EmailJS init
   if (typeof emailjs !== 'undefined') {
-    emailjs.init('YOUR_EMAILJS_PUBLIC_KEY');
+    emailjs.init(EMAILJS_PUBLIC_KEY);
   }
 
   renderDynPrices();
