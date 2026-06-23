@@ -13,6 +13,23 @@
   }
 })();
 
+/* ── DIAG TEMPORAL: indicador de versión visible 4s en la esquina ──
+   Sirve para que el usuario sepa si su navegador tiene la última versión.
+   Quitar cuando el formulario funcione. */
+const ZRV_VERSION = 'v20260624a';
+(function showVersionBadge() {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', showVersionBadge);
+    return;
+  }
+  const b = document.createElement('div');
+  b.textContent = '⚙ ' + ZRV_VERSION;
+  b.style.cssText = 'position:fixed;bottom:8px;left:8px;background:#00C896;color:#fff;font:600 11px -apple-system,sans-serif;padding:4px 8px;border-radius:6px;z-index:99999;opacity:.9;box-shadow:0 2px 6px rgba(0,0,0,.2);pointer-events:none;';
+  document.body.appendChild(b);
+  setTimeout(() => { b.style.transition = 'opacity .4s'; b.style.opacity = '0'; }, 4000);
+  setTimeout(() => b.remove(), 4600);
+})();
+
 /* ── Captura global de errores JS → dataLayer (visible en GA4) ──
    Throttled: máx 5 eventos por sesión para no inflar GA. */
 (function initErrorTracking() {
