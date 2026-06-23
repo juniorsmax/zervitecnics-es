@@ -66,7 +66,7 @@
   <!-- /ZRV-FONTS -->
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/shared.css?v=20260623b">
+  <link rel="stylesheet" href="css/shared.css?v=20260623c">
 
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js" integrity="sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS" crossorigin="anonymous" defer></script>
@@ -1672,8 +1672,8 @@
 </div>
 
 <!-- ── Scripts ── -->
-<script src="js/shared.js?v=20260623b"></script>
-<script src="js/pages.js?v=20260623b"></script>
+<script src="js/shared.js?v=20260623c"></script>
+<script src="js/pages.js?v=20260623c"></script>
 
 <script>
   // Responsive form grid
@@ -1865,19 +1865,28 @@ async function modalSubmit() {
 
   try {
     if (typeof window.getRecaptchaToken === 'function') {
-      params['g-recaptcha-response'] = await window.getRecaptchaToken('modal_form');
+      const token = await window.getRecaptchaToken('modal_form');
+      params['g-recaptcha-response'] = token;
+      console.log('[Zervitecnics modal] reCAPTCHA token:', token ? `${token.slice(0,20)}... (len=${token.length})` : 'VACÍO');
     }
-    if (typeof emailjs !== 'undefined') {
-      await emailjs.send(window.EMAILJS_SERVICE_ID || 'service_tfuzhfr', window.EMAILJS_TEMPLATE_ID || 'template_wcjvjy3', params);
+    console.log('[Zervitecnics modal] Enviando a EmailJS:', { service: window.EMAILJS_SERVICE_ID, template: window.EMAILJS_TEMPLATE_ID, params });
+    if (typeof emailjs === 'undefined') {
+      throw new Error('EmailJS SDK no cargado (revisa CSP / bloqueador de scripts)');
     }
+    const resp = await emailjs.send(window.EMAILJS_SERVICE_ID || 'service_tfuzhfr', window.EMAILJS_TEMPLATE_ID || 'template_wcjvjy3', params);
+    console.log('[Zervitecnics modal] EmailJS OK:', resp);
     if (typeof window.markFormSubmitted === 'function') window.markFormSubmitted();
     if (typeof trackEvent === 'function') trackEvent('form_submit', { zona: params.zona, tipo: modalTipo, source: 'modal-sticky' });
     window.location.href = 'gracias.html';
   } catch(e) {
-    if (typeof trackEvent === 'function') trackEvent('form_error', { source: 'modal-sticky', message: (e && e.text) || String(e) });
+    const status = e && (e.status || e.code) || '?';
+    const text = (e && (e.text || e.message)) || String(e);
+    console.error('[Zervitecnics modal] EmailJS ERROR:', { status, text, full: e });
+    if (typeof trackEvent === 'function') trackEvent('form_error', { source: 'modal-sticky', status, message: text });
     btn.disabled = false;
     btn.textContent = '→ Solicitar presupuesto gratis';
-    document.getElementById('modal-result').innerHTML = '<p style="color:var(--red,#E53E3E);font-size:.85rem;margin-top:8px">Error al enviar. Llámanos directamente.</p>';
+    const safe = String(text).replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
+    document.getElementById('modal-result').innerHTML = `<p style="color:var(--red,#E53E3E);font-size:.8rem;margin-top:8px;line-height:1.4"><strong>Error ${status}:</strong> ${safe}<br><span style="color:#6B7A8D">Llámanos al 625 215 983</span></p>`;
   }
 }
 

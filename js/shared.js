@@ -482,18 +482,24 @@ function initForm() {
     try {
       const token = await getRecaptchaToken('hero_form');
       data['g-recaptcha-response'] = token;
-      if (typeof emailjs !== 'undefined') {
-        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data);
+      console.log('[Zervitecnics] reCAPTCHA token obtenido:', token ? `${token.slice(0,20)}... (len=${token.length})` : 'VACÍO');
+      console.log('[Zervitecnics] Enviando a EmailJS:', { service: EMAILJS_SERVICE_ID, template: EMAILJS_TEMPLATE_ID, params: data });
+      if (typeof emailjs === 'undefined') {
+        throw new Error('EmailJS SDK no cargado (revisa CSP / bloqueador de scripts)');
       }
+      const resp = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data);
+      console.log('[Zervitecnics] EmailJS OK:', resp);
       markFormSubmitted();
       trackEvent('form_submit', { zona: data.zona, tipo: data.tipo });
       window.location.href = 'gracias.html';
     } catch(err) {
-      console.error('EmailJS error:', err);
-      trackEvent('form_error', { source: 'hero-form', message: (err && err.text) || String(err) });
+      const status = err && (err.status || err.code) || '?';
+      const text = (err && (err.text || err.message)) || String(err);
+      console.error('[Zervitecnics] EmailJS ERROR:', { status, text, full: err });
+      trackEvent('form_error', { source: 'hero-form', status, message: text });
       btn.disabled = false;
       btn.textContent = 'Solicitar presupuesto';
-      alert('Error al enviar. Por favor llámenos al ' + PHONE);
+      alert(`Error al enviar (${status}): ${text}\n\nPor favor llámenos al ${PHONE} o avisa para reportar el problema.`);
     }
   });
 }
