@@ -839,7 +839,7 @@
           <!-- Paso 2 -->
           <div id="form-step-2" style="display:none">
             <div class="form-group">
-              <label class="form-label" for="f-tipo">Tipo de instalación</label>
+              <label class="form-label" for="f-tipo">Tipo de instalación / equipo</label>
               <select id="f-tipo" class="form-select" onchange="toggleMaterialFields(this.value)">
                 <option value="">¿Qué necesitas?</option>
                 <option value="split-1x1">Split 1×1 (una habitación)</option>
@@ -847,8 +847,43 @@
                 <option value="multisplit-3x1">Multisplit 3×1 (tres habitaciones)</option>
                 <option value="multisplit-4x1">Multisplit 4×1 (cuatro habitaciones)</option>
                 <option value="conductos">Aire por conductos</option>
+                <option value="cassette">Cassette de techo</option>
+                <option value="portatil">Portátil</option>
                 <option value="solo-instalacion">Solo instalación (tengo el equipo)</option>
                 <option value="no-se">No sé, necesito asesoramiento</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-marca">Marca preferida <small style="color:var(--gray-500);font-weight:400">(opcional)</small></label>
+              <select id="f-marca" class="form-select">
+                <option value="">Sin preferencia / asesoradme</option>
+                <option value="Daikin">Daikin</option>
+                <option value="Mitsubishi Electric">Mitsubishi Electric</option>
+                <option value="Fujitsu">Fujitsu</option>
+                <option value="LG">LG</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Panasonic">Panasonic</option>
+                <option value="Hisense">Hisense</option>
+                <option value="Haier">Haier</option>
+                <option value="Midea">Midea</option>
+                <option value="Toshiba">Toshiba</option>
+                <option value="Marca blanca / económica">Marca blanca / económica</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-problema">Servicio que necesitas</label>
+              <select id="f-problema" class="form-select">
+                <option value="">Selecciona una opción</option>
+                <option value="Instalación nueva">Instalación nueva</option>
+                <option value="Cambio de equipo">Cambio de equipo antiguo</option>
+                <option value="Reparación — no enfría/calienta">Reparación — no enfría / no calienta</option>
+                <option value="Mantenimiento / limpieza">Mantenimiento o limpieza</option>
+                <option value="Recarga de gas">Recarga de gas</option>
+                <option value="Ruidos o vibraciones">Ruidos o vibraciones</option>
+                <option value="Goteo o fugas de agua">Goteo o fugas de agua</option>
+                <option value="Asesoramiento">Solo asesoramiento</option>
               </select>
             </div>
 

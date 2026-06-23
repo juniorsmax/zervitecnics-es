@@ -476,7 +476,11 @@ function initForm() {
       nombre: document.getElementById('f-nombre')?.value || '',
       telefono: document.getElementById('f-telefono')?.value || '',
       zona: document.getElementById('f-zona')?.value || '',
-      tipo: document.getElementById('f-tipo')?.value || '',
+      tipo_equipo: document.getElementById('f-tipo')?.value || '',
+      marca: document.getElementById('f-marca')?.value || '',
+      problema: document.getElementById('f-problema')?.value || '',
+      distancia_exterior: document.getElementById('f-dist-ext')?.value || '',
+      planta: document.getElementById('f-planta')?.value || '',
       observaciones: document.getElementById('f-obs')?.value || '',
     };
 
@@ -499,7 +503,7 @@ function initForm() {
       }
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data);
       markFormSubmitted();
-      trackEvent('form_submit', { zona: data.zona, tipo: data.tipo });
+      trackEvent('form_submit', { zona: data.zona, tipo: data.tipo_equipo });
       window.location.href = 'gracias.html';
     } catch(err) {
       const status = err && (err.status || err.code) || '?';
