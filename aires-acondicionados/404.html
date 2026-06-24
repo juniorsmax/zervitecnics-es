@@ -36,12 +36,8 @@
   <script src="https://www.google.com/recaptcha/api.js?render=6LcESzAtAAAAAEhvnT0Zmh07PJUOkjYiC0qeed4S" async defer></script>
   <!-- ZRV-ANALYTICS-END -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.clarity.ms https://www.clarity.ms; connect-src 'self' https://api.emailjs.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms https://*.bing.com; frame-src https://www.googletagmanager.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="robots" content="noindex, follow">
-
-  <title>¡Gracias! Presupuesto solicitado | Zervitecnics Barcelona</title>
-  <meta name="description" content="Hemos recibido tu solicitud de presupuesto. Te contactamos en menos de 2 horas.">
-
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- ZRV-FONTS -->
@@ -49,85 +45,70 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"></noscript>
   <!-- /ZRV-FONTS -->
-  <link rel="stylesheet" href="css/shared.css?v=20260624b">
+
+  <title>Página no encontrada (404) | Zervitecnics Barcelona</title>
 
   <style>
-    .gracias-wrap {
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0B1E3D 0%, #132848 40%, #1a3a6b 100%);
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 40px 24px;
-      background: linear-gradient(135deg, var(--navy) 0%, #132848 40%, #1a3a6b 100%);
+      padding: 24px;
     }
-    .gracias-card {
-      background: var(--white, #fff);
+    .card {
+      background: #fff;
       border-radius: 20px;
       padding: 48px 32px;
       max-width: 480px;
       width: 100%;
+      text-align: center;
       box-shadow: 0 24px 64px rgba(0,0,0,.3);
     }
-    .gracias-icon { font-size: 3.5rem; margin-bottom: 16px; }
-    .gracias-card h1 {
-      font-family: var(--font-title, sans-serif);
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--navy, #0B1E3D);
-      margin-bottom: 12px;
-    }
-    .gracias-card p {
-      font-size: .95rem;
-      color: var(--gray-600, #4A5A6B);
-      line-height: 1.7;
-      margin-bottom: 8px;
-    }
-    .gracias-pasos {
-      text-align: left;
-      background: var(--gray-50, #F7F9FB);
+    .code { font-size: 4rem; font-weight: 900; color: #1E90FF; line-height: 1; }
+    h1 { font-size: 1.4rem; font-weight: 800; color: #0B1E3D; margin: 12px 0; }
+    p { font-size: .95rem; color: #4A5A6B; line-height: 1.7; margin-bottom: 24px; }
+    .links { display: flex; flex-direction: column; gap: 10px; }
+    .btn {
+      display: block;
+      padding: 14px 20px;
       border-radius: 12px;
-      padding: 18px 20px;
-      margin: 20px 0;
-      font-size: .88rem;
-      color: var(--gray-600, #4A5A6B);
-      line-height: 2;
+      font-size: .95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity .2s;
     }
-    .gracias-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
-    .gracias-logo { margin-top: 28px; }
-    .gracias-logo img { height: 44px; width: auto; }
+    .btn:hover { opacity: .85; }
+    .btn-primary { background: #1E90FF; color: #fff; }
+    .btn-outline { border: 2px solid #E3E9F0; color: #0B1E3D; }
+    .quick { margin-top: 24px; font-size: .85rem; color: #6B7A8D; }
+    .quick a { color: #1E90FF; text-decoration: none; }
   </style>
 </head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6C8L3VX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<div class="gracias-wrap">
-  <div class="gracias-card">
-    <div class="gracias-icon">✅</div>
-    <h1>¡Presupuesto solicitado!</h1>
-    <p>Hemos recibido tu solicitud correctamente.</p>
+<div class="card">
+  <div class="code">404</div>
+  <h1>Página no encontrada</h1>
+  <p>La página que buscas no existe o ha cambiado de dirección. Pero no te preocupes, seguimos aquí para ayudarte con tu aire acondicionado.</p>
 
-    <div class="gracias-pasos">
-      <strong>¿Qué pasa ahora?</strong><br>
-      1️⃣ Revisamos tu solicitud<br>
-      2️⃣ Te llamamos en menos de 2 horas (horario laboral)<br>
-      3️⃣ Recibes tu presupuesto sin compromiso
-    </div>
+  <div class="links">
+    <a href="index.html" class="btn btn-primary">← Ir a la página principal</a>
+    <a href="tel:+34625215983" class="btn btn-outline">📞 Llamar: 625 215 983</a>
+  </div>
 
-    <p style="font-size:.85rem">¿Es urgente? Llámanos directamente:</p>
-
-    <div class="gracias-actions">
-      <a href="tel:+34625215983" class="btn btn-primary" data-location="gracias">📞 625 215 983</a>
-      <a href="index.html" class="btn btn-outline">← Volver al inicio</a>
-    </div>
-
-    <div class="gracias-logo">
-      <img src="img/logo_zervitecnics.png" alt="Zervitecnics Barcelona">
-    </div>
+  <div class="quick">
+    Páginas populares:
+    <a href="precios.html">Precios</a> ·
+    <a href="categorias/split.html">Split</a> ·
+    <a href="categorias/multisplit.html">Multisplit</a> ·
+    <a href="subvenciones.html">Subvenciones</a>
   </div>
 </div>
 
-<script src="js/shared.js?v=20260624b"></script>
 </body>
 </html>

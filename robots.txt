@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /pages/privacidad.html
-Disallow: /pages/cookies.html
-Disallow: /pages/aviso-legal.html
+Disallow: /pages/
 
-Sitemap: https://juniorsmax.github.io/zervitecnics-web/sitemap.xml
+Sitemap: https://zervitecnics.es/sitemap.xml

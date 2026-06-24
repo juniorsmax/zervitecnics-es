@@ -1,41 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Página principal -->
+  <!-- Portal raíz -->
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/</loc>
-    <lastmod>2026-06-08</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://zervitecnics.es/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Vertical: aires acondicionados -->
+  <url>
+    <loc>https://zervitecnics.es/aires-acondicionados/</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- Servicios -->
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/split.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/categorias/split.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/multisplit.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/categorias/multisplit.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/conductos.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/categorias/conductos.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/subvenciones.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/subvenciones.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/precios.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/precios.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -43,73 +51,73 @@
 
   <!-- Marcas -->
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/daikin.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/marcas/daikin.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/mitsubishi.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/marcas/mitsubishi.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/fujitsu.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/marcas/fujitsu.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/lg.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/marcas/lg.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/samsung.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/marcas/samsung.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/hisense.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/marcas/hisense.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/haier.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/marcas/haier.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/panasonic.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/marcas/panasonic.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/toshiba.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/marcas/toshiba.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/midea.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/marcas/midea.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/dicore.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/categorias/dicore.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/marca-blanca.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/categorias/marca-blanca.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -117,49 +125,49 @@
 
   <!-- Zonas SEO -->
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/eixample.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/eixample.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/gracia.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/gracia.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/hospitalet.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/hospitalet.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/badalona.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/badalona.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/sant-cugat.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/sant-cugat.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/cornella.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/cornella.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/terrassa.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/terrassa.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/sabadell.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/sabadell.html</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -167,43 +175,43 @@
 
 
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/sarria.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/sarria.html</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/sants.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/sants.html</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/les-corts.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/les-corts.html</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/castelldefels.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/castelldefels.html</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/nou-barris.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/nou-barris.html</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/sant-andreu.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/sant-andreu.html</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://juniorsmax.github.io/zervitecnics-web/pages/sant-marti.html</loc>
+    <loc>https://zervitecnics.es/aires-acondicionados/zonas/sant-marti.html</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
