@@ -551,7 +551,7 @@ function injectLocalBusinessSchema() {
     "name": "Zervitecnics Barcelona",
     "alternateName": "Aires Zervitecnics",
     "description": "Empresa especializada en instalación de aire acondicionado en Barcelona. Técnico HVAC certificado con carnet de gases fluorados y habilitación RITE.",
-    "url": "https://juniorsmax.github.io/zervitecnics-web/",
+    "url": "https://zervitecnics.es/aires-acondicionados/",
     "telephone": PHONE_RAW,
     "email": "formularios.zervitecnics@gmail.com",
     "address": {
@@ -590,8 +590,8 @@ function injectLocalBusinessSchema() {
     "priceRange": "€€",
     "currenciesAccepted": "EUR",
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-    "image": "https://juniorsmax.github.io/zervitecnics-web/img/logo_zervitecnics.png",
-    "logo": "https://juniorsmax.github.io/zervitecnics-web/img/logo_zervitecnics.png",
+    "image": "https://zervitecnics.es/aires-acondicionados/img/logo_zervitecnics.png",
+    "logo": "https://zervitecnics.es/aires-acondicionados/img/logo_zervitecnics.png",
     "sameAs": [
       "https://www.instagram.com/zervitecnics",
       "https://www.facebook.com/zervitecnics"
