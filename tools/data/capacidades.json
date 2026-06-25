@@ -1,0 +1,6 @@
+[
+  { "frig": 2000, "btu": 9000,  "kw": 2.6, "m2Min": 12, "m2Max": 20, "precioDesde": 1099, "descripcionUso": "habitaciones pequeñas, dormitorios individuales y despachos" },
+  { "frig": 2500, "btu": 12000, "kw": 3.5, "m2Min": 20, "m2Max": 30, "precioDesde": 1299, "descripcionUso": "dormitorios dobles, salones medianos y oficinas" },
+  { "frig": 4500, "btu": 18000, "kw": 5.2, "m2Min": 30, "m2Max": 45, "precioDesde": 1699, "descripcionUso": "salones amplios, espacios diáfanos y locales comerciales pequeños" },
+  { "frig": 6000, "btu": 24000, "kw": 7.0, "m2Min": 45, "m2Max": 60, "precioDesde": 1999, "descripcionUso": "lofts, locales comerciales y estancias muy grandes" }
+]

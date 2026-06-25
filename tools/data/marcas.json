@@ -1,0 +1,152 @@
+[
+  {
+    "slug": "daikin",
+    "nombre": "Daikin",
+    "color": "#0067B1",
+    "tagline": "El líder mundial en climatización",
+    "descripcion": "Daikin es el fabricante de aire acondicionado número 1 del mundo. Sus equipos destacan por su eficiencia energética extrema (hasta A+++), tecnología inverter de última generación y durabilidad excepcional. La serie Perfera y la serie Emura son las más demandadas en Barcelona por su diseño elegante y prestaciones premium.",
+    "checklist": [
+      "Tecnología inverter A+++",
+      "Control por app Daikin Online Controller",
+      "Modo Econo para máximo ahorro",
+      "Filtro Flash Streamer purificador",
+      "Garantía oficial Daikin"
+    ],
+    "modeloRecomendado": "Daikin Perfera"
+  },
+  {
+    "slug": "mitsubishi",
+    "nombre": "Mitsubishi Electric",
+    "color": "#E60012",
+    "tagline": "Tecnología japonesa premium",
+    "descripcion": "Mitsubishi Electric es sinónimo de calidad japonesa. Sus series Kirigamine y MSZ-LN destacan por un funcionamiento extremadamente silencioso (desde 19 dB), sensor 3D iSee y un acabado premium. Ideales para dormitorios y espacios donde el confort acústico es prioritario.",
+    "checklist": [
+      "Funcionamiento ultra-silencioso (desde 19 dB)",
+      "Sensor 3D iSee de presencia",
+      "Compresor inverter R32 ecológico",
+      "Filtro Plasma Quad Plus",
+      "Garantía oficial Mitsubishi"
+    ],
+    "modeloRecomendado": "Mitsubishi Kirigamine"
+  },
+  {
+    "slug": "fujitsu",
+    "nombre": "Fujitsu",
+    "color": "#E4002B",
+    "tagline": "Eficiencia y fiabilidad japonesa",
+    "descripcion": "Fujitsu fabrica equipos de aire acondicionado robustos, eficientes y con relación calidad-precio sobresaliente. La gama ASYG y la serie KM ofrecen eficiencia A++ con tecnología inverter, control WiFi y un sistema antibacteriano de iones de plata.",
+    "checklist": [
+      "Inverter DC de alta eficiencia",
+      "Filtro de iones de plata antibacteriano",
+      "Control WiFi Fujitsu",
+      "Refrigerante R32 ecológico",
+      "Garantía oficial Fujitsu"
+    ],
+    "modeloRecomendado": "Fujitsu ASYG-KM"
+  },
+  {
+    "slug": "lg",
+    "nombre": "LG",
+    "color": "#A50034",
+    "tagline": "Diseño coreano e innovación",
+    "descripcion": "LG combina diseño y tecnología puntera. La gama Artcool y Dualcool incorpora compresor Dual Inverter con garantía extendida de 10 años, ionizador Plasmaster y control por voz mediante asistentes (Google Home, Alexa).",
+    "checklist": [
+      "Compresor Dual Inverter (10 años de garantía)",
+      "Ionizador Plasmaster antibacteriano",
+      "Compatible con Google Home y Alexa",
+      "Eficiencia A+++",
+      "Control WiFi LG ThinQ"
+    ],
+    "modeloRecomendado": "LG Dualcool"
+  },
+  {
+    "slug": "samsung",
+    "nombre": "Samsung",
+    "color": "#1428A0",
+    "tagline": "Tecnología WindFree™",
+    "descripcion": "Samsung es pionera con su tecnología WindFree™ que distribuye el aire frío sin corrientes molestas, mediante 23.000 microorificios. La gama AR9500 y la serie Wind-Free Elite son ideales para personas sensibles a las corrientes y para dormitorios.",
+    "checklist": [
+      "Tecnología WindFree™ (sin corrientes de aire)",
+      "Compresor Digital Inverter (10 años garantía)",
+      "Control SmartThings WiFi",
+      "Refrigerante R32 ecológico",
+      "Filtro Tri-Care antibacteriano"
+    ],
+    "modeloRecomendado": "Samsung WindFree Elite"
+  },
+  {
+    "slug": "panasonic",
+    "nombre": "Panasonic",
+    "color": "#003087",
+    "tagline": "Tecnología nanoe™ X purificadora",
+    "descripcion": "Panasonic destaca por su tecnología nanoe™ X, capaz de inhibir virus, bacterias, alérgenos y olores mediante partículas hidroxilo. La gama Etherea y la serie TZ ofrecen eficiencia A+++, control WiFi Panasonic Comfort Cloud y silencio extremo.",
+    "checklist": [
+      "Tecnología nanoe™ X (inhibe virus y bacterias)",
+      "Compresor inverter R32",
+      "Eficiencia A+++",
+      "Control WiFi Panasonic Comfort Cloud",
+      "Funcionamiento silencioso desde 19 dB"
+    ],
+    "modeloRecomendado": "Panasonic Etherea"
+  },
+  {
+    "slug": "haier",
+    "nombre": "Haier",
+    "color": "#0066CC",
+    "tagline": "Innovación premium con UV Cool",
+    "descripcion": "Haier es el mayor fabricante mundial de electrodomésticos. Su serie Flexis y la gama Tundra ofrecen un diseño elegante, control WiFi nativo y la innovadora tecnología UV Cool que esteriliza el aire mediante luz ultravioleta. Excelente relación prestaciones-precio.",
+    "checklist": [
+      "Tecnología UV Cool esterilizante",
+      "Control WiFi nativo hOn",
+      "Diseño Flexis premium",
+      "Refrigerante R32 ecológico",
+      "Compresor inverter de alta eficiencia"
+    ],
+    "modeloRecomendado": "Haier Flexis Plus"
+  },
+  {
+    "slug": "hisense",
+    "nombre": "Hisense",
+    "color": "#E31837",
+    "tagline": "Calidad-precio imbatible",
+    "descripcion": "Hisense ofrece equipos modernos con WiFi de serie, control por voz y eficiencia A++ a un precio competitivo. Las series Easy Smart y Energy Pro son perfectas para quien busca un buen aire acondicionado sin pagar el sobrecoste de marcas premium.",
+    "checklist": [
+      "WiFi y control por voz de serie",
+      "Eficiencia A++",
+      "Refrigerante R32 ecológico",
+      "Diseño moderno y compacto",
+      "Garantía oficial Hisense"
+    ],
+    "modeloRecomendado": "Hisense Energy Pro"
+  },
+  {
+    "slug": "midea",
+    "nombre": "Midea",
+    "color": "#00A0E9",
+    "tagline": "Fabricante OEM líder mundial",
+    "descripcion": "Midea es el mayor fabricante OEM de aire acondicionado del mundo (fabrica para muchas otras marcas). Sus equipos propios, como la serie Xtreme Save y Mission, ofrecen tecnología inverter, WiFi y eficiencia A++ con un precio muy competitivo.",
+    "checklist": [
+      "Tecnología Full DC Inverter",
+      "WiFi MideaAir de serie",
+      "Eficiencia A++",
+      "Refrigerante R32 ecológico",
+      "Filtro antibacteriano de plata"
+    ],
+    "modeloRecomendado": "Midea Xtreme Save"
+  },
+  {
+    "slug": "toshiba",
+    "nombre": "Toshiba",
+    "color": "#E60012",
+    "tagline": "Tecnología japonesa fiable",
+    "descripcion": "Toshiba combina ingeniería japonesa con un excelente equilibrio precio-prestaciones. Las series Seiya y Shorai destacan por su compresor Dual Rotary, filtro Ultra Pure y control WiFi mediante la app Toshiba Home AC Control.",
+    "checklist": [
+      "Compresor Dual Rotary",
+      "Filtro Ultra Pure antibacteriano",
+      "Control WiFi Toshiba Home AC",
+      "Refrigerante R32 ecológico",
+      "Eficiencia A++"
+    ],
+    "modeloRecomendado": "Toshiba Shorai Edge"
+  }
+]
