@@ -107,8 +107,22 @@ function markFormSubmitted() {
 window.formRateLimited = formRateLimited;
 window.markFormSubmitted = markFormSubmitted;
 
+/* ── Skip Link (accesibilidad) ── */
+function injectSkipLink() {
+  if (document.querySelector('.skip-link')) return;
+  const target = document.querySelector('main, [role="main"], .hero, section');
+  if (!target) return;
+  if (!target.id) target.id = 'contenido';
+  const link = document.createElement('a');
+  link.className = 'skip-link';
+  link.href = '#' + target.id;
+  link.textContent = 'Saltar al contenido';
+  document.body.insertBefore(link, document.body.firstChild);
+}
+
 /* ── Header Scroll Effect ── */
 function initHeader() {
+  injectSkipLink();
   const header = $('.site-header');
   if (!header) return;
   const onScroll = () => {
@@ -544,7 +558,21 @@ function protectImages() {
 }
 
 /* ── Schema.org LocalBusiness ── */
+function hasSchemaType(targetType) {
+  const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+  for (const s of scripts) {
+    try {
+      const data = JSON.parse(s.textContent);
+      const t = data['@type'];
+      const types = Array.isArray(t) ? t : [t];
+      if (types.includes(targetType)) return true;
+    } catch (e) {}
+  }
+  return false;
+}
+
 function injectLocalBusinessSchema() {
+  if (hasSchemaType('LocalBusiness') || hasSchemaType('HVACBusiness')) return;
   const schema = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "HVACBusiness"],
@@ -624,6 +652,7 @@ function injectBreadcrumbSchema(items) {
 
 /* ── Schema FAQPage ── */
 function injectFAQSchema() {
+  if (hasSchemaType('FAQPage')) return;
   const items = $$('.faq-item');
   if (!items.length) return;
   const faqs = items.map(item => ({

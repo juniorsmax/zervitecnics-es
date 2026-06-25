@@ -1167,3 +1167,22 @@ input, textarea, select { font-family: inherit; }
 .flex-col { display: flex; flex-direction: column; }
 .items-center { align-items: center; }
 .w-full { width: 100%; }
+
+/* ── Skip link (accesibilidad teclado) ── */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--blue, #0066cc);
+  color: #fff;
+  padding: 12px 20px;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 99999;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus {
+  left: 0;
+  outline: 3px solid #ffcb05;
+  outline-offset: 2px;
+}

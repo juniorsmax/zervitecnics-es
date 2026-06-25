@@ -66,7 +66,7 @@
   <!-- /ZRV-FONTS -->
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/shared.css?v=20260624c">
+  <link rel="stylesheet" href="css/shared.css?v=20260625a">
 
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js" integrity="sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS" crossorigin="anonymous" defer></script>
@@ -647,7 +647,7 @@
 <!-- ── Header ── -->
 <header class="site-header" role="banner">
   <div class="header-inner">
-    <a href="/" class="logo" aria-label="Zervitecnics Barcelona - Inicio">
+    <a href="index.html" class="logo" aria-label="Zervitecnics Barcelona - Inicio">
       <img src="img/logo_zervitecnics.png" alt="Zervitecnics Barcelona logo" width="40" height="40"  style="height:56px;width:auto;object-fit:contain">
     </a>
 
@@ -1707,8 +1707,8 @@
 </div>
 
 <!-- ── Scripts ── -->
-<script src="js/shared.js?v=20260624c"></script>
-<script src="js/pages.js?v=20260624c"></script>
+<script src="js/shared.js?v=20260625a"></script>
+<script src="js/pages.js?v=20260625a"></script>
 
 <script>
   // Responsive form grid
@@ -1821,8 +1821,11 @@
 
 // ── MODAL PRESUPUESTO ──
 let modalTipo = '';
+let modalPrevFocus = null;
+const MODAL_FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 function openPresupModal() {
+  modalPrevFocus = document.activeElement;
   document.getElementById('presup-modal').classList.add('open');
   document.body.classList.add('modal-open');
   document.body.style.overflow = 'hidden';
@@ -1831,17 +1834,38 @@ function openPresupModal() {
   document.getElementById('modal-panel2').classList.remove('active');
   modalTipo = '';
   document.querySelectorAll('#presup-modal .tipo-btn').forEach(b => b.classList.remove('sel'));
+  // Foco al primer input del paso activo
+  setTimeout(() => {
+    const first = document.querySelector('#modal-panel1 input, #modal-panel1 button');
+    if (first) first.focus();
+  }, 50);
 }
 
 function closePresupModal() {
   document.getElementById('presup-modal').classList.remove('open');
   document.body.classList.remove('modal-open');
   document.body.style.overflow = '';
+  if (modalPrevFocus && typeof modalPrevFocus.focus === 'function') modalPrevFocus.focus();
 }
 
 // Cerrar al tocar el overlay
 document.getElementById('presup-modal').addEventListener('click', function(e) {
   if (e.target === this) closePresupModal();
+});
+
+// Focus trap + cierre con Escape
+document.addEventListener('keydown', function(e) {
+  const overlay = document.getElementById('presup-modal');
+  if (!overlay || !overlay.classList.contains('open')) return;
+  if (e.key === 'Escape') { e.preventDefault(); closePresupModal(); return; }
+  if (e.key !== 'Tab') return;
+  const focusables = overlay.querySelectorAll(MODAL_FOCUSABLE);
+  const visibles = Array.from(focusables).filter(el => el.offsetParent !== null);
+  if (!visibles.length) return;
+  const first = visibles[0];
+  const last = visibles[visibles.length - 1];
+  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
 });
 
 function modalGoStep2() {
