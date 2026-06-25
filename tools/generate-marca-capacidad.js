@@ -1,0 +1,423 @@
+#!/usr/bin/env node
+/*
+ * Generador Fase 3 — 40 páginas SEO long-tail marca × capacidad.
+ * Salida: aires-acondicionados/marcas/{slug}-{frig}-frigorias.html
+ * Diseño clonado de marcas/daikin.html con sustituciones por marca y capacidad.
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const REPO = path.resolve(__dirname, '..');
+const OUT_DIR = path.join(REPO, 'aires-acondicionados', 'marcas');
+const CACHE_BUST = 'v=20260625a';
+
+const MARCAS = [
+  {
+    slug: 'daikin', nombre: 'Daikin', color: '#0067B1',
+    tagline: 'El líder mundial en climatización',
+    descripcion: 'Daikin es el fabricante de aire acondicionado número 1 del mundo. Sus equipos destacan por su eficiencia energética extrema (hasta A+++), tecnología inverter de última generación y durabilidad excepcional. La serie Perfera y la serie Emura son las más demandadas en Barcelona por su diseño elegante y prestaciones premium.',
+    checklist: [
+      'Tecnología inverter A+++',
+      'Control por app Daikin Online Controller',
+      'Modo Econo para máximo ahorro',
+      'Filtro Flash Streamer purificador',
+      'Garantía oficial Daikin'
+    ],
+    modeloRecomendado: 'Daikin Perfera'
+  },
+  {
+    slug: 'mitsubishi', nombre: 'Mitsubishi Electric', color: '#E60012',
+    tagline: 'Tecnología japonesa premium',
+    descripcion: 'Mitsubishi Electric es sinónimo de calidad japonesa. Sus series Kirigamine y MSZ-LN destacan por un funcionamiento extremadamente silencioso (desde 19 dB), sensor 3D iSee y un acabado premium. Ideales para dormitorios y espacios donde el confort acústico es prioritario.',
+    checklist: [
+      'Funcionamiento ultra-silencioso (desde 19 dB)',
+      'Sensor 3D iSee de presencia',
+      'Compresor inverter R32 ecológico',
+      'Filtro Plasma Quad Plus',
+      'Garantía oficial Mitsubishi'
+    ],
+    modeloRecomendado: 'Mitsubishi Kirigamine'
+  },
+  {
+    slug: 'fujitsu', nombre: 'Fujitsu', color: '#E4002B',
+    tagline: 'Eficiencia y fiabilidad japonesa',
+    descripcion: 'Fujitsu fabrica equipos de aire acondicionado robustos, eficientes y con relación calidad-precio sobresaliente. La gama ASYG y la serie KM ofrecen eficiencia A++ con tecnología inverter, control WiFi y un sistema antibacteriano de iones de plata.',
+    checklist: [
+      'Inverter DC de alta eficiencia',
+      'Filtro de iones de plata antibacteriano',
+      'Control WiFi Fujitsu',
+      'Refrigerante R32 ecológico',
+      'Garantía oficial Fujitsu'
+    ],
+    modeloRecomendado: 'Fujitsu ASYG-KM'
+  },
+  {
+    slug: 'lg', nombre: 'LG', color: '#A50034',
+    tagline: 'Diseño coreano e innovación',
+    descripcion: 'LG combina diseño y tecnología puntera. La gama Artcool y Dualcool incorpora compresor Dual Inverter con garantía extendida de 10 años, ionizador Plasmaster y control por voz mediante asistentes (Google Home, Alexa).',
+    checklist: [
+      'Compresor Dual Inverter (10 años de garantía)',
+      'Ionizador Plasmaster antibacteriano',
+      'Compatible con Google Home y Alexa',
+      'Eficiencia A+++',
+      'Control WiFi LG ThinQ'
+    ],
+    modeloRecomendado: 'LG Dualcool'
+  },
+  {
+    slug: 'samsung', nombre: 'Samsung', color: '#1428A0',
+    tagline: 'Tecnología WindFree™',
+    descripcion: 'Samsung es pionera con su tecnología WindFree™ que distribuye el aire frío sin corrientes molestas, mediante 23.000 microorificios. La gama AR9500 y la serie Wind-Free Elite son ideales para personas sensibles a las corrientes y para dormitorios.',
+    checklist: [
+      'Tecnología WindFree™ (sin corrientes de aire)',
+      'Compresor Digital Inverter (10 años garantía)',
+      'Control SmartThings WiFi',
+      'Refrigerante R32 ecológico',
+      'Filtro Tri-Care antibacteriano'
+    ],
+    modeloRecomendado: 'Samsung WindFree Elite'
+  },
+  {
+    slug: 'panasonic', nombre: 'Panasonic', color: '#003087',
+    tagline: 'Tecnología nanoe™ X purificadora',
+    descripcion: 'Panasonic destaca por su tecnología nanoe™ X, capaz de inhibir virus, bacterias, alérgenos y olores mediante partículas hidroxilo. La gama Etherea y la serie TZ ofrecen eficiencia A+++, control WiFi Panasonic Comfort Cloud y silencio extremo.',
+    checklist: [
+      'Tecnología nanoe™ X (inhibe virus y bacterias)',
+      'Compresor inverter R32',
+      'Eficiencia A+++',
+      'Control WiFi Panasonic Comfort Cloud',
+      'Funcionamiento silencioso desde 19 dB'
+    ],
+    modeloRecomendado: 'Panasonic Etherea'
+  },
+  {
+    slug: 'haier', nombre: 'Haier', color: '#0066CC',
+    tagline: 'Innovación premium con UV Cool',
+    descripcion: 'Haier es el mayor fabricante mundial de electrodomésticos. Su serie Flexis y la gama Tundra ofrecen un diseño elegante, control WiFi nativo y la innovadora tecnología UV Cool que esteriliza el aire mediante luz ultravioleta. Excelente relación prestaciones-precio.',
+    checklist: [
+      'Tecnología UV Cool esterilizante',
+      'Control WiFi nativo hOn',
+      'Diseño Flexis premium',
+      'Refrigerante R32 ecológico',
+      'Compresor inverter de alta eficiencia'
+    ],
+    modeloRecomendado: 'Haier Flexis Plus'
+  },
+  {
+    slug: 'hisense', nombre: 'Hisense', color: '#E31837',
+    tagline: 'Calidad-precio imbatible',
+    descripcion: 'Hisense ofrece equipos modernos con WiFi de serie, control por voz y eficiencia A++ a un precio competitivo. Las series Easy Smart y Energy Pro son perfectas para quien busca un buen aire acondicionado sin pagar el sobrecoste de marcas premium.',
+    checklist: [
+      'WiFi y control por voz de serie',
+      'Eficiencia A++',
+      'Refrigerante R32 ecológico',
+      'Diseño moderno y compacto',
+      'Garantía oficial Hisense'
+    ],
+    modeloRecomendado: 'Hisense Energy Pro'
+  },
+  {
+    slug: 'midea', nombre: 'Midea', color: '#00A0E9',
+    tagline: 'Fabricante OEM líder mundial',
+    descripcion: 'Midea es el mayor fabricante OEM de aire acondicionado del mundo (fabrica para muchas otras marcas). Sus equipos propios, como la serie Xtreme Save y Mission, ofrecen tecnología inverter, WiFi y eficiencia A++ con un precio muy competitivo.',
+    checklist: [
+      'Tecnología Full DC Inverter',
+      'WiFi MideaAir de serie',
+      'Eficiencia A++',
+      'Refrigerante R32 ecológico',
+      'Filtro antibacteriano de plata'
+    ],
+    modeloRecomendado: 'Midea Xtreme Save'
+  },
+  {
+    slug: 'toshiba', nombre: 'Toshiba', color: '#E60012',
+    tagline: 'Tecnología japonesa fiable',
+    descripcion: 'Toshiba combina ingeniería japonesa con un excelente equilibrio precio-prestaciones. Las series Seiya y Shorai destacan por su compresor Dual Rotary, filtro Ultra Pure y control WiFi mediante la app Toshiba Home AC Control.',
+    checklist: [
+      'Compresor Dual Rotary',
+      'Filtro Ultra Pure antibacteriano',
+      'Control WiFi Toshiba Home AC',
+      'Refrigerante R32 ecológico',
+      'Eficiencia A++'
+    ],
+    modeloRecomendado: 'Toshiba Shorai Edge'
+  }
+];
+
+const CAPACIDADES = [
+  { frig: 2000, btu: 9000,  kw: 2.6, m2Min: 12, m2Max: 20, precioDesde: 1099, descripcionUso: 'habitaciones pequeñas, dormitorios individuales y despachos' },
+  { frig: 2500, btu: 12000, kw: 3.5, m2Min: 20, m2Max: 30, precioDesde: 1299, descripcionUso: 'dormitorios dobles, salones medianos y oficinas' },
+  { frig: 4500, btu: 18000, kw: 5.2, m2Min: 30, m2Max: 45, precioDesde: 1699, descripcionUso: 'salones amplios, espacios diáfanos y locales comerciales pequeños' },
+  { frig: 6000, btu: 24000, kw: 7.0, m2Min: 45, m2Max: 60, precioDesde: 1999, descripcionUso: 'lofts, locales comerciales y estancias muy grandes' }
+];
+
+const BRANDS_GRID_HTML = `
+      <div class="brand-item" title="Instalación Daikin Barcelona"><a href="daikin.html"><div class="brand-svg" style="color:#0067B1;font-size:1.2rem;font-weight:900;letter-spacing:-.02em">DAIKIN</div></a></div>
+      <div class="brand-item" title="Instalación Mitsubishi Electric Barcelona"><a href="mitsubishi.html"><div class="brand-svg" style="color:#E60012;font-size:.95rem">MITSUBISHI<br><span style="font-size:.7rem;letter-spacing:.12em">ELECTRIC</span></div></a></div>
+      <div class="brand-item" title="Instalación Fujitsu Barcelona"><a href="fujitsu.html"><div class="brand-svg" style="color:#E4002B;font-size:1.1rem">FUJITSU</div></a></div>
+      <div class="brand-item" title="Instalación LG Barcelona"><a href="lg.html"><div class="brand-svg" style="color:#A50034;font-size:1.4rem;font-weight:900">LG</div></a></div>
+      <div class="brand-item" title="Instalación Samsung Barcelona"><a href="samsung.html"><div class="brand-svg" style="color:#1428A0;font-size:1.1rem">SAMSUNG</div></a></div>
+      <div class="brand-item" title="Instalación Hisense Barcelona"><a href="hisense.html"><div class="brand-svg" style="color:#E31837;font-size:1.1rem">HISENSE</div></a></div>
+      <div class="brand-item" title="Instalación Haier Barcelona"><a href="haier.html"><div class="brand-svg" style="color:#0066CC;font-size:1.1rem">HAIER</div></a></div>
+      <div class="brand-item" title="Instalación Panasonic Barcelona"><a href="panasonic.html"><div class="brand-svg" style="color:#003087;font-size:1rem">PANASONIC</div></a></div>
+      <div class="brand-item" title="Instalación Toshiba Barcelona"><a href="toshiba.html"><div class="brand-svg" style="color:#E60012;font-size:1.1rem">TOSHIBA</div></a></div>
+      <div class="brand-item" title="Instalación Midea Barcelona"><a href="midea.html"><div class="brand-svg" style="color:#00A0E9;font-size:1.1rem">MIDEA</div></a></div>
+`.trim();
+
+const CHECK_SVG = '<svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>';
+
+function buildPage(marca, cap) {
+  const fileName = `${marca.slug}-${cap.frig}-frigorias.html`;
+  const url = `https://zervitecnics.es/aires-acondicionados/marcas/${fileName}`;
+  const title = `Aire Acondicionado ${marca.nombre} ${cap.frig} Frigorías Barcelona | Instalación`;
+  const desc = `Instalación de aire acondicionado ${marca.nombre} ${cap.frig} frigorías (${cap.btu} BTU) en Barcelona. Ideal para ${cap.descripcionUso}. Presupuesto gratis en 24h.`;
+  const h1 = `Aire acondicionado <span style="color:${marca.color}">${marca.nombre} ${cap.frig} frigorías</span> en Barcelona`;
+  const lightBg = marca.color + '22';
+  const borderBg = marca.color + '44';
+  const checklistHTML = marca.checklist.map(item => `<li class="service-check-item">${CHECK_SVG}${item}</li>`).join('\n');
+  const priceCards = [
+    { name: `${marca.modeloRecomendado} ${cap.kw} kW`, sub: `Eficiencia A+++`, price: cap.precioDesde, featured: false },
+    { name: `${marca.modeloRecomendado} ${cap.kw} kW · WiFi`, sub: `Eficiencia A+++ · WiFi`, price: cap.precioDesde + 200, featured: true },
+    { name: `${marca.modeloRecomendado} ${cap.kw} kW · Premium`, sub: `Diseño premium`, price: cap.precioDesde + 400, featured: false }
+  ];
+
+  const priceCardsHTML = priceCards.map(p => `
+<div class="price-card${p.featured ? ' featured' : ''}">
+  ${p.featured ? "<div class='price-badge'>Más vendido</div>" : ''}
+  <div class="price-name">${p.name}</div>
+  <div class="price-desc">${p.sub}</div>
+  <div class="price-amount"><sup>€</sup>${p.price.toLocaleString('es-ES')}</div>
+  <div class="price-from">Pack completo · IVA incluido</div>
+  <ul class="price-features">
+    <li class="price-feature">${CHECK_SVG} Equipo + instalación</li>
+    <li class="price-feature">${CHECK_SVG} Certificación profesional</li>
+    <li class="price-feature">${CHECK_SVG} Doble garantía incluida</li>
+  </ul>
+  <a href="../index.html#presupuesto" class="btn btn-primary w-full">Solicitar presupuesto</a>
+</div>`).join('\n');
+
+  const waText = encodeURIComponent(`Hola, me interesa instalar un ${marca.nombre} de ${cap.frig} frigorías en Barcelona.`);
+
+  return `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <meta name="theme-color" content="#1E90FF">
+  <!-- ZRV-ANALYTICS-START -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      'analytics_storage':'denied',
+      'ad_storage':'denied',
+      'ad_user_data':'denied',
+      'ad_personalization':'denied',
+      'wait_for_update':500
+    });
+  </script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P6C8L3VX');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4C8H8KMFD"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config','G-N4C8H8KMFD',{ anonymize_ip:true, send_page_view:true });
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcESzAtAAAAAEhvnT0Zmh07PJUOkjYiC0qeed4S" async defer></script>
+  <!-- ZRV-ANALYTICS-END -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.clarity.ms https://www.clarity.ms; connect-src 'self' https://api.emailjs.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms https://*.bing.com; frame-src https://www.googletagmanager.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>${title}</title>
+  <meta name="description" content="${desc}">
+  <link rel="canonical" href="${url}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${title}">
+  <meta property="og:description" content="${desc}">
+  <meta property="og:image" content="https://zervitecnics.es/aires-acondicionados/img/hero_main.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- ZRV-FONTS -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"></noscript>
+  <!-- /ZRV-FONTS -->
+  <link rel="stylesheet" href="../css/shared.css?${CACHE_BUST}">
+  <link rel="stylesheet" href="../css/pages.css?${CACHE_BUST}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Aire acondicionado ${marca.nombre} ${cap.frig} frigorías",
+    "description": "${desc.replace(/"/g, '\\"')}",
+    "brand": { "@type": "Brand", "name": "${marca.nombre}" },
+    "offers": {
+      "@type": "Offer",
+      "price": "${cap.precioDesde}",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "${url}",
+      "seller": { "@type": "LocalBusiness", "name": "Zervitecnics Barcelona" }
+    }
+  }
+  </script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6C8L3VX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="urgency-bar">🌡️ <strong>Temporada alta:</strong> Agenda tu instalación ahora. <a href="tel:+34625215983"> Llamar: 625 215 983</a></div>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo"><img src="../img/logo_zervitecnics.png" alt="Zervitecnics" width="40" height="40" style="height:56px;width:auto;object-fit:contain"></a>
+    <nav class="main-nav"><a href="../index.html#servicios">Servicios</a><a href="../index.html#precios">Precios</a><a href="../subvenciones.html">Subvenciones</a><a href="../index.html#zonas">Zonas</a><a href="../index.html#faq">FAQ</a><a href="../index.html#presupuesto">Presupuesto</a></nav>
+    <div class="header-cta">
+      <a href="tel:+34625215983" class="btn-phone" data-location="header-${marca.slug}-${cap.frig}"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>625 215 983</a>
+      <a href="https://wa.me/34625215983?text=${waText}" class="btn-whatsapp-header" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span></a>
+    </div>
+    <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav"><a href="../index.html">Inicio</a><a href="../index.html#servicios">Servicios</a><a href="../index.html#precios">Precios</a><a href="../subvenciones.html">Subvenciones</a><div class="mobile-nav-cta"><a href="tel:+34625215983" class="btn btn-secondary btn-sm">Llamar</a><a href="https://wa.me/34625215983" class="btn btn-green btn-sm" target="_blank" rel="noopener">WhatsApp</a></div></nav>
+</header>
+
+<section class="page-hero" style="background:linear-gradient(135deg, #0B1E3D 0%, ${lightBg} 100%)">
+  <div class="page-hero-content">
+    <nav class="breadcrumb"><a href="../index.html">Inicio</a><span class="sep">›</span><a href="${marca.slug}.html">${marca.nombre}</a><span class="sep">›</span><span class="current">${cap.frig} frigorías</span></nav>
+    <div style="display:inline-block;background:${lightBg};border:1px solid ${borderBg};border-radius:9999px;padding:6px 16px;font-size:.8rem;font-weight:700;color:${marca.color};margin-bottom:16px;letter-spacing:.06em;text-transform:uppercase">${marca.tagline}</div>
+    <h1>${h1}</h1>
+    <p>Instalación de aire acondicionado <strong>${marca.nombre} ${cap.frig} frigorías</strong> (${cap.btu.toLocaleString('es-ES')} BTU · ${cap.kw} kW) en Barcelona. Capacidad ideal para ${cap.descripcionUso} de ${cap.m2Min} a ${cap.m2Max} m². Instalación documentada con informe técnico incluido.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">
+      <a href="../index.html#presupuesto" class="btn btn-primary">Pedir presupuesto gratis</a>
+      <a href="tel:+34625215983" class="btn btn-secondary" data-location="hero-${marca.slug}-${cap.frig}">625 215 983</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="service-detail-grid fade-up">
+      <div class="service-detail-img"><img src="../img/hero_split.jpg" alt="Instalación ${marca.nombre} ${cap.frig} frigorías Barcelona" loading="lazy"></div>
+      <div class="service-detail-content">
+        <span class="section-label">${marca.nombre} ${cap.frig} frigorías</span>
+        <h2>Instalación de ${marca.nombre} ${cap.frig} frigorías en Barcelona</h2>
+        <p>${marca.descripcion}</p>
+        <p>La capacidad de <strong>${cap.frig} frigorías</strong> (${cap.btu.toLocaleString('es-ES')} BTU, equivalente a ${cap.kw} kW de potencia frigorífica) es la recomendada para <strong>${cap.descripcionUso}</strong> de entre <strong>${cap.m2Min} y ${cap.m2Max} m²</strong> con altura estándar (2,5 m). Para espacios con orientación sur, mucha exposición solar o ventanales amplios conviene subir a la siguiente capacidad.</p>
+        <ul class="service-checklist">
+${checklistHTML}
+        </ul>
+        <a href="../index.html#presupuesto" class="btn btn-primary mt-24">Solicitar presupuesto gratis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-gray">
+  <div class="container">
+    <div class="text-center mb-32 fade-up">
+      <span class="section-label">Precios orientativos 2026</span>
+      <h2 class="section-title">Modelos ${marca.nombre} de ${cap.frig} frigorías en Barcelona</h2>
+      <p class="section-subtitle">Pack completo: equipo + instalación + informe técnico incluido. IVA incluido. El precio final dependerá del modelo concreto y la complejidad de la instalación.</p>
+    </div>
+    <div class="grid grid-3 fade-up">
+${priceCardsHTML}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-32 fade-up">
+      <span class="section-label">¿Qué son ${cap.frig} frigorías?</span>
+      <h2 class="section-title">Capacidad ${cap.frig} frigorías (${cap.btu.toLocaleString('es-ES')} BTU · ${cap.kw} kW)</h2>
+    </div>
+    <div style="max-width:780px;margin:0 auto;color:var(--gray-600);line-height:1.8">
+      <p>Una unidad de aire acondicionado de <strong>${cap.frig} frigorías/hora</strong> (también expresada como <strong>${cap.btu.toLocaleString('es-ES')} BTU/h</strong> en sistema imperial) ofrece una potencia frigorífica de aproximadamente <strong>${cap.kw} kilovatios térmicos</strong>. Esta capacidad es la adecuada para refrigerar ${cap.descripcionUso} de <strong>${cap.m2Min} a ${cap.m2Max} m²</strong>.</p>
+      <p>El cálculo orientativo es de unas <strong>100 frigorías por m²</strong>, ajustando según orientación, aislamiento, número de ventanas y altura de techo. Un técnico cualificado siempre realizará un cálculo de carga térmica personalizado antes de recomendar el equipo.</p>
+      <p><strong>Equivalencias rápidas</strong>: ${cap.frig} frigorías = ${cap.btu.toLocaleString('es-ES')} BTU = ${cap.kw} kW frigoríficos. La potencia eléctrica consumida es muy inferior (en torno a ${(cap.kw / 3.8).toFixed(1)} kW) gracias a la tecnología inverter de los equipos modernos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-inner fade-up">
+      <h2 class="cta-title">¿Quieres instalar un ${marca.nombre} de ${cap.frig} frigorías en Barcelona?</h2>
+      <p class="cta-subtitle">Presupuesto gratuito en menos de 24 horas. Técnico autorizado.</p>
+      <div class="cta-buttons">
+        <a href="tel:+34625215983" class="btn btn-primary btn-lg" data-location="cta-${marca.slug}-${cap.frig}">Llamar: 625 215 983</a>
+        <a href="https://wa.me/34625215983?text=${waText}" class="btn btn-green btn-lg" target="_blank" rel="noopener">WhatsApp ahora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARCAS ── -->
+<section class="brands-section" style="padding:32px 0">
+  <div class="container">
+    <p class="brands-label">Otras marcas que instalamos en Barcelona</p>
+    <div class="brands-grid">
+${BRANDS_GRID_HTML}
+    </div>
+  </div>
+</section>
+
+<!-- ── GARANTÍAS UNIFICADAS ── -->
+<section style="padding:32px 0;background:#EBF4FF;border-top:2px solid #DBEAFE">
+  <div style="max-width:900px;margin:0 auto;padding:0 24px">
+    <h3 style="font-size:1.1rem;font-weight:700;color:#0B1E3D;margin-bottom:16px;text-align:center">Condiciones de garantía</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+      <div style="background:white;border-radius:12px;padding:20px;border-left:4px solid #0066FF">
+        <strong style="color:#0066FF;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em">Garantía del fabricante</strong>
+        <p style="margin-top:8px;font-size:.88rem;color:#374151;line-height:1.6"><strong>3 años de garantía directamente con el fabricante.</strong> El fabricante gestiona y cubre todos los defectos de fabricación del equipo. Zervitecnics te acompaña en el proceso de reclamación si fuera necesario.</p>
+      </div>
+      <div style="background:white;border-radius:12px;padding:20px;border-left:4px solid #00C896">
+        <strong style="color:#00C896;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em">Garantía de instalación Zervitecnics</strong>
+        <p style="margin-top:8px;font-size:.88rem;color:#374151;line-height:1.6"><strong>3 años de garantía por nuestra instalación.</strong> Cubre cualquier problema derivado del trabajo realizado: sistema de drenaje, carga de gas, conexiones eléctricas y correcta puesta en marcha del equipo.</p>
+      </div>
+      <div style="background:white;border-radius:12px;padding:20px;border-left:4px solid #F59E0B">
+        <strong style="color:#F59E0B;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em">Condiciones de mantenimiento</strong>
+        <p style="margin-top:8px;font-size:.88rem;color:#374151;line-height:1.6">Para mantener vigente la garantía de instalación de 3 años, el equipo deberá recibir los <strong>mantenimientos preventivos recomendados</strong>. La falta de mantenimiento periódico podrá suponer la pérdida de la garantía ofrecida por Zervitecnics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="footer-grid"><div class="footer-brand"><div class="logo"><img src="../img/logo_zervitecnics.png" alt="Zervitecnics" style="height:56px;width:auto;object-fit:contain"></div><p style="margin-top:16px">Instalación profesional de aire acondicionado en Barcelona. Técnico certificado.</p></div><div class="footer-col"><h4>Servicios</h4><ul><li><a href="../categorias/split.html">Split 1×1</a></li><li><a href="../categorias/multisplit.html">Multisplit</a></li><li><a href="../categorias/conductos.html">Por Conductos</a></li><li><a href="../subvenciones.html">Subvenciones</a></li></ul></div><div class="footer-col"><h4>Marcas</h4><ul><li><a href="daikin.html">Daikin</a></li><li><a href="mitsubishi.html">Mitsubishi</a></li><li><a href="fujitsu.html">Fujitsu</a></li><li><a href="lg.html">LG</a></li><li><a href="samsung.html">Samsung</a></li><li><a href="hisense.html">Hisense</a></li></ul></div><div class="footer-col"><h4>Contacto</h4><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:18px;height:18px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+34625215983" style="color:rgba(255,255,255,.6)">625 215 983</a></div></div></div><div class="footer-bottom"><p>© 2026 Zervitecnics Barcelona.</p><div class="footer-legal"><a href="../legal/privacidad.html">Privacidad</a><a href="../legal/cookies.html">Cookies</a><a href="../legal/aviso-legal.html">Aviso legal</a></div></div></footer>
+<a class="whatsapp-float" href="https://wa.me/34625215983" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<div class="cookie-banner"><div class="cookie-text">Usamos cookies. <a href="../legal/cookies.html">Más info</a></div><div class="cookie-actions"><button class="btn-cookie-accept">Aceptar</button><button class="btn-cookie-necessary">Solo necesarias</button></div></div>
+<script src="../js/shared.js?${CACHE_BUST}"></script>
+<script src="../js/pages.js?${CACHE_BUST}"></script>
+
+<!-- ── NOTA LEGAL MARCAS ── -->
+<div style="background:#F8F9FA;border-top:1px solid #E5E7EB;padding:16px 0;font-size:.75rem;color:#6B7280;line-height:1.6">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <strong style="color:#374151">Aviso legal sobre marcas comerciales:</strong>
+    Zervitecnics no tiene relación comercial, societaria ni representación oficial con ninguna de las marcas mostradas en este sitio web, salvo indicación expresa en contrario.
+    Los nombres comerciales, marcas registradas y logotipos de fabricantes (Daikin, Mitsubishi Electric, Fujitsu, LG, Samsung, Hisense, Haier, Panasonic, Toshiba, Midea y otras) se utilizan únicamente con carácter descriptivo e informativo, con el fin de facilitar al usuario la identificación de los productos con los que Zervitecnics presta sus servicios de suministro, instalación, mantenimiento y reparación.
+    El uso referencial de estas marcas no implica asociación, patrocinio, autorización ni representación oficial por parte de los fabricantes, y se realiza al amparo del artículo 37 de la Ley 17/2001 de Marcas y la normativa comunitaria aplicable.
+  </div>
+</div>
+
+</body>
+</html>
+`;
+}
+
+let count = 0;
+const generated = [];
+for (const marca of MARCAS) {
+  for (const cap of CAPACIDADES) {
+    const fileName = `${marca.slug}-${cap.frig}-frigorias.html`;
+    const filePath = path.join(OUT_DIR, fileName);
+    fs.writeFileSync(filePath, buildPage(marca, cap), 'utf8');
+    count++;
+    generated.push(fileName);
+  }
+}
+
+console.log(`Generadas ${count} páginas en ${OUT_DIR}`);
+console.log('Archivos:');
+generated.forEach(f => console.log('  - ' + f));
