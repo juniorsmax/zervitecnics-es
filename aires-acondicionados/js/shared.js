@@ -462,6 +462,8 @@ function initForm() {
     e.preventDefault();
 
     // Anti-spam: honeypot relleno o envío en menos de 3s = bot
+    // Silencioso a propósito (no restaurar botón ni mostrar mensaje: los bots
+    // no deben recibir feedback). Un humano legítimo tardará >3s en rellenar.
     if (document.getElementById('f-website')?.value) return;
     if (Date.now() - formLoadedAt < 3000) return;
 
@@ -522,18 +524,14 @@ function initForm() {
     } catch(err) {
       const status = err && (err.status || err.code) || '?';
       const text = (err && (err.text || err.message)) || String(err);
-      let fullJson = '';
-      try { fullJson = JSON.stringify(err, Object.getOwnPropertyNames(err || {}), 2); }
-      catch(e) { fullJson = String(err); }
       console.error('[Zervitecnics] EmailJS ERROR:', { status, text, full: err });
       trackEvent('form_error', { source: 'hero-form', status, message: text });
       btn.disabled = false;
       btn.textContent = 'Solicitar presupuesto';
-      alert(
-        '❌ Error al enviar (' + status + '): ' + text + '\n\n' +
-        '— Detalle —\n' + fullJson.slice(0, 400) + '\n\n' +
-        'Por favor llámenos al ' + PHONE
-      );
+      // Mensaje corto y humano — el detalle técnico va a la consola/GA
+      const userMsg = 'No hemos podido enviar tu solicitud en este momento. ' +
+                      'Por favor, llámanos al ' + PHONE + ' o escríbenos por WhatsApp.';
+      alert(userMsg);
     }
   });
 }
@@ -748,10 +746,20 @@ document.addEventListener('DOMContentLoaded', () => {
   animateCounters();
   detectZoneFromURL();
 
-  // EmailJS init
-  if (typeof emailjs !== 'undefined') {
-    emailjs.init(EMAILJS_PUBLIC_KEY);
-  }
+  // EmailJS init con reintento — el <script> lleva defer, puede no estar listo
+  // en el momento del DOMContentLoaded. Reintentamos cada 100ms hasta 3s.
+  (function initEmailJSWhenReady(attempt) {
+    if (typeof emailjs !== 'undefined') {
+      try { emailjs.init(EMAILJS_PUBLIC_KEY); }
+      catch (e) { console.error('[Zervitecnics] EmailJS init falló:', e); }
+      return;
+    }
+    if (attempt >= 30) {
+      console.error('[Zervitecnics] EmailJS SDK no cargó tras 3s (¿bloqueador / CSP?)');
+      return;
+    }
+    setTimeout(() => initEmailJSWhenReady(attempt + 1), 100);
+  })(0);
 
   renderDynPrices();
 });
