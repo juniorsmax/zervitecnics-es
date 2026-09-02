@@ -166,48 +166,146 @@ function initScrollAnimations() {
   elements.forEach(el => observer.observe(el));
 }
 
-/* ── WhatsApp — mensaje contextual según página ── */
+/* ── WhatsApp — mensaje contextual según página ──
+   Diccionarios de marcas y localidades (slug → nombre bonito).
+   El detector reconstruye el mensaje desde el filename.
+   Un <a> puede sobrescribir con data-wa-text="Texto custom".
+──────────────────────────────────────────────────── */
+const WA_MARCAS = {
+  'daikin':       'Daikin',
+  'mitsubishi':   'Mitsubishi Electric',
+  'fujitsu':      'Fujitsu',
+  'samsung':      'Samsung',
+  'lg':           'LG',
+  'hisense':      'Hisense',
+  'panasonic':    'Panasonic',
+  'toshiba':      'Toshiba',
+  'haier':        'Haier',
+  'midea':        'Midea',
+  'dicore':       'Dicore',
+  'marca-blanca': 'marca blanca',
+};
+
+const WA_LOCALIDADES = {
+  'arenys-de-mar':            'Arenys de Mar',
+  'argentona':                'Argentona',
+  'badalona':                 'Badalona',
+  'barbera-del-valles':       'Barberà del Vallès',
+  'barcelona':                'Barcelona',
+  'cabrils':                  'Cabrils',
+  'caldes-de-montbui':        'Caldes de Montbui',
+  'calella':                  'Calella',
+  'canet-de-mar':             'Canet de Mar',
+  'cardedeu':                 'Cardedeu',
+  'castellar-del-valles':     'Castellar del Vallès',
+  'castelldefels':            'Castelldefels',
+  'cerdanyola-del-valles':    'Cerdanyola del Vallès',
+  'cornella-de-llobregat':    'Cornellà de Llobregat',
+  'cornella':                 'Cornellà de Llobregat',
+  'eixample':                 "el Eixample de Barcelona",
+  'el-masnou':                'El Masnou',
+  'el-prat-de-llobregat':     'El Prat de Llobregat',
+  'esplugues-de-llobregat':   'Esplugues de Llobregat',
+  'gava':                     'Gavà',
+  'gracia':                   'el barrio de Gràcia (Barcelona)',
+  'granollers':               'Granollers',
+  'hospitalet-de-llobregat':  "L'Hospitalet de Llobregat",
+  'hospitalet':               "L'Hospitalet de Llobregat",
+  'la-garriga':               'La Garriga',
+  'les-corts':                'Les Corts (Barcelona)',
+  'mataro':                   'Mataró',
+  'mollet-del-valles':        'Mollet del Vallès',
+  'nou-barris':               'Nou Barris (Barcelona)',
+  'parets-del-valles':        'Parets del Vallès',
+  'pineda-de-mar':            'Pineda de Mar',
+  'premia-de-mar':            'Premià de Mar',
+  'rubi':                     'Rubí',
+  'sabadell':                 'Sabadell',
+  'sant-adria-de-besos':      'Sant Adrià de Besòs',
+  'sant-andreu':              'Sant Andreu (Barcelona)',
+  'sant-boi-de-llobregat':    'Sant Boi de Llobregat',
+  'sant-celoni':              'Sant Celoni',
+  'sant-cugat-del-valles':    'Sant Cugat del Vallès',
+  'sant-cugat':               'Sant Cugat del Vallès',
+  'sant-joan-despi':          'Sant Joan Despí',
+  'sant-just-desvern':        'Sant Just Desvern',
+  'sant-marti':               'Sant Martí (Barcelona)',
+  'sant-quirze-del-valles':   'Sant Quirze del Vallès',
+  'santa-coloma-de-gramenet': 'Santa Coloma de Gramenet',
+  'sants':                    'Sants (Barcelona)',
+  'sarria':                   'Sarrià (Barcelona)',
+  'sitges':                   'Sitges',
+  'terrassa':                 'Terrassa',
+  'viladecans':               'Viladecans',
+  'vilassar-de-mar':          'Vilassar de Mar',
+};
+
+function _waSlugFromPath(page) {
+  // Devuelve el basename sin extensión: '/aires-acondicionados/marcas/daikin-badalona.html' → 'daikin-badalona'
+  const m = page.match(/([^\/]+?)(?:\.html)?$/);
+  return m ? m[1].toLowerCase() : '';
+}
+
+function _waMatchLocalidad(slug) {
+  // Ordenados por longitud desc para preferir el match más específico (evita que 'cornella' machaque 'cornella-de-llobregat')
+  const keys = Object.keys(WA_LOCALIDADES).sort((a, b) => b.length - a.length);
+  for (const k of keys) if (slug.includes(k)) return WA_LOCALIDADES[k];
+  return null;
+}
+
+function _waMatchMarca(slug) {
+  const keys = Object.keys(WA_MARCAS).sort((a, b) => b.length - a.length);
+  for (const k of keys) if (slug.includes(k)) return WA_MARCAS[k];
+  return null;
+}
+
+function _waMatchCapacidad(slug) {
+  // Patrones: '3000-frigorias', 'daikin-2500-frigorias', '3000-en-eixample'
+  const m = slug.match(/(\d{3,4})(?:-frigorias|-en-)/);
+  return m ? `${m[1]} frigorías` : null;
+}
+
 function getWAMessage() {
-  const page = window.location.pathname;
-  // Servicios
-  if (page.includes('multisplit'))   return 'Hola, me interesa la instalación de un sistema Multisplit. ¿Pueden darme un presupuesto?';
-  if (page.includes('split'))        return 'Hola, me interesa la instalación de un Split 1×1 en Barcelona. ¿Pueden darme un presupuesto?';
-  if (page.includes('conductos'))    return 'Hola, me interesa el aire acondicionado por conductos. ¿Pueden darme información y presupuesto?';
-  if (page.includes('subvenciones')) return 'Hola, me gustaría información sobre las subvenciones disponibles para instalar aire acondicionado.';
-  if (page.includes('precios'))      return 'Hola, he visto vuestros precios y me gustaría solicitar un presupuesto personalizado.';
-  // Marcas
-  if (page.includes('daikin'))       return 'Hola, me interesa instalar un equipo Daikin en Barcelona. ¿Pueden darme un presupuesto?';
-  if (page.includes('mitsubishi'))   return 'Hola, me interesa instalar un equipo Mitsubishi Electric en Barcelona. ¿Pueden darme un presupuesto?';
-  if (page.includes('fujitsu'))      return 'Hola, me interesa instalar un equipo Fujitsu en Barcelona. ¿Pueden darme un presupuesto?';
-  if (page.includes('samsung'))      return 'Hola, me interesa instalar un equipo Samsung en Barcelona. ¿Pueden darme un presupuesto?';
-  if (page.includes('lg'))           return 'Hola, me interesa instalar un equipo LG en Barcelona. ¿Pueden darme un presupuesto?';
-  if (page.includes('hisense'))      return 'Hola, me interesa instalar un equipo Hisense en Barcelona. ¿Pueden darme un presupuesto?';
-  if (page.includes('panasonic'))    return 'Hola, me interesa instalar un equipo Panasonic en Barcelona. ¿Pueden darme un presupuesto?';
-  if (page.includes('toshiba'))      return 'Hola, me interesa instalar un equipo Toshiba en Barcelona. ¿Pueden darme un presupuesto?';
-  if (page.includes('haier'))        return 'Hola, me interesa instalar un equipo Haier en Barcelona. ¿Pueden darme un presupuesto?';
-  if (page.includes('midea'))        return 'Hola, me interesa instalar un equipo Midea en Barcelona. ¿Pueden darme un presupuesto?';
-  if (page.includes('dicore'))       return 'Hola, me interesa instalar un equipo Dicore en Barcelona. ¿Pueden darme un presupuesto?';
-  if (page.includes('marca-blanca')) return 'Hola, me interesa información sobre aire acondicionado marca blanca. ¿Pueden darme un presupuesto?';
-  // Zonas
-  if (page.includes('hospitalet'))   return "Hola, me gustaría un presupuesto para instalar aire acondicionado en L'Hospitalet de Llobregat.";
-  if (page.includes('badalona'))     return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en Badalona.';
-  if (page.includes('sant-cugat'))   return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en Sant Cugat del Vallès.';
-  if (page.includes('cornella'))     return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en Cornellà de Llobregat.';
-  if (page.includes('terrassa'))     return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en Terrassa.';
-  if (page.includes('sabadell'))     return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en Sabadell.';
-  if (page.includes('eixample'))     return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en el Eixample de Barcelona.';
-  if (page.includes('gracia'))       return 'Hola, me gustaría un presupuesto para instalar aire acondicionado en el barrio de Gràcia, Barcelona.';
-  // Default
+  const slug = _waSlugFromPath(window.location.pathname);
+  if (!slug) return 'Hola, estoy interesado en instalar aire acondicionado en Barcelona. ¿Pueden darme más información?';
+
+  // Servicios raíz (prioridad alta — mensajes específicos)
+  if (slug === 'mantenimiento')            return 'Hola, me gustaría información sobre mantenimiento de aire acondicionado en Barcelona.';
+  if (slug === 'instalacion-personalizada') return 'Hola, me gustaría un presupuesto personalizado tras evaluación técnica para instalar aire acondicionado.';
+  if (slug === 'ofertas')                  return 'Hola, me interesan las ofertas todo incluido de aire acondicionado.';
+  if (slug === 'subvenciones')             return 'Hola, me gustaría información sobre las subvenciones disponibles para instalar aire acondicionado.';
+  if (slug === 'precios')                  return 'Hola, he visto vuestros precios y me gustaría solicitar un presupuesto personalizado.';
+  if (slug === 'gracias')                  return 'Hola, acabo de enviar el formulario y me gustaría hacer seguimiento.';
+
+  const marca      = _waMatchMarca(slug);
+  const localidad  = _waMatchLocalidad(slug);
+  const capacidad  = _waMatchCapacidad(slug);
+
+  // Combinaciones más específicas primero
+  if (marca && localidad)     return `Hola, me interesa instalar un equipo ${marca} en ${localidad}. ¿Pueden darme un presupuesto?`;
+  if (capacidad && localidad) return `Hola, me interesa un aire acondicionado de ${capacidad} en ${localidad}. ¿Pueden darme un presupuesto?`;
+  if (marca && capacidad)     return `Hola, me interesa un equipo ${marca} de ${capacidad}. ¿Pueden darme un presupuesto?`;
+  if (marca)                  return `Hola, me interesa instalar un equipo ${marca} en Barcelona. ¿Pueden darme un presupuesto?`;
+  if (localidad)              return `Hola, me gustaría un presupuesto para instalar aire acondicionado en ${localidad}.`;
+  if (capacidad)              return `Hola, me interesa un aire acondicionado de ${capacidad} en Barcelona. ¿Pueden darme un presupuesto?`;
+
+  // Categorías equipo
+  if (slug.includes('multisplit'))  return 'Hola, me interesa la instalación de un sistema Multisplit. ¿Pueden darme un presupuesto?';
+  if (slug.includes('split'))       return 'Hola, me interesa la instalación de un Split 1×1 en Barcelona. ¿Pueden darme un presupuesto?';
+  if (slug.includes('conductos'))   return 'Hola, me interesa el aire acondicionado por conductos. ¿Pueden darme información y presupuesto?';
+
   return 'Hola, estoy interesado en instalar aire acondicionado en Barcelona. ¿Pueden darme más información?';
 }
 
 function initWhatsApp() {
   const page = window.location.pathname;
-  const msg = getWAMessage();
-  const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
-  // Actualiza TODOS los links de WhatsApp de la página
+  const defaultMsg = getWAMessage();
+  const defaultUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(defaultMsg)}`;
   document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-    link.href = waUrl;
+    const custom = link.dataset.waText;
+    link.href = custom
+      ? `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(custom)}`
+      : defaultUrl;
     link.addEventListener('click', () => trackEvent('whatsapp_click', { page }));
   });
 }
@@ -777,16 +875,29 @@ const PRECIOS_WEB = {
   'pack-premium': { label: 'Desde 1.699 €', valor: 1699 },
   'multi-2x1':    { label: 'Desde 1.799 €', valor: 1799 },
   'multi-3x1':    { label: 'Desde 2.599 €', valor: 2599 },
+  /* Instalación personalizada */
+  'inst-hasta-4500':      { label: 'Desde 350 €', valor: 350 },
+  'inst-mas-4500':        { label: 'Desde 450 €', valor: 450 },
+  'metro-hasta-4500':     { label: '50 €/m',      valor: 50  },
+  'metro-mas-4500':       { label: '65 €/m',      valor: 65  },
+  'pared-dura-30cm':      { label: '+80 €',       valor: 80  },
+  'pared-dura-extra-5cm': { label: '+15 €',       valor: 15  },
+  /* Mantenimiento */
+  'mant-preventivo':  { label: '70 €',  suffix: 'sin IVA', valor: 70  },
+  'mant-correctivo':  { label: '130 €', suffix: 'sin IVA', valor: 130 },
+  'mant-diagnostico': { label: '70 €',  suffix: '+ IVA',   valor: 70  },
 };
 
 function renderDynPrices() {
   document.querySelectorAll('[data-price]').forEach(el => {
     const key = el.dataset.price;
-    if (PRECIOS_WEB[key]) {
-      el.textContent = PRECIOS_WEB[key].label;
-      el.style.fontWeight = '700';
-      el.style.color = 'var(--green, #00C896)';
-    }
+    const p = PRECIOS_WEB[key];
+    if (!p) return;
+    el.innerHTML = p.suffix
+      ? `${p.label} <span class="iva-suffix">${p.suffix}</span>`
+      : p.label;
+    el.style.fontWeight = '700';
+    el.style.color = 'var(--green, #00C896)';
   });
 }
 
