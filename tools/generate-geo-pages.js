@@ -113,14 +113,14 @@ function paginaMarcaCiudad(marca, ciudad) {
     priceSectionLabel: `Modelos ${marca.nombre} para ${ciudad.nombre}`,
     priceSectionTitle: `Precios orientativos de ${marca.nombre} en ${ciudad.nombre}`,
     priceCardsHTML,
-    capacityInfoLabel: `Servicio técnico ${marca.nombre} en ${ciudad.nombre}`,
-    capacityInfoTitle: `Mantenimiento y reparación de equipos ${marca.nombre} en ${ciudad.nombre}`,
+    capacityInfoLabel: `Mantenimiento ${marca.nombre} en ${ciudad.nombre}`,
+    capacityInfoTitle: `Mantenimiento y revisión de equipos ${marca.nombre} en ${ciudad.nombre}`,
     capacityInfoParas: [
-      `Además de la instalación, ofrecemos <strong>mantenimiento preventivo</strong>, <strong>reparación de averías</strong> y <strong>recargas de gas refrigerante</strong> para equipos ${marca.nombre} en ${ciudad.nombre} y resto de ${ciudad.comarca}. El mantenimiento periódico es la principal causa de longevidad del equipo y prolonga la vigencia de la garantía de instalación.`,
+      `Además de la instalación, ofrecemos <strong>mantenimiento preventivo</strong> (limpieza, revisión y ajuste) y <strong>diagnóstico técnico de averías</strong> para equipos ${marca.nombre} en ${ciudad.nombre} y resto de ${ciudad.comarca}. Si tras el diagnóstico hace falta reparación, te derivamos al SAT oficial de la marca o a un técnico especializado — recogemos toda la información para agilizar la gestión. El mantenimiento periódico es la principal causa de longevidad del equipo y prolonga la vigencia de la garantía de instalación.`,
       `<strong>Tiempo de respuesta orientativo</strong> para ${ciudad.nombre}: visitas técnicas habitualmente disponibles en 24-72 horas según temporada. En picos de temporada alta (junio-agosto) recomendamos solicitar el servicio cuanto antes para asegurar fecha.`,
       `Trabajamos exclusivamente con repuestos originales o equivalentes homologados. Tras cualquier intervención entregamos <strong>parte de trabajo</strong> con el material utilizado y las pruebas realizadas, válido para reclamación de garantía del fabricante si fuera necesario.`
     ],
-    ctaTitle: `¿Necesitas instalar o reparar un ${marca.nombre} en ${ciudad.nombre}?`,
+    ctaTitle: `¿Necesitas instalar o revisar un ${marca.nombre} en ${ciudad.nombre}?`,
     ctaLocation: `${marca.slug}-${ciudad.slug}`,
     jsonld
   });
@@ -419,7 +419,7 @@ ${brandsGrid}
   <div style="max-width:1200px;margin:0 auto;padding:0 24px">
     <strong style="color:#374151">Aviso legal sobre marcas comerciales:</strong>
     Zervitecnics no tiene relación comercial, societaria ni representación oficial con ninguna de las marcas mostradas en este sitio web, salvo indicación expresa en contrario.
-    Los nombres comerciales, marcas registradas y logotipos de fabricantes (Daikin, Mitsubishi Electric, Fujitsu, LG, Samsung, Hisense, Haier, Panasonic, Toshiba, Midea y otras) se utilizan únicamente con carácter descriptivo e informativo, con el fin de facilitar al usuario la identificación de los productos con los que Zervitecnics presta sus servicios de suministro, instalación, mantenimiento y reparación.
+    Los nombres comerciales, marcas registradas y logotipos de fabricantes (Daikin, Mitsubishi Electric, Fujitsu, LG, Samsung, Hisense, Haier, Panasonic, Toshiba, Midea y otras) se utilizan únicamente con carácter descriptivo e informativo, con el fin de facilitar al usuario la identificación de los productos con los que Zervitecnics presta sus servicios de suministro, instalación y mantenimiento.
     El uso referencial de estas marcas no implica asociación, patrocinio, autorización ni representación oficial por parte de los fabricantes, y se realiza al amparo del artículo 37 de la Ley 17/2001 de Marcas y la normativa comunitaria aplicable.
   </div>
 </div>
