@@ -38,6 +38,38 @@ function distanciaTxt(km) {
   return `a unos ${km} km de Barcelona; consultamos disponibilidad de fecha previamente`;
 }
 
+function renderFaqHTML(faqs) {
+  const items = faqs.map(f => `      <div class="faq-item">
+        <div class="faq-question" tabindex="0">${f.q}<div class="faq-icon"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M6 1v10M1 6h10"/></svg></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">${f.a}</div></div>
+      </div>`).join('\n');
+  return `
+<section class="section section-gray">
+  <div class="container">
+    <div class="text-center mb-32 fade-up">
+      <span class="section-label">Preguntas frecuentes</span>
+      <h2 class="section-title">Dudas habituales</h2>
+    </div>
+    <div class="faq-list" style="max-width:780px;margin:0 auto">
+${items}
+    </div>
+  </div>
+</section>
+`;
+}
+
+function faqJsonLd(faqs) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a }
+    }))
+  };
+}
+
 function paginaMarcaCiudad(marca, ciudad) {
   const fileName = `${marca.slug}-${ciudad.slug}.html`;
   const url = `https://zervitecnics.es/aires-acondicionados/marcas/${fileName}`;
@@ -95,9 +127,22 @@ function paginaMarcaCiudad(marca, ciudad) {
     }
   ];
 
+  const faqMC = [
+    { q: `¿Cuánto tarda una instalación de ${marca.nombre} en ${ciudad.nombre}?`,
+      a: `La mayoría de instalaciones de split 1×1 ${marca.nombre} en ${ciudad.nombre} se completan en 2-4 horas. Un sistema multisplit ${marca.nombre} puede requerir entre 4-8 horas dependiendo del número de unidades interiores. El aire por conductos puede llevar 1-2 días.` },
+    { q: `¿La garantía oficial de ${marca.nombre} sigue siendo válida si instaláis vosotros?`,
+      a: `Sí. Somos instaladores certificados y aplicamos los procedimientos recomendados por ${marca.nombre}: vacío, prueba de estanqueidad y carga complementaria de refrigerante si la línea supera la carga precargada. Entregamos parte de trabajo con el material utilizado y las pruebas realizadas — documento válido para reclamar la garantía del fabricante (3 años).` },
+    { q: `¿Hacéis mantenimiento de equipos ${marca.nombre} en ${ciudad.nombre}?`,
+      a: `Sí. Ofrecemos mantenimiento preventivo anual (70€) — limpieza, revisión y ajuste — y diagnóstico técnico de averías (70€) para equipos ${marca.nombre} en ${ciudad.nombre} y resto de ${ciudad.comarca}. Si tras el diagnóstico hace falta reparación, te derivamos al SAT oficial de ${marca.nombre} o a un técnico especializado.` },
+    { q: `¿Cuánto cuesta instalar un ${marca.nombre} en ${ciudad.nombre}?`,
+      a: `La instalación estándar tiene precio fijo según la potencia del equipo: 350€ para equipos hasta 4.500 frigorías y 450€ para equipos de más de 4.500 frigorías. Incluye 3 metros de cable, desagüe, canaleta, silentblocks, prueba de estanqueidad, vacío y anclajes. Metro adicional: 50€/m (equipos pequeños) o 65€/m (grandes). Si prefieres el pack todo incluido (equipo ${marca.nombre} + instalación completa), consulta la tabla de precios de arriba. Presupuesto gratuito con visita técnica en ${ciudad.nombre}.` }
+  ];
+  jsonld.push(faqJsonLd(faqMC));
+
   return template({
     url, title, desc, h1, lightBg, borderBg,
     waText,
+    faqHTML: renderFaqHTML(faqMC),
     breadcrumbHTML: `<a href="../index.html">Inicio</a><span class="sep">›</span><a href="${marca.slug}.html">${marca.nombre}</a><span class="sep">›</span><span class="current">${ciudad.nombre}</span>`,
     badgeTxt: marca.tagline,
     badgeColor: marca.color,
@@ -189,9 +234,22 @@ function paginaCapacidadCiudad(cap, ciudad) {
     }
   ];
 
+  const faqCC = [
+    { q: `¿Cuántos m² cubre un aire de ${cap.frig} frigorías (${cap.btu.toLocaleString('es-ES')} BTU)?`,
+      a: `Un equipo de ${cap.frig} frigorías (${cap.kw} kW) es adecuado para estancias de ${cap.m2Min} a ${cap.m2Max} m² — ideal para ${cap.descripcionUso}. El cálculo exacto depende de la orientación, aislamiento y altura de techos; en la visita técnica gratuita ajustamos la recomendación para tu vivienda en ${ciudad.nombre}.` },
+    { q: `¿Cuánto consume un equipo de ${cap.frig} frigorías?`,
+      a: `Un aire de ${cap.frig} frigorías (${cap.kw} kW) con tecnología inverter clase A++ o superior consume entre el 30% y el 50% de la potencia nominal en régimen de trabajo estable. El consumo real depende del uso, temperatura exterior y eficiencia del equipo.` },
+    { q: `¿${cap.frig} frigorías son suficientes para mi estancia en ${ciudad.nombre}?`,
+      a: `Depende de la superficie, la orientación (sur/oeste requieren más potencia), la altura de techos y el aislamiento. Como referencia: ${cap.frig} frigorías cubren ${cap.m2Min}-${cap.m2Max} m² en condiciones estándar. En ${ciudad.nombre} hacemos visita técnica gratuita para calcular la potencia exacta.` },
+    { q: `¿Cuánto cuesta un equipo de ${cap.frig} frigorías en ${ciudad.nombre}?`,
+      a: `Los equipos de ${cap.frig} frigorías arrancan desde ${cap.precioDesde}€ con instalación incluida (pack todo incluido). Si ya tienes el equipo, la instalación estándar cuesta 350€ (equipos hasta 4.500 frigorías) o 450€ (equipos de más de 4.500 frigorías). Presupuesto gratuito y sin compromiso en 24h.` }
+  ];
+  jsonld.push(faqJsonLd(faqCC));
+
   return template({
     url, title, desc, h1, lightBg, borderBg,
     waText,
+    faqHTML: renderFaqHTML(faqCC),
     relPrefix: '../', // /capacidades/ is sibling of /marcas/, both inside /aires-acondicionados/
     breadcrumbHTML: `<a href="../index.html">Inicio</a><span class="sep">›</span><a href="../index.html#precios">Capacidades</a><span class="sep">›</span><span class="current">${cap.frig} frigorías en ${ciudad.nombre}</span>`,
     badgeTxt: `${cap.btu.toLocaleString('es-ES')} BTU · ${cap.kw} kW`,
@@ -363,7 +421,7 @@ ${capacityInfoParasHTML}
     </div>
   </div>
 </section>
-
+${p.faqHTML || ''}
 <section class="section cta-section">
   <div class="container">
     <div class="cta-inner fade-up">
