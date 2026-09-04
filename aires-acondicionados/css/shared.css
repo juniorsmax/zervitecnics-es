@@ -616,14 +616,26 @@ input, textarea, select { font-family: inherit; }
   flex-shrink: 0;
   border-radius: 50%;
   background: var(--gray-100);
+  color: var(--navy);
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition-fast);
 }
-.faq-item.open .faq-icon { background: var(--blue); transform: rotate(45deg); }
-.faq-icon svg { width: 12px; height: 12px; }
-.faq-item.open .faq-icon svg { fill: var(--white); }
+/* SVG inline del "+" es sólo trazos rectos sin stroke — no se ve. Lo ocultamos y
+   pintamos el "+" con pseudo-elementos. La rotación 45° del padre lo convierte en × al abrir. */
+.faq-icon svg { display: none; }
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+  border-radius: 1px;
+}
+.faq-icon::before { width: 12px; height: 2px; }
+.faq-icon::after  { width: 2px;  height: 12px; }
+.faq-item.open .faq-icon { background: var(--blue); transform: rotate(45deg); color: var(--white); }
 .faq-answer {
   max-height: 0;
   overflow: hidden;
