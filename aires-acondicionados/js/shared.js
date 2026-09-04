@@ -875,17 +875,19 @@ const PRECIOS_WEB = {
   'pack-premium': { label: 'Desde 1.699 €', valor: 1699 },
   'multi-2x1':    { label: 'Desde 1.799 €', valor: 1799 },
   'multi-3x1':    { label: 'Desde 2.599 €', valor: 2599 },
-  /* Instalación personalizada */
-  'inst-hasta-4500':      { label: 'Desde 350 €', valor: 350 },
-  'inst-mas-4500':        { label: 'Desde 450 €', valor: 450 },
-  'metro-hasta-4500':     { label: '50 €/m',      valor: 50  },
-  'metro-mas-4500':       { label: '65 €/m',      valor: 65  },
+  /* Instalación personalizada — 3 tramos por capacidad */
+  'inst-hasta-4000':      { label: 'Desde 350 €', valor: 350 },
+  'inst-4000-5000':       { label: 'Desde 450 €', valor: 450 },
+  'inst-5000-6500':       { label: 'Desde 580 €', valor: 580 },
+  'metro-hasta-4000':     { label: '55 €/m',      valor: 55  },
+  'metro-4000-5000':      { label: '65 €/m',      valor: 65  },
+  'metro-5000-6500':      { label: '80 €/m',      valor: 80  },
   'pared-dura-30cm':      { label: '+80 €',       valor: 80  },
-  'pared-dura-extra-5cm': { label: '+15 €',       valor: 15  },
+  'pared-dura-extra-5cm': { label: '+20 €',       valor: 20  },
   /* Mantenimiento */
-  'mant-preventivo':  { label: '70 €',  suffix: 'sin IVA', valor: 70  },
-  'mant-correctivo':  { label: '130 €', suffix: 'sin IVA', valor: 130 },
-  'mant-diagnostico': { label: '70 €',  suffix: '+ IVA',   valor: 70  },
+  'mant-preventivo':  { label: '70 €',  suffix: '+IVA', valor: 70  },
+  'mant-correctivo':  { label: '130 €', suffix: '+IVA', valor: 130 },
+  'mant-diagnostico': { label: '70 €',  suffix: '+IVA', valor: 70  },
 };
 
 function renderDynPrices() {

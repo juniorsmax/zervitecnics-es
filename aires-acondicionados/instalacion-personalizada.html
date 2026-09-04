@@ -103,8 +103,8 @@
       "@type": "AggregateOffer",
       "priceCurrency": "EUR",
       "lowPrice": "350",
-      "highPrice": "450",
-      "offerCount": "2"
+      "highPrice": "580",
+      "offerCount": "3"
     }
   }
   </script>
@@ -137,7 +137,7 @@
         "name": "¿Cuánto cuesta la instalación estándar?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Para equipos hasta 4.500 frigorías el precio base parte de 350 € e incluye 3 metros de cable, desagüe, canaleta, kit de silentblocks, prueba de estanqueidad con nitrógeno, vacío y anclajes. Para equipos de más de 4.500 frigorías el precio base parte de 450 €. Metro adicional: 50 €/m para equipos pequeños y 65 €/m para equipos grandes."
+          "text": "Tres tramos según capacidad del equipo: hasta 4.000 frigorías el precio base parte de 350 € (+55 €/m adicional). De 4.000 a 5.000 frigorías parte de 450 € (+65 €/m adicional). De 5.000 a 6.500 frigorías parte de 580 € (+80 €/m adicional). El precio base incluye 3 metros de cable, desagüe, canaleta, kit de silentblocks, prueba de estanqueidad con nitrógeno, vacío y anclajes."
         }
       },
       {
@@ -145,7 +145,7 @@
         "name": "¿Qué NO está incluido en el precio base?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No incluye bomba de desagüe (si hace falta), punto de electricidad nuevo, magnetotérmico o diferencial nuevo, ni cualquier trabajo adicional no descrito en la propuesta inicial. También hay sobrecoste por pared dura (ladrillo macizo, hormigón armado) y trabajo en altura con andamio o técnicas de cuerda."
+          "text": "No incluye bomba de desagüe (si hace falta), punto de electricidad nuevo, magnetotérmico o diferencial nuevo, ni cualquier trabajo adicional no descrito en la propuesta inicial. También hay sobrecoste por pared dura (ladrillo macizo, hormigón armado): +80 € por pared y +20 € por cada 5 cm adicionales de grosor. Y trabajo en altura con andamio o técnicas de cuerda se valora aparte."
         }
       },
       {
@@ -287,20 +287,28 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>Instalación estándar hasta 4.500 frigorías</strong><br><span style="font-size:.82rem;color:var(--gray-600)">Incluye 3 m de cable, desagüe, canaleta, silentblocks, prueba de estanqueidad con nitrógeno, vacío y anclajes</span></td>
-            <td class="num"><span class="dyn-price" data-price="inst-hasta-4500">---</span></td>
+            <td><strong>Instalación estándar hasta 4.000 frigorías</strong><br><span style="font-size:.82rem;color:var(--gray-600)">Incluye 3 m de cable, desagüe, canaleta, silentblocks, prueba de estanqueidad con nitrógeno, vacío y anclajes</span></td>
+            <td class="num"><span class="dyn-price" data-price="inst-hasta-4000">---</span></td>
           </tr>
           <tr>
-            <td><strong>Instalación estándar más de 4.500 frigorías</strong><br><span style="font-size:.82rem;color:var(--gray-600)">Mismo contenido de instalación completo</span></td>
-            <td class="num"><span class="dyn-price" data-price="inst-mas-4500">---</span></td>
+            <td><strong>Instalación estándar de 4.000 a 5.000 frigorías</strong><br><span style="font-size:.82rem;color:var(--gray-600)">Mismo contenido de instalación completo</span></td>
+            <td class="num"><span class="dyn-price" data-price="inst-4000-5000">---</span></td>
           </tr>
           <tr>
-            <td>Metro adicional (equipos hasta 4.500 frigorías)<br><span style="font-size:.82rem;color:var(--gray-600)">Incluye canaleta, cableado y desagüe</span></td>
-            <td class="num"><span class="dyn-price" data-price="metro-hasta-4500">---</span></td>
+            <td><strong>Instalación estándar de 5.000 a 6.500 frigorías</strong><br><span style="font-size:.82rem;color:var(--gray-600)">Mismo contenido de instalación completo</span></td>
+            <td class="num"><span class="dyn-price" data-price="inst-5000-6500">---</span></td>
           </tr>
           <tr>
-            <td>Metro adicional (equipos más de 4.500 frigorías)</td>
-            <td class="num"><span class="dyn-price" data-price="metro-mas-4500">---</span></td>
+            <td>Metro adicional (equipos hasta 4.000 frigorías)<br><span style="font-size:.82rem;color:var(--gray-600)">Incluye canaleta, cableado y desagüe</span></td>
+            <td class="num"><span class="dyn-price" data-price="metro-hasta-4000">---</span></td>
+          </tr>
+          <tr>
+            <td>Metro adicional (equipos de 4.000 a 5.000 frigorías)</td>
+            <td class="num"><span class="dyn-price" data-price="metro-4000-5000">---</span></td>
+          </tr>
+          <tr>
+            <td>Metro adicional (equipos de 5.000 a 6.500 frigorías)</td>
+            <td class="num"><span class="dyn-price" data-price="metro-5000-6500">---</span></td>
           </tr>
           <tr>
             <td>Sobrecoste pared dura (ladrillo macizo / hormigón armado) hasta 30 cm</td>
@@ -408,11 +416,17 @@
       </details>
       <details>
         <summary>¿Cuánto cuesta la instalación estándar?</summary>
-        <p>Equipos hasta 4.500 frigorías: <span class="dyn-price" data-price="inst-hasta-4500">---</span> (base). Equipos más de 4.500 frigorías: <span class="dyn-price" data-price="inst-mas-4500">---</span>. Incluye 3 metros de cable, desagüe, canaleta, silentblocks, prueba de estanqueidad, vacío y anclajes. Metro adicional: <span class="dyn-price" data-price="metro-hasta-4500">---</span> (equipos pequeños) o <span class="dyn-price" data-price="metro-mas-4500">---</span> (grandes).</p>
+        <p>Tres tramos según capacidad del equipo:</p>
+        <ul style="margin:8px 0 0 0;padding-left:22px;font-size:.9rem;color:var(--gray-700, #374151);line-height:1.7">
+          <li>Hasta 4.000 frigorías: <span class="dyn-price" data-price="inst-hasta-4000">---</span> (base) + <span class="dyn-price" data-price="metro-hasta-4000">---</span> por metro adicional.</li>
+          <li>De 4.000 a 5.000 frigorías: <span class="dyn-price" data-price="inst-4000-5000">---</span> (base) + <span class="dyn-price" data-price="metro-4000-5000">---</span> por metro adicional.</li>
+          <li>De 5.000 a 6.500 frigorías: <span class="dyn-price" data-price="inst-5000-6500">---</span> (base) + <span class="dyn-price" data-price="metro-5000-6500">---</span> por metro adicional.</li>
+        </ul>
+        <p>El precio base incluye 3 metros de cable, desagüe, canaleta, silentblocks, prueba de estanqueidad, vacío y anclajes.</p>
       </details>
       <details>
         <summary>¿Qué NO está incluido en el precio base?</summary>
-        <p>Bomba de desagüe, punto de electricidad nuevo, magnetotérmico o diferencial nuevo, trabajo en altura con andamio o cuerda, y cualquier trabajo adicional no descrito en la propuesta inicial. También hay sobrecoste por pared dura (ladrillo macizo, hormigón armado).</p>
+        <p>Bomba de desagüe, punto de electricidad nuevo, magnetotérmico o diferencial nuevo, trabajo en altura con andamio o cuerda, y cualquier trabajo adicional no descrito en la propuesta inicial. También hay sobrecoste por <strong>pared dura</strong> (ladrillo macizo, hormigón armado): <span class="dyn-price" data-price="pared-dura-30cm">---</span> por pared y <span class="dyn-price" data-price="pared-dura-extra-5cm">---</span> por cada 5 cm adicionales de grosor.</p>
       </details>
       <details>
         <summary>¿Cómo hacéis la evaluación?</summary>
