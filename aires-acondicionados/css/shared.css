@@ -392,6 +392,13 @@ input, textarea, select { font-family: inherit; }
 .breadcrumb .sep { color: var(--gray-300); }
 .breadcrumb .current { color: var(--gray-600); font-weight: 500; }
 
+/* Breadcrumb sobre hero navy: contraste alto con blancos translúcidos */
+.page-hero .breadcrumb { color: rgba(255,255,255,.75); }
+.page-hero .breadcrumb a { color: rgba(255,255,255,.85); }
+.page-hero .breadcrumb a:hover { color: #FFFFFF; }
+.page-hero .breadcrumb .sep { color: rgba(255,255,255,.5); }
+.page-hero .breadcrumb .current { color: #FFFFFF; }
+
 /* ── WhatsApp Flotante ── */
 .whatsapp-float {
   position: fixed;
