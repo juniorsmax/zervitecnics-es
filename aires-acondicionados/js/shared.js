@@ -297,6 +297,84 @@ function getWAMessage() {
   return 'Hola, estoy interesado en instalar aire acondicionado en Barcelona. ¿Pueden darme más información?';
 }
 
+/* ── Botón "Llamar" en desktop → modal (no marca) ──
+   Móvil/tablet: tel: funciona nativo, no interceptamos.
+   Detección por capacidades del dispositivo (no user-agent). */
+function initCallButtons() {
+  const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!isDesktop) return;
+
+  const modalHTML = `
+    <div class="call-modal-overlay" id="callModal" role="dialog" aria-labelledby="callModalTitle" aria-modal="true">
+      <div class="call-modal-card">
+        <button class="call-modal-close" id="callModalClose" aria-label="Cerrar">&times;</button>
+        <div class="call-modal-icon" aria-hidden="true">📞</div>
+        <h3 class="call-modal-title" id="callModalTitle">Llamar por teléfono</h3>
+        <div class="call-modal-phone">625 215 983</div>
+        <p class="call-modal-text">Llama desde tu móvil, o escríbenos por WhatsApp y te respondemos al instante.</p>
+        <div class="call-modal-actions">
+          <a href="https://wa.me/${WA_NUMBER}" class="btn btn-green" id="callModalWA" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          <button class="btn btn-secondary" id="callModalCopy" type="button">Copiar número</button>
+        </div>
+        <div class="call-modal-copy-msg" id="callModalCopyMsg" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+  const modal = document.getElementById('callModal');
+  const closeBtn = document.getElementById('callModalClose');
+  const waBtn = document.getElementById('callModalWA');
+  const copyBtn = document.getElementById('callModalCopy');
+  const copyMsg = document.getElementById('callModalCopyMsg');
+
+  const openModal = (sourceLocation) => {
+    const msg = getWAMessage();
+    waBtn.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+    waBtn.dataset.location = `call-desktop-modal-${sourceLocation || 'unknown'}`;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => closeBtn.focus(), 50);
+  };
+  const closeModal = () => {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    copyMsg.classList.remove('show');
+    copyMsg.textContent = '';
+  };
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+
+  waBtn.addEventListener('click', () => {
+    trackEvent('whatsapp_click', { page: window.location.pathname, source: 'call-modal' });
+    setTimeout(closeModal, 100);
+  });
+
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText('625215983');
+      copyMsg.textContent = 'Número copiado ✓';
+      copyMsg.classList.add('show');
+      setTimeout(() => copyMsg.classList.remove('show'), 2200);
+    } catch (e) {
+      copyMsg.textContent = 'No se pudo copiar — márcalo manualmente';
+      copyMsg.classList.add('show');
+    }
+  });
+
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const src = link.dataset.location || 'unknown';
+      openModal(src);
+    });
+  });
+}
+
 function initWhatsApp() {
   const page = window.location.pathname;
   const defaultMsg = getWAMessage();
@@ -831,6 +909,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initScrollAnimations();
   initWhatsApp();
+  initCallButtons();
   initFAQ();
   initCarousel();
   initCookies();
