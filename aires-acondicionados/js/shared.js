@@ -266,8 +266,24 @@ function _waMatchCapacidad(slug) {
 }
 
 function getWAMessage() {
-  const slug = _waSlugFromPath(window.location.pathname);
+  const path = window.location.pathname;
+  const slug = _waSlugFromPath(path);
   if (!slug) return 'Hola, estoy interesado en instalar aire acondicionado en Barcelona. ¿Pueden darme más información?';
+
+  // Guías (prioridad máxima — mensajes contextuales por tema)
+  if (path.includes('/guias/')) {
+    if (slug === 'que-frigorias-necesito')                return 'Hola, tengo una duda sobre qué potencia (frigorías/kW) necesito para mi aire acondicionado.';
+    if (slug === 'ubicacion-unidad-exterior')             return 'Hola, tengo una duda sobre dónde ubicar la unidad exterior del aire acondicionado.';
+    if (slug === 'split-vs-multisplit-vs-conductos')      return 'Hola, tengo una duda sobre qué sistema me conviene: split, multisplit o conductos.';
+    if (slug === 'consumo-real-aire-acondicionado')       return 'Hola, tengo una duda sobre el consumo real de mi aire acondicionado.';
+    if (slug === 'normativa-comunidad-vecinos-barcelona') return 'Hola, tengo una duda sobre la normativa de instalación en mi comunidad de vecinos.';
+    if (slug === 'gas-r32-vs-r410a')                      return 'Hola, tengo una duda sobre el tipo de gas de mi equipo (R32 / R410A).';
+    if (slug === 'mantenimiento-diy-vs-profesional' ||
+        slug === 'mantenimiento-yo-mismo-o-profesional')  return 'Hola, tengo una duda sobre el mantenimiento de mi aire acondicionado.';
+    if (slug === 'subvenciones-como-solicitarlas')        return 'Hola, quiero información sobre las subvenciones disponibles para instalar aire acondicionado.';
+    // Hub /guias/ o cualquier otra guía futura
+    return 'Hola, he leído vuestras guías y me gustaría hablar con vosotros sobre mi caso.';
+  }
 
   // Servicios raíz (prioridad alta — mensajes específicos)
   if (slug === 'mantenimiento')            return 'Hola, me gustaría información sobre mantenimiento de aire acondicionado en Barcelona.';

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <meta name="theme-color" content="#1E90FF">
+  <!-- ZRV-ANALYTICS-START -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      'analytics_storage':'denied',
+      'ad_storage':'denied',
+      'ad_user_data':'denied',
+      'ad_personalization':'denied',
+      'wait_for_update':500
+    });
+  </script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P6C8L3VX');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N4C8H8KMFD"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config','G-N4C8H8KMFD',{ anonymize_ip:true, send_page_view:true });
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcESzAtAAAAAEhvnT0Zmh07PJUOkjYiC0qeed4S" async defer></script>
+  <!-- ZRV-ANALYTICS-END -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.clarity.ms https://www.clarity.ms; connect-src 'self' https://api.emailjs.com https://www.google.com https://www.gstatic.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms https://*.bing.com; frame-src https://www.googletagmanager.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Consumo real del aire acondicionado — cuánto gasta al mes en Barcelona | Zervitecnics</title>
+  <meta name="description" content="Cálculo del consumo real en kWh y €/mes de un aire acondicionado en Barcelona. SEER/SCOP, inverter vs on-off, buenas prácticas para reducir la factura. Guía Zervitecnics.">
+  <link rel="canonical" href="https://zervitecnics.es/aires-acondicionados/guias/consumo-real-aire-acondicionado.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Consumo real del aire acondicionado en Barcelona | Zervitecnics">
+  <meta property="og:description" content="Cuánto consume tu aire acondicionado al mes: kWh reales + €/mes con tarifa media.">
+  <meta property="og:url" content="https://zervitecnics.es/aires-acondicionados/guias/consumo-real-aire-acondicionado.html">
+  <meta property="og:image" content="https://zervitecnics.es/aires-acondicionados/img/hero_main.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"></noscript>
+  <link rel="stylesheet" href="../css/shared.css?v=20260902a">
+  <link rel="stylesheet" href="../css/pages.css?v=20260902a">
+  <style>
+    .guide-tldr { background:#EBF4FF; border-left:4px solid var(--blue); padding:18px 22px; border-radius:0 var(--radius) var(--radius) 0; margin:24px 0 32px; font-size:.98rem; line-height:1.65; color:var(--gray-700, #374151); }
+    .guide-tldr strong { color:var(--navy); }
+    .guide-table { width:100%; border-collapse:collapse; background:var(--white); border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm, 0 1px 3px rgba(0,0,0,.05)); margin:20px 0; font-size:.92rem; }
+    .guide-table thead { background:var(--navy); color:var(--white); }
+    .guide-table th, .guide-table td { padding:12px 14px; text-align:left; border-bottom:1px solid var(--gray-100); vertical-align:top; }
+    .guide-table th { font-family:var(--font-title); font-weight:700; font-size:.88rem; letter-spacing:.02em; }
+    .guide-table tr:last-child td { border-bottom:none; }
+    .guide-table tr:nth-child(even) td { background:#F8FAFF; }
+    .guide-table .num { font-weight:700; color:var(--navy); }
+    .guide-section h2 { font-family:var(--font-title); font-size:1.55rem; color:var(--navy); margin-top:36px; margin-bottom:12px; }
+    .guide-section h3 { font-family:var(--font-title); font-size:1.15rem; color:var(--navy); margin-top:24px; margin-bottom:10px; }
+    .guide-section p { font-size:1rem; line-height:1.7; color:var(--gray-700, #374151); margin-bottom:14px; }
+    .guide-section ul, .guide-section ol { font-size:1rem; line-height:1.75; color:var(--gray-700, #374151); padding-left:22px; margin:10px 0 18px; }
+    .guide-section ul li, .guide-section ol li { margin-bottom:6px; }
+    .calc-box { background:linear-gradient(135deg,#EBF4FF 0%,#F0F8FF 100%); border:1px solid #D6E7FF; border-radius:16px; padding:24px; margin:24px 0; }
+    .calc-box h3 { margin-top:0; }
+    .calc-inputs { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:14px; margin:16px 0; }
+    .calc-inputs label { display:flex; flex-direction:column; font-size:.88rem; font-weight:600; color:var(--navy); gap:6px; }
+    .calc-inputs input, .calc-inputs select { padding:10px 12px; border:1px solid #CBD5E1; border-radius:8px; font:inherit; font-size:.95rem; }
+    .calc-result { background:var(--white); border-radius:12px; padding:18px 20px; margin-top:14px; text-align:center; }
+    .calc-result .num-big { font-family:var(--font-title); font-size:2rem; font-weight:800; color:var(--green, #00C896); display:block; }
+    .calc-result .num-small { font-size:.9rem; color:var(--gray-600); margin-top:4px; }
+    .info-card { background:var(--white); border:1px solid var(--gray-100); border-radius:14px; padding:22px 24px; margin:18px 0; box-shadow:var(--shadow-sm, 0 1px 3px rgba(0,0,0,.06)); }
+    .info-card h3 { margin-top:0; }
+    .xlink-box { background:#F0FDF9; border:1px solid #A7F3D0; border-radius:12px; padding:18px 22px; margin:24px 0; }
+    .xlink-box strong { color:var(--navy); }
+    .xlink-box a { color:#059669; font-weight:600; }
+    .faq-list details { background:var(--white); border:1px solid var(--gray-100); border-radius:12px; padding:16px 20px; margin-bottom:12px; box-shadow:var(--shadow-sm, 0 1px 3px rgba(0,0,0,.05)); }
+    .faq-list details summary { cursor:pointer; font-family:var(--font-title); font-weight:700; color:var(--navy); font-size:.98rem; list-style:none; padding-right:24px; position:relative; }
+    .faq-list details summary::-webkit-details-marker { display:none; }
+    .faq-list details summary::after { content:"+"; position:absolute; right:0; top:0; font-size:1.4rem; color:var(--blue); line-height:1; }
+    .faq-list details[open] summary::after { content:"−"; }
+    .faq-list details p { font-size:.94rem; color:var(--gray-700, #374151); line-height:1.65; margin:12px 0 0; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Consumo real del aire acondicionado — cuánto gasta al mes en Barcelona",
+    "description": "Guía práctica: consumo eléctrico real de un aire acondicionado (kWh/mes y €/mes), SEER/SCOP, diferencias inverter vs on-off, buenas prácticas.",
+    "author": { "@type": "Organization", "name": "Zervitecnics" },
+    "publisher": { "@type": "Organization", "name": "Zervitecnics", "logo": { "@type": "ImageObject", "url": "https://zervitecnics.es/aires-acondicionados/img/logo_zervitecnics.png" } },
+    "datePublished": "2026-09-06",
+    "dateModified": "2026-09-06",
+    "image": "https://zervitecnics.es/aires-acondicionados/img/hero_main.jpg",
+    "mainEntityOfPage": "https://zervitecnics.es/aires-acondicionados/guias/consumo-real-aire-acondicionado.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zervitecnics.es/aires-acondicionados/" },
+      { "@type": "ListItem", "position": 2, "name": "Guías", "item": "https://zervitecnics.es/aires-acondicionados/guias/" },
+      { "@type": "ListItem", "position": 3, "name": "Consumo real del aire acondicionado", "item": "https://zervitecnics.es/aires-acondicionados/guias/consumo-real-aire-acondicionado.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuánto consume un aire acondicionado por hora?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un aire acondicionado inverter moderno de clase A++ (SEER ~7) con 3,5 kW frigoríficos consume entre 0,4 y 0,8 kWh reales por hora en régimen estable, dependiendo de la diferencia de temperatura con el exterior. En arranque puede subir a 1,0-1,2 kWh la primera hora hasta alcanzar consigna. Un equipo antiguo on/off con la misma potencia consume el doble o más."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto gasta el aire acondicionado al mes en Barcelona?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Con uso típico de 8 horas/día durante los 3 meses de verano y una tarifa media de 0,15 €/kWh, un split inverter A++ de 3.000 frig climatizando un salón de 25 m² supone entre 25 y 45 € al mes en factura. Un uso más intensivo (12h/día, ola de calor, equipo antiguo) puede llegar a 70-100 €/mes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué significa SEER y SCOP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SEER (Seasonal Energy Efficiency Ratio) mide la eficiencia estacional en frío: cuántos kWh frigoríficos genera por cada kWh eléctrico consumido, promediados en toda la temporada. SCOP hace lo mismo en calefacción. Cuanto más alto, más eficiente. Un equipo A+++ tiene SEER > 8,5 y SCOP > 5,1; un equipo A++ tiene SEER ~7 y SCOP ~4."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿A qué temperatura debo poner el aire para que consuma menos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cada grado menos en frío (o más en calor) aumenta el consumo entre un 6 y un 8 %. La temperatura recomendada por el IDAE es 26 ºC en verano y 21 ºC en invierno. Bajar del confort real no ahorra: no llegas antes al fresco, sólo consumes más. Y poner 18 ºC pensando que enfría más rápido es un mito — el equipo va al máximo desde el arranque hasta alcanzar la consigna."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Consume más apagar y encender que dejarlo puesto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende del tiempo. Los inverter modulan la potencia — cuando alcanzan consigna bajan a régimen mínimo (100-300 W), muy eficiente. Si te vas menos de 1 hora, sale más barato dejarlo. Si te vas varias horas, sale más barato apagar. Nunca dejes el equipo encendido si no hay nadie o durante toda la noche a temperatura muy baja — es donde más gasto se acumula sin beneficio."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6C8L3VX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="urgency-bar">🌡️ <strong>Temporada alta:</strong> Reserva tu instalación. <a href="tel:+34625215983"> Llamar: 625 215 983</a></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/aires-acondicionados/" class="logo"><picture><source srcset="../img/logo_zervitecnics.webp" type="image/webp"><img src="../img/logo_zervitecnics.png" alt="Zervitecnics" width="40" height="40" style="height:56px;width:auto;object-fit:contain"></picture></a>
+    <nav class="main-nav"><a href="../../index.html#servicios">Servicios</a><a href="../precios.html">Precios</a><a href="../subvenciones.html">Subvenciones</a><a href="../../index.html#zonas">Zonas</a><a href="../../index.html#faq">FAQ</a><a href="../../index.html#presupuesto">Presupuesto</a></nav>
+    <div class="header-cta">
+      <a href="tel:+34625215983" class="btn-phone" data-location="header-guia-consumo"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>625 215 983</a>
+      <a href="https://wa.me/34625215983" class="btn-whatsapp-header" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span></a>
+    </div>
+    <button class="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mobile-nav"><a href="../../index.html">Inicio</a><a href="../../index.html#servicios">Servicios</a><a href="../precios.html">Precios</a><a href="../subvenciones.html">Subvenciones</a><div class="mobile-nav-cta"><a href="tel:+34625215983" class="btn btn-secondary btn-sm">Llamar</a><a href="https://wa.me/34625215983" class="btn btn-green btn-sm" target="_blank" rel="noopener">WhatsApp</a></div></nav>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <nav class="breadcrumb"><a href="../../index.html">Inicio</a><span class="sep">›</span><a href="../index.html">Aire acondicionado</a><span class="sep">›</span><a href="index.html">Guías</a><span class="sep">›</span><span class="current">Consumo real</span></nav>
+    <h1>Consumo real del aire acondicionado en Barcelona</h1>
+    <p>Cuánto cuesta de verdad tener el A/C encendido: kWh por hora, €/mes con tarifa media, diferencia entre inverter y on/off y buenas prácticas para reducir la factura sin renunciar al confort.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:900px">
+
+    <div class="guide-tldr">
+      <strong>Lo esencial:</strong> Un split inverter A++ de 3.000 frigorías consume <strong>0,4-0,8 kWh reales/hora</strong> en régimen estable — no los 3,5 kW frigoríficos que aparecen en la ficha. Con 8 h/día durante 3 meses de verano y tarifa media de 0,15 €/kWh, esto son <strong>25-45 € al mes</strong> por un salón de 25 m². Un equipo antiguo on/off consume el doble.
+    </div>
+
+    <div class="guide-section">
+
+      <h2>Potencia frigorífica ≠ potencia eléctrica</h2>
+      <p>Este es el error más habitual: pensar que un equipo de <strong>3,5 kW frigoríficos</strong> consume 3,5 kW eléctricos. No es así. Un aire acondicionado no genera frío, lo transporta — extrae calor del interior y lo suelta al exterior. Este ciclo termodinámico permite que por cada kWh eléctrico gastado, el equipo mueva entre 3 y 5 kWh de calor.</p>
+      <p>La relación entre lo que consume y lo que refrigera se llama <strong>EER</strong> (Energy Efficiency Ratio, en frío) o <strong>COP</strong> (en calor). Un equipo con EER 3,5 consume 1 kW eléctrico para dar 3,5 kW frigoríficos. Los equipos modernos tienen EER 3-4 y COP 4-5.</p>
+
+      <h2>SEER y SCOP — lo que importa para calcular el consumo real</h2>
+      <p>EER y COP son valores medidos en condiciones estándar de laboratorio. En el uso real, la temperatura exterior varía, el equipo modula, arranca, para. Para reflejar esto se usan las versiones <em>estacionales</em>: <strong>SEER</strong> (frío) y <strong>SCOP</strong> (calor), que promedian el rendimiento a lo largo de toda la temporada.</p>
+
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>Clase energética</th>
+            <th>SEER (frío)</th>
+            <th>SCOP (calor)</th>
+            <th>Comentario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">A+++</td><td>&gt; 8,5</td><td>&gt; 5,1</td><td>Top de gama, inverter DC de última generación</td></tr>
+          <tr><td class="num">A++</td><td>6,1 – 8,5</td><td>4,6 – 5,1</td><td>Gama alta actual, la mayoría de equipos nuevos</td></tr>
+          <tr><td class="num">A+</td><td>5,6 – 6,1</td><td>4,0 – 4,6</td><td>Gama media, cada vez menos habitual</td></tr>
+          <tr><td class="num">A</td><td>5,1 – 5,6</td><td>3,4 – 4,0</td><td>Mínimo actual para nuevos productos</td></tr>
+          <tr><td class="num">Antiguos on/off</td><td>~2,5 – 3,0</td><td>~2,5 – 3,0</td><td>Equipos previos a 2013 sin inverter — consumo doble</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Consumo real en kWh por hora — tabla de referencia</h2>
+      <p>Consumo eléctrico aproximado en régimen estable (después de alcanzar la temperatura de consigna), con equipos inverter modernos:</p>
+
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>Capacidad (frig)</th>
+            <th>kW frigoríficos</th>
+            <th>Consumo típico (kWh/h)</th>
+            <th>Consumo pico arranque (kWh/h)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">2.000</td><td>2,3</td><td>0,25 – 0,50</td><td>0,7 – 0,9</td></tr>
+          <tr><td class="num">2.500</td><td>2,9</td><td>0,30 – 0,60</td><td>0,8 – 1,0</td></tr>
+          <tr><td class="num">3.000</td><td>3,5</td><td>0,40 – 0,80</td><td>1,0 – 1,2</td></tr>
+          <tr><td class="num">3.500</td><td>4,1</td><td>0,50 – 0,90</td><td>1,1 – 1,4</td></tr>
+          <tr><td class="num">4.500</td><td>5,2</td><td>0,60 – 1,10</td><td>1,3 – 1,7</td></tr>
+          <tr><td class="num">6.000</td><td>7,0</td><td>0,90 – 1,50</td><td>1,7 – 2,2</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.85rem;color:var(--gray-600)">Rango bajo: uso ligero (fuera calor moderado, buena envolvente). Rango alto: ola de calor exterior &gt; 33 ºC, mal aislamiento. Pico de arranque: primeros 15-30 min hasta alcanzar consigna.</p>
+
+      <h2>Calculadora de €/mes</h2>
+
+      <div class="calc-box">
+        <h3>Calcula tu gasto mensual estimado</h3>
+        <p style="margin:0 0 8px;font-size:.92rem">Introduce los datos y calculamos el gasto aproximado en euros/mes de temporada de verano.</p>
+        <div class="calc-inputs">
+          <label>Capacidad (frigorías)
+            <select id="calc-cap">
+              <option value="0.4">2.000 (dormitorio)</option>
+              <option value="0.5">2.500 (salón pequeño)</option>
+              <option value="0.6" selected>3.000 (salón estándar)</option>
+              <option value="0.7">3.500 (salón grande)</option>
+              <option value="0.85">4.500 (salón amplio)</option>
+              <option value="1.2">6.000 (loft/local)</option>
+            </select>
+          </label>
+          <label>Horas/día
+            <input type="number" id="calc-horas" min="1" max="24" value="8" step="1">
+          </label>
+          <label>Días/mes
+            <input type="number" id="calc-dias" min="1" max="31" value="30" step="1">
+          </label>
+          <label>€/kWh (tu tarifa)
+            <input type="number" id="calc-tarifa" min="0.05" max="0.5" value="0.15" step="0.01">
+          </label>
+        </div>
+        <div class="calc-result">
+          <span class="num-big" id="calc-euros">— €/mes</span>
+          <span class="num-small" id="calc-kwh">— kWh/mes</span>
+        </div>
+        <p style="font-size:.82rem;color:var(--gray-600);margin:12px 0 0;text-align:center">Estimación para equipo inverter A++/A+++ en régimen estable. Los valores reales varían con la temperatura exterior y el aislamiento.</p>
+      </div>
+
+      <h2>Inverter vs on/off — el mismo equipo consumiendo la mitad</h2>
+      <p>La tecnología <strong>inverter</strong> permite que el compresor <em>module</em> su velocidad continuamente en lugar de arrancar a máxima potencia y parar cuando alcanza la consigna. Esto tiene tres consecuencias:</p>
+      <ul>
+        <li><strong>Menos consumo</strong> — un inverter en régimen estable trabaja al 30-50 % de su potencia máxima. Un on/off siempre trabaja al 100 % o al 0 %.</li>
+        <li><strong>Menos ciclos arranque/parada</strong> — cada arranque de un compresor on/off es una punta de consumo de 8-10 veces la potencia nominal.</li>
+        <li><strong>Más confort</strong> — sin picos de temperatura ni ruido de arranques.</li>
+      </ul>
+      <p>Diferencia práctica: un equipo <em>on/off</em> antiguo (2010) de 3.000 frig puede gastar 1,2-1,5 kWh/h en régimen estable. Un inverter A++ moderno del mismo tamaño gasta 0,5-0,7 kWh/h. Diferencia: <strong>consume aproximadamente el doble el antiguo</strong>.</p>
+
+      <div class="info-card">
+        <h3>Ejemplo real: comparativa on/off vs inverter</h3>
+        <p><strong>Escenario:</strong> salón 25 m², orientación oeste, 3.000 frig, uso 8 h/día durante los 3 meses de verano (junio, julio, agosto).</p>
+        <p><strong>Equipo antiguo on/off (SEER 2,8):</strong> ~1,25 kWh/h × 8 h × 90 días = 900 kWh/temporada × 0,15 €/kWh = <strong>135 €/verano</strong>.</p>
+        <p><strong>Equipo inverter A++ (SEER 7):</strong> ~0,55 kWh/h × 8 h × 90 días = 396 kWh/temporada × 0,15 €/kWh = <strong>60 €/verano</strong>.</p>
+        <p><strong>Ahorro anual sólo en frío:</strong> ~75 €. Si además usas el mismo equipo como bomba de calor en invierno (calefacción), el ahorro se multiplica.</p>
+      </div>
+
+      <h2>8 buenas prácticas para reducir el consumo sin sacrificar confort</h2>
+      <ol>
+        <li><strong>Consigna 26 ºC en verano, 21 ºC en invierno</strong>. Cada grado menos suma 6-8 % de consumo. 24 ºC no es "más frío", es más gasto.</li>
+        <li><strong>Cierra puertas y persianas al mediodía</strong>. Persiana bajada evita hasta un 30 % del calor por radiación solar en fachadas sur/oeste.</li>
+        <li><strong>Usa el modo automático</strong>. El equipo elige velocidad de ventilador y modulación óptima. Poner ventilador al máximo permanentemente consume más y no enfría más rápido.</li>
+        <li><strong>Programa apagado o temporizador</strong>. Especialmente por la noche — pon un timer de 3-4 horas en lugar de dejarlo toda la noche.</li>
+        <li><strong>Limpia filtros cada 2-3 semanas de uso intenso</strong>. Un filtro sucio reduce el flujo de aire y aumenta el consumo 10-15 %. Se hace en 2 minutos con agua tibia.</li>
+        <li><strong>Deja libre la unidad exterior</strong>. Si hay obstáculos frente a la salida de aire (macetas, cajas, sombrilla), pierde eficiencia — el aire caliente se recircula y sube la temperatura de trabajo.</li>
+        <li><strong>Mantenimiento preventivo anual</strong>. Un equipo con la presión de gas correcta y el serpentín limpio consume hasta un 20 % menos. Ver nuestra <a href="../mantenimiento.html">página de mantenimiento</a>.</li>
+        <li><strong>Ventila cuando refresque</strong>. En Barcelona, entre las 22 h y las 8 h de junio y septiembre la temperatura exterior baja mucho — abrir 30-60 min ventila la vivienda sin tener que enfriar de nuevo desde 30 ºC al día siguiente.</li>
+      </ol>
+
+      <div class="xlink-box">
+        <p><strong>¿Aire acondicionado antiguo con consumo alto?</strong> Renovar a un equipo A++ moderno puede amortizarse en 3-5 temporadas sólo por el ahorro eléctrico. Y hay <a href="../subvenciones.html">subvenciones vigentes</a> para instalación de equipos eficientes. Consulta también <a href="../precios.html">precios y packs completos</a>.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="background:#F8FAFF">
+  <div class="container" style="max-width:820px">
+
+    <h2 class="section-title">Preguntas frecuentes sobre consumo</h2>
+
+    <div class="faq-list" style="margin-top:24px">
+      <details>
+        <summary>¿Cuánto consume un aire acondicionado por hora?</summary>
+        <p>Un aire acondicionado inverter moderno de clase A++ (SEER ~7) con 3,5 kW frigoríficos consume entre <strong>0,4 y 0,8 kWh reales por hora</strong> en régimen estable, dependiendo de la diferencia de temperatura con el exterior. En arranque puede subir a 1,0-1,2 kWh la primera hora hasta alcanzar consigna. Un equipo antiguo on/off con la misma potencia consume el doble o más.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto gasta el aire acondicionado al mes en Barcelona?</summary>
+        <p>Con uso típico de 8 horas/día durante los 3 meses de verano y una tarifa media de 0,15 €/kWh, un split inverter A++ de 3.000 frig climatizando un salón de 25 m² supone entre <strong>25 y 45 € al mes</strong> en factura. Un uso más intensivo (12h/día, ola de calor, equipo antiguo) puede llegar a 70-100 €/mes.</p>
+      </details>
+      <details>
+        <summary>¿Qué significa SEER y SCOP?</summary>
+        <p><strong>SEER</strong> (Seasonal Energy Efficiency Ratio) mide la eficiencia estacional en frío: cuántos kWh frigoríficos genera por cada kWh eléctrico consumido, promediados en toda la temporada. <strong>SCOP</strong> hace lo mismo en calefacción. Cuanto más alto, más eficiente. Un equipo A+++ tiene SEER > 8,5 y SCOP > 5,1; un equipo A++ tiene SEER ~7 y SCOP ~4.</p>
+      </details>
+      <details>
+        <summary>¿A qué temperatura debo poner el aire para que consuma menos?</summary>
+        <p>Cada grado menos en frío (o más en calor) aumenta el consumo entre un 6 y un 8 %. La temperatura recomendada por el IDAE es <strong>26 ºC en verano y 21 ºC en invierno</strong>. Bajar del confort real no ahorra: no llegas antes al fresco, sólo consumes más. Y poner 18 ºC pensando que enfría más rápido es un mito — el equipo va al máximo desde el arranque hasta alcanzar la consigna.</p>
+      </details>
+      <details>
+        <summary>¿Consume más apagar y encender que dejarlo puesto?</summary>
+        <p>Depende del tiempo. Los inverter modulan la potencia — cuando alcanzan consigna bajan a régimen mínimo (100-300 W), muy eficiente. Si te vas <strong>menos de 1 hora</strong>, sale más barato dejarlo. Si te vas <strong>varias horas</strong>, sale más barato apagar. Nunca dejes el equipo encendido si no hay nadie o durante toda la noche a temperatura muy baja — es donde más gasto se acumula sin beneficio.</p>
+      </details>
+      <details>
+        <summary>¿Ventilar afecta al consumo?</summary>
+        <p>Sí, mucho. Cada vez que abres puertas al exterior mientras el A/C está en marcha, el equipo tiene que volver a enfriar aire nuevo caliente. Pero <strong>ventilar durante la madrugada</strong> cuando el aire exterior está más fresco es una de las estrategias más eficientes: enfrías la vivienda sin coste eléctrico y arrancas el día con menos carga térmica.</p>
+      </details>
+      <details>
+        <summary>¿Los ventiladores son alternativa al aire acondicionado?</summary>
+        <p>No son alternativa (no enfrían el aire, sólo mueven), pero son un buen <strong>complemento</strong>. Un ventilador de techo permite subir la consigna del A/C 2-3 ºC manteniendo la misma sensación de confort — consume 20-40 W frente a los 500-800 W del compresor. Ahorra 15-25 % en verano si los combinas.</p>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-inner fade-up">
+      <h2 class="cta-title">¿Quieres renovar tu equipo antiguo por uno eficiente?</h2>
+      <p class="cta-subtitle">Presupuesto claro, subvenciones disponibles y ahorro real desde el primer verano.</p>
+      <div class="cta-buttons">
+        <a href="tel:+34625215983" class="btn btn-primary btn-lg" data-location="cta-tel-guia-consumo">Llamar: 625 215 983</a>
+        <a href="https://wa.me/34625215983" class="btn btn-green btn-lg" target="_blank" rel="noopener" data-wa-text="Hola, quiero cambiar mi aire acondicionado antiguo por uno más eficiente.">WhatsApp ahora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="logo"><picture><source srcset="../img/logo_zervitecnics.webp" type="image/webp"><img src="../img/logo_zervitecnics.png" alt="Zervitecnics" style="height:56px;width:auto;object-fit:contain"></picture></div><p style="margin-top:16px">Instalación profesional de aire acondicionado en Barcelona. Técnico certificado.</p></div>
+    <div class="footer-col"><h4>Servicios</h4><ul><li><a href="../categorias/split.html">Split 1×1</a></li><li><a href="../categorias/multisplit.html">Multisplit</a></li><li><a href="../categorias/conductos.html">Por Conductos</a></li><li><a href="../categorias/cassette.html">Cassette</a></li><li><a href="../categorias/suelo-techo.html">Suelo-Techo</a></li><li><a href="../subvenciones.html">Subvenciones</a></li><li><a href="../precios.html">Precios</a></li><li><a href="../ofertas.html">Ofertas todo incluido</a></li></ul></div>
+    <div class="footer-col"><h4>Marcas</h4><ul><li><a href="../marcas/daikin.html">Daikin</a></li><li><a href="../marcas/mitsubishi.html">Mitsubishi</a></li><li><a href="../marcas/fujitsu.html">Fujitsu</a></li><li><a href="../marcas/lg.html">LG</a></li><li><a href="../marcas/samsung.html">Samsung</a></li></ul></div>
+    <div class="footer-col"><h4>Contacto</h4><div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="var(--blue)" style="width:18px;height:18px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+34625215983" style="color:rgba(255,255,255,.6)">625 215 983</a></div></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Zervitecnics Barcelona.</p><div class="footer-legal"><a href="../legal/privacidad.html">Privacidad</a><a href="../legal/cookies.html">Cookies</a><a href="../legal/aviso-legal.html">Aviso legal</a></div></div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/34625215983" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<div class="cookie-banner"><div class="cookie-text">Usamos cookies. <a href="../legal/cookies.html">Más info</a></div><div class="cookie-actions"><button class="btn-cookie-accept">Aceptar</button><button class="btn-cookie-necessary">Solo necesarias</button></div></div>
+<script src="../js/shared.js?v=20260902a"></script>
+<script src="../js/pages.js?v=20260625a"></script>
+<script>
+  // Calculadora de consumo mensual
+  (function(){
+    const cap = document.getElementById('calc-cap');
+    const horas = document.getElementById('calc-horas');
+    const dias = document.getElementById('calc-dias');
+    const tarifa = document.getElementById('calc-tarifa');
+    const outE = document.getElementById('calc-euros');
+    const outKwh = document.getElementById('calc-kwh');
+    if (!cap || !outE) return;
+    function calc(){
+      const kwhH = parseFloat(cap.value) || 0.6; // kWh/h típico
+      const h = parseFloat(horas.value) || 0;
+      const d = parseFloat(dias.value) || 0;
+      const t = parseFloat(tarifa.value) || 0;
+      const kwhMes = kwhH * h * d;
+      const eur = kwhMes * t;
+      outE.textContent = eur.toFixed(2).replace('.', ',') + ' €/mes';
+      outKwh.textContent = kwhMes.toFixed(0) + ' kWh/mes';
+    }
+    [cap, horas, dias, tarifa].forEach(el => el && el.addEventListener('input', calc));
+    calc();
+  })();
+</script>
+
+</body>
+</html>

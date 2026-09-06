@@ -1,4 +1,49 @@
+# Zervitecnics — robots.txt
+# Permitir indexado general + bots de IA (motores generativos y respuesta)
+
 User-agent: *
 Allow: /
 
+# ── Bots de IA (motores generativos y de respuesta directa) ──
+# Se permiten explícitamente para que Zervitecnics aparezca como fuente
+# en resultados de ChatGPT, Claude, Perplexity y respuestas de Google/Gemini.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# ── Sitemaps ──
 Sitemap: https://zervitecnics.es/sitemap.xml
+Sitemap: https://zervitecnics.es/sitemap-guias.xml
