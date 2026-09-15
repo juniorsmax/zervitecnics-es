@@ -1,0 +1,152 @@
+[
+  {
+    "slug": "badalona",
+    "nombre": "Badalona",
+    "cobertura": "Badalona, Montgat y área litoral norte",
+    "intro": "el clima costero mediterráneo somete a las unidades exteriores instaladas en fachada a un factor extra: el salitre del mar (Badalona está a 200-400 m de la costa) acelera la oxidación del serpentín exterior y de los tornillos de anclaje. El preventivo anual detecta el desgaste antes de que se convierta en avería estructural, especialmente en equipos que llevan 5+ años en fachada a mar.",
+    "cuandoPedirTitulo": "Corrosión por salitre",
+    "cuandoPedirTexto": "Si tu unidad exterior está en fachada a mar y lleva más de 3-4 temporadas sin revisión, conviene un correctivo (130€) para retirar depósitos de sal, verificar oxidación de anclajes y comprobar estanqueidad del circuito refrigerante.",
+    "faqCadaCuantoTexto": "En Badalona recomendamos <strong>una revisión anual</strong> si la unidad exterior está en fachada a mar. El salitre mediterráneo se deposita sobre el serpentín y acelera la corrosión — el preventivo lava estos depósitos antes de que dañen las aletas del intercambiador. Si tu unidad está en patio interior o cubierta protegida, cada 18-24 meses puede ser suficiente.",
+    "faqAscensorTexto": "No. El transporte de herramientas, hidrolimpiadora y material por escalera está incluido en el precio del mantenimiento, tanto si vives en fincas antiguas del centro de Badalona como en bloques de la zona marítima."
+  },
+  {
+    "slug": "castelldefels",
+    "nombre": "Castelldefels",
+    "cobertura": "Castelldefels, Gavà mar y municipios del Baix Llobregat costero",
+    "intro": "en Castelldefels la combinación de <strong>salitre marino + arena de playa + humedad ambiental alta</strong> es el gran enemigo del aire acondicionado. Las unidades exteriores instaladas en chalets, terrazas y fachadas cerca del paseo marítimo requieren mantenimiento más frecuente que en Barcelona interior. El preventivo anual limpia el serpentín antes de que la sal cristalice sobre las aletas.",
+    "cuandoPedirTitulo": "Cerca de la playa",
+    "cuandoPedirTexto": "Si tu vivienda está a menos de 500 m del paseo marítimo, el correctivo (130€) es especialmente útil cada 2-3 años: incluye limpieza profunda del serpentín con Karcher (elimina sal cristalizada + arena) y revisión de anclajes por posible corrosión.",
+    "faqCadaCuantoTexto": "En Castelldefels recomendamos <strong>revisión anual</strong> por defecto, especialmente en chalets con unidad exterior en jardín o terraza expuesta. La proximidad al mar acelera la corrosión de aletas de aluminio y anclajes de acero — el preventivo anual retrasa este desgaste y prolonga la vida útil del equipo varios años.",
+    "faqAscensorTexto": "No aplica extra por escalera. En Castelldefels muchos clientes viven en chalet o casa unifamiliar, donde el reto es más bien acceder a unidades exteriores en cubierta o azotea — está incluido en el precio."
+  },
+  {
+    "slug": "cornella",
+    "nombre": "Cornellà de Llobregat",
+    "cobertura": "Cornellà, Sant Joan Despí y municipios del Baix Llobregat industrial",
+    "intro": "Cornellà combina zona residencial densa (pisos de 60-100 m² en bloques de los años 60-80) con actividad industrial cercana (polígonos de la Ronda del Mig, Zona Franca colindante). Esto significa <strong>polvo urbano fino + partículas industriales</strong> en el aire que se depositan en filtros y serpentín. El preventivo anual mantiene la eficiencia energética y evita el ruido extra por acumulación de suciedad.",
+    "cuandoPedirTitulo": "Zona con carga industrial",
+    "cuandoPedirTexto": "Si tu piso da a la Gran Via, Ronda del Mig o zona industrial de Cornellà, el ambiente urbano acelera el ensuciamiento. Un preventivo cada 10-12 meses mantiene el equipo eficiente. Si notas ruido nuevo o menos frío, el diagnóstico (70€) identifica la causa.",
+    "faqCadaCuantoTexto": "En Cornellà recomendamos <strong>revisión anual</strong> por la carga de polvo urbano y partículas industriales del entorno. Los filtros se ensucian más rápido que en zonas rurales o de alta montaña, y el ensuciamiento del serpentín se traduce en más consumo eléctrico y menos frío efectivo.",
+    "faqAscensorTexto": "No. El transporte por escalera está incluido, viva en el piso que viva. En Cornellà muchas fincas de los años 60-70 no tienen ascensor y no cobramos extra por ello."
+  },
+  {
+    "slug": "eixample",
+    "nombre": "Eixample",
+    "cobertura": "Eixample Dret, Esquerra de l'Eixample, Sant Antoni y Fort Pienc",
+    "intro": "el Eixample tiene un reto particular: <strong>fincas modernistas protegidas + normativa del Ajuntament de Barcelona (Ordenança Paisatge Urbà)</strong> restringen dónde puede colocarse la unidad exterior. Muchos equipos están en patios de luces cerrados o cubiertas — entornos con humedad alta y ventilación limitada. El preventivo anual detecta problemas de recirculación de aire caliente y humedad acumulada antes de que afecten al rendimiento.",
+    "cuandoPedirTitulo": "Patios de luces cerrados",
+    "cuandoPedirTexto": "En el Eixample los patios de luces son estrechos y verticales. Si tu unidad lleva 3-4 temporadas ahí sin correctivo, la limpieza a fondo (130€) elimina hongos y humedad acumulada, y revisa que la salida de aire caliente no esté recirculando (causa típica de bajo rendimiento).",
+    "faqCadaCuantoTexto": "En pisos del Eixample recomendamos <strong>una revisión anual</strong> como mínimo. Los patios de luces cerrados acumulan humedad y polvo urbano (proximidad a Diagonal, Aragó, Gran Via de les Corts Catalanes), y las unidades exteriores en cubierta modernista sufren el calor extra del techo plano en verano.",
+    "faqAscensorTexto": "No. El transporte por escalera está incluido. En el Eixample muchas fincas modernistas tienen ascensor original pequeño (no cabe carga voluminosa) — subimos hidrolimpiadora, escalera plegable y herramientas por escalera sin coste extra."
+  },
+  {
+    "slug": "gracia",
+    "nombre": "Gràcia",
+    "cobertura": "Vila de Gràcia, Vallcarca, El Camp d'en Grassot y Penitents",
+    "intro": "Gràcia combina fincas antiguas de 2-4 plantas (calles estrechas peatonales, plazas históricas) con equipos instalados en terrazas mínimas o patios interiores compartidos. El reto principal es <strong>la accesibilidad y el ruido a vecinos</strong>: unidades exteriores mal ubicadas generan quejas por ruido nocturno. El preventivo revisa silentblocks, ancles y niveles sonoros.",
+    "cuandoPedirTitulo": "Ruido a vecinos o terrazas compartidas",
+    "cuandoPedirTexto": "Si tu unidad exterior está en terraza o patio compartido y los vecinos se quejan de ruido, el diagnóstico técnico (70€) revisa silentblocks desgastados, presión anormal del compresor y anclajes flojos — causas típicas de ruido excesivo tras años de uso.",
+    "faqCadaCuantoTexto": "En Gràcia recomendamos <strong>revisión anual</strong> especialmente si la unidad exterior está en terraza pequeña o patio compartido. Además de higiene, verificamos los niveles sonoros y los silentblocks — un equipo mal mantenido puede pasar de 45 dB a 55 dB, cifra que ya genera molestias a vecinos por la noche.",
+    "faqAscensorTexto": "No. El transporte por escalera está incluido. La mayoría de fincas de Gràcia son de 2-4 plantas sin ascensor y no cobramos extra por subir material."
+  },
+  {
+    "slug": "hospitalet",
+    "nombre": "L'Hospitalet",
+    "cobertura": "L'Hospitalet de Llobregat, Bellvitge, Santa Eulàlia y Collblanc",
+    "intro": "L'Hospitalet es la segunda ciudad más poblada de Cataluña con una densidad demográfica altísima y muchas fincas de posguerra (años 50-70) reformadas parcialmente. Los equipos suelen estar en <strong>fachadas traseras estrechas o patios comunes</strong>, lo que dificulta el acceso y acelera el ensuciamiento por polvo urbano. El preventivo anual mantiene la eficiencia.",
+    "cuandoPedirTitulo": "Fincas antiguas con reformas parciales",
+    "cuandoPedirTexto": "Si tu equipo se instaló en una finca antigua con reformas parciales del sistema eléctrico, el correctivo (130€) incluye revisión eléctrica exhaustiva (posibles falsos contactos por instalación mixta antigua-moderna) además de la limpieza a fondo estándar.",
+    "faqCadaCuantoTexto": "En L'Hospitalet recomendamos <strong>revisión anual</strong>. La densidad urbana genera más polvo en suspensión, y muchas fincas antiguas tienen unidades exteriores en fachadas traseras estrechas con recirculación de aire caliente — el preventivo verifica que el equipo respira bien.",
+    "faqAscensorTexto": "No. El transporte por escalera está incluido, viva en el piso que viva. En L'Hospitalet muchas fincas de 5-7 plantas de posguerra no tienen ascensor y no cobramos extra."
+  },
+  {
+    "slug": "les-corts",
+    "nombre": "Les Corts",
+    "cobertura": "Les Corts, Pedralbes bajo y La Maternitat i Sant Ramon",
+    "intro": "Les Corts combina zona residencial premium (fincas de años 70-2000, pisos amplios de 90-140 m²) con corredores de oficinas (Diagonal, Sarrià-Sant Gervasi). Los equipos suelen ser <strong>multisplit o conductos</strong> en pisos grandes, y en oficinas hay unidades cassette o suelo-techo. El preventivo por unidad interior aplica a cada evaporador del sistema.",
+    "cuandoPedirTitulo": "Sistemas multisplit y conductos",
+    "cuandoPedirTexto": "Si tienes un multisplit (1 exterior + varios interiores) o conductos, el preventivo se cobra <strong>por unidad interior</strong> (70€/unidad). En un piso con 3-4 splits interiores, un mantenimiento anual completo son 210-280€ +IVA, pero merece la pena: cada equipo lleva su propio circuito refrigerante y filtro.",
+    "faqCadaCuantoTexto": "En Les Corts recomendamos <strong>revisión anual</strong>. En pisos amplios con multisplit o conductos, el preventivo incluye revisar cada unidad interior y el equipo exterior compartido. En oficinas o locales comerciales con cassette o suelo-techo, la revisión evita fallos de refrigeración justo en pico de verano cuando más importa.",
+    "faqAscensorTexto": "No. El transporte por escalera está incluido si aplica. En Les Corts la mayoría de fincas tienen ascensor, pero en pisos con acceso a azotea comunitaria para revisar unidades exteriores subimos herramientas sin coste extra."
+  },
+  {
+    "slug": "nou-barris",
+    "nombre": "Nou Barris",
+    "cobertura": "Nou Barris, Verdum, Trinitat Nova, Roquetes, Torre Baró y Vallbona",
+    "intro": "Nou Barris es un distrito diverso, con barrios en ladera (Torre Baró, Vallbona, Roquetes) y otros más planos (Prosperitat, Porta). Muchos equipos están en <strong>fachadas traseras de fincas de posguerra</strong> con ventilación limitada y polvo urbano. El preventivo anual limpia filtros y serpentín, factores clave de eficiencia.",
+    "cuandoPedirTitulo": "Fachadas traseras estrechas",
+    "cuandoPedirTexto": "Si tu unidad exterior está en fachada trasera estrecha (típica en Verdum o Trinitat Nova) y notas menos frío que hace 2-3 años, es probable que haya recirculación de aire caliente. El diagnóstico (70€) identifica si el problema es de ubicación o de equipo.",
+    "faqCadaCuantoTexto": "En Nou Barris recomendamos <strong>revisión anual</strong>. La combinación de polvo urbano y fachadas traseras con ventilación reducida acelera el ensuciamiento del serpentín exterior — el preventivo lava estos depósitos antes de que reduzcan la eficiencia.",
+    "faqAscensorTexto": "No. El transporte por escalera está incluido. En Nou Barris muchas fincas de los años 60-70 no tienen ascensor y no cobramos extra por subir material a pisos altos."
+  },
+  {
+    "slug": "sabadell",
+    "nombre": "Sabadell",
+    "cobertura": "Sabadell, Sant Quirze del Vallès y núcleos del Vallès Occidental cercanos",
+    "intro": "Sabadell tiene clima <strong>continental templado</strong>: veranos más calurosos que la costa (algunas jornadas a 38-40 ºC) y inviernos más fríos con heladas puntuales. Esto exige más a los equipos de aire acondicionado (que hacen frío en verano y calor en invierno con bomba de calor). El preventivo revisa el rendimiento del inverter en ambos modos.",
+    "cuandoPedirTitulo": "Uso intenso en verano e invierno",
+    "cuandoPedirTexto": "Si usas el equipo también como calefacción en invierno (bomba de calor), pide el preventivo <strong>en primavera</strong>: revisamos el modo frío antes del pico de verano. Si aparece un fallo intermitente en modo calor durante el invierno, el diagnóstico (70€) lo identifica sin esperar a la temporada siguiente.",
+    "faqCadaCuantoTexto": "En Sabadell recomendamos <strong>revisión anual</strong> por el uso intensivo del equipo (frío en verano + calor en invierno). El compresor inverter trabaja muchas más horas que en zonas costeras — el preventivo verifica que sigue dentro de rangos de presión y consumo.",
+    "faqAscensorTexto": "No. El transporte por escalera está incluido. En Sabadell hay una mezcla de fincas antiguas (Centre, Sant Oleguer) y bloques modernos con ascensor — cubrimos ambos sin coste extra."
+  },
+  {
+    "slug": "sant-andreu",
+    "nombre": "Sant Andreu",
+    "cobertura": "Sant Andreu del Palomar, La Sagrera, Bon Pastor y Congrés-Indians",
+    "intro": "Sant Andreu conserva el carácter de <strong>antiguo pueblo agregado a Barcelona</strong>: fincas de 3-4 plantas de finales del s. XIX y principios del XX, con patios interiores comunes y unidades exteriores en fachadas traseras. La proximidad a las cocheras de RENFE (La Sagrera) genera polvo ferroviario en algunas zonas. El preventivo anual mantiene el equipo limpio y eficiente.",
+    "cuandoPedirTitulo": "Fincas antiguas con patios comunes",
+    "cuandoPedirTexto": "En fincas con patio interior compartido (habitual en Sant Andreu), el ruido de la unidad exterior puede generar quejas de vecinos con los años. Si notas más ruido que antes, el diagnóstico (70€) revisa silentblocks, presión del compresor y anclajes — causas típicas de aumento de dB.",
+    "faqCadaCuantoTexto": "En Sant Andreu recomendamos <strong>revisión anual</strong>. Las fincas del casco antiguo tienen patios interiores con humedad y polvo acumulado, y las cercanías a La Sagrera reciben polvo ferroviario adicional — el preventivo lava filtros y serpentín antes de que la suciedad reduzca el rendimiento.",
+    "faqAscensorTexto": "No. El transporte por escalera está incluido. Muchas fincas de Sant Andreu son de 3-5 plantas sin ascensor y no cobramos extra por subir material."
+  },
+  {
+    "slug": "sant-cugat",
+    "nombre": "Sant Cugat",
+    "cobertura": "Sant Cugat del Vallès, La Floresta y Valldoreix",
+    "intro": "Sant Cugat es zona residencial premium con <strong>chalets, casas unifamiliares y pisos amplios</strong>. Muchos equipos son multisplit o conductos con 3-5 unidades interiores. La proximidad a Collserola supone <strong>ambiente boscoso</strong>: polen en primavera y hojas caídas en otoño se depositan en unidades exteriores en jardín. El preventivo anual mantiene los filtros limpios y evita obstrucciones.",
+    "cuandoPedirTitulo": "Casa con jardín y bosque cerca",
+    "cuandoPedirTexto": "Si tu unidad exterior está en jardín o terraza con árboles cerca (habitual en La Floresta o Valldoreix), pide el correctivo (130€) al menos cada 2 años: elimina hojas, polen y polvo orgánico acumulado en el intercambiador, causa típica de reducción de rendimiento en otoño.",
+    "faqCadaCuantoTexto": "En Sant Cugat recomendamos <strong>revisión anual</strong>. Los sistemas multisplit y conductos (habituales en casas unifamiliares) tienen más componentes y filtros que un split simple. Además, el ambiente boscoso genera polen y hojas que se depositan en el equipo exterior.",
+    "faqAscensorTexto": "No aplica extra. En chalets el acceso a unidades exteriores en cubierta o zona técnica está incluido. Si es piso, el transporte por escalera también sin coste extra."
+  },
+  {
+    "slug": "sant-marti",
+    "nombre": "Sant Martí",
+    "cobertura": "Poblenou, 22@, Diagonal Mar, El Clot i El Camp de l'Arpa",
+    "intro": "Sant Martí combina el <strong>Poblenou reformado + distrito 22@ (edificios corporativos)</strong> con barrios residenciales tradicionales (El Clot, Camp de l'Arpa). En 22@ los equipos suelen ser cassette o conductos para oficinas; en pisos reformados del Poblenou, splits de última generación con app WiFi. La proximidad al mar (Diagonal Mar) añade salitre en las fachadas litorales.",
+    "cuandoPedirTitulo": "Loft o piso reformado en Poblenou",
+    "cuandoPedirTexto": "Los lofts y pisos reformados del Poblenou suelen tener techos altos (3-4 m) y espacios diáfanos que exigen más al equipo. Si el equipo tiene 4-5 años y notas menos frío o más consumo, pide el diagnóstico (70€) — puede ser dimensionamiento inadecuado o simple ensuciamiento.",
+    "faqCadaCuantoTexto": "En Sant Martí recomendamos <strong>revisión anual</strong>. En zona 22@ y Diagonal Mar la proximidad al mar añade salitre; en Poblenou reformado, los espacios diáfanos y techos altos hacen trabajar más al equipo; en barrios más tradicionales (El Clot, Camp de l'Arpa) aplican los mismos criterios que en otros barrios urbanos densos.",
+    "faqAscensorTexto": "No. El transporte por escalera está incluido en fincas antiguas del Clot y Camp de l'Arpa. En bloques modernos del 22@ y Diagonal Mar hay ascensor de servicio para material técnico."
+  },
+  {
+    "slug": "sarria",
+    "nombre": "Sarrià",
+    "cobertura": "Sarrià, Sant Gervasi, Pedralbes alto y Les Tres Torres",
+    "intro": "Sarrià-Sant Gervasi es zona residencial alta con <strong>fincas señoriales antiguas + chalets con jardín + pisos amplios de reforma reciente</strong>. Los equipos suelen ser multisplit, conductos ocultos o cassette, con instalaciones cuidadas. El clima de zona alta (más fresco que centro BCN, humedad más baja) prolonga la vida útil del equipo si se mantiene bien.",
+    "cuandoPedirTitulo": "Instalaciones ocultas por conductos",
+    "cuandoPedirTexto": "Si tienes conductos ocultos en falso techo (habituales en Sarrià-Sant Gervasi), el preventivo revisa filtros de retorno y rejillas — puntos de suciedad que reducen caudal de aire con los años. El correctivo (130€) permite limpieza a fondo si lleva 3+ años sin revisar.",
+    "faqCadaCuantoTexto": "En Sarrià recomendamos <strong>revisión anual</strong>. En equipos multisplit y conductos hay más filtros y elementos que en un split simple. Además, en muchas fincas antiguas de la zona los equipos se han instalado adaptándose a la arquitectura protegida — el preventivo verifica que la ubicación siga funcionando bien.",
+    "faqAscensorTexto": "No aplica extra. En pisos de fincas antiguas de Sarrià con ascensor pequeño (histórico) subimos material por escalera sin coste. En chalets, el acceso a azotea o zona técnica está incluido."
+  },
+  {
+    "slug": "sants",
+    "nombre": "Sants",
+    "cobertura": "Sants, Hostafrancs, La Bordeta y Poble-sec",
+    "intro": "trabajamos con equipos instalados en fincas antiguas del barrio — pisos de 60 a 90 m², patios de luces estrechos y unidades exteriores colocadas en fachadas traseras o cubiertas. El preventivo anual detecta el desgaste típico de estos entornos —humedad del patio, polvo urbano de Gran Via y Paral·lel— antes de que se convierta en avería.",
+    "cuandoPedirTitulo": "Patio de luces con humedad",
+    "cuandoPedirTexto": "Los patios cerrados típicos de Sants generan humedad y polvo que se acumulan en el serpentín exterior. Si tu equipo lleva más de 2-3 temporadas sin revisión, conviene un correctivo (130€).",
+    "faqCadaCuantoTexto": "En pisos de Sants con patio de luces recomendamos <strong>una revisión anual</strong>. Los patios cerrados típicos del barrio acumulan más humedad y polvo urbano (Gran Via, Paral·lel) que una unidad exterior en fachada abierta, lo que acelera el ensuciamiento del serpentín. El preventivo anual detecta el desgaste antes de que se convierta en avería.",
+    "faqAscensorTexto": "No. El transporte de herramientas, hidrolimpiadora y material por escalera está incluido en el precio del mantenimiento, viva en el piso que viva. Muchas fincas del barrio (Sants, Hostafrancs, La Bordeta) no tienen ascensor y no cobramos extra por ello."
+  },
+  {
+    "slug": "terrassa",
+    "nombre": "Terrassa",
+    "cobertura": "Terrassa y núcleos del Vallès Occidental cercanos (Matadepera, Viladecavalls)",
+    "intro": "Terrassa tiene clima <strong>continental interior</strong> con veranos más calurosos que la costa (picos de 38-40 ºC) y noches más frescas en invierno. Los equipos trabajan intensivamente en verano por la diferencia térmica alta entre interior y exterior. El preventivo anual verifica el estado del compresor inverter y la presión de gas, factores clave con estas cargas de trabajo.",
+    "cuandoPedirTitulo": "Uso intensivo en pico de verano",
+    "cuandoPedirTexto": "Si tu equipo trabaja muchas horas seguidas en pleno julio-agosto y el rendimiento cae, el diagnóstico (70€) identifica si es dimensionamiento, gas o suciedad. En Terrassa el sobredimensionamiento es común — un equipo de 3.500 frigorías puede quedar corto en un salón sur mal aislado.",
+    "faqCadaCuantoTexto": "En Terrassa recomendamos <strong>revisión anual</strong> por la carga térmica extra del clima continental. Los equipos hacen más horas de trabajo en verano que en la costa, y el compresor inverter se desgasta más rápido — el preventivo verifica presiones y consumo antes del pico estival.",
+    "faqAscensorTexto": "No. El transporte por escalera está incluido. En Terrassa hay una mezcla de fincas antiguas del centro histórico y bloques modernos con ascensor — cubrimos ambos sin coste extra."
+  }
+]
