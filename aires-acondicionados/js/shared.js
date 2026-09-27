@@ -978,9 +978,10 @@ const PRECIOS_WEB = {
   'pared-dura-30cm':      { label: '+80 €',       valor: 80  },
   'pared-dura-extra-5cm': { label: '+20 €',       valor: 20  },
   /* Mantenimiento */
-  'mant-preventivo':  { label: '70 €',  suffix: '+IVA', valor: 70  },
-  'mant-correctivo':  { label: '130 €', suffix: '+IVA', valor: 130 },
-  'mant-diagnostico': { label: '70 €',  suffix: '+IVA', valor: 70  },
+  'mant-preventivo':     { label: '70 €',  suffix: '+IVA', valor: 70  },
+  'mant-correctivo':     { label: '130 €', suffix: '+IVA', valor: 130 },
+  'mant-diagnostico':    { label: '70 €',  suffix: '+IVA', valor: 70  },
+  'mant-limpieza-diag':  { label: '70 €',  suffix: '+IVA', valor: 70  },
 };
 
 function renderDynPrices() {
