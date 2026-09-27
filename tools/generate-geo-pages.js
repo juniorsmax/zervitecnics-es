@@ -26,6 +26,16 @@ const CIUDADES = require('./data/ciudades.json');
 
 const CHECK_SVG = '<svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>';
 
+// Los `precioDesde` en capacidades.json están declarados como precio final
+// "IVA incluido". La web se muestra en base sin IVA + sufijo "+IVA" (política
+// unificada). Este helper divide y redondea al euro entero.
+const IVA = 1.21;
+const baseSinIva = precioTotal => Math.round(precioTotal / IVA);
+function fmtEur(n) {
+  const s = String(n);
+  return s.length <= 3 ? s : s.slice(0, -3) + '.' + s.slice(-3);
+}
+
 const BRANDS_GRID_HTML = MARCAS.map(m =>
   `      <div class="brand-item" title="Instalación ${m.nombre} Barcelona"><a href="${m.slug}.html"><div class="brand-svg" style="color:${m.color};font-size:1.1rem;font-weight:700">${m.nombre.toUpperCase()}</div></a></div>`
 ).join('\n');
@@ -85,8 +95,8 @@ function paginaMarcaCiudad(marca, ciudad) {
   ${i === 1 ? "<div class='price-badge'>Más vendido</div>" : ''}
   <div class="price-name">${marca.modeloRecomendado} ${cap.kw} kW</div>
   <div class="price-desc">${cap.frig} frigorías · ${cap.m2Min}-${cap.m2Max} m²</div>
-  <div class="price-amount"><sup>€</sup>${cap.precioDesde.toLocaleString('es-ES')}</div>
-  <div class="price-from">Pack completo · IVA incluido</div>
+  <div class="price-amount"><sup>€</sup>${fmtEur(baseSinIva(cap.precioDesde))}<span class="iva-suffix">+IVA</span></div>
+  <div class="price-from">Pack completo · precio orientativo</div>
   <ul class="price-features">
     <li class="price-feature">${CHECK_SVG} Equipo + instalación</li>
     <li class="price-feature">${CHECK_SVG} Certificación profesional</li>
@@ -133,9 +143,7 @@ function paginaMarcaCiudad(marca, ciudad) {
     { q: `¿La garantía oficial de ${marca.nombre} sigue siendo válida si instaláis vosotros?`,
       a: `Sí. Somos instaladores certificados y aplicamos los procedimientos recomendados por ${marca.nombre}: vacío, prueba de estanqueidad y carga complementaria de refrigerante si la línea supera la carga precargada. Entregamos parte de trabajo con el material utilizado y las pruebas realizadas — documento válido para reclamar la garantía del fabricante (3 años).` },
     { q: `¿Hacéis mantenimiento de equipos ${marca.nombre} en ${ciudad.nombre}?`,
-      a: `Sí. Ofrecemos mantenimiento preventivo anual (70€) — limpieza, revisión y ajuste — y diagnóstico técnico de averías (70€) para equipos ${marca.nombre} en ${ciudad.nombre} y resto de ${ciudad.comarca}. Si tras el diagnóstico hace falta reparación, te derivamos al SAT oficial de ${marca.nombre} o a un técnico especializado.` },
-    { q: `¿Cuánto cuesta instalar un ${marca.nombre} en ${ciudad.nombre}?`,
-      a: `La instalación estándar tiene precio fijo según la potencia del equipo: 350€ para equipos hasta 4.500 frigorías y 450€ para equipos de más de 4.500 frigorías. Incluye 3 metros de cable, desagüe, canaleta, silentblocks, prueba de estanqueidad, vacío y anclajes. Metro adicional: 50€/m (equipos pequeños) o 65€/m (grandes). Si prefieres el pack todo incluido (equipo ${marca.nombre} + instalación completa), consulta la tabla de precios de arriba. Presupuesto gratuito con visita técnica en ${ciudad.nombre}.` }
+      a: `Sí. Ofrecemos mantenimiento preventivo anual (70€ + IVA) — limpieza, revisión y ajuste — y diagnóstico técnico de averías (70€ + IVA) para equipos ${marca.nombre} en ${ciudad.nombre} y resto de ${ciudad.comarca}. Si tras el diagnóstico hace falta reparación, te derivamos al SAT oficial de ${marca.nombre} o a un técnico especializado.` }
   ];
   jsonld.push(faqJsonLd(faqMC));
 
@@ -180,15 +188,18 @@ function paginaCapacidadCiudad(cap, ciudad) {
   const lightBg = '#0066FF22';
   const borderBg = '#0066FF44';
 
-  // Sample 3 brand cards: Daikin, Mitsubishi, LG (representative tiers)
+  // Sample 3 brand cards: Daikin, Mitsubishi, LG. Todas con el mismo precio
+  // base (sin escalera artificial +i*100); las diferencias reales entre marcas
+  // se ajustan a mano en cotización.
   const featuredBrands = ['daikin', 'mitsubishi', 'lg'].map(s => MARCAS.find(m => m.slug === s));
+  const precioBaseCap = baseSinIva(cap.precioDesde);
   const priceCardsHTML = featuredBrands.map((m, i) => `
 <div class="price-card${i === 1 ? ' featured' : ''}">
   ${i === 1 ? "<div class='price-badge'>Más vendido</div>" : ''}
   <div class="price-name">${m.modeloRecomendado} ${cap.kw} kW</div>
   <div class="price-desc">${cap.frig} frigorías · ${m.nombre}</div>
-  <div class="price-amount"><sup>€</sup>${(cap.precioDesde + i * 100).toLocaleString('es-ES')}</div>
-  <div class="price-from">Pack completo · IVA incluido</div>
+  <div class="price-amount"><sup>€</sup>${fmtEur(precioBaseCap)}<span class="iva-suffix">+IVA</span></div>
+  <div class="price-from">Pack completo · precio orientativo</div>
   <ul class="price-features">
     <li class="price-feature">${CHECK_SVG} Equipo + instalación</li>
     <li class="price-feature">${CHECK_SVG} Certificación profesional</li>
@@ -242,7 +253,7 @@ function paginaCapacidadCiudad(cap, ciudad) {
     { q: `¿${cap.frig} frigorías son suficientes para mi estancia en ${ciudad.nombre}?`,
       a: `Depende de la superficie, la orientación (sur/oeste requieren más potencia), la altura de techos y el aislamiento. Como referencia: ${cap.frig} frigorías cubren ${cap.m2Min}-${cap.m2Max} m² en condiciones estándar. En ${ciudad.nombre} hacemos visita técnica gratuita para calcular la potencia exacta.` },
     { q: `¿Cuánto cuesta un equipo de ${cap.frig} frigorías en ${ciudad.nombre}?`,
-      a: `Los equipos de ${cap.frig} frigorías arrancan desde ${cap.precioDesde}€ con instalación incluida (pack todo incluido). Si ya tienes el equipo, la instalación estándar cuesta 350€ (equipos hasta 4.500 frigorías) o 450€ (equipos de más de 4.500 frigorías). Presupuesto gratuito y sin compromiso en 24h.` }
+      a: `Los equipos de ${cap.frig} frigorías arrancan desde ${fmtEur(baseSinIva(cap.precioDesde))}€ + IVA con instalación incluida (pack todo incluido). Precio orientativo — el importe final depende del modelo concreto y la complejidad de la instalación. Presupuesto gratuito y sin compromiso en 24h.` }
   ];
   jsonld.push(faqJsonLd(faqCC));
 
@@ -402,7 +413,7 @@ ${p.checklistHTML}
     <div class="text-center mb-32 fade-up">
       <span class="section-label">${p.priceSectionLabel}</span>
       <h2 class="section-title">${p.priceSectionTitle}</h2>
-      <p class="section-subtitle">Pack completo: equipo + instalación + informe técnico incluido. IVA incluido. El precio final dependerá del modelo concreto y la complejidad de la instalación.</p>
+      <p class="section-subtitle">Pack completo: equipo + instalación + informe técnico incluido. Precio orientativo + IVA. El precio final dependerá del modelo concreto y la complejidad de la instalación.</p>
     </div>
     <div class="grid grid-3 fade-up">
 ${p.priceCardsHTML}

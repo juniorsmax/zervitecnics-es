@@ -30,6 +30,16 @@ const BRANDS_GRID_HTML = `
 
 const CHECK_SVG = '<svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>';
 
+// Los `precioDesde` en capacidades.json están declarados como precio final
+// "IVA incluido". La web se muestra en base sin IVA + sufijo "+IVA" (política
+// unificada). Este helper divide y redondea al euro entero.
+const IVA = 1.21;
+const baseSinIva = precioTotal => Math.round(precioTotal / IVA);
+function fmtEur(n) {
+  const s = String(n);
+  return s.length <= 3 ? s : s.slice(0, -3) + '.' + s.slice(-3);
+}
+
 function buildPage(marca, cap) {
   const fileName = `${marca.slug}-${cap.frig}-frigorias.html`;
   const url = `https://zervitecnics.es/aires-acondicionados/marcas/${fileName}`;
@@ -39,26 +49,21 @@ function buildPage(marca, cap) {
   const lightBg = marca.color + '22';
   const borderBg = marca.color + '44';
   const checklistHTML = marca.checklist.map(item => `<li class="service-check-item">${CHECK_SVG}${item}</li>`).join('\n');
-  const priceCards = [
-    { name: `${marca.modeloRecomendado} ${cap.kw} kW`, sub: `Eficiencia A+++`, price: cap.precioDesde, featured: false },
-    { name: `${marca.modeloRecomendado} ${cap.kw} kW · WiFi`, sub: `Eficiencia A+++ · WiFi`, price: cap.precioDesde + 200, featured: true },
-    { name: `${marca.modeloRecomendado} ${cap.kw} kW · Premium`, sub: `Diseño premium`, price: cap.precioDesde + 400, featured: false }
-  ];
-
-  const priceCardsHTML = priceCards.map(p => `
-<div class="price-card${p.featured ? ' featured' : ''}">
-  ${p.featured ? "<div class='price-badge'>Más vendido</div>" : ''}
-  <div class="price-name">${p.name}</div>
-  <div class="price-desc">${p.sub}</div>
-  <div class="price-amount"><sup>€</sup>${p.price.toLocaleString('es-ES')}</div>
-  <div class="price-from">Pack completo · IVA incluido</div>
+  const precioBase = baseSinIva(cap.precioDesde);
+  const priceCardHTML = `
+<div class="price-card featured">
+  <div class='price-badge'>Recomendado</div>
+  <div class="price-name">${marca.modeloRecomendado} ${cap.kw} kW</div>
+  <div class="price-desc">Eficiencia A+++</div>
+  <div class="price-amount"><sup>€</sup>${fmtEur(precioBase)}<span class="iva-suffix">+IVA</span></div>
+  <div class="price-from">Pack completo · precio orientativo</div>
   <ul class="price-features">
     <li class="price-feature">${CHECK_SVG} Equipo + instalación</li>
     <li class="price-feature">${CHECK_SVG} Certificación profesional</li>
     <li class="price-feature">${CHECK_SVG} Doble garantía incluida</li>
   </ul>
   <a href="../index.html#presupuesto" class="btn btn-primary w-full">Solicitar presupuesto</a>
-</div>`).join('\n');
+</div>`;
 
   const waText = encodeURIComponent(`Hola, me interesa instalar un ${marca.nombre} de ${cap.frig} frigorías en Barcelona.`);
 
@@ -121,7 +126,7 @@ function buildPage(marca, cap) {
     "brand": { "@type": "Brand", "name": "${marca.nombre}" },
     "offers": {
       "@type": "Offer",
-      "price": "${cap.precioDesde}",
+      "price": "${precioBase}",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
       "url": "${url}",
@@ -182,10 +187,12 @@ ${checklistHTML}
     <div class="text-center mb-32 fade-up">
       <span class="section-label">Precios orientativos 2026</span>
       <h2 class="section-title">Modelos ${marca.nombre} de ${cap.frig} frigorías en Barcelona</h2>
-      <p class="section-subtitle">Pack completo: equipo + instalación + informe técnico incluido. IVA incluido. El precio final dependerá del modelo concreto y la complejidad de la instalación.</p>
+      <p class="section-subtitle">Pack completo: equipo + instalación + informe técnico incluido. Precio orientativo + IVA. El precio final dependerá del modelo concreto y la complejidad de la instalación.</p>
     </div>
-    <div class="grid grid-3 fade-up">
-${priceCardsHTML}
+    <div class="fade-up" style="display:flex;justify-content:center">
+      <div style="max-width:360px;width:100%">
+${priceCardHTML}
+      </div>
     </div>
   </div>
 </section>
