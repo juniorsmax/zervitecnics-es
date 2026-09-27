@@ -963,8 +963,6 @@ document.addEventListener('DOMContentLoaded', () => {
    NUNCA poner precios en el HTML
 ════════════════════════════════════════════════ */
 const PRECIOS_WEB = {
-  'mo-basico':    { label: 'Desde 299 €',   valor: 299  },
-  'mo-estandar':  { label: 'Desde 350 €',   valor: 350  },
   'pack-eco':     { label: 'Desde 799 €',   valor: 799  },
   'pack-medio':   { label: 'Desde 1.299 €', valor: 1299 },
   'pack-premium': { label: 'Desde 1.699 €', valor: 1699 },
