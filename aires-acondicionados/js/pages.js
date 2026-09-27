@@ -126,7 +126,7 @@ const PRECIOS = {
       name: 'Multisplit 2×1',
       desc: '1 unidad exterior + 2 interiores',
       from: 'Precio desde',
-      price: 2199,
+      price: 1799,
       featured: false,
       badge: null,
       features: [
