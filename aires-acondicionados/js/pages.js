@@ -13,7 +13,7 @@ const PRECIOS = {
       name: 'Split 1×1 · 2,5 kW',
       desc: 'Ideal para habitaciones de hasta 20 m²',
       from: 'Precio desde',
-      price: 1099,
+      price: 908,
       featured: false,
       badge: null,
       features: [
@@ -29,7 +29,7 @@ const PRECIOS = {
       name: 'Split 1×1 · 3,5 kW',
       desc: 'Perfecto para salones de 20–35 m²',
       from: 'El más popular',
-      price: 1299,
+      price: 1074,
       featured: true,
       badge: 'Más vendido',
       features: [
@@ -45,7 +45,7 @@ const PRECIOS = {
       name: 'Split 1×1 · 5 kW',
       desc: 'Para espacios grandes de 35–60 m²',
       from: 'Precio desde',
-      price: 1549,
+      price: 1280,
       featured: false,
       badge: null,
       features: [
@@ -61,7 +61,7 @@ const PRECIOS = {
       name: 'Split 1×1 · 6 kW',
       desc: 'Espacios de 50–70 m² (≈5.000 frigorías)',
       from: 'Precio desde',
-      price: 1699,
+      price: 1404,
       featured: false,
       badge: null,
       features: [
@@ -79,7 +79,7 @@ const PRECIOS = {
       name: 'Solo instalación · Básica',
       desc: 'Tienes el equipo, nosotros lo instalamos',
       from: 'Precio desde',
-      price: 299,
+      price: 247,
       featured: false,
       badge: null,
       features: [
@@ -89,36 +89,6 @@ const PRECIOS = {
         'Informe técnico de instalación',
         'Garantía 3 años instalación'
       ]
-    },
-    {
-      name: 'Solo instalación · Completa',
-      desc: 'Instalación completa con acabado cuidado',
-      from: 'Más recomendado',
-      price: 399,
-      featured: true,
-      badge: 'Recomendado',
-      features: [
-        'Todo lo de la básica',
-        'Limpieza de zona de trabajo',
-        'Informe técnico detallado',
-        'Garantía 3 años instalación',
-        'Soporte post-instalación'
-      ]
-    },
-    {
-      name: 'Solo instalación · Premium',
-      desc: 'Instalación con acabado y estética premium',
-      from: 'Precio desde',
-      price: 499,
-      featured: false,
-      badge: null,
-      features: [
-        'Todo lo de la completa',
-        'Canaleta decorativa blanca',
-        'Acabado premium cuidado',
-        'Garantía 3 años instalación',
-        'Soporte prioritario'
-      ]
     }
   ],
   multisplit: [
@@ -126,7 +96,7 @@ const PRECIOS = {
       name: 'Multisplit 2×1',
       desc: '1 unidad exterior + 2 interiores',
       from: 'Precio desde',
-      price: 1799,
+      price: 1487,
       featured: false,
       badge: null,
       features: [
@@ -158,7 +128,7 @@ const PRECIOS = {
       name: 'Multisplit 4×1',
       desc: '1 unidad exterior + 4 interiores',
       from: 'Precio desde',
-      price: 3599,
+      price: 2974,
       featured: false,
       badge: null,
       features: [
@@ -183,8 +153,8 @@ function renderPrices() {
         <div class="price-name">${card.name}</div>
         <div class="price-desc">${card.desc}</div>
         ${card.price
-          ? `<div class="price-amount"><sup>€</sup>${card.price.toLocaleString('es-ES')}</div>
-             <div class="price-from">${card.from} · IVA incluido</div>`
+          ? `<div class="price-amount"><sup>€</sup>${card.price.toLocaleString('es-ES')}<span class="iva-suffix">+IVA</span></div>
+             <div class="price-from">${card.from} · precio orientativo</div>`
           : `<div class="price-amount price-consultar">Consultar disponibilidad</div>
              <div class="price-from">Llamar para confirmar</div>`}
         <ul class="price-features">

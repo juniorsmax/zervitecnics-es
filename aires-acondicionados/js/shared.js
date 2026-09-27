@@ -963,10 +963,10 @@ document.addEventListener('DOMContentLoaded', () => {
    NUNCA poner precios en el HTML
 ════════════════════════════════════════════════ */
 const PRECIOS_WEB = {
-  'pack-eco':     { label: 'Desde 799 €',   valor: 799  },
-  'pack-medio':   { label: 'Desde 1.299 €', valor: 1299 },
-  'pack-premium': { label: 'Desde 1.699 €', valor: 1699 },
-  'multi-2x1':    { label: 'Desde 1.799 €', valor: 1799 },
+  'pack-eco':     { label: 'Desde 660 €',   suffix: '+IVA', valor: 660  },
+  'pack-medio':   { label: 'Desde 1.074 €', suffix: '+IVA', valor: 1074 },
+  'pack-premium': { label: 'Desde 1.404 €', suffix: '+IVA', valor: 1404 },
+  'multi-2x1':    { label: 'Desde 1.487 €', suffix: '+IVA', valor: 1487 },
   'multi-3x1':    { label: 'Consultar disponibilidad', valor: null },
   /* Instalación personalizada — 3 tramos por capacidad */
   'inst-hasta-4000':      { label: 'Desde 350 €', valor: 350 },
