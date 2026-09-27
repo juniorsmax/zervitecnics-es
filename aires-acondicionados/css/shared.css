@@ -947,6 +947,7 @@ input, textarea, select { font-family: inherit; }
   margin-bottom: 4px;
 }
 .price-amount sup { font-size: 1.2rem; vertical-align: top; margin-top: 8px; }
+.price-amount.price-consultar { font-size: 1.35rem; color: var(--gray-700, #374151); font-weight: 700; letter-spacing: -.01em; }
 
 /* Sufijo IVA — escala relativa al padre (em, no rem), tono gris discreto */
 .iva-suffix {

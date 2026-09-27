@@ -141,8 +141,8 @@ const PRECIOS = {
     {
       name: 'Multisplit 3×1',
       desc: '1 unidad exterior + 3 interiores',
-      from: 'Más popular',
-      price: 2899,
+      from: 'Consultar disponibilidad',
+      price: null,
       featured: true,
       badge: 'Más popular',
       features: [
@@ -182,8 +182,11 @@ function renderPrices() {
         ${card.badge ? `<div class="price-badge">${card.badge}</div>` : ''}
         <div class="price-name">${card.name}</div>
         <div class="price-desc">${card.desc}</div>
-        <div class="price-amount"><sup>€</sup>${card.price.toLocaleString('es-ES')}</div>
-        <div class="price-from">${card.from} · IVA incluido</div>
+        ${card.price
+          ? `<div class="price-amount"><sup>€</sup>${card.price.toLocaleString('es-ES')}</div>
+             <div class="price-from">${card.from} · IVA incluido</div>`
+          : `<div class="price-amount price-consultar">Consultar disponibilidad</div>
+             <div class="price-from">Llamar para confirmar</div>`}
         <ul class="price-features">
           ${card.features.map(f => `
             <li class="price-feature">
