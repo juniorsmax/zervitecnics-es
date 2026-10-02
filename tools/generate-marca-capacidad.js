@@ -134,6 +134,31 @@ function buildPage(marca, cap) {
     }
   }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://zervitecnics.es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "${marca.nombre}",
+      "item": "https://zervitecnics.es/aires-acondicionados/marcas/${marca.slug}.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "${cap.frig} frigorías"
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6C8L3VX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
