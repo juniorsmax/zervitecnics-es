@@ -515,7 +515,7 @@ function initCookies() {
     hideBanner();
   });
   btnConfig?.addEventListener('click', () => {
-    window.location.href = (window.location.pathname.includes('/pages/') ? '' : 'pages/') + 'cookies.html';
+    window.location.href = '/aires-acondicionados/legal/cookies.html';
   });
 
   function hideBanner() { banner.classList.remove('visible'); }

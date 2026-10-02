@@ -13,37 +13,14 @@ aires-zervitecnics/
 ├── js/
 │   ├── shared.js               # Lógica compartida (nav, cookies, formulario, carrusel, FAQ)
 │   └── pages.js                # Lógica de subpáginas (precios dinámicos, schema Service)
-├── img/
-│   ├── logo_zervitecnics.png   # Logo
-│   ├── hero_main.jpg           # Imagen hero principal
-│   ├── hero_split.jpg          # Imagen split
-│   ├── hero_technician.jpg     # Imagen técnico
-│   ├── multisplit_service.jpg  # Imagen multisplit
-│   ├── conductos_service.jpg   # Imagen conductos
-│   └── barcelona_aerial.jpg    # Imagen aérea Barcelona
-└── pages/
-    ├── split.html              # Instalación Split 1×1
-    ├── multisplit.html         # Instalación Multisplit
-    ├── conductos.html          # Aire por Conductos
-    ├── subvenciones.html       # Subvenciones 2026
-    ├── precios.html            # Tabla de precios completa
-    ├── daikin.html             # Marca Daikin
-    ├── mitsubishi.html         # Marca Mitsubishi Electric
-    ├── fujitsu.html            # Marca Fujitsu
-    ├── lg.html                 # Marca LG
-    ├── samsung.html            # Marca Samsung
-    ├── hisense.html            # Marca Hisense
-    ├── eixample.html           # Zona SEO: L'Eixample
-    ├── gracia.html             # Zona SEO: Gràcia
-    ├── hospitalet.html         # Zona SEO: L'Hospitalet
-    ├── badalona.html           # Zona SEO: Badalona
-    ├── sant-cugat.html         # Zona SEO: Sant Cugat
-    ├── cornella.html           # Zona SEO: Cornellà
-    ├── terrassa.html           # Zona SEO: Terrassa
-    ├── sabadell.html           # Zona SEO: Sabadell
-    ├── privacidad.html         # Política de Privacidad (RGPD)
-    ├── cookies.html            # Política de Cookies
-    └── aviso-legal.html        # Aviso Legal (LSSI)
+└── img/
+    ├── logo_zervitecnics.png   # Logo
+    ├── hero_main.jpg           # Imagen hero principal
+    ├── hero_split.jpg          # Imagen split
+    ├── hero_technician.jpg     # Imagen técnico
+    ├── multisplit_service.jpg  # Imagen multisplit
+    ├── conductos_service.jpg   # Imagen conductos
+    └── barcelona_aerial.jpg    # Imagen aérea Barcelona
 ```
 
 ## Configuración necesaria antes del despliegue
