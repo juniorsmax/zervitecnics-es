@@ -3,24 +3,38 @@
 ## Estructura del proyecto
 
 ```
-aires-zervitecnics/
-├── index.html                  # Página principal
-├── sitemap.xml                 # Sitemap SEO
-├── robots.txt                  # Directivas para buscadores
-├── css/
-│   ├── shared.css              # Estilos compartidos (variables, header, footer, componentes)
-│   └── pages.css               # Estilos específicos de subpáginas
-├── js/
-│   ├── shared.js               # Lógica compartida (nav, cookies, formulario, carrusel, FAQ)
-│   └── pages.js                # Lógica de subpáginas (precios dinámicos, schema Service)
-└── img/
-    ├── logo_zervitecnics.png   # Logo
-    ├── hero_main.jpg           # Imagen hero principal
-    ├── hero_split.jpg          # Imagen split
-    ├── hero_technician.jpg     # Imagen técnico
-    ├── multisplit_service.jpg  # Imagen multisplit
-    ├── conductos_service.jpg   # Imagen conductos
-    └── barcelona_aerial.jpg    # Imagen aérea Barcelona
+zervitecnics-es/
+├── index.html                       # Portada del dominio (multi-servicio)
+├── llms.txt                         # Resumen del sitio para modelos de IA
+├── sitemap.xml                      # Sitemap SEO (vertical + geo-pages)
+├── sitemap-guias.xml                # Sitemap específico de guías
+├── robots.txt                       # Directivas para buscadores
+├── 404.html                         # Página de error
+├── CNAME                            # Dominio GitHub Pages
+├── aires-acondicionados/            # Vertical de aire acondicionado
+│   ├── index.html                   # Hub del vertical
+│   ├── precios.html                 # Tabla de precios de referencia
+│   ├── ofertas.html                 # Packs con descuento vigente
+│   ├── subvenciones.html            # Landing transaccional de subvenciones
+│   ├── mantenimiento.html           # Hub de mantenimiento
+│   ├── instalacion-personalizada.html
+│   ├── gracias.html                 # Confirmación de formulario
+│   ├── css/                         # Estilos del vertical
+│   ├── js/                          # Lógica del vertical
+│   ├── img/                         # Imágenes del vertical
+│   ├── categorias/                  # Tipos de equipo (split, multisplit, conductos, cassette…)
+│   ├── marcas/                      # Marca raíz + marca×ciudad + marca×capacidad
+│   ├── capacidades/                 # Capacidad×ciudad (frigorías × municipio)
+│   ├── zonas/                       # Zonas de instalación (distritos BCN + municipios)
+│   ├── mantenimiento-zonas/         # Mantenimiento por zona
+│   ├── mantenimiento-marcas/        # Mantenimiento por marca
+│   ├── guias/                       # Contenido editorial informativo
+│   └── legal/                       # Aviso legal, cookies, privacidad
+├── docs/                            # Documentación interna del proyecto
+│   └── MAPA_PALABRAS_CLAVE.md       # Mapa de keywords por intención
+└── tools/                           # Generadores Node y datos fuente
+    ├── data/                        # JSONs de ciudades, marcas, capacidades…
+    └── *.js                         # Scripts de generación de páginas y sitemap
 ```
 
 ## Configuración necesaria antes del despliegue
@@ -30,7 +44,7 @@ aires-zervitecnics/
 1. Crear cuenta en [emailjs.com](https://www.emailjs.com)
 2. Crear un servicio de email (Gmail, SMTP, etc.)
 3. Crear una plantilla con las variables: `{{nombre}}`, `{{telefono}}`, `{{zona}}`, `{{tipo}}`, `{{obs}}`
-4. En `js/shared.js`, buscar y reemplazar:
+4. En `aires-acondicionados/js/shared.js`, buscar y reemplazar:
    - `TU_PUBLIC_KEY` → tu Public Key de EmailJS
    - `TU_SERVICE_ID` → tu Service ID
    - `TU_TEMPLATE_ID` → tu Template ID
@@ -46,12 +60,12 @@ El GTM ya está integrado con el ID `GTM-TF473QQQ`. Para usar tu propio:
 Busca y reemplaza en todos los archivos:
 - `625 215 983` → tu número real
 - `+34625215983` → tu número en formato internacional
-- `info@zervitecnics.com` → tu email real
-- `www.zervitecnics.com` → tu dominio real
+- `info@zervitecnics.es` → tu email real
+- `zervitecnics.es` → tu dominio real
 
 ### 4. Imágenes
 
-Las imágenes en `/img/` son generadas con IA. Puedes reemplazarlas por fotos reales de tus instalaciones manteniendo los mismos nombres de archivo.
+Las imágenes en `aires-acondicionados/img/` son generadas con IA. Puedes reemplazarlas por fotos reales de tus instalaciones manteniendo los mismos nombres de archivo.
 
 ## Despliegue
 
@@ -64,17 +78,45 @@ Las imágenes en `/img/` son generadas con IA. Puedes reemplazarlas por fotos re
 - Sube todos los archivos al directorio raíz de tu hosting
 - Asegúrate de que el servidor sirve `index.html` como página principal
 
-## SEO — Palabras clave objetivo
+## SEO — Mapa de palabras clave
 
-| Página | Keyword principal |
-|--------|-------------------|
-| index.html | instalación aire acondicionado Barcelona |
-| split.html | instalación split Barcelona |
-| multisplit.html | instalación multisplit Barcelona |
-| conductos.html | aire acondicionado conductos Barcelona |
-| subvenciones.html | subvenciones aire acondicionado Barcelona 2026 |
-| daikin.html | instalación Daikin Barcelona |
-| eixample.html | aire acondicionado Eixample Barcelona |
+El inventario completo de intenciones y palabras clave por tipo de página
+(hub, precios, ofertas, subvenciones, categorías, marcas raíz, marca-ciudad,
+marca-capacidad, capacidad-ciudad, zonas, mantenimiento, guías, legal y
+portada), junto con las canibalizaciones detectadas y los huecos de intención,
+vive en [`docs/MAPA_PALABRAS_CLAVE.md`](docs/MAPA_PALABRAS_CLAVE.md).
+
+Validar con Search Console cuando haya al menos 60 días de datos.
+
+## Reglas para páginas nuevas
+
+Toda página nueva (servicio, zona, marca, guía o cualquier otro tipo) debe
+cumplir todos los puntos siguientes **antes de publicarse**:
+
+- **a) Keyword e intención asignadas.** Tener una *keyword principal* y una
+  *intención* (informativa / comparación / transaccional / local) asignadas
+  en el mapa, y quedar registrada en
+  [`docs/MAPA_PALABRAS_CLAVE.md`](docs/MAPA_PALABRAS_CLAVE.md).
+- **b) Sin solapamiento de keyword principal.** No atacar la misma keyword
+  principal que otra página existente. Si hay solapamiento, decidir cuál gana
+  (y la perdedora se funde, se canonicaliza o cambia de eje).
+- **c) Title, meta description y H1 únicos** en todo el sitio.
+- **d) Schema adecuado** al tipo de página (Service, LocalBusiness, FAQPage,
+  Article, etc.) **y BreadcrumbList obligatorio**.
+- **e) Enlazado interno desde el hub** correspondiente y **entrada en
+  `sitemap.xml`** (o `sitemap-guias.xml` si es guía).
+- **f) Solo afirmar lo demostrable.** Sin reseñas, cifras ni certificaciones
+  inventadas. Sin dirección postal.
+- **g) Precios solo desde la fuente única.** Los precios solo pueden ser los
+  vigentes de la fuente única de precios, con `+ IVA` y sin suplementos.
+- **h) Contenido propio**, no una plantilla con la ciudad o la marca
+  cambiada. Diferenciación real por página (barrio, equipo, m², ejemplos).
+- **i) Servicios nuevos (reformas, electricidad, diseño web)**: solo se
+  añaden a `llms.txt`, al schema de la portada y a la ficha de Google cuando
+  **ya estén publicadas** con página real. Nada de prometer servicios futuros.
+- **j) No prometer reparaciones ni derivación al SAT oficial.** La web habla
+  exclusivamente de instalación y mantenimiento. Las keywords de avería,
+  recarga de gas o servicio técnico correctivo quedan fuera del mapa.
 
 ## Soporte técnico
 
