@@ -251,6 +251,54 @@
     footer a { color: rgba(255,255,255,.9); text-decoration: underline; }
     footer .row { margin: 6px 0; }
   </style>
+
+  <!-- Schema JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://zervitecnics.es/#organization",
+    "name": "Zervitecnics",
+    "url": "https://zervitecnics.es/",
+    "logo": "https://zervitecnics.es/aires-acondicionados/img/logo_zervitecnics.png",
+    "image": "https://zervitecnics.es/aires-acondicionados/img/hero_main.jpg",
+    "description": "Servicios profesionales en Barcelona y alrededores. Hoy ofrecemos instalación y mantenimiento de aire acondicionado.",
+    "email": "info@zervitecnics.es",
+    "telephone": "+34625215983",
+    "areaServed": [
+      { "@type": "City", "name": "Barcelona" },
+      { "@type": "AdministrativeArea", "name": "Barcelona y alrededores" }
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+34625215983",
+      "email": "info@zervitecnics.es",
+      "contactType": "customer service",
+      "availableLanguage": ["es"]
+    }],
+    "makesOffer": [{
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Instalación y mantenimiento de aire acondicionado",
+        "url": "https://zervitecnics.es/aires-acondicionados/",
+        "areaServed": "Barcelona y alrededores",
+        "provider": { "@id": "https://zervitecnics.es/#organization" }
+      }
+    }]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://zervitecnics.es/#website",
+    "url": "https://zervitecnics.es/",
+    "name": "Zervitecnics",
+    "inLanguage": "es-ES",
+    "publisher": { "@id": "https://zervitecnics.es/#organization" }
+  }
+  </script>
 </head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6C8L3VX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
