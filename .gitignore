@@ -16,3 +16,7 @@ dump.rdb
 # Dependencias y build
 node_modules/
 dist/
+
+# Graphify (prueba local, no versionar)
+graphify-out/
+tools/graphify-out/

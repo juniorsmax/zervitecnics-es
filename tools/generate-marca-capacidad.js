@@ -14,6 +14,7 @@ const CACHE_BUST = 'v=20260625a';
 
 const MARCAS = require('./data/marcas.json');
 const CAPACIDADES = require('./data/capacidades.json');
+const INTERLINK = require('./lib/interlink.js');
 
 const BRANDS_GRID_HTML = `
       <div class="brand-item" title="Instalación Daikin Barcelona"><a href="daikin.html"><div class="brand-svg" style="color:#0067B1;font-size:1.2rem;font-weight:900;letter-spacing:-.02em">DAIKIN</div></a></div>
@@ -66,6 +67,7 @@ function buildPage(marca, cap) {
 </div>`;
 
   const waText = encodeURIComponent(`Hola, me interesa instalar un ${marca.nombre} de ${cap.frig} frigorías en Barcelona.`);
+  const xlinkBlock = INTERLINK.bloqueMarcaCapacidad(marca, cap);
 
   return `<!DOCTYPE html>
 <html lang="es">
@@ -236,6 +238,7 @@ ${priceCardHTML}
   </div>
 </section>
 
+${xlinkBlock}
 <section class="section cta-section">
   <div class="container">
     <div class="cta-inner fade-up">
