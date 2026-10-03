@@ -23,6 +23,7 @@ const CACHE_BUST = 'v=20260625a';
 const MARCAS = require('./data/marcas.json');
 const CAPACIDADES = require('./data/capacidades.json');
 const CIUDADES = require('./data/ciudades.json');
+const INTERLINK = require('./lib/interlink.js');
 
 const CHECK_SVG = '<svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>';
 
@@ -175,7 +176,8 @@ function paginaMarcaCiudad(marca, ciudad) {
     ],
     ctaTitle: `¿Necesitas instalar o revisar un ${marca.nombre} en ${ciudad.nombre}?`,
     ctaLocation: `${marca.slug}-${ciudad.slug}`,
-    jsonld
+    jsonld,
+    xlinkBlock: INTERLINK.isRound1(ciudad.slug) ? INTERLINK.bloqueMarcaCiudad(marca, ciudad) : ''
   });
 }
 
@@ -293,7 +295,8 @@ function paginaCapacidadCiudad(cap, ciudad) {
     ctaTitle: `¿Quieres un aire acondicionado de ${cap.frig} frigorías en ${ciudad.nombre}?`,
     ctaLocation: `${cap.frig}-${ciudad.slug}`,
     jsonld,
-    brandsGridOverride: brandsGridRelative
+    brandsGridOverride: brandsGridRelative,
+    xlinkBlock: INTERLINK.isRound1(ciudad.slug) ? INTERLINK.bloqueCapacidadCiudad(cap, ciudad) : ''
   });
 }
 
@@ -432,7 +435,7 @@ ${capacityInfoParasHTML}
     </div>
   </div>
 </section>
-${p.faqHTML || ''}
+${p.faqHTML || ''}${p.xlinkBlock || ''}
 <section class="section cta-section">
   <div class="container">
     <div class="cta-inner fade-up">
