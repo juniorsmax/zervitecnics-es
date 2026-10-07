@@ -1305,3 +1305,27 @@ input, textarea, select { font-family: inherit; }
   outline: 3px solid #ffcb05;
   outline-offset: 2px;
 }
+
+/* ── Opiniones (generado en build desde data/reviews.json) ── */
+.rev-summary { color: var(--gray-700, #4b5563); margin-top: 8px; }
+.rev-list {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.rev-item {
+  background: #fff; border: 1px solid var(--gray-200, #e5e7eb);
+  border-radius: 12px; padding: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.rev-item { background: var(--white, #fff); border: 1px solid var(--gray-200, #e5e7eb); border-radius: 14px; padding: 18px; }
+.rev-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.rev-avatar { width: 40px; height: 40px; flex: 0 0 40px; border-radius: 50%; background: #5c6bc0; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 1.1em; }
+.rev-who { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.rev-author { font-style: normal; font-weight: 600; color: var(--gray-900, #111827); }
+.rev-when { font-size: .82em; color: var(--gray-500, #6b7280); }
+.rev-g { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--gray-200, #e5e7eb); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .9em; color: #4285f4; background: #fff; }
+.rev-stars { color: #fbbc04; font-size: 1.1em; letter-spacing: 2px; }
+.rev-text { margin: 8px 0 0; color: var(--gray-800, #1f2937); font-style: normal; }
+.rev-cta { text-align: center; margin-top: 24px; }
+.rev-attrib { text-align: center; font-size: .85em; color: var(--gray-500, #9ca3af); margin-top: 16px; }
