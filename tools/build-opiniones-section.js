@@ -41,16 +41,23 @@ function stars(rating) {
   return `<span class="rev-stars" aria-label="${r} de 5 estrellas">${full}${empty}</span>`;
 }
 
-function renderReview(r) {
+const GLOGO = '<span class="rev-g" aria-label="Google" title="Google">G</span>';
+
+function renderReview(r, mapsUri) {
   const name = escapeHtml(r.author?.name || 'Cliente de Google');
+  const initial = escapeHtml((r.author?.name || 'G').trim().charAt(0).toUpperCase());
   const text = escapeHtml((r.text || '').trim());
   const when = r.relative
     ? escapeHtml(r.relative)
     : (r.publishTime ? new Date(r.publishTime).toISOString().slice(0, 10) : '');
   return `  <li class="rev-item">
+    <div class="rev-head">
+      <span class="rev-avatar" aria-hidden="true">${initial}</span>
+      <div class="rev-who"><cite class="rev-author">${name}</cite><span class="rev-when">${when}</span></div>
+      ${GLOGO}
+    </div>
     ${stars(r.rating)}
     <blockquote class="rev-text">${text}</blockquote>
-    <footer class="rev-footer"><cite class="rev-author">${name}</cite>${when ? ` <span class="rev-when">· ${when}</span>` : ''}</footer>
   </li>`;
 }
 
@@ -69,7 +76,7 @@ function renderSection(data) {
     (count ? ` sobre ${count} reseñas` : '') +
     ' en <a href="' + escapeHtml(mapsUri || 'https://www.google.com/maps') + '" rel="nofollow noopener" target="_blank">Google</a>.</p>';
 
-  const list = reviews.map(renderReview).join('\n');
+  const list = reviews.map(r => renderReview(r, mapsUri)).join('\n');
 
   const cta = reviewUrl
     ? `  <p class="rev-cta"><a class="btn btn-outline" href="${escapeHtml(reviewUrl)}" rel="nofollow noopener" target="_blank">Deja tu reseña en Google</a></p>`
