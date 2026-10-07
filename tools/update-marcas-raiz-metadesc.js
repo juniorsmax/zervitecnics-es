@@ -22,13 +22,13 @@ for (const m of MARCAS) {
   const modelo = m.modeloRecomendado;
 
   // Meta desc canónica F6 (155-165 chars ideal)
-  const metaDesc = `Instalación de aires acondicionados ${nombreVisible} en Barcelona: ${tagline}. Recomendamos la serie ${modelo}. Instaladores certificados. Presupuesto gratis en 24h.`;
+  const metaDesc = `Instalación de aires acondicionados ${nombreVisible} en Barcelona: ${tagline}. Recomendamos la serie ${modelo}. Instaladores certificados. Respuesta en menos de 2 h en horario de atención.`;
 
   // og:description (más corta)
   const ogDesc = `${nombreVisible} en Barcelona: ${m.tagline}. Recomendamos ${modelo}. Instaladores certificados con parte de trabajo firmado.`;
 
   // Marker de idempotencia (frase distintiva única F6)
-  const marker = `Recomendamos la serie ${modelo}. Instaladores certificados. Presupuesto gratis en 24h.`;
+  const marker = `Recomendamos la serie ${modelo}. Instaladores certificados. Respuesta en menos de 2 h en horario de atención.`;
   if (content.includes(marker)) { skipped++; continue; }
 
   // Reemplaza meta description
