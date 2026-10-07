@@ -45,7 +45,7 @@ function buildPage(marca, cap) {
   const fileName = `${marca.slug}-${cap.frig}-frigorias.html`;
   const url = `https://zervitecnics.es/aires-acondicionados/marcas/${fileName}`;
   const title = `Aire Acondicionado ${marca.nombre} ${cap.frig} Frigorías Barcelona | Instalación`;
-  const desc = `Instalación de aire acondicionado ${marca.nombre} ${cap.frig} frigorías (${cap.btu} BTU) en Barcelona. Ideal para ${cap.descripcionUso}. Presupuesto gratis en 24h.`;
+  const desc = `Instalación de aire acondicionado ${marca.nombre} ${cap.frig} frigorías (${cap.btu} BTU) en Barcelona. Ideal para ${cap.descripcionUso}. Respuesta en menos de 2 h en horario de atención.`;
   const h1 = `Aire acondicionado <span style="color:${marca.color}">${marca.nombre} ${cap.frig} frigorías</span> en Barcelona`;
   const lightBg = marca.color + '22';
   const borderBg = marca.color + '44';
@@ -243,7 +243,7 @@ ${xlinkBlock}
   <div class="container">
     <div class="cta-inner fade-up">
       <h2 class="cta-title">¿Quieres instalar un ${marca.nombre} de ${cap.frig} frigorías en Barcelona?</h2>
-      <p class="cta-subtitle">Presupuesto gratuito en menos de 24 horas. Instalador profesional.</p>
+      <p class="cta-subtitle">Respuesta en menos de 2 h en horario de atención. Instalador profesional.</p>
       <div class="cta-buttons">
         <a href="tel:+34625215983" class="btn btn-primary btn-lg" data-location="cta-${marca.slug}-${cap.frig}">Llamar: 625 215 983</a>
         <a href="https://wa.me/34625215983?text=${waText}" class="btn btn-green btn-lg" target="_blank" rel="noopener">WhatsApp ahora</a>

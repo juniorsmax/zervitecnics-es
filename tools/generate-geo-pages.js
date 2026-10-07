@@ -85,7 +85,7 @@ function paginaMarcaCiudad(marca, ciudad) {
   const fileName = `${marca.slug}-${ciudad.slug}.html`;
   const url = `https://zervitecnics.es/aires-acondicionados/marcas/${fileName}`;
   const title = `Aire Acondicionado ${marca.nombre} en ${ciudad.nombre} | Instalación y Mantenimiento`;
-  const desc = `Instalación y mantenimiento de aire acondicionado ${marca.nombre} en ${ciudad.nombre} (${ciudad.comarca}). Técnico especializado, presupuesto gratis en 24h.`;
+  const desc = `Instalación y mantenimiento de aire acondicionado ${marca.nombre} en ${ciudad.nombre} (${ciudad.comarca}). Técnico especializado, respuesta en menos de 2 h en horario de atención, sin compromiso.`;
   const h1 = `Aire acondicionado <span style="color:${marca.color}">${marca.nombre}</span> en ${ciudad.nombre}`;
   const lightBg = marca.color + '22';
   const borderBg = marca.color + '44';
@@ -155,7 +155,7 @@ function paginaMarcaCiudad(marca, ciudad) {
     breadcrumbHTML: `<a href="../index.html">Inicio</a><span class="sep">›</span><a href="${marca.slug}.html">${marca.nombre}</a><span class="sep">›</span><span class="current">${ciudad.nombre}</span>`,
     badgeTxt: marca.tagline,
     badgeColor: marca.color,
-    heroIntro: `Servicio de instalación y mantenimiento de aire acondicionado <strong>${marca.nombre}</strong> en <strong>${ciudad.nombre}</strong> (${ciudad.comarca}). ${capitalize(distTxt)}. Atendemos tu solicitud con presupuesto sin compromiso en menos de 24h.`,
+    heroIntro: `Servicio de instalación y mantenimiento de aire acondicionado <strong>${marca.nombre}</strong> en <strong>${ciudad.nombre}</strong> (${ciudad.comarca}). ${capitalize(distTxt)}. Atendemos tu solicitud con respuesta en menos de 2 h en horario de atención y sin compromiso.`,
     sectionLabel: `${marca.nombre} en ${ciudad.nombre}`,
     sectionTitle: `${marca.nombre} en ${ciudad.nombre}: instalación y servicio técnico`,
     sectionParas: [
@@ -185,7 +185,7 @@ function paginaCapacidadCiudad(cap, ciudad) {
   const fileName = `${cap.frig}-frigorias-${ciudad.slug}.html`;
   const url = `https://zervitecnics.es/aires-acondicionados/capacidades/${fileName}`;
   const title = `Aire Acondicionado ${cap.frig} Frigorías en ${ciudad.nombre} | Instalación`;
-  const desc = `Instalación de aire acondicionado de ${cap.frig} frigorías (${cap.btu} BTU) en ${ciudad.nombre} (${ciudad.comarca}). Ideal para ${cap.descripcionUso} de ${cap.m2Min} a ${cap.m2Max} m². Presupuesto en 24h.`;
+  const desc = `Instalación de aire acondicionado de ${cap.frig} frigorías (${cap.btu} BTU) en ${ciudad.nombre} (${ciudad.comarca}). Ideal para ${cap.descripcionUso} de ${cap.m2Min} a ${cap.m2Max} m². Respuesta en menos de 2 h en horario de atención.`;
   const h1 = `Aire acondicionado de <span style="color:#0066FF">${cap.frig} frigorías</span> en ${ciudad.nombre}`;
   const lightBg = '#0066FF22';
   const borderBg = '#0066FF44';
@@ -255,7 +255,7 @@ function paginaCapacidadCiudad(cap, ciudad) {
     { q: `¿${cap.frig} frigorías son suficientes para mi estancia en ${ciudad.nombre}?`,
       a: `Depende de la superficie, la orientación (sur/oeste requieren más potencia), la altura de techos y el aislamiento. Como referencia: ${cap.frig} frigorías cubren ${cap.m2Min}-${cap.m2Max} m² en condiciones estándar. En ${ciudad.nombre} hacemos visita técnica gratuita para calcular la potencia exacta.` },
     { q: `¿Cuánto cuesta un equipo de ${cap.frig} frigorías en ${ciudad.nombre}?`,
-      a: `Los equipos de ${cap.frig} frigorías arrancan desde ${fmtEur(baseSinIva(cap.precioDesde))}€ + IVA con instalación incluida (pack todo incluido). Precio orientativo — el importe final depende del modelo concreto y la complejidad de la instalación. Presupuesto gratuito y sin compromiso en 24h.` }
+      a: `Los equipos de ${cap.frig} frigorías arrancan desde ${fmtEur(baseSinIva(cap.precioDesde))}€ + IVA con instalación incluida (pack todo incluido). Precio orientativo — el importe final depende del modelo concreto y la complejidad de la instalación. Respuesta en menos de 2 h en horario de atención, sin compromiso.` }
   ];
   jsonld.push(faqJsonLd(faqCC));
 
@@ -440,7 +440,7 @@ ${p.faqHTML || ''}${p.xlinkBlock || ''}
   <div class="container">
     <div class="cta-inner fade-up">
       <h2 class="cta-title">${p.ctaTitle}</h2>
-      <p class="cta-subtitle">Presupuesto gratuito en menos de 24 horas. Instalador profesional.</p>
+      <p class="cta-subtitle">Respuesta en menos de 2 h en horario de atención. Instalador profesional.</p>
       <div class="cta-buttons">
         <a href="tel:+34625215983" class="btn btn-primary btn-lg" data-location="cta-${p.ctaLocation}">Llamar: 625 215 983</a>
         <a href="https://wa.me/34625215983?text=${p.waText}" class="btn btn-green btn-lg" target="_blank" rel="noopener">WhatsApp ahora</a>

@@ -21,7 +21,7 @@ const PRECIOS = {
         'Instalación completa',
         'Informe técnico de instalación',
         'Garantía 3 años fabricante',
-        'Garantía 3 años instalación',
+        'Garantía 1 año instalación',
         'Soporte post-instalación'
       ]
     },
@@ -37,7 +37,7 @@ const PRECIOS = {
         'Instalación completa',
         'Informe técnico de instalación',
         'Garantía 3 años fabricante',
-        'Garantía 3 años instalación',
+        'Garantía 1 año instalación',
         'Soporte prioritario 24h'
       ]
     },
@@ -53,7 +53,7 @@ const PRECIOS = {
         'Instalación completa',
         'Informe técnico de instalación',
         'Garantía 3 años fabricante',
-        'Garantía 3 años instalación',
+        'Garantía 1 año instalación',
         'Soporte post-instalación'
       ]
     },
@@ -69,7 +69,7 @@ const PRECIOS = {
         'Instalación completa',
         'Informe técnico de instalación',
         'Garantía 3 años fabricante',
-        'Garantía 3 años instalación',
+        'Garantía 1 año instalación',
         'Soporte post-instalación'
       ]
     }
@@ -87,7 +87,7 @@ const PRECIOS = {
         'Carga de gas refrigerante',
         'Prueba de funcionamiento',
         'Informe técnico de instalación',
-        'Garantía 3 años instalación'
+        'Garantía 1 año instalación'
       ]
     }
   ],
@@ -104,7 +104,7 @@ const PRECIOS = {
         'Instalación completa',
         'Informe técnico de instalación',
         'Garantía 3 años fabricante',
-        'Garantía 3 años instalación',
+        'Garantía 1 año instalación',
         'Control independiente por zona'
       ]
     },
@@ -120,7 +120,7 @@ const PRECIOS = {
         'Instalación completa',
         'Informe técnico de instalación',
         'Garantía 3 años fabricante',
-        'Garantía 3 años instalación',
+        'Garantía 1 año instalación',
         'Control independiente por zona'
       ]
     },
@@ -136,7 +136,7 @@ const PRECIOS = {
         'Instalación completa',
         'Informe técnico de instalación',
         'Garantía 3 años fabricante',
-        'Garantía 3 años instalación',
+        'Garantía 1 año instalación',
         'Control independiente por zona'
       ]
     }
