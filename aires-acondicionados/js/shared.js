@@ -59,8 +59,29 @@ window.EMAILJS_SERVICE_ID = EMAILJS_SERVICE_ID;
 window.EMAILJS_TEMPLATE_ID = EMAILJS_TEMPLATE_ID;
 
 /* ── reCAPTCHA v3: ejecuta y devuelve token, o '' si falla o tarda más de 3s ── */
+let recaptchaLoading = null;
+/* Carga el script de Google reCAPTCHA solo cuando el usuario usa un formulario
+   (no al entrar en la página). Se declara en la política de privacidad y cookies. */
+function loadRecaptcha() {
+  if (typeof grecaptcha !== 'undefined' && grecaptcha.execute) return Promise.resolve();
+  if (recaptchaLoading) return recaptchaLoading;
+  recaptchaLoading = new Promise(resolve => {
+    const s = document.createElement('script');
+    s.src = 'https://www.google.com/recaptcha/api.js?render=' + RECAPTCHA_SITE_KEY;
+    s.async = true; s.defer = true;
+    s.onload = () => resolve(); s.onerror = () => resolve();
+    document.head.appendChild(s);
+  });
+  return recaptchaLoading;
+}
+window.loadRecaptcha = loadRecaptcha;
+document.addEventListener('focusin', function (e) {
+  if (e.target && e.target.closest && e.target.closest('form')) loadRecaptcha();
+}, { once: true });
+
 async function getRecaptchaToken(action) {
   try {
+    await Promise.race([loadRecaptcha(), new Promise(r => setTimeout(r, 3000))]);
     if (typeof grecaptcha === 'undefined' || !grecaptcha.execute) return '';
     const run = (async () => {
       await new Promise(r => grecaptcha.ready(r));
