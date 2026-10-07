@@ -139,7 +139,7 @@ function renderFormSendError(container, info = {}) {
   wa.style.cssText = 'display:inline-flex;width:100%;justify-content:center';
   wa.target = '_blank';
   wa.rel = 'noopener';
-  wa.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
+  wa.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waWithRef(lines.join('\n')))}`;
   wa.textContent = 'Enviar por WhatsApp';
   wa.addEventListener('click', () => trackEvent('whatsapp_click', { page: window.location.pathname, source: 'form-error' }));
   box.append(p, wa);
@@ -342,6 +342,15 @@ function _waMatchCapacidad(slug) {
   return m ? `${m[1]} frigorías` : null;
 }
 
+/* Referencia de la página vista (para que el asistente sepa de dónde viene el cliente).
+   Solo la ruta pública de la página; sin datos personales. */
+function waRef() {
+  let r = window.location.pathname.replace(/^\/aires-acondicionados\//, '').replace(/^\//, '')
+    .replace(/index\.html$/, '').replace(/\.html$/, '').replace(/\/$/, '');
+  return 'Ref: ' + (r || 'inicio');
+}
+function waWithRef(msg) { return msg + '\n\n(' + waRef() + ')'; }
+
 function getWAMessage() {
   const path = window.location.pathname;
   const slug = _waSlugFromPath(path);
@@ -423,7 +432,7 @@ function initCallButtons() {
 
   const openModal = (sourceLocation) => {
     const msg = getWAMessage();
-    waBtn.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+    waBtn.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waWithRef(msg))}`;
     waBtn.dataset.location = `call-desktop-modal-${sourceLocation || 'unknown'}`;
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -470,12 +479,12 @@ function initCallButtons() {
 
 function initWhatsApp() {
   const page = window.location.pathname;
-  const defaultMsg = getWAMessage();
+  const defaultMsg = waWithRef(getWAMessage());
   const defaultUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(defaultMsg)}`;
   document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
     const custom = link.dataset.waText;
     link.href = custom
-      ? `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(custom)}`
+      ? `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waWithRef(custom))}`
       : defaultUrl;
     link.addEventListener('click', () => trackEvent('whatsapp_click', { page }));
   });

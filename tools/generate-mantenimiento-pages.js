@@ -128,7 +128,7 @@ function garantiasBloque(marcaNombre) {
 
 const COOKIE_FOOTER_END = `<a class="whatsapp-float" href="https://wa.me/34625215983" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">${WA_SVG_FLOAT}</a>
 <div class="cookie-banner"><div class="cookie-text">Usamos cookies. <a href="../legal/cookies.html">Más info</a></div><div class="cookie-actions"><button class="btn-cookie-accept">Aceptar</button><button class="btn-cookie-necessary">Solo necesarias</button></div></div>
-<script src="../js/shared.js?v=20260902a"></script>
+<script src="../js/shared.js?v=20261007a"></script>
 <script src="../js/pages.js?v=20260625a"></script>
 
 </body>
