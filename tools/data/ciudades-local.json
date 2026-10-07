@@ -124,7 +124,17 @@
    "url": "https://bop.diba.cat/temp/06_022013013413.pdf"
   }
  },
- "castelldefels": {},
+ "castelldefels": {
+  "perfil": [
+   "<strong>Castelldefels</strong> (Baix Llobregat) está a unos 20 km al suroeste de Barcelona, junto al macizo del Garraf. Su playa mide unos 4,8 km y continúa sin interrupción en la de Gavà hasta la desembocadura del Llobregat.",
+   "Pasó de masías dispersas a segunda residencia de muchos barceloneses a mediados de los años 50, con decenas de urbanizaciones en construcción. Por eso conviven el casco urbano con zonas de vivienda unifamiliar y chalets, donde la ubicación de la unidad exterior y la distancia de tubería suelen marcar el presupuesto.",
+   "<em>Recomendación del instalador:</em> en viviendas cercanas al mar conviene revisar la protección anticorrosión de la unidad exterior y limpiarla con regularidad."
+  ],
+  "fuentes": [
+   "https://www.wikipedia.com/wiki/Castelldefels",
+   "https://femturisme.cat/pobles/castelldefels"
+  ]
+ },
  "gava": {
   "barrios": [
    "Rambla-Centre",
@@ -237,7 +247,17 @@
    "url": "https://bop.diba.cat/anunci/3126509/aprovacio-definitiva-de-l-ordenanca-municipal-reguladora-dels-sorolls-i-les-vibracions-ajuntament-de-premia-de-mar"
   }
  },
- "vilassar-de-mar": {},
+ "vilassar-de-mar": {
+  "perfil": [
+   "<strong>Vilassar de Mar</strong> (Maresme) tiene unos 21.200 habitantes (1 de enero de 2025) y ocupa unos 4 km² de costa, entre Premià de Mar y Cabrera de Mar. Cuenta con tres playas urbanas, Almadrava, Astillero y Ponent, que suman unos 2,5 km.",
+   "Fue un pueblo de pesca y construcción naval y hoy es residencial y de veraneo, con mucha población que trabaja en Barcelona. Es una zona de pisos y casas entre medianeras donde un buen estudio previo de la ubicación de la unidad exterior evita problemas con los vecinos.",
+   "<em>Recomendación del instalador:</em> al estar junto al mar, conviene proteger la unidad exterior contra la corrosión y revisarla cada año."
+  ],
+  "fuentes": [
+   "https://www.ccmaresme.cat/wp-content/uploads/2025/12/2025-xifra-pob.pdf",
+   "https://femturisme.cat/pobles/vilassar-de-mar"
+  ]
+ },
  "el-masnou": {
   "barrios": [
    "Ocata",

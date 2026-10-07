@@ -88,6 +88,7 @@ function ciudadLocalParas(ciudad) {
   const d = CIUDADES_LOCAL[ciudad.slug];
   if (!d) return [];
   const out = [];
+  if (d.perfil) { d.perfil.forEach(t => out.push(t)); if (d.fuentes) out.push('<small>Fuentes: ' + d.fuentes.map(u => `<a href="${u}" rel="nofollow noopener" target="_blank">${new URL(u).hostname.replace(/^www\./, '')}</a>`).join(' · ') + '</small>'); }
   const lc = t => t.charAt(0).toLowerCase() + t.slice(1);
   if (d.barrios && d.barrios.length >= 3) {
     out.push(`Atendemos <strong>${ciudad.nombre}</strong> y, entre otras zonas, ${d.barrios.slice(0, 6).join(', ')}.`);
