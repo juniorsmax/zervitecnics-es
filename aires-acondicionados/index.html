@@ -1859,16 +1859,12 @@ async function modalSubmit() {
     observaciones: obs ? `[Origen: modal-sticky] ${obs}` : '[Origen: modal-sticky]',
   };
 
-  // reCAPTCHA v3 = guard local. NO se envía a EmailJS (incompatible con v2
-  // configurado en su panel — devuelve "The bot is detected").
+  // reCAPTCHA v3: el token NO se verifica en ningún servidor ni se envía a
+  // EmailJS (incompatible con v2 configurado en su panel — devuelve "The bot
+  // is detected"). Por eso no bloquea: si falta, se anota en GA y se sigue.
   if (typeof window.getRecaptchaToken === 'function') {
     const modalToken = await window.getRecaptchaToken('modal_form');
-    if (!modalToken) {
-      btn.disabled = false;
-      btn.textContent = '→ Solicitar presupuesto gratis';
-      document.getElementById('modal-result').innerHTML = '<p style="color:var(--red,#E53E3E);font-size:.8rem;margin-top:8px">No hemos podido verificar que eres humano. Recarga la página o llámanos al 625 215 983.</p>';
-      return;
-    }
+    if (!modalToken && typeof trackEvent === 'function') trackEvent('recaptcha_missing', { source: 'modal-sticky' });
   }
 
   try {
@@ -1886,8 +1882,13 @@ async function modalSubmit() {
     if (typeof trackEvent === 'function') trackEvent('form_error', { source: 'modal-sticky', status, message: text });
     btn.disabled = false;
     btn.textContent = '→ Solicitar presupuesto gratis';
-    const safe = String(text).replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
-    document.getElementById('modal-result').innerHTML = `<p style="color:var(--red,#E53E3E);font-size:.8rem;margin-top:8px;line-height:1.4"><strong>Error ${status}:</strong> ${safe}<br><span style="color:#6B7A8D">Llámanos al 625 215 983</span></p>`;
+    // Mismo mensaje sencillo que el formulario principal + WhatsApp (sin detalle técnico)
+    const result = document.getElementById('modal-result');
+    if (typeof window.renderFormSendError === 'function') {
+      window.renderFormSendError(result, { nombre: params.nombre, zona: params.zona, tipo: modalTipo, observaciones: obs });
+    } else {
+      result.textContent = 'No hemos podido enviar tu solicitud en este momento. Por favor, llámanos al 625 215 983 o escríbenos por WhatsApp.';
+    }
   }
 }
 

@@ -58,18 +58,74 @@ window.RECAPTCHA_SITE_KEY = RECAPTCHA_SITE_KEY;
 window.EMAILJS_SERVICE_ID = EMAILJS_SERVICE_ID;
 window.EMAILJS_TEMPLATE_ID = EMAILJS_TEMPLATE_ID;
 
-/* ── reCAPTCHA v3: ejecuta y devuelve token, o '' si falla ── */
+/* ── reCAPTCHA v3: ejecuta y devuelve token, o '' si falla o tarda más de 3s ── */
 async function getRecaptchaToken(action) {
   try {
     if (typeof grecaptcha === 'undefined' || !grecaptcha.execute) return '';
-    await new Promise(r => grecaptcha.ready(r));
-    return await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: action || 'submit' });
+    const run = (async () => {
+      await new Promise(r => grecaptcha.ready(r));
+      return await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: action || 'submit' });
+    })();
+    const timeout = new Promise(r => setTimeout(() => r(''), 3000));
+    return (await Promise.race([run, timeout])) || '';
   } catch (e) {
     console.warn('reCAPTCHA error', e);
     return '';
   }
 }
 window.getRecaptchaToken = getRecaptchaToken;
+
+/* ── Almacenamiento seguro ──
+   localStorage lanza una excepción si el navegador bloquea los datos del sitio
+   (modo privado estricto, cookies bloqueadas). Sin esto se cortaba todo el
+   arranque (cookies → formulario → EmailJS). */
+function storageGet(key) {
+  try { return localStorage.getItem(key); } catch (e) { return null; }
+}
+function storageSet(key, value) {
+  try { localStorage.setItem(key, value); } catch (e) {}
+}
+function storageRemove(key) {
+  try { localStorage.removeItem(key); } catch (e) {}
+}
+window.storageGet = storageGet;
+window.storageSet = storageSet;
+window.storageRemove = storageRemove;
+
+/* ── Mensaje de error de envío (formulario principal y ventana emergente) ──
+   Texto sencillo para el cliente + botón de WhatsApp con su solicitud ya escrita,
+   para que no se pierda. El detalle técnico va solo a la consola y a GA. */
+const FORM_SEND_ERROR_TEXT = 'No hemos podido enviar tu solicitud en este momento. ' +
+  'Por favor, llámanos al ' + PHONE + ' o escríbenos por WhatsApp.';
+
+function renderFormSendError(container, info = {}) {
+  if (!container) return;
+  const lines = ['Hola, he intentado pedir presupuesto en la web y no se ha enviado.'];
+  if (info.nombre) lines.push('Nombre: ' + info.nombre);
+  if (info.zona) lines.push('Zona: ' + info.zona);
+  if (info.tipo) lines.push('Necesito: ' + info.tipo);
+  if (info.observaciones) lines.push('Observaciones: ' + info.observaciones);
+
+  const box = document.createElement('div');
+  box.className = 'form-send-error';
+  box.setAttribute('role', 'alert');
+  box.style.cssText = 'margin-top:12px;font-size:.85rem;line-height:1.5;color:var(--red,#E53E3E)';
+  const p = document.createElement('p');
+  p.style.margin = '0 0 10px';
+  p.textContent = FORM_SEND_ERROR_TEXT;
+  const wa = document.createElement('a');
+  wa.className = 'btn btn-green';
+  wa.style.cssText = 'display:inline-flex;width:100%;justify-content:center';
+  wa.target = '_blank';
+  wa.rel = 'noopener';
+  wa.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
+  wa.textContent = 'Enviar por WhatsApp';
+  wa.addEventListener('click', () => trackEvent('whatsapp_click', { page: window.location.pathname, source: 'form-error' }));
+  box.append(p, wa);
+  container.replaceChildren(box);
+}
+window.FORM_SEND_ERROR_TEXT = FORM_SEND_ERROR_TEXT;
+window.renderFormSendError = renderFormSendError;
 
 /* ── Utilidades ── */
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
@@ -489,7 +545,7 @@ function initCookies() {
   const banner = $('.cookie-banner');
   if (!banner) return;
 
-  const saved = localStorage.getItem('sz_consent');
+  const saved = storageGet('sz_consent');
   if (saved) {
     try {
       const data = JSON.parse(saved);
@@ -522,7 +578,7 @@ function initCookies() {
 }
 
 function saveConsent(data) {
-  localStorage.setItem('sz_consent', JSON.stringify(data));
+  storageSet('sz_consent', JSON.stringify(data));
   applyConsent(data);
 }
 
@@ -684,6 +740,7 @@ function initForm() {
       nombre: document.getElementById('f-nombre')?.value || '',
       telefono: document.getElementById('f-telefono')?.value || '',
       zona: document.getElementById('f-zona')?.value || '',
+      codigo_postal: document.getElementById('f-postal')?.value || '',
       tipo_equipo: document.getElementById('f-tipo')?.value || '',
       marca: document.getElementById('f-marca')?.value || '',
       problema: document.getElementById('f-problema')?.value || '',
@@ -692,18 +749,13 @@ function initForm() {
       observaciones: document.getElementById('f-obs')?.value || '',
     };
 
-    // reCAPTCHA v3 como guard local solamente: si no se obtiene token,
-    // el script de Google probablemente fue bloqueado o el usuario es un bot
-    // que no ejecuta JS de Google → aborta. NO se envía a EmailJS porque su
-    // servicio espera v2 y rechaza tokens v3 con "The bot is detected".
+    // reCAPTCHA v3: el token NO se verifica en ningún servidor ni se envía a
+    // EmailJS (su servicio espera v2 y rechaza v3 con "The bot is detected").
+    // Por eso no bloquea el envío: si falta (Google bloqueado o lento) se
+    // anota en GA y se sigue. La defensa local es el campo trampa, los 3 s y el
+    // límite de envíos.
     const token = await getRecaptchaToken('hero_form');
-    if (!token) {
-      trackEvent('form_error', { source: 'hero-form', status: 'recaptcha_local', message: 'token vacío' });
-      btn.disabled = false;
-      btn.textContent = 'Solicitar presupuesto';
-      alert('No hemos podido verificar que eres humano. Recarga la página o llámanos al ' + PHONE + '.');
-      return;
-    }
+    if (!token) trackEvent('recaptcha_missing', { source: 'hero-form' });
 
     try {
       if (typeof emailjs === 'undefined') {
@@ -720,10 +772,21 @@ function initForm() {
       trackEvent('form_error', { source: 'hero-form', status, message: text });
       btn.disabled = false;
       btn.textContent = 'Solicitar presupuesto';
-      // Mensaje corto y humano — el detalle técnico va a la consola/GA
-      const userMsg = 'No hemos podido enviar tu solicitud en este momento. ' +
-                      'Por favor, llámanos al ' + PHONE + ' o escríbenos por WhatsApp.';
-      alert(userMsg);
+      // Mensaje corto y humano + WhatsApp — el detalle técnico va a la consola/GA
+      let result = document.getElementById('form-result');
+      if (!result) {
+        result = document.createElement('div');
+        result.id = 'form-result';
+        form.appendChild(result);
+      }
+      const zonaSel = document.getElementById('f-zona');
+      const tipoSel = document.getElementById('f-tipo');
+      renderFormSendError(result, {
+        nombre: data.nombre,
+        zona: [zonaSel?.selectedOptions[0]?.text, data.codigo_postal && 'CP ' + data.codigo_postal].filter(Boolean).join(' · '),
+        tipo: data.tipo_equipo ? tipoSel?.selectedOptions[0]?.text : '',
+        observaciones: data.observaciones,
+      });
     }
   });
 }
