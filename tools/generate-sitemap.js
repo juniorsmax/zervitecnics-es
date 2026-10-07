@@ -1,24 +1,31 @@
 #!/usr/bin/env node
 /*
- * Generador de sitemap.xml — escanea el repo, asigna prioridades por patrón
- * y emite el sitemap completo. Re-ejecutable tras añadir/quitar páginas.
+ * Generador de sitemaps — escanea el repo, asigna prioridades por patrón
+ * y emite sitemap.xml (todo) + sitemap-guias.xml (guías). Re-ejecutable tras
+ * añadir/quitar páginas.
+ *
+ * - Incluye cualquier .html del sitio (sin listas manuales de carpetas).
+ * - Excluye automáticamente las páginas con <meta name="robots" content="noindex…">.
+ * - lastmod = fecha del último commit que tocó el archivo (git log). Si el
+ *   archivo tiene cambios sin commitear o no está en git, se usa la fecha de hoy.
+ *
+ * Uso:
+ *   node tools/generate-sitemap.js              → escribe sitemap.xml y sitemap-guias.xml en la raíz
+ *   node tools/generate-sitemap.js --out <dir>  → escribe en <dir> (para comparar sin tocar los reales)
  */
 
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
+const { REPO, BASE, collectHtmlFiles, relPath, urlFor, isNoindex } = require('./lib/site-pages');
 
-const REPO = path.resolve(__dirname, '..');
-const BASE = 'https://zervitecnics.es';
-const LASTMOD = new Date().toISOString().slice(0, 10);
+const TODAY = new Date().toISOString().slice(0, 10);
 
-// Carpetas a escanear y carpetas/archivos a excluir
-const SCAN_ROOTS = ['.', 'aires-acondicionados'];
-const SCAN_SUBDIRS = ['categorias', 'marcas', 'capacidades', 'zonas', 'legal'];
-const EXCLUDE_FILES = new Set([
-  '404.html',
-  'gracias.html',
-  // legal pages se incluyen pero con baja prioridad
-]);
+const outArg = process.argv.indexOf('--out');
+const OUT_DIR = outArg > -1 ? path.resolve(process.argv[outArg + 1]) : REPO;
+
+// Páginas que van a sitemap-guias.xml en vez de sitemap.xml
+const isGuia = url => url.startsWith('/aires-acondicionados/guias/');
 
 function priorityFor(relUrl) {
   // relUrl: e.g. "/aires-acondicionados/marcas/daikin-barcelona.html" or "/"
@@ -28,11 +35,23 @@ function priorityFor(relUrl) {
   if (relUrl === '/aires-acondicionados/' || relUrl === '/aires-acondicionados/index.html') {
     return { priority: '0.9', changefreq: 'weekly' };
   }
+  if (/\/aires-acondicionados\/(ofertas|instalacion-personalizada|mantenimiento)\.html$/.test(relUrl)) {
+    return { priority: '0.9', changefreq: 'weekly' };
+  }
   if (/\/aires-acondicionados\/(subvenciones|precios)\.html$/.test(relUrl)) {
     return { priority: '0.9', changefreq: 'monthly' };
   }
   if (/\/aires-acondicionados\/categorias\//.test(relUrl)) {
     return { priority: '0.9', changefreq: 'monthly' };
+  }
+  if (/\/aires-acondicionados\/mantenimiento-(zonas|marcas)\//.test(relUrl)) {
+    return { priority: '0.8', changefreq: 'monthly' };
+  }
+  if (relUrl === '/aires-acondicionados/guias/') {
+    return { priority: '0.8', changefreq: 'monthly' };
+  }
+  if (isGuia(relUrl)) {
+    return { priority: '0.7', changefreq: 'monthly' };
   }
   // Brand hub: marcas/{slug}.html — exactly one segment, no dash inside that's NOT part of recognized brand
   // Distinguimos por presencia o no de "-" y "frigorias"
@@ -62,76 +81,82 @@ function priorityFor(relUrl) {
   return { priority: '0.5', changefreq: 'monthly' };
 }
 
-function urlFor(absPath) {
-  let rel = path.relative(REPO, absPath).split(path.sep).join('/');
-  // index.html → carpeta/
-  if (rel === 'index.html') return '/';
-  if (rel.endsWith('/index.html')) return '/' + rel.slice(0, -'index.html'.length);
-  return '/' + rel;
-}
+// Fecha (AAAA-MM-DD) del último commit de cada archivo, en una sola pasada de git log
+function gitLastmodMap() {
+  const map = new Map();
+  try {
+    // En un clon superficial (git clone --depth N) los archivos sin cambios recientes
+    // recibirían la fecha del commit más antiguo descargado, no la real.
+    const shallow = execFileSync('git', ['-C', REPO, 'rev-parse', '--is-shallow-repository'], { encoding: 'utf8' }).trim();
+    if (shallow === 'true') console.warn('Aviso: clon superficial de git; las fechas de archivos sin cambios recientes pueden salir más nuevas de lo real (usa un clon completo: git fetch --unshallow).');
 
-function collectHtmlFiles() {
-  const out = [];
-
-  // Raíz
-  for (const f of fs.readdirSync(REPO)) {
-    if (!f.endsWith('.html')) continue;
-    if (EXCLUDE_FILES.has(f)) continue;
-    out.push(path.join(REPO, f));
-  }
-
-  // aires-acondicionados/
-  const air = path.join(REPO, 'aires-acondicionados');
-  for (const f of fs.readdirSync(air)) {
-    const p = path.join(air, f);
-    const st = fs.statSync(p);
-    if (st.isFile() && f.endsWith('.html')) {
-      if (!EXCLUDE_FILES.has(f)) out.push(p);
-    } else if (st.isDirectory() && SCAN_SUBDIRS.includes(f)) {
-      for (const f2 of fs.readdirSync(p)) {
-        if (!f2.endsWith('.html')) continue;
-        if (EXCLUDE_FILES.has(f2)) continue;
-        out.push(path.join(p, f2));
-      }
+    const log = execFileSync('git', ['-C', REPO, 'log', '--format=@%cs', '--name-only', '--no-renames', '--', '*.html'],
+      { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    let date = null;
+    for (const line of log.split('\n')) {
+      if (line.startsWith('@')) date = line.slice(1);
+      else if (line && date && !map.has(line)) map.set(line, date); // el primero que aparece es el más reciente
     }
+    // Archivos con cambios sin commitear o sin seguimiento → hoy
+    const status = execFileSync('git', ['-C', REPO, 'status', '--porcelain', '--', '*.html'], { encoding: 'utf8' });
+    for (const line of status.split('\n')) {
+      const file = line.slice(3).trim();
+      if (file) map.set(file, TODAY);
+    }
+  } catch (e) {
+    console.warn('Aviso: no se pudo leer git log; lastmod = fecha de hoy para todo.', e.message);
   }
-
-  return out;
+  return map;
 }
 
-const files = collectHtmlFiles();
-const entries = files
-  .map(f => ({ file: f, url: urlFor(f) }))
-  .map(e => ({ ...e, ...priorityFor(e.url) }))
+const lastmods = gitLastmodMap();
+const excluded = [];
+const entries = collectHtmlFiles()
+  .filter(f => {
+    if (isNoindex(fs.readFileSync(f, 'utf8'))) { excluded.push(urlFor(f)); return false; }
+    return true;
+  })
+  .map(f => {
+    const url = urlFor(f);
+    return { file: f, url, lastmod: lastmods.get(relPath(f)) || TODAY, ...priorityFor(url) };
+  })
   // Orden estable: por URL
   .sort((a, b) => a.url.localeCompare(b.url));
 
-const xml = [
-  '<?xml version="1.0" encoding="UTF-8"?>',
-  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-  '',
-  ...entries.map(e =>
-    [
-      '  <url>',
-      `    <loc>${BASE}${e.url}</loc>`,
-      `    <lastmod>${LASTMOD}</lastmod>`,
-      `    <changefreq>${e.changefreq}</changefreq>`,
-      `    <priority>${e.priority}</priority>`,
-      '  </url>'
-    ].join('\n')
-  ),
-  '',
-  '</urlset>',
-  ''
-].join('\n');
+function urlset(list) {
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    '',
+    ...list.map(e =>
+      [
+        '  <url>',
+        `    <loc>${BASE}${e.url}</loc>`,
+        `    <lastmod>${e.lastmod}</lastmod>`,
+        `    <changefreq>${e.changefreq}</changefreq>`,
+        `    <priority>${e.priority}</priority>`,
+        '  </url>'
+      ].join('\n')
+    ),
+    '',
+    '</urlset>',
+    ''
+  ].join('\n');
+}
 
-fs.writeFileSync(path.join(REPO, 'sitemap.xml'), xml, 'utf8');
+const main = entries.filter(e => !isGuia(e.url));
+const guias = entries.filter(e => isGuia(e.url));
+fs.mkdirSync(OUT_DIR, { recursive: true });
+fs.writeFileSync(path.join(OUT_DIR, 'sitemap.xml'), urlset(main), 'utf8');
+fs.writeFileSync(path.join(OUT_DIR, 'sitemap-guias.xml'), urlset(guias), 'utf8');
 
 // Resumen por patrón
 const summary = entries.reduce((a, e) => {
   const key = (() => {
     if (e.url === '/') return 'root';
+    if (isGuia(e.url)) return 'guias';
     if (/\/categorias\//.test(e.url)) return 'categorias';
+    if (/\/mantenimiento-(zonas|marcas)\//.test(e.url)) return 'mantenimiento geo/marca';
     if (/\/marcas\/[^/]+-frigorias\.html$/.test(e.url)) return 'marca×capacidad';
     if (/\/marcas\/[^/]+-[^/]+\.html$/.test(e.url) && !/-frigorias\.html$/.test(e.url)) return 'marca×ciudad';
     if (/\/marcas\/[^/]+\.html$/.test(e.url)) return 'marca hub';
@@ -144,6 +169,8 @@ const summary = entries.reduce((a, e) => {
   return a;
 }, {});
 
-console.log(`sitemap.xml regenerado con ${entries.length} URLs`);
+const where = OUT_DIR === REPO ? '' : ` en ${OUT_DIR}`;
+console.log(`sitemap.xml regenerado con ${main.length} URLs y sitemap-guias.xml con ${guias.length}${where}`);
 console.log('Resumen por tipo:');
-Object.entries(summary).sort().forEach(([k, v]) => console.log(`  ${k.padEnd(20)} ${v}`));
+Object.entries(summary).sort().forEach(([k, v]) => console.log(`  ${k.padEnd(24)} ${v}`));
+console.log(`Excluidas por noindex (${excluded.length}): ${excluded.join(', ')}`);
