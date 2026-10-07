@@ -32,7 +32,7 @@ function findHtmlFiles(dir, acc = []) {
 const htmlFiles = findHtmlFiles(REPO);
 console.log(`HTML a procesar: ${htmlFiles.length}`);
 
-const IMG_RE = /<img\s+[^>]*?src="([^"]+\/img\/([^"\/]+)\.(jpe?g|png))"[^>]*?>/gi;
+const IMG_RE = /<img\s+[^>]*?src="((?:[^"]*\/)?img\/([^"\/]+)\.(jpe?g|png))"[^>]*?>/gi;
 
 let totalReplacements = 0;
 let filesChanged = 0;
@@ -40,9 +40,10 @@ let filesChanged = 0;
 for (const file of htmlFiles) {
   let html = fs.readFileSync(file, 'utf8');
   let replacedInFile = 0;
-  html = html.replace(IMG_RE, (match, fullSrc, baseName, ext) => {
+  html = html.replace(IMG_RE, (match, fullSrc, baseName, ext, offset, whole) => {
     if (!webpAvailable.has(baseName)) return match;
-    if (match.includes('</picture>')) return match;
+    // ya envuelta en <picture> con fuente WebP -> no repetir
+    if (/type="image\/webp">\s*$/.test(whole.slice(Math.max(0, offset - 160), offset))) return match;
     const webpSrc = fullSrc.replace(/\.(jpe?g|png)$/i, '.webp');
     replacedInFile++;
     return `<picture><source srcset="${webpSrc}" type="image/webp">${match}</picture>`;
