@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "check:seo": "node check-seo.js"
+  },
   "dependencies": {
     "sharp": "^0.35.2"
   }
