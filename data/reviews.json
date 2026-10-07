@@ -1,0 +1,28 @@
+{
+  "reviewUrl": "https://g.page/r/CXH7-yVPG3bTEBM/review",
+  "place": {
+    "rating": 5,
+    "userRatingCount": 3,
+    "googleMapsUri": "https://g.page/r/CXH7-yVPG3bTEBM"
+  },
+  "reviews": [
+    {
+      "author": { "name": "Clau Martínez" },
+      "rating": 5,
+      "relative": "octubre 2026 · traducida del catalán",
+      "text": "Servicio excepcional, Júnior vino enseguida a realizar el presupuesto de aire acondicionado e instalación. En dos días volvió, en fin de semana, a instalar el aire. Se mostró profesional y muy amable. Quedó todo instalado en el mismo día y yo quedé encantada."
+    },
+    {
+      "author": { "name": "Albert Montilla Garrido" },
+      "rating": 5,
+      "relative": "octubre 2026 · traducida del catalán",
+      "text": "Necesitaba instalar dos AC en poco tiempo y Junior respondió el mismo día a mi mensaje. Yo quería comprar por mis cuentas los aires y no hubo problema. La obra ha quedado muy bien. Recomiendo."
+    },
+    {
+      "author": { "name": "Paul Popescu" },
+      "rating": 5,
+      "relative": "octubre 2026",
+      "text": "Súper servicios. Recomiendo."
+    }
+  ]
+}
