@@ -126,10 +126,10 @@ function buildPage(marca, cap) {
     "description": "${desc.replace(/"/g, '\\"')}",
     "brand": { "@type": "Brand", "name": "${marca.nombre}" },
     "offers": {
-      "@type": "Offer",
-      "price": "${precioBase}",
+      "@type": "AggregateOffer",
+      "lowPrice": "${precioBase}",
       "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock",
+      "offerCount": "1",
       "url": "${url}",
       "seller": { "@type": "LocalBusiness", "name": "Zervitecnics Barcelona" }
     }
