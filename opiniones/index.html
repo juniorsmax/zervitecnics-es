@@ -49,6 +49,23 @@
   .help-links { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
   .help-links a { display:flex; align-items:center; justify-content:center; min-height:52px; border:2px solid var(--navy); border-radius:12px; color:var(--navy); font-weight:700; text-decoration:none; font-size:.98rem; background:#fff; }
   .help-links a:hover { background:var(--navy); color:#fff; }
+  #opiniones { padding:30px 20px 4px; }
+  #opiniones .section-label { display:block; font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); margin-bottom:6px; }
+  #opiniones .section-title { font-family:Syne,"DM Sans",system-ui,sans-serif; font-weight:800; font-size:1.4rem; line-height:1.15; color:var(--navy); margin:0 0 10px; }
+  #opiniones .text-center { margin-bottom:18px; }
+  #opiniones .rev-summary a { color:var(--blue); }
+  #opiniones .rev-list { display:grid; gap:14px; list-style:none; padding:0; margin:0; }
+  #opiniones .rev-item { background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px; }
+  #opiniones .rev-head { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+  #opiniones .rev-avatar { width:40px; height:40px; flex:0 0 40px; border-radius:50%; background:#5c6bc0; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }
+  #opiniones .rev-who { display:flex; flex-direction:column; min-width:0; flex:1; }
+  #opiniones .rev-author { font-style:normal; font-weight:700; }
+  #opiniones .rev-when { font-size:.82rem; color:var(--muted); }
+  #opiniones .rev-g { width:24px; height:24px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.85rem; color:#4285f4; background:#fff; }
+  #opiniones .rev-stars { color:#fbbc04; letter-spacing:2px; }
+  #opiniones .rev-text { margin:6px 0 0; font-size:.98rem; }
+  #opiniones .rev-cta { display:none; }
+  #opiniones .rev-attrib { font-size:.82rem; color:var(--muted); text-align:center; margin:14px 0 0; }
   footer { margin:34px 20px 28px; font-size:.85rem; color:var(--muted); }
 </style>
 </head>
@@ -70,6 +87,48 @@
     <p class="alt"><a data-evento="click_ficha_google" href="https://share.google/fQGNSYk7E1LD4lg2o" target="_blank" rel="noopener">Ver la ficha de Zervitecnics en Google</a></p>
     <p class="fair">Tu opinión es libre: no damos regalos ni descuentos a cambio de una reseña.</p>
   </main>
+  <!-- opiniones:start -->
+<section class="section" id="opiniones" aria-labelledby="opiniones-title">
+  <div class="container-sm">
+    <div class="text-center mb-32 fade-up">
+      <span class="section-label">Opiniones de clientes</span>
+      <h2 class="section-title" id="opiniones-title">Lo que dicen sobre nosotros</h2>
+      <p class="rev-summary"><strong>5.0/5</strong> sobre 3 reseñas en <a href="https://g.page/r/CXH7-yVPG3bTEBM" rel="nofollow noopener" target="_blank">Google</a>.</p>
+    </div>
+    <ul class="rev-list fade-up">
+  <li class="rev-item">
+    <div class="rev-head">
+      <span class="rev-avatar" aria-hidden="true">C</span>
+      <div class="rev-who"><cite class="rev-author">Clau Martínez</cite><span class="rev-when">octubre 2026 · traducida del catalán</span></div>
+      <span class="rev-g" aria-label="Google" title="Google">G</span>
+    </div>
+    <span class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</span>
+    <blockquote class="rev-text">Servicio excepcional, Júnior vino enseguida a realizar el presupuesto de aire acondicionado e instalación. En dos días volvió, en fin de semana, a instalar el aire. Se mostró profesional y muy amable. Quedó todo instalado en el mismo día y yo quedé encantada.</blockquote>
+  </li>
+  <li class="rev-item">
+    <div class="rev-head">
+      <span class="rev-avatar" aria-hidden="true">A</span>
+      <div class="rev-who"><cite class="rev-author">Albert Montilla Garrido</cite><span class="rev-when">octubre 2026 · traducida del catalán</span></div>
+      <span class="rev-g" aria-label="Google" title="Google">G</span>
+    </div>
+    <span class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</span>
+    <blockquote class="rev-text">Necesitaba instalar dos AC en poco tiempo y Junior respondió el mismo día a mi mensaje. Yo quería comprar por mis cuentas los aires y no hubo problema. La obra ha quedado muy bien. Recomiendo.</blockquote>
+  </li>
+  <li class="rev-item">
+    <div class="rev-head">
+      <span class="rev-avatar" aria-hidden="true">P</span>
+      <div class="rev-who"><cite class="rev-author">Paul Popescu</cite><span class="rev-when">octubre 2026</span></div>
+      <span class="rev-g" aria-label="Google" title="Google">G</span>
+    </div>
+    <span class="rev-stars" aria-label="5 de 5 estrellas">★★★★★</span>
+    <blockquote class="rev-text">Súper servicios. Recomiendo.</blockquote>
+  </li>
+    </ul>
+  <p class="rev-cta"><a class="btn btn-outline" href="https://g.page/r/CXH7-yVPG3bTEBM/review" rel="nofollow noopener" target="_blank">Deja tu reseña en Google</a></p>
+    <p class="rev-attrib">Reseñas publicadas por los autores en Google. Zervitecnics no modifica el contenido.</p>
+  </div>
+</section>
+<!-- opiniones:end -->
   <section class="help" aria-labelledby="ayuda">
     <h2 id="ayuda">¿Necesitas algo de tu equipo?</h2>
     <div class="help-links">
