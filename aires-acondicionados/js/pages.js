@@ -172,8 +172,11 @@ function renderPrices() {
   });
 }
 
-/* ── Schema Service ── */
-function injectServiceSchema(serviceName, description, price) {
+/* ── Schema Service ──
+   Sin precio: los 299/399/990 € que llevaba no coincidían con ninguna tabla.
+   No se inyecta si la página ya trae su propio Service en el HTML. */
+function injectServiceSchema(serviceName, description) {
+  if (typeof hasSchemaType === 'function' && hasSchemaType('Service')) return;
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -193,13 +196,7 @@ function injectServiceSchema(serviceName, description, price) {
     "areaServed": {
       "@type": "City",
       "name": "Barcelona"
-    },
-    "offers": price ? {
-      "@type": "Offer",
-      "price": price,
-      "priceCurrency": "EUR",
-      "availability": "https://schema.org/InStock"
-    } : undefined
+    }
   };
   const script = document.createElement('script');
   script.type = 'application/ld+json';
@@ -212,13 +209,13 @@ function initCookieReset() {
   const btn = document.getElementById('btn-reset-cookies');
   if (!btn) return;
   btn.addEventListener('click', () => {
-    localStorage.removeItem('sz_consent');
+    storageRemove('sz_consent');
     window.location.reload();
   });
   // Mostrar estado actual
   const statusEl = document.getElementById('cookie-status');
   if (statusEl) {
-    const saved = localStorage.getItem('sz_consent');
+    const saved = storageGet('sz_consent');
     if (saved) {
       try {
         const data = JSON.parse(saved);
@@ -309,13 +306,16 @@ document.addEventListener('DOMContentLoaded', () => {
   renderPrices();
   initCookieReset();
 
-  // Detectar página actual e inyectar schema Service
+  // Detectar página actual e inyectar schema Service (nunca en las guías:
+  // /guias/split-vs-multisplit-vs-conductos.html no es una página de servicio)
   const path = window.location.pathname;
-  if (path.includes('multisplit')) {
-    injectServiceSchema('Instalación Multisplit Barcelona', 'Instalación de sistemas multisplit en Barcelona. Climatiza varias habitaciones con una sola unidad exterior.', 399);
+  if (path.includes('/guias/')) {
+    // sin schema Service
+  } else if (path.includes('multisplit')) {
+    injectServiceSchema('Instalación Multisplit Barcelona', 'Instalación de sistemas multisplit en Barcelona. Climatiza varias habitaciones con una sola unidad exterior.');
   } else if (path.includes('split')) {
-    injectServiceSchema('Instalación Split 1x1 Barcelona', 'Instalación profesional de aire acondicionado split 1x1 en Barcelona. Técnico certificado.', 299);
+    injectServiceSchema('Instalación Split 1x1 Barcelona', 'Instalación profesional de aire acondicionado split 1x1 en Barcelona. Técnico certificado.');
   } else if (path.includes('conductos')) {
-    injectServiceSchema('Aire Acondicionado por Conductos Barcelona', 'Instalación de aire acondicionado por conductos en Barcelona. Climatización invisible y silenciosa.', 990);
+    injectServiceSchema('Aire Acondicionado por Conductos Barcelona', 'Instalación de aire acondicionado por conductos en Barcelona. Climatización invisible y silenciosa.');
   }
 });
