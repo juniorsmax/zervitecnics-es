@@ -304,7 +304,7 @@ ${MAINT_STYLES}
 <div class="urgency-bar">🌡️ <strong>Temporada alta:</strong> Reserva tu mantenimiento en ${nombre}. <a href="tel:+34625215983"> Llamar: 625 215 983</a></div>
 <header class="site-header">
   <div class="header-inner">
-    <a href="/aires-acondicionados/" class="logo"><picture><source srcset="../img/logo_zervitecnics.webp" type="image/webp"><img width="560" height="120" src="../img/logo_zervitecnics.png" alt="Zervitecnics" width="560" height="120"  style="height:56px;width:auto;object-fit:contain"></picture></a>
+    <a href="/aires-acondicionados/" class="logo"><picture><source srcset="../img/logo_zervitecnics.webp" type="image/webp"><img width="560" height="120" src="../img/logo_zervitecnics.png" alt="Zervitecnics"  style="height:56px;width:auto;object-fit:contain"></picture></a>
     <nav class="main-nav"><a href="../index.html#servicios">Servicios</a><a href="../precios.html">Precios</a><a href="../subvenciones.html">Subvenciones</a><a href="../index.html#zonas">Zonas</a><a href="../index.html#faq">FAQ</a><a href="../index.html#presupuesto">Presupuesto</a></nav>
     <div class="header-cta">
       <a href="tel:+34625215983" class="btn-phone" data-location="header-mant-${slug}">${PHONE_SVG}625 215 983</a>
@@ -662,7 +662,7 @@ ${MAINT_STYLES}
 <div class="urgency-bar">🌡️ <strong>Temporada alta:</strong> Reserva tu mantenimiento ${nombre}. <a href="tel:+34625215983"> Llamar: 625 215 983</a></div>
 <header class="site-header">
   <div class="header-inner">
-    <a href="/aires-acondicionados/" class="logo"><picture><source srcset="../img/logo_zervitecnics.webp" type="image/webp"><img width="560" height="120" src="../img/logo_zervitecnics.png" alt="Zervitecnics" width="560" height="120"  style="height:56px;width:auto;object-fit:contain"></picture></a>
+    <a href="/aires-acondicionados/" class="logo"><picture><source srcset="../img/logo_zervitecnics.webp" type="image/webp"><img width="560" height="120" src="../img/logo_zervitecnics.png" alt="Zervitecnics"  style="height:56px;width:auto;object-fit:contain"></picture></a>
     <nav class="main-nav"><a href="../index.html#servicios">Servicios</a><a href="../precios.html">Precios</a><a href="../subvenciones.html">Subvenciones</a><a href="../index.html#zonas">Zonas</a><a href="../index.html#faq">FAQ</a><a href="../index.html#presupuesto">Presupuesto</a></nav>
     <div class="header-cta">
       <a href="tel:+34625215983" class="btn-phone" data-location="header-mant-${slug}">${PHONE_SVG}625 215 983</a>

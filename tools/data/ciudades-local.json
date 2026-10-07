@@ -1,0 +1,566 @@
+{
+ "barcelona": {
+  "barrios": [
+   "Dreta de l'Eixample",
+   "Sagrada Família",
+   "Vila de Gràcia",
+   "Sants",
+   "Poblenou",
+   "Sant Antoni"
+  ]
+ },
+ "l-hospitalet-de-llobregat": {
+  "barrios": [
+   "Centre",
+   "Sant Josep",
+   "Collblanc",
+   "la Torrassa",
+   "Santa Eulàlia",
+   "Bellvitge"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança Municipal sobre sorolls i vibracions (BOPB núm. 301, 17/12/1998)",
+   "articulo": "Art. 16.6 (tambien 17.1.a y 19.2.d)",
+   "resumen": "La ubicacion e instalacion de equipos, con especial atencion a ventilacion, calefaccion y aire acondicionado, debe garantizar que no se superen los niveles de inmision sonora en edificios y locales proximos; no se permite anclaje directo de maquinaria sobre medianeras sin antivibratorios.",
+   "url": "https://www.l-h.cat/gdocs/d4728676.pdf"
+  }
+ },
+ "santa-coloma-de-gramenet": {
+  "barrios": [
+   "El Centre",
+   "Can Franquesa",
+   "El Singuerlín",
+   "Riu Nord",
+   "Santa Rosa",
+   "El Fondo"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança sobre el soroll i les vibracions a Santa Coloma de Gramenet",
+   "articulo": "Art. 27.1 (tambien 19.4, 27.2, 27.3)",
+   "resumen": "Los equipos de aire acondicionado, refrigeracion y ventilacion deben instalarse segun la normativa y no superar los valores limite de inmision; instaladores y propietarios son responsables de su ubicacion y funcionamiento.",
+   "url": "https://www.gramenet.cat/fileadmin/Files/Ajuntament/participacio/ord_soroll/010118_ORDENANCA_SOBRE_EL_SOROLL_I_LES_VIBRACIONS_V22.pdf"
+  },
+  "fachada": {
+   "articulo": "Art. 27.1",
+   "resumen": "Preferentemente la parte externa del sistema va en tejado o cubierta; evitar aleros, rincones y patios; ventiladores y extractores no deben dirigirse a jardines, galerias, ventanas o balcones vecinos y llevan silenciadores. No regula fachada como tal.",
+   "url": "https://www.gramenet.cat/fileadmin/Files/Ajuntament/participacio/ord_soroll/010118_ORDENANCA_SOBRE_EL_SOROLL_I_LES_VIBRACIONS_V22.pdf"
+  }
+ },
+ "sant-adria-de-besos": {
+  "barrios": [
+   "Sant Adrià Nord",
+   "Sant Joan Baptista",
+   "La Catalana",
+   "Montsolís",
+   "El Besòs",
+   "La Mina"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança sobre el Soroll i les Vibracions de Sant Adrià de Besòs (setembre 2008)",
+   "articulo": "Art. 13.1.c, 14.1 y 28.5",
+   "resumen": "Los equipos de climatizacion no pueden generar en edificios proximos inmisiones superiores a las del Anexo 3; la parte externa va preferentemente en cubierta, evitando aleros, rincones y patios; antivibratorios obligatorios.",
+   "url": "https://decidim.diba.cat/uploads/decidim/attachment/file/4115/ordSorollsVibracions.pdf"
+  },
+  "fachada": {
+   "articulo": "Art. 14.1",
+   "resumen": "En edificios ya construidos los equipos van preferentemente en tejado o cubierta; si no es posible, en patios de luces o de parcela solo si todos los vecinos con acceso estan de acuerdo. No regula fachada especificamente.",
+   "url": "https://decidim.diba.cat/uploads/decidim/attachment/file/4115/ordSorollsVibracions.pdf"
+  }
+ },
+ "cornella-de-llobregat": {
+  "barrios": [
+   "El Centre",
+   "La Riera",
+   "Sant Ildefons",
+   "Almeda",
+   "El Pedró",
+   "La Gavarra"
+  ]
+ },
+ "esplugues-de-llobregat": {
+  "barrios": [
+   "Can Vidalet",
+   "La Plana",
+   "Centre",
+   "El Gall",
+   "Finestrelles",
+   "Ciutat Diagonal"
+  ]
+ },
+ "sant-cugat-del-valles": {
+  "barrios": [
+   "Centre",
+   "Eixample Sud",
+   "Volpelleres",
+   "Mira-sol",
+   "Les Planes",
+   "La Floresta"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança municipal sobre sorolls, vibracions i olors de Sant Cugat del Vallès (documento fechado 4 mayo 2018)",
+   "articulo": "Art. 31 (Instal·lacions de climatització, condicionament d'aire i ventilació)",
+   "resumen": "Los equipos de climatización/refrigeración/ventilación deben instalarse conforme a la normativa y no superar los valores límite; si pueden causar impacto acústico significativo han de llevar sistemas de corrección acústica, y instaladores/propietarios/explotadores son responsables de su correcta ubicación y funcionamiento. El art. 33 exige elementos antivibratorios.",
+   "url": "https://xarxaenxarxa.diba.cat/sites/xarxaenxarxa.diba.cat/files/2018_ordenanca_soroll_vibracions_i_olors_sant_cugat_del_valles.pdf"
+  },
+  "fachada": {
+   "articulo": "Art. 31.4 y 31.5",
+   "resumen": "En edificios nuevos o con reforma integral las unidades van en cubierta o espacios previstos y en ningún caso sobre fachadas ni patios de manzana; en edificios existentes se prefiere la cubierta y, si no es posible, rige composición de fachada (p. ej. tras la barandilla del balcón, tras carpintería o rejillas en planta baja) con tuberías por el interior.",
+   "url": "https://xarxaenxarxa.diba.cat/sites/xarxaenxarxa.diba.cat/files/2018_ordenanca_soroll_vibracions_i_olors_sant_cugat_del_valles.pdf"
+  }
+ },
+ "sant-boi-de-llobregat": {
+  "barrios": [
+   "Ciutat Cooperativa-Molí Nou",
+   "Marianao-Can Paulet",
+   "Barri Centre",
+   "Vinyets-Molí Vell",
+   "Camps Blancs-Canons-Orioles",
+   "Casablanca"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança municipal reguladora del soroll i mapa de capacitat acústica (Sant Boi de Llobregat)",
+   "articulo": "Art. 24 (Instal·lacions de climatització, condicionament d'aire i ventilació)",
+   "resumen": "Los equipos de aire acondicionado, refrigeración o ventilación deben instalarse según la normativa vigente sin superar los valores límite; si pueden afectar significativamente al entorno, se exigen sistemas de corrección acústica, siendo responsables instalador y propietario. Art. 17.1: entre 22:00 y 08:00 no se permite usar aparatos domésticos ruidosos.",
+   "url": "https://bop.diba.cat/temp/06_022013013413.pdf"
+  }
+ },
+ "castelldefels": {},
+ "gava": {
+  "barrios": [
+   "Rambla-Centre",
+   "Can Tintorer",
+   "Bruguers",
+   "Ca n'Espinós",
+   "Les Marines",
+   "Gavà Mar"
+  ],
+  "fachada": {
+   "articulo": "Art. 97 bis",
+   "resumen": "En edificios nuevos y rehabilitaciones integrales se reserva espacio para unidades en cubierta o zonas comunes fuera de la vista de la calle; se prohíbe el trazado por fachadas principales, patios interiores de manzana o terrazas; en locales de planta baja existentes la unidad exterior debe quedar dentro de los huecos arquitectónicos sin sobresalir del plano de fachada. La salida de aire no puede molestar a vianantes ni vecinos y los condensados no pueden verter a la vía pública.",
+   "url": "https://dibaaps.diba.cat/vnis/temp/CIDO_bopb_2006_05_20060503_B901_20060503_061_061.pdf"
+  }
+ },
+ "viladecans": {
+  "barrios": [
+   "Barri Antic",
+   "L'Eixample Centre",
+   "La Montserratina",
+   "El Ginestar",
+   "Barri de Sales",
+   "Can Palmer-Can Batllori"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança reguladora de la instal·lació d'aparells d'aire condicionat (Viladecans)",
+   "articulo": "Arts. 4.1, 6.2, 7, 10 i 11.4",
+   "resumen": "Les instal·lacions han de complir l'ordenança municipal de soroll i vibracions; si superen els límits cal aïllament acústic, i qualsevol equip que pugui produir vibració necessita suports antivibratoris; l'aire calent de la unitat exterior no pot elevar més de 2 °C la temperatura a l'habitatge o local més proper (mesurat al pla de façana).",
+   "url": "https://seu-e.cat/documents/4123793/18336317/%28Microsoft+Word+-+46.-ORDENAN_307A_REGULADORA_INSTAL_267LACIO_APARELLS_AIRE_CONDICIONAT.doc%29.pdf/ba7154e0-598d-4961-9fb3-7b0bc6ce4f44"
+  },
+  "fachada": {
+   "articulo": "Arts. 4.1, 4.2, 4.3, 5.1, 5.2 i 7",
+   "resumen": "No es poden instal·lar unitats a les façanes (els patis d'illa compten com a façana). Excepcions: planta baixa, sense fixar ni foradar la façana i sobresortint màx. 20 cm dins buits de finestra; on hi ha balcó, la unitat va a terra del balcó per sota de la barana; a coberta, per sota del carener, agrupada i amagada de la via pública; es prefereixen coberes comunitàries; distància mínima de 10 cm a façanes/mitgeres; edificis històrics i Casc Antic amb tractament especial.",
+   "url": "https://seu-e.cat/documents/4123793/18336317/%28Microsoft+Word+-+46.-ORDENAN_307A_REGULADORA_INSTAL_267LACIO_APARELLS_AIRE_CONDICIONAT.doc%29.pdf/ba7154e0-598d-4961-9fb3-7b0bc6ce4f44"
+  }
+ },
+ "el-prat-de-llobregat": {
+  "barrios": [
+   "Sant Cosme",
+   "Sant Jordi",
+   "La Granja"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança de l'ús dels colors, materials i altres elements en les edificacions (modificació)",
+   "articulo": "Art. 13.1",
+   "resumen": "La comunicació prèvia d'instal·lació d'aire condicionat/aerotèrmia ha d'incloure mesures contra soroll i vibració i complir els límits de l'ordenança municipal de soroll o la normativa vigent. (Nota: l'article concret d'AC de l'ordenança de soroll 'Ordenança reguladora de la contaminació per sorolls i vibracions' no s'ha pogut llegir.)",
+   "url": "https://bop.diba.cat/anuncio/ver-pdf/3666615"
+  },
+  "fachada": {
+   "articulo": "Arts. 13.2 i 14 (colors/materials); art. 38.5 (civisme)",
+   "resumen": "Edificis existents: la unitat va a la coberta per defecte; si és impossible, a plantes altes cal ubicació que l'amagui de la via pública i s'integri a la composició; en planta baixa la sortida va integrada al buit, sobresortint màx. 1/10 de l'amplada de la vorera i 20 cm, a mínim 2,20 m sobre la vorera, amb reixa del mateix material/color de la façana, sense foradar ni fixar a la façana. Obra nova: condensadors a coberta (preferent prop de l'escala, façana posterior o patis de parcel·la), 2 m² reservats per habitatge/local. A més, l'Ordenança de civisme (text de 2015) art. 38.5 prohibeix aparells d'aire condicionat visibles a façana.",
+   "url": "https://bop.diba.cat/anuncio/ver-pdf/3666615"
+  }
+ },
+ "sant-just-desvern": {
+  "barrios": [
+   "Barri Centre",
+   "Barri Nord",
+   "Barri Sud",
+   "Illa Walden",
+   "La Miranda-Canigó",
+   "Mas Lluí"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança municipal de civisme i convivència ciutadana",
+   "articulo": "Art. 81.5 (i art. 2 remet a l'Ordenança municipal de sorolls i vibracions, no localitzada)",
+   "resumen": "Prohibeix llençar fums, vapors o aire a l'exterior per façanes i patis, però exceptua les instal·lacions d'aire condicionat de menys de 10 kW sempre que el cabal d'aire no alteri sensiblement la temperatura als buits veïns.",
+   "url": "https://www.santjust.net/media/uploads/salut/ordenanca_mpal_civisme.pdf"
+  }
+ },
+ "sant-joan-despi": {
+  "barrios": [
+   "Barri Centre",
+   "Les Planes",
+   "Barri TV3 (Pla del Vent i Torreblanca)",
+   "Eixample"
+  ]
+ },
+ "mataro": {
+  "barrios": [
+   "Centre",
+   "Eixample",
+   "Rocafonda",
+   "Cirera",
+   "Cerdanyola",
+   "Peramàs"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança reguladora del soroll i les vibracions (2012)",
+   "articulo": "Art. 25",
+   "resumen": "Els equips d'aire condicionat, refrigeració o aireig s'han d'instal·lar segons la normativa urbanística vigent sense superar els valors límit (residencial exterior 55/55/45 dB(A) dia/vespre/nit; interior dormitoris 30/30/25); si poden tenir impacte acústic cal instal·lar sistemes correctors; instal·ladors i propietaris en són responsables.",
+   "url": "https://www.mataro.cat/ca/lajuntament/normativa/ordenances-municipals/ordenanca-reguladora-del-soroll-i-les-vibracions-2012/normativa-view/++widget++form.widgets.file/@@download/Ordenanca_soroll_i_vibracions.pdf"
+  },
+  "fachada": {
+   "articulo": "Arts. 23 i 32.7",
+   "resumen": "No fixa on ha d'anar la unitat exterior: només exigeix comunicació prèvia per instal·lar aparells d'aire condicionat visibles des de la via pública (excepte els d'activitats amb llicència d'activitats), amb documentació gràfica i fotografia de la façana indicant l'emplaçament.",
+   "url": "https://www.mataro.cat/es/recursos/urbanisme/docs/text-ordenanca-llicencies-22022019.pdf"
+  }
+ },
+ "premia-de-mar": {
+  "barrios": [
+   "Barri Antic (AVECA)",
+   "Can Pou-Camp de Mar",
+   "Llevant"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança municipal reguladora dels sorolls i les vibracions de Premià de Mar",
+   "articulo": "Art. 27 (apartados 1, 2 y 3)",
+   "resumen": "Los equipos de aire acondicionado, refrigeración o aireación deben instalarse según la normativa y no superar los valores límite; si pueden causar impacto acústico significativo han de llevar sistemas correctores acústicos, y instaladores y propietarios responden de la ubicación, el funcionamiento y el cumplimiento de los límites.",
+   "url": "https://bop.diba.cat/anunci/3126509/aprovacio-definitiva-de-l-ordenanca-municipal-reguladora-dels-sorolls-i-les-vibracions-ajuntament-de-premia-de-mar"
+  }
+ },
+ "vilassar-de-mar": {},
+ "el-masnou": {
+  "barrios": [
+   "Ocata",
+   "Alella de Mar",
+   "Califòrnia (urbanització)",
+   "Can Teixidor (urbanització)",
+   "Bellesguard (urbanització)",
+   "Santa Madrona (urbanització)"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança municipal de civisme i convivència ciutadana del Masnou",
+   "articulo": "Art. 9 (Veïnatge, apartado 1.2) y art. 14.3 (Fums)",
+   "resumen": "El funcionamiento de aparatos, incluidos aire acondicionado, ventilación y refrigeración, dentro de la vivienda debe ajustarse a los límites legales para evitar molestias (art. 9), y no se puede lanzar al exterior por fachadas o patios aire o gases con temperatura distinta a la ambiente (art. 14.3).",
+   "url": "https://www.elmasnou.cat/media/repository/documents_oficials/normativa_general/2023_ordenanca_civisme_20230622.pdf"
+  },
+  "fachada": {
+   "articulo": "Art. 21 (Col·locació d'aparells d'aire condicionat)",
+   "resumen": "Se prohíbe instalar en los edificios aparatos de aire acondicionado que queden a la vista en las fachadas; se sugieren las cubiertas/terrados como ubicación adecuada y, excepcionalmente, terrazas preservando la estética del edificio. Hay que presentar petición por escrito con fotografías del lugar previsto, y en edificios protegidos, la documentación que pidan los servicios técnicos.",
+   "url": "https://www.elmasnou.cat/media/repository/documents_oficials/normativa_general/2023_ordenanca_civisme_20230622.pdf"
+  }
+ },
+ "argentona": {
+  "barrios": [
+   "El Cros (barri)",
+   "Madà (nucli dispers)",
+   "Can Raimí (urbanització)",
+   "Les Ginesteres (urbanització)",
+   "Can Cabot (urbanització)"
+  ]
+ },
+ "cabrils": {
+  "barrios": [
+   "Barri de l'església de la Santa Creu (la Sagrera)",
+   "Veïnat del Sant Crist",
+   "Valldeneu (urbanització)",
+   "Crist Park (urbanització)",
+   "Cabrils Dos (urbanització)"
+  ]
+ },
+ "arenys-de-mar": {
+  "barrios": [
+   "Sant Elm",
+   "Santa Maria",
+   "Pla dels Frares",
+   "Sa Boada",
+   "Joan XXIII"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança reguladora del soroll i les vibracions (Model A, setembre 2010)",
+   "articulo": "Art. 27 (Instal·lacions de climatització, condicionament d'aire i ventilació)",
+   "resumen": "Los equipos de aire acondicionado deben instalarse conforme a la normativa vigente, no superar los valores límite de la zona acústica, llevar sistemas correctores si el impacto acústico es significativo, y instaladores y propietarios responden de su correcta ubicación y funcionamiento.",
+   "url": "https://seu-e.cat/documents/988208/0/Ordenan%C3%A7a+Sorolls/8ed00748-fd47-4b14-ab28-0063cf4c9099"
+  }
+ },
+ "pineda-de-mar": {
+  "barrios": [
+   "Poblenou (Garbí)",
+   "les Creus",
+   "Mar",
+   "Nucli vell (la Boada)"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança municipal de convivència i civisme de Pineda de Mar (versión de la sede electrónica, fecha 07-11-2019)",
+   "articulo": "Art. 28 bis.4 f) y 28.2.a",
+   "resumen": "Los equipos de aire acondicionado en azotea no pueden causar ruidos ni vibraciones a las viviendas colindantes y deben apantallarse o cerrarse con recinto insonorizado; además se prohíbe el ruido excesivo de cualquier aparato del domicilio.",
+   "url": "https://seu.pinedademar.org/siac/Publicacion_ver_doc.aspx?coddoc=SEC13I2MZ&id=233"
+  },
+  "fachada": {
+   "articulo": "Art. 28 bis.3, 28 bis.4 (a-g) y 28 bis.5; art. 28.2.l (prohíbe instalar inadecuadamente en fachadas aparatos, conducciones y desagües)",
+   "resumen": "Aire acondicionado en edificios protegidos: prohibido si es visible desde la vía pública (28 bis.3). En el resto: plantas bajas con protección visual sin sobrepasar la línea de fachada; otras plantas sin sobrepasar la línea de fachada y, si no hay balcón, en cubierta no visible; no en patios de luces (en vivienda particular solo por debajo de 1,5 m); prohibido verter condensación a la vía pública; salida de aire de compresores a mínimo 2 m sobre la acera.",
+   "url": "https://seu.pinedademar.org/siac/Publicacion_ver_doc.aspx?coddoc=SEC13I2MZ&id=233"
+  }
+ },
+ "calella": {
+  "barrios": [
+   "Pequín",
+   "Capaspre",
+   "Dalt de Calella",
+   "Sant Quirze",
+   "Valldengulí"
+  ]
+ },
+ "canet-de-mar": {
+  "barrios": [
+   "Casc antic",
+   "Centre",
+   "Mas El Grau",
+   "Can Salat Busquets"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança de civisme i convivència ciutadana de Canet de Mar (aprobación inicial, Ple 25-03-2010)",
+   "articulo": "Art. 24.3 a), 25.1 b) y 30.1",
+   "resumen": "No cita el aire acondicionado expresamente: hace responsable al titular del funcionamiento de instalaciones y aparatos del domicilio (24.3 a), prohíbe entre 20 h y 8 h instalar o reparar aparatos si superan los límites sonoros (25.1 b) y remite a la legislación sectorial de contaminación acústica (30.1).",
+   "url": "https://canetdemar.cat/ARXIUS/ordenances/2010/Ordenanca_Civisme_Convivencia_Canet_Aprovacio_inicial.pdf"
+  }
+ },
+ "granollers": {
+  "barrios": [
+   "Congost",
+   "Can Bassa",
+   "Lledoner",
+   "Primer de Maig",
+   "Granollers Nord",
+   "Can Gili"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança municipal reguladora del soroll i les vibracions de Granollers (aprobación definitiva Ple 30-11-2010; modificación julio 2011)",
+   "articulo": "Art. 26 (Instal·lacions de climatització, aire condicionat i ventilació)",
+   "resumen": "Los equipos deben instalarse según la normativa vigente sin superar los valores límite (anexos 3 y 4), con correctores acústicos si el impacto es significativo, y instaladores y propietarios responden de su ubicación y funcionamiento.",
+   "url": "https://www.granollers.cat/sites/default/files/importades_d6/oferta/2011/02/Aprovacio_definitva-Ordenan%C3%A7a_soroll.pdf"
+  },
+  "fachada": {
+   "articulo": "Art. 9 (9.1.1 a 9.1.5) de la Ordenança municipal dels usos del paisatge i de la publicitat",
+   "resumen": "Los equipos de climatización deben ir en terrazas, cubiertas o azoteas no visibles desde la vía pública, con elementos antivibratorios; prohibido evacuar condensados a la vía pública; en edificios existentes se puede autorizar un aparato en fachada con licencia municipal, en la parte baja de los balcones sin sobresalir de la altura de la barandilla; rejillas de ventilación a mínimo 2 m de altura.",
+   "url": "https://tramitacio.granollers.cat/portal/sede/RecursosWeb/DOCUMENTOS/1/0_6604_1.pdf"
+  }
+ },
+ "mollet-del-valles": {
+  "barrios": [
+   "La Plana d'en Lledó",
+   "Santa Rosa",
+   "Nostra Senyora de Lourdes",
+   "Can Pantiquet"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança de convivència ciutadana (i de la via pública) de Mollet del Vallès; texto con publicaciones BOPB 15-09-1999, 11-10-2001, 18-04-2007 y 29-11-2011 (última modificación, aprobada por el Pleno el 20-12-2010)",
+   "articulo": "Art. 66.2 y art. 68.3",
+   "resumen": "El funcionamiento de las instalaciones de climatización/ventilación no debe originar en edificios contiguos niveles de inmisión superiores a los valores guía del art. 42 (art. 66.2), y los equipos de aire acondicionado deben instalarse de forma que no causen molestias a los vecinos (art. 68.3); el art. 64.3.d incluye el funcionamiento de instalaciones de aire acondicionado entre las actuaciones municipales sobre ruido nocturno.",
+   "url": "https://decidim-mollet.diba.cat/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdWM1IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b4854d49b22931f2fa102a3e6b1b58ebdc386a8e/10._Ordenan%C3%A7a_Conviv%C3%A8ncia_ciutadana.pdf"
+  },
+  "fachada": {
+   "articulo": "Art. 68.3 a), b), c) (Ordenança de convivència ciutadana)",
+   "resumen": "Art. 68.3: la instalación de equipos de aire acondicionado en fachada requiere licencia municipal (a), no pueden colocarse a menos de 2 m sobre el nivel de la calle (b) y el agua de condensación no puede verterse a la vía pública (c). La ordenanza de ruido de 2007 (art. 10.2.c) indica que la parte exterior debe ir en tejado o cubierta.",
+   "url": "https://decidim-mollet.diba.cat/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdWM1IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b4854d49b22931f2fa102a3e6b1b58ebdc386a8e/10._Ordenan%C3%A7a_Conviv%C3%A8ncia_ciutadana.pdf"
+  }
+ },
+ "parets-del-valles": {
+  "barrios": [
+   "Barri Antic",
+   "Eixample",
+   "Escorxador",
+   "Can Cerdanet",
+   "Can Volart",
+   "Can Riera"
+  ]
+ },
+ "la-garriga": {
+  "ruido": {
+   "ordenanza": "Ordenança municipal G05 de control de la contaminació acústica (Pleno 24-10-1995, modificada 09-11-1999); versión del fichero fechada 2013-01-25. Además, Ordenança de Civisme i Convivència Ciutadana, aprobación definitiva BOPB 02-07-2026 (CVE 202610114665)",
+   "articulo": "Art. 10 y art. 17 (G05); art. 41-42 (Civisme 2026)",
+   "resumen": "Prohíbe fijar máquinas en paredes, techos o forjados salvo excepciones con medidas correctoras, exige antivibratorios en suelo, 0,70 m de separación de medianeras y conexiones flexibles en climatización/ventilación (art. 10); el art. 17 exige medidas correctoras para instalaciones de climatización y refrigeración en el proyecto acústico. La ordenanza de civismo de 2026 no cita el A/C y remite a la ordenanza de ruidos (art. 41-42).",
+   "url": "https://www.lagarriga.cat/media/repository/documents/ordenancesgenerals/generals/3105130222_g05-2013-01-25.pdf"
+  }
+ },
+ "cardedeu": {
+  "barrios": [
+   "La Creu",
+   "La Riera",
+   "L'Estalvi",
+   "La Granada",
+   "El Poble-sec"
+  ]
+ },
+ "sant-celoni": {
+  "barrios": [
+   "Les Borrelles",
+   "Can Sans",
+   "Illes Belles",
+   "Sant Ponç",
+   "Barri de la Força",
+   "Barri Vilanova"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança reguladora del soroll i les vibracions de Sant Celoni (aprobación definitiva, BOPB 13-08-2012)",
+   "articulo": "Art. 17",
+   "resumen": "Los equipos de aire acondicionado, refrigeración o ventilación deben instalarse según la normativa y no superar los valores límite; si pueden causar impacto acústico significativo deben llevar sistemas correctores acústicos, y instaladores y propietarios son responsables de la ubicación correcta, el funcionamiento y el cumplimiento de los límites.",
+   "url": "https://santceloni.cat/fitxa.php?id=12774"
+  }
+ },
+ "caldes-de-montbui": {
+  "barrios": [
+   "Sant Sebastià de Montmajor (poble)",
+   "Lledoners (urbanització)",
+   "Saulons (urbanització)",
+   "Can Valls (urbanització)",
+   "el Negrell (urbanització)",
+   "la Font dels Enamorats (urbanització)"
+  ]
+ },
+ "sabadell": {
+  "barrios": [
+   "Ca n'Oriac",
+   "Torre-romeu",
+   "Creu de Barberà",
+   "Can Puiggener",
+   "Can Rull",
+   "La Concòrdia"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança municipal reguladora del civisme i la convivència a Sabadell",
+   "articulo": "Art. 21 (Sorolls); también art. 19 (molèsties que provenen d'habitatges)",
+   "resumen": "Obliga a respetar el descanso vecinal y evitar ruidos, con exigencia especial entre las 21 h y las 8 h; el art. 19 obliga a propietarios/ocupantes de viviendas a evitar molestias innecesarias a otras personas. El texto NO menciona expresamente aire acondicionado ni climatización.",
+   "url": "https://bop.diba.cat/anuncio/descargar-pdf/3618683"
+  }
+ },
+ "cerdanyola-del-valles": {
+  "barrios": [
+   "Fontetes",
+   "Canaletes",
+   "Sant Ramon",
+   "Parcers",
+   "Guiera",
+   "Montflorit-Can Cerdà"
+  ]
+ },
+ "rubi": {
+  "barrios": [
+   "Les Torres",
+   "Vint-i-cinc de Setembre",
+   "Ca n'Oriol",
+   "Can Xercavins",
+   "La Sagrera",
+   "El Pedró"
+  ],
+  "fachada": {
+   "articulo": "Art. 87.1.d y 87.2",
+   "resumen": "Exige licencia previa para instalar aparatos de aire acondicionado (en bienes de dominio público o privado, por estética, decoro y seguridad); la licencia fija las condiciones de instalación. No fija reglas concretas de ubicación u orientación.",
+   "url": "https://rubi.cat/es/fitxers/documents-ok/area-de-planificacio-estrategica-promocio-economica-i-govern/ord-policia-bon-govern.pdf"
+  }
+ },
+ "sant-quirze-del-valles": {
+  "barrios": [
+   "Les Fonts",
+   "Can Pallars",
+   "Can Llobateres",
+   "Sant Quirze Parc",
+   "Mas Duran"
+  ]
+ },
+ "castellar-del-valles": {
+  "barrios": [
+   "Sant Feliu del Racó",
+   "les Arenes",
+   "l'Airesol (urbanització)",
+   "el Racó (urbanització)",
+   "el Balcó de Sant Llorenç (urbanització)",
+   "Can Font (urbanització)",
+   "Ca n'Avellaneda (urbanització)"
+  ]
+ },
+ "barbera-del-valles": {
+  "barrios": [
+   "la Romànica",
+   "Barri Europa",
+   "Can Serra",
+   "Can Gorgs",
+   "Centre - Eixample - Can Llobet",
+   "Parc Central",
+   "Barri Antic"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança municipal de sorolls i vibracions (Barberà del Vallès; aprobada 23/09/1986, BOP nº 289 de 03/12/1986)",
+   "articulo": "Art. 26 (también 21-25 y 27)",
+   "resumen": "Art. 26: los equipos de aire acondicionado, ventilación y refrigeración (condensadores, evaporadores, compresores, ventiladores) no pueden generar en edificios contiguos o próximos ruido por encima de los límites del Anexo I, Tabla 1; art. 24.2 exige soportes elásticos antivibratorios en conexiones de climatización.",
+   "url": "https://www.bdv.cat/sites/default/files/common/Medi_Ambient/ordenanca_municipal_de_sorolls_i_vibracions.pdf"
+  },
+  "fachada": {
+   "articulo": "Arts. 21-23",
+   "resumen": "No hay norma de fachada/balcón verificada. Sí hay norma de montaje: art. 21 prohíbe instalar máquinas en movimiento sobre techos, forjados u otros elementos estructurales; art. 22 exige elementos antivibratorios adecuados en instalación a nivel de suelo; art. 23 fija 10 cm mínimos al cerramiento perimetral.",
+   "url": "https://www.bdv.cat/sites/default/files/common/Medi_Ambient/ordenanca_municipal_de_sorolls_i_vibracions.pdf"
+  }
+ },
+ "badalona": {
+  "barrios": [
+   "Sant Roc",
+   "Llefià",
+   "La Salut",
+   "Pomar",
+   "Dalt de la Vila",
+   "Gorg"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança municipal de civisme de Badalona",
+   "articulo": "arts. 63 y 64",
+   "resumen": "cita expresamente el funcionamiento de las instalaciones de aire acondicionado como posible foco de ruido y fija el descanso de 22:00 a 08:00 entre semana y de 22:00 a 10:00 en fin de semana.",
+   "url": "https://bop.diba.cat/anuncis/antic/022014013639"
+  }
+ },
+ "sitges": {
+  "barrios": [
+   "Poble Sec",
+   "Terramar",
+   "Aiguadolç",
+   "Vallpineda",
+   "Quint Mar",
+   "Montgavina"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança de soroll i vibracions de Sitges",
+   "articulo": "art. 27",
+   "resumen": "regula las instalaciones de climatización: no pueden superar los límites de ruido, pueden exigir sistemas correctores y hacen responsables de su ubicación y funcionamiento al instalador y al propietario.",
+   "url": "https://seu.sitges.cat/documentPublic/download/2348"
+  },
+  "fachada": {
+   "articulo": "ficha del casco antiguo del PEPPAC",
+   "resumen": "en el casco antiguo, la normativa de patrimonio considera un desorden visual los aparatos de aire en ventanas, balcones o fachada y pide instalaciones ordenadas y grapadas a la fachada; conviene consultar al Ajuntament antes de instalar.",
+   "url": "https://seu.sitges.cat/documentPublic/download/690"
+  }
+ },
+ "terrassa": {
+  "barrios": [
+   "Centre",
+   "Ca n'Anglada",
+   "Sant Pere",
+   "Can Parellada",
+   "Ca n'Aurell",
+   "Can Palet"
+  ],
+  "ruido": {
+   "ordenanza": "Ordenança reguladora dels sorolls i les vibracions de Terrassa",
+   "articulo": "art. 27",
+   "resumen": "los equipos de aire acondicionado deben instalarse conforme a la normativa y no superar los límites de ruido; instalador y propietario son responsables de su ubicación y funcionamiento.",
+   "url": "https://normatia.com/es/normativa/ruido-vibraciones-terrasa/2018/articulat/"
+  }
+ }
+}

@@ -81,6 +81,27 @@ function faqJsonLd(faqs) {
   };
 }
 
+
+const CIUDADES_LOCAL = (() => { try { return require('./data/ciudades-local.json'); } catch (e) { return {}; } })();
+/* Bloque propio por ciudad: solo con datos verificados con fuente (tools/data/ciudades-local.json). */
+function ciudadLocalParas(ciudad) {
+  const d = CIUDADES_LOCAL[ciudad.slug];
+  if (!d) return [];
+  const out = [];
+  const lc = t => t.charAt(0).toLowerCase() + t.slice(1);
+  if (d.barrios && d.barrios.length >= 3) {
+    out.push(`Atendemos <strong>${ciudad.nombre}</strong> y, entre otras zonas, ${d.barrios.slice(0, 6).join(', ')}.`);
+  }
+  if (d.ruido) {
+    out.push(`<strong>Normativa local:</strong> la ${d.ruido.ordenanza} (${d.ruido.articulo}) ${lc(d.ruido.resumen)} <a href="${d.ruido.url}" rel="nofollow noopener" target="_blank">Ver ordenanza</a>`);
+  }
+  if (d.fachada) {
+    out.push(`<strong>Ubicación de la unidad exterior:</strong> ${d.fachada.resumen.charAt(0).toUpperCase() + d.fachada.resumen.slice(1)} (${d.fachada.articulo}) <a href="${d.fachada.url}" rel="nofollow noopener" target="_blank">Ver fuente</a>`);
+  }
+  if (d.ruido || d.fachada) out.push('<em>Resumen informativo de la normativa municipal; consulta siempre el texto vigente en tu ayuntamiento o en la comunidad de propietarios.</em>');
+  return out;
+}
+
 function paginaMarcaCiudad(marca, ciudad) {
   const fileName = `${marca.slug}-${ciudad.slug}.html`;
   const url = `https://zervitecnics.es/aires-acondicionados/marcas/${fileName}`;
@@ -161,7 +182,8 @@ function paginaMarcaCiudad(marca, ciudad) {
     sectionParas: [
       marca.descripcion,
       `<strong>${ciudad.nombre}</strong> (${ciudad.comarca}) es ${ciudad.notas}, ${distTxt}. Trabajamos toda la zona con desplazamiento ágil y técnico especializado. Para los equipos ${marca.nombre} aplicamos los procedimientos de instalación recomendados por el fabricante: vacío, prueba de estanqueidad y carga complementaria de refrigerante si la línea frigorífica supera la carga precargada.`,
-      `Para que esta página te sirva como referencia: los precios "desde" aplican a viviendas de ${ciudad.nombre} con instalación estándar (split de pared, dos máquinas a menos de 5 metros de distancia, tirada lineal de tubería frigorífica). En instalaciones que requieran taladros en hormigón armado, cubierta de pizarra o subida con grúa, el técnico te indicará el coste adicional antes de empezar.`
+      `Para que esta página te sirva como referencia: los precios "desde" aplican a viviendas de ${ciudad.nombre} con instalación estándar (split de pared, dos máquinas a menos de 5 metros de distancia, tirada lineal de tubería frigorífica). En instalaciones que requieran taladros en hormigón armado, cubierta de pizarra o subida con grúa, el técnico te indicará el coste adicional antes de empezar.`,
+      ...ciudadLocalParas(ciudad),
     ],
     checklistHTML,
     priceSectionLabel: `Modelos ${marca.nombre} para ${ciudad.nombre}`,
@@ -273,7 +295,8 @@ function paginaCapacidadCiudad(cap, ciudad) {
     sectionParas: [
       `La capacidad de <strong>${cap.frig} frigorías/h</strong> (${cap.btu.toLocaleString('es-ES')} BTU/h · ${cap.kw} kW térmicos) es la recomendada para refrigerar <strong>${cap.descripcionUso}</strong> de <strong>${cap.m2Min} a ${cap.m2Max} m²</strong> con altura estándar (2,5 m).`,
       `En <strong>${ciudad.nombre}</strong> (${ciudad.comarca}, ${distTxt}) las estancias con orientación sur o ventanales amplios al Mediterráneo pueden requerir subir a la siguiente capacidad. ${capitalize(ciudad.notas)}: tenlo en cuenta si el inmueble es de obra antigua sin aislamiento renovado, o si está en una planta alta con mucha exposición solar.`,
-      `<strong>Cálculo orientativo</strong>: en torno a <strong>100 frigorías por m²</strong>, ajustando según orientación, aislamiento, número de ventanas y altura del techo. Antes de presupuestar realizamos siempre el cálculo de carga térmica personalizado en tu vivienda de ${ciudad.nombre}.`
+      `<strong>Cálculo orientativo</strong>: en torno a <strong>100 frigorías por m²</strong>, ajustando según orientación, aislamiento, número de ventanas y altura del techo. Antes de presupuestar realizamos siempre el cálculo de carga térmica personalizado en tu vivienda de ${ciudad.nombre}.`,
+      ...ciudadLocalParas(ciudad),
     ],
     checklistHTML: [
       'Cálculo de carga térmica personalizado',
@@ -369,7 +392,7 @@ function template(p) {
 <div class="urgency-bar">🌡️ <strong>Temporada alta:</strong> Agenda tu instalación ahora. <a href="tel:+34625215983"> Llamar: 625 215 983</a></div>
 <header class="site-header">
   <div class="header-inner">
-    <a href="/aires-acondicionados/" class="logo"><picture><source srcset="${prefix}img/logo_zervitecnics.webp" type="image/webp"><img width="560" height="120" src="${prefix}img/logo_zervitecnics.png" alt="Zervitecnics" width="560" height="120" style="height:56px;width:auto;object-fit:contain"></picture></a>
+    <a href="/aires-acondicionados/" class="logo"><picture><source srcset="${prefix}img/logo_zervitecnics.webp" type="image/webp"><img width="560" height="120" src="${prefix}img/logo_zervitecnics.png" alt="Zervitecnics" style="height:56px;width:auto;object-fit:contain"></picture></a>
     <nav class="main-nav"><a href="${prefix}index.html#servicios">Servicios</a><a href="${prefix}index.html#precios">Precios</a><a href="${prefix}subvenciones.html">Subvenciones</a><a href="${prefix}index.html#zonas">Zonas</a><a href="${prefix}index.html#faq">FAQ</a><a href="${prefix}index.html#presupuesto">Presupuesto</a></nav>
     <div class="header-cta">
       <a href="tel:+34625215983" class="btn-phone" data-location="header-${p.ctaLocation}"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>625 215 983</a>
