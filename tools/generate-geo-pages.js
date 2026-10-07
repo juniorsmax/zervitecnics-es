@@ -105,8 +105,8 @@ function ciudadLocalParas(ciudad) {
 function paginaMarcaCiudad(marca, ciudad) {
   const fileName = `${marca.slug}-${ciudad.slug}.html`;
   const url = `https://zervitecnics.es/aires-acondicionados/marcas/${fileName}`;
-  const title = `Aire Acondicionado ${marca.nombre} en ${ciudad.nombre} | Instalación y Mantenimiento`;
-  const desc = `Instalación y mantenimiento de aire acondicionado ${marca.nombre} en ${ciudad.nombre} (${ciudad.comarca}). Técnico especializado, respuesta en menos de 2 h en horario de atención, sin compromiso.`;
+  const title = `Aire acondicionado ${marca.nombre} en ${ciudad.nombre} | Zervitecnics`;
+  const desc = `Instalación y mantenimiento de aire acondicionado ${marca.nombre} en ${ciudad.nombre}. Respuesta en menos de 2 h en horario de atención.`;
   const h1 = `Aire acondicionado <span style="color:${marca.color}">${marca.nombre}</span> en ${ciudad.nombre}`;
   const lightBg = marca.color + '22';
   const borderBg = marca.color + '44';
@@ -206,8 +206,8 @@ function paginaMarcaCiudad(marca, ciudad) {
 function paginaCapacidadCiudad(cap, ciudad) {
   const fileName = `${cap.frig}-frigorias-${ciudad.slug}.html`;
   const url = `https://zervitecnics.es/aires-acondicionados/capacidades/${fileName}`;
-  const title = `Aire Acondicionado ${cap.frig} Frigorías en ${ciudad.nombre} | Instalación`;
-  const desc = `Instalación de aire acondicionado de ${cap.frig} frigorías (${cap.btu} BTU) en ${ciudad.nombre} (${ciudad.comarca}). Ideal para ${cap.descripcionUso} de ${cap.m2Min} a ${cap.m2Max} m². Respuesta en menos de 2 h en horario de atención.`;
+  const title = `Aire acondicionado ${cap.frig} frigorías en ${ciudad.nombre} | Zervitecnics`;
+  const desc = `Aire acondicionado de ${cap.frig} frigorías en ${ciudad.nombre} para estancias de ${cap.m2Min} a ${cap.m2Max} m². Respuesta en menos de 2 h en horario de atención.`;
   const h1 = `Aire acondicionado de <span style="color:#0066FF">${cap.frig} frigorías</span> en ${ciudad.nombre}`;
   const lightBg = '#0066FF22';
   const borderBg = '#0066FF44';

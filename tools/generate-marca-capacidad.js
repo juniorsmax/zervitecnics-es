@@ -44,8 +44,8 @@ function fmtEur(n) {
 function buildPage(marca, cap) {
   const fileName = `${marca.slug}-${cap.frig}-frigorias.html`;
   const url = `https://zervitecnics.es/aires-acondicionados/marcas/${fileName}`;
-  const title = `Aire Acondicionado ${marca.nombre} ${cap.frig} Frigorías Barcelona | Instalación`;
-  const desc = `Instalación de aire acondicionado ${marca.nombre} ${cap.frig} frigorías (${cap.btu} BTU) en Barcelona. Ideal para ${cap.descripcionUso}. Respuesta en menos de 2 h en horario de atención.`;
+  const title = `Aire acondicionado ${marca.nombre} ${cap.frig} frigorías Barcelona | Zervitecnics`;
+  const desc = `Instalación de aire acondicionado ${marca.nombre} de ${cap.frig} frigorías en Barcelona. Respuesta en menos de 2 h en horario de atención.`;
   const h1 = `Aire acondicionado <span style="color:${marca.color}">${marca.nombre} ${cap.frig} frigorías</span> en Barcelona`;
   const lightBg = marca.color + '22';
   const borderBg = marca.color + '44';
