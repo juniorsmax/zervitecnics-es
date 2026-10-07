@@ -1305,3 +1305,23 @@ input, textarea, select { font-family: inherit; }
   outline: 3px solid #ffcb05;
   outline-offset: 2px;
 }
+
+/* ── Opiniones (generado en build desde data/reviews.json) ── */
+.rev-summary { color: var(--gray-700, #4b5563); margin-top: 8px; }
+.rev-list {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.rev-item {
+  background: #fff; border: 1px solid var(--gray-200, #e5e7eb);
+  border-radius: 12px; padding: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.rev-stars { color: #f5a623; font-size: 1.1em; letter-spacing: 2px; }
+.rev-text { margin: 10px 0 12px; color: var(--gray-800, #1f2937); font-style: normal; }
+.rev-footer { font-size: .9em; color: var(--gray-600, #6b7280); }
+.rev-author { font-style: normal; font-weight: 600; }
+.rev-when { color: var(--gray-500, #9ca3af); }
+.rev-cta { text-align: center; margin-top: 24px; }
+.rev-attrib { text-align: center; font-size: .85em; color: var(--gray-500, #9ca3af); margin-top: 16px; }
