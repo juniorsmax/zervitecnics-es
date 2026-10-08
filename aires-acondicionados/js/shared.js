@@ -701,6 +701,13 @@ function initForm() {
     if (telInput.value !== limpio) telInput.value = limpio;
   });
 
+  // Código postal: solo números, máximo 5
+  const cpInput = document.getElementById('f-postal');
+  if (cpInput) cpInput.addEventListener('input', () => {
+    const limpio = cpInput.value.replace(/\D/g, '').slice(0, 5);
+    if (cpInput.value !== limpio) cpInput.value = limpio;
+  });
+
   function validateStep1() {
     let ok = true;
     ['f-nombre', 'f-telefono', 'f-zona'].forEach(id => {
@@ -777,7 +784,7 @@ function initForm() {
       nombre: (document.getElementById('f-nombre')?.value || '').slice(0, 30),
       telefono: (document.getElementById('f-telefono')?.value || '').replace(/\D/g, '').slice(0, 9),
       zona: document.getElementById('f-zona')?.value || '',
-      codigo_postal: document.getElementById('f-postal')?.value || '',
+      codigo_postal: (document.getElementById('f-postal')?.value || '').replace(/\D/g, '').slice(0, 5),
       tipo_equipo: document.getElementById('f-tipo')?.value || '',
       marca: document.getElementById('f-marca')?.value || '',
       problema: document.getElementById('f-problema')?.value || '',
