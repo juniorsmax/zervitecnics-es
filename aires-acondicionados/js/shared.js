@@ -767,7 +767,7 @@ function initForm() {
     btn.textContent = 'Enviando...';
 
     const data = {
-      nombre: document.getElementById('f-nombre')?.value || '',
+      nombre: (document.getElementById('f-nombre')?.value || '').slice(0, 80),
       telefono: document.getElementById('f-telefono')?.value || '',
       zona: document.getElementById('f-zona')?.value || '',
       codigo_postal: document.getElementById('f-postal')?.value || '',
@@ -776,7 +776,7 @@ function initForm() {
       problema: document.getElementById('f-problema')?.value || '',
       distancia_exterior: document.getElementById('f-dist-ext')?.value || '',
       planta: document.getElementById('f-planta')?.value || '',
-      observaciones: document.getElementById('f-obs')?.value || '',
+      observaciones: (document.getElementById('f-obs')?.value || '').slice(0, 1000),
     };
 
     // reCAPTCHA v3: el token NO se verifica en ningún servidor ni se envía a
