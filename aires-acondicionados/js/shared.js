@@ -96,6 +96,70 @@ async function getRecaptchaToken(action) {
 }
 window.getRecaptchaToken = getRecaptchaToken;
 
+/* ── Turnstile (Cloudflare) + envío al receptor del formulario ──
+   El formulario ya no habla con EmailJS desde el navegador: manda los datos
+   a un Worker de Cloudflare que comprueba Turnstile en el servidor y envía el correo. */
+const TURNSTILE_SITE_KEY = '0x4AAAAAAFRa2Z_FDbIioA07';
+const FORM_ENDPOINT = 'https://zervitecnics-form.u1699711536.workers.dev';
+let turnstileLoading = null;
+const tsWidgets = {};
+
+function loadTurnstile() {
+  if (window.turnstile) return Promise.resolve();
+  if (turnstileLoading) return turnstileLoading;
+  turnstileLoading = new Promise(resolve => {
+    const s = document.createElement('script');
+    s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+    s.async = true; s.defer = true;
+    s.onload = () => resolve(); s.onerror = () => resolve();
+    document.head.appendChild(s);
+  });
+  return turnstileLoading;
+}
+document.addEventListener('focusin', function (e) {
+  if (e.target && e.target.closest && e.target.closest('form')) loadTurnstile();
+}, { once: true });
+
+async function getTurnstileToken(containerId, maxMs) {
+  await Promise.race([loadTurnstile(), new Promise(r => setTimeout(r, 8000))]);
+  const el = document.getElementById(containerId);
+  if (!window.turnstile || !el) return '';
+  let w = tsWidgets[containerId];
+  if (!w) {
+    w = tsWidgets[containerId] = { id: null, token: '' };
+    w.id = window.turnstile.render(el, {
+      sitekey: TURNSTILE_SITE_KEY,
+      appearance: 'interaction-only',
+      callback: t => { w.token = t; },
+      'expired-callback': () => { w.token = ''; },
+      'error-callback': () => { w.token = ''; }
+    });
+  }
+  const limit = Date.now() + (maxMs || 20000);
+  while (!w.token && Date.now() < limit) await new Promise(r => setTimeout(r, 150));
+  return w.token;
+}
+
+function resetTurnstile(containerId) {
+  const w = tsWidgets[containerId];
+  if (w) { w.token = ''; try { window.turnstile.reset(w.id); } catch (e) {} }
+}
+
+async function sendLead(data, containerId) {
+  const token = await getTurnstileToken(containerId);
+  if (!token) { const e = new Error('Turnstile no completado'); e.status = 'captcha'; throw e; }
+  let r;
+  try {
+    r = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, data })
+    });
+  } finally { resetTurnstile(containerId); }
+  if (!r.ok) { const e = new Error('Receptor del formulario: ' + r.status); e.status = r.status; throw e; }
+}
+window.sendLead = sendLead;
+
 /* ── Almacenamiento seguro ──
    localStorage lanza una excepción si el navegador bloquea los datos del sitio
    (modo privado estricto, cookies bloqueadas). Sin esto se cortaba todo el
@@ -793,26 +857,15 @@ function initForm() {
       observaciones: (document.getElementById('f-obs')?.value || '').slice(0, 1000),
     };
 
-    // reCAPTCHA v3: el token NO se verifica en ningún servidor ni se envía a
-    // EmailJS (su servicio espera v2 y rechaza v3 con "The bot is detected").
-    // Por eso no bloquea el envío: si falta (Google bloqueado o lento) se
-    // anota en GA y se sigue. La defensa local es el campo trampa, los 3 s y el
-    // límite de envíos.
-    const token = await getRecaptchaToken('hero_form');
-    if (!token) trackEvent('recaptcha_missing', { source: 'hero-form' });
-
     try {
-      if (typeof emailjs === 'undefined') {
-        throw new Error('EmailJS SDK no cargado (revisa CSP / bloqueador de scripts)');
-      }
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, data);
+      await sendLead(data, 'ts-hero');
       markFormSubmitted();
       trackEvent('form_submit', { zona: data.zona, tipo: data.tipo_equipo });
       window.location.href = 'gracias.html';
     } catch(err) {
       const status = err && (err.status || err.code) || '?';
       const text = (err && (err.text || err.message)) || String(err);
-      console.error('[Zervitecnics] EmailJS ERROR:', { status, text, full: err });
+      console.error('[Zervitecnics] ENVÍO ERROR:', { status, text, full: err });
       trackEvent('form_error', { source: 'hero-form', status, message: text });
       btn.disabled = false;
       btn.textContent = 'Solicitar presupuesto';

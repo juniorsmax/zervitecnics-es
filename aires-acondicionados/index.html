@@ -34,7 +34,7 @@
   </script>
   <!-- reCAPTCHA v3 -->
   <!-- ZRV-ANALYTICS-END -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.clarity.ms https://www.clarity.ms; connect-src 'self' https://api.emailjs.com https://www.google.com https://www.gstatic.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms https://*.bing.com; frame-src https://www.googletagmanager.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com https://www.clarity.ms https://*.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.clarity.ms https://www.clarity.ms; connect-src 'self' https://zervitecnics-form.u1699711536.workers.dev https://api.emailjs.com https://www.google.com https://www.gstatic.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.clarity.ms https://*.clarity.ms https://*.bing.com; frame-src https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- SEO -->
@@ -954,6 +954,7 @@
               <label class="form-label" for="f-obs">Observaciones (opcional)</label>
               <textarea id="f-obs" class="form-textarea" maxlength="1000" placeholder="Ej: Piso en 3ª planta, salón de 25m², necesito instalar en la terraza interior..."></textarea>
             </div>
+            <div id="ts-hero" style="margin-top:8px"></div>
             <div style="display:flex;gap:10px;margin-top:8px">
               <button type="button" id="btn-back" class="btn btn-outline" style="flex:0 0 auto">
                 <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px;height:16px"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
@@ -1690,7 +1691,7 @@
 </div>
 
 <!-- ── Scripts ── -->
-<script src="js/shared.js?v=20261008e"></script>
+<script src="js/shared.js?v=20261008f"></script>
 <script src="js/pages.js?v=20260625a"></script>
 
 <script>
@@ -1790,6 +1791,7 @@
         <button type="button" class="btn btn-primary" style="width:100%" onclick="modalSubmit()">
           → Solicitar presupuesto gratis
         </button>
+        <div id="ts-modal" style="margin-top:8px"></div>
         <div id="modal-result"></div>
       </div>
     </div>
@@ -1905,26 +1907,21 @@ async function modalSubmit() {
     observaciones: obs ? `[Origen: modal-sticky] ${obs}` : '[Origen: modal-sticky]',
   };
 
-  // reCAPTCHA v3: el token NO se verifica en ningún servidor ni se envía a
-  // EmailJS (incompatible con v2 configurado en su panel — devuelve "The bot
-  // is detected"). Por eso no bloquea: si falta, se anota en GA y se sigue.
-  if (typeof window.getRecaptchaToken === 'function') {
-    const modalToken = await window.getRecaptchaToken('modal_form');
-    if (!modalToken && typeof trackEvent === 'function') trackEvent('recaptcha_missing', { source: 'modal-sticky' });
-  }
-
   try {
-    if (typeof emailjs === 'undefined') {
-      throw new Error('EmailJS SDK no cargado (revisa CSP / bloqueador de scripts)');
-    }
-    await emailjs.send(window.EMAILJS_SERVICE_ID || 'service_tfuzhfr', window.EMAILJS_TEMPLATE_ID || 'template_wcjvjy3', params);
+    await window.sendLead({
+      nombre: params.nombre,
+      telefono: params.telefono,
+      zona: params.zona,
+      tipo_equipo: modalTipo,
+      observaciones: params.observaciones,
+    }, 'ts-modal');
     if (typeof window.markFormSubmitted === 'function') window.markFormSubmitted();
     if (typeof trackEvent === 'function') trackEvent('form_submit', { zona: params.zona, tipo: modalTipo, source: 'modal-sticky' });
     window.location.href = 'gracias.html';
   } catch(e) {
     const status = e && (e.status || e.code) || '?';
     const text = (e && (e.text || e.message)) || String(e);
-    console.error('[Zervitecnics modal] EmailJS ERROR:', { status, text, full: e });
+    console.error('[Zervitecnics modal] ENVÍO ERROR:', { status, text, full: e });
     if (typeof trackEvent === 'function') trackEvent('form_error', { source: 'modal-sticky', status, message: text });
     btn.disabled = false;
     btn.textContent = '→ Solicitar presupuesto gratis';
