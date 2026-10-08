@@ -1271,6 +1271,16 @@ h1, h2, h3, .section-title, .cta-title {
   .service-detail-content h2 { font-size: clamp(1.4rem, 6.2vw, 1.9rem); }
 }
 .grid > *, .service-detail-grid > * { min-width: 0; }
+/* Tablet y portátil pequeño (769–1160 px): el menú no cabía y el botón de WhatsApp quedaba fuera → menú de tres rayas */
+@media (min-width: 769px) and (max-width: 1160px) {
+  .main-nav { display: none; }
+  .btn-phone { display: none; }
+  .btn-whatsapp-header { display: none; }
+  .hamburger { display: flex; }
+}
+@media (min-width: 769px) and (max-width: 900px) {
+  .price-amount { font-size: 2rem; }
+}
 .service-detail-img picture { display: block; }
 @media (max-width: 600px) {
   .guide-table, .legal-content table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }

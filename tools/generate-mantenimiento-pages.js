@@ -59,7 +59,7 @@ const FONTS = `  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"></noscript>
   <!-- /ZRV-FONTS -->
-  <link rel="stylesheet" href="../css/shared.css?v=20261008a">
+  <link rel="stylesheet" href="../css/shared.css?v=20261008b">
   <link rel="stylesheet" href="../css/pages.css?v=20260902a">`;
 
 const MAINT_STYLES = `  <style>

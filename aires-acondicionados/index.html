@@ -65,7 +65,7 @@
   <!-- /ZRV-FONTS -->
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/shared.css?v=20261008a">
+  <link rel="stylesheet" href="css/shared.css?v=20261008b">
 
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js" integrity="sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS" crossorigin="anonymous" defer></script>
@@ -151,6 +151,9 @@
     
     
     .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+    @media (min-width: 769px) and (max-width: 1000px) {
+      #form-grid { grid-template-columns: minmax(0,1fr) minmax(0,420px) !important; gap: 32px !important; }
+    }
     @media (max-width: 768px) {
       .hero-badge { display: none !important; }
       .hero-cta { display: none !important; }
