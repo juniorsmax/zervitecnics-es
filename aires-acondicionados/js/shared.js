@@ -694,6 +694,13 @@ function initForm() {
   let formStarted = false;
   const formLoadedAt = Date.now();
 
+  // Teléfono: solo números, máximo 9 (se borran letras y espacios al escribir o pegar)
+  const telInput = document.getElementById('f-telefono');
+  if (telInput) telInput.addEventListener('input', () => {
+    const limpio = telInput.value.replace(/\D/g, '').slice(0, 9);
+    if (telInput.value !== limpio) telInput.value = limpio;
+  });
+
   function validateStep1() {
     let ok = true;
     ['f-nombre', 'f-telefono', 'f-zona'].forEach(id => {
@@ -767,8 +774,8 @@ function initForm() {
     btn.textContent = 'Enviando...';
 
     const data = {
-      nombre: (document.getElementById('f-nombre')?.value || '').slice(0, 80),
-      telefono: document.getElementById('f-telefono')?.value || '',
+      nombre: (document.getElementById('f-nombre')?.value || '').slice(0, 20),
+      telefono: (document.getElementById('f-telefono')?.value || '').replace(/\D/g, '').slice(0, 9),
       zona: document.getElementById('f-zona')?.value || '',
       codigo_postal: document.getElementById('f-postal')?.value || '',
       tipo_equipo: document.getElementById('f-tipo')?.value || '',
