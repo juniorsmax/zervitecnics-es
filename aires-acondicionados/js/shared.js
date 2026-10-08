@@ -774,7 +774,7 @@ function initForm() {
     btn.textContent = 'Enviando...';
 
     const data = {
-      nombre: (document.getElementById('f-nombre')?.value || '').slice(0, 20),
+      nombre: (document.getElementById('f-nombre')?.value || '').slice(0, 30),
       telefono: (document.getElementById('f-telefono')?.value || '').replace(/\D/g, '').slice(0, 9),
       zona: document.getElementById('f-zona')?.value || '',
       codigo_postal: document.getElementById('f-postal')?.value || '',

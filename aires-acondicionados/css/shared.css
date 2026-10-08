@@ -1145,7 +1145,7 @@ input, textarea, select { font-family: inherit; }
 .form-input.error, .form-select.error { border-color: #EF4444; }
 .form-error { font-size: .8rem; color: #EF4444; margin-top: 4px; display: none; }
 .form-error.visible { display: block; }
-.form-textarea { resize: vertical; min-height: 100px; }
+.form-textarea { resize: vertical; min-height: 170px; }
 
 .form-success {
   text-align: center;
