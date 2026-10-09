@@ -34,8 +34,15 @@ function urlFor(absPath) {
   return '/' + rel;
 }
 
-// <meta name="robots" content="noindex…"> (en cualquier orden de atributos)
+// Página que solo redirige (meta refresh inmediato): no va a sitemap ni se exige indexable.
+// Hoy: la portada "/" redirige a /aires-acondicionados/ (decisión 9-oct-2026).
+function isRedirect(html) {
+  return /<meta\b[^>]*http-equiv\s*=\s*["']refresh["'][^>]*content\s*=\s*["']\s*0\s*;/i.test(html);
+}
+
+// <meta name="robots" content="noindex…"> (en cualquier orden de atributos) o página de redirección
 function isNoindex(html) {
+  if (isRedirect(html)) return true;
   const metas = html.match(/<meta\b[^>]*>/gi) || [];
   return metas.some(tag => /\bname\s*=\s*["']robots["']/i.test(tag) && /\bcontent\s*=\s*["'][^"']*noindex/i.test(tag));
 }
