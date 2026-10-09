@@ -28,7 +28,7 @@ Muestra muy pequeña (177 impresiones, 5 clics): sirve para detectar pistas, no 
 | aire acondicionado por cassettes en sabadell | 6 | 7,7 | (no existe cassette × ciudad) | **Hueco**: crear cassette × ciudad |
 | conductos precio barcelona (3 variantes) | 15 | 63–70 | `categorias/conductos.html` | Título y descripción reforzados con "precio desde 2.397 €" (9-oct) |
 | reformas de pisos con instalación de aire acondicionado en badalona / sabadell / l'hospitalet | 6 | 11–19 | (no existe) | **Hueco**: página de reformas con aire acondicionado incluido |
-| instalacion aire acondicionado sarria sant gervasi | 2 | 6,5 | `zonas/sarria.html` | Falta mencionar "Sant Gervasi" |
+| instalacion aire acondicionado sarria sant gervasi | 2 | 6,5 | `zonas/sarria.html` | Ya cubierta (título "Sarrià-Sant Gervasi"); esperar datos |
 | panasonic barcelona / daikin 4500 frigorías | 3 | 14–40 | marca-barcelona / marca-capacidad | Títulos reforzados (9-oct) |
 | servicio técnico hisense badalona | 1 | 6 | — | Es reparación: NO se cubre (ver C.1) |
 | informe técnico solar, reparación y conservación de viviendas | 4 | 60–99 | — | Descartadas, no encajan con el negocio |
