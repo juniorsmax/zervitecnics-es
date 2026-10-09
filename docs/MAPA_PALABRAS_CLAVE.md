@@ -18,6 +18,29 @@
 
 ---
 
+## 0. Datos reales de Search Console (muestra: 7 días hasta 9-oct-2026)
+
+Muestra muy pequeña (177 impresiones, 5 clics): sirve para detectar pistas, no para decidir.
+
+| Consulta real | Impr. | Pos. | Página que debería captarla | Estado |
+|---|---|---|---|---|
+| aires acondicionados barcelona | 8 | 8,3 | Hub `/aires-acondicionados/` | Bien posicionada, sin clics aún |
+| aire acondicionado por cassettes en sabadell | 6 | 7,7 | (no existe cassette × ciudad) | **Hueco**: crear cassette × ciudad |
+| conductos precio barcelona (3 variantes) | 15 | 63–70 | `categorias/conductos.html` | Título y descripción reforzados con "precio desde 2.397 €" (9-oct) |
+| reformas de pisos con instalación de aire acondicionado en badalona / sabadell / l'hospitalet | 6 | 11–19 | (no existe) | **Hueco**: página de reformas con aire acondicionado incluido |
+| instalacion aire acondicionado sarria sant gervasi | 2 | 6,5 | `zonas/sarria.html` | Falta mencionar "Sant Gervasi" |
+| panasonic barcelona / daikin 4500 frigorías | 3 | 14–40 | marca-barcelona / marca-capacidad | Títulos reforzados (9-oct) |
+| servicio técnico hisense badalona | 1 | 6 | — | Es reparación: NO se cubre (ver C.1) |
+| informe técnico solar, reparación y conservación de viviendas | 4 | 60–99 | — | Descartadas, no encajan con el negocio |
+
+Páginas con impresiones y 0 clics (títulos y descripciones mejorados el 9-oct): panasonic-barcelona (46), daikin-4500-frigorias (41), hisense-badalona (37), conductos (36), zonas/gracia (34).
+
+Cambios de enlazado interno hechos el 9-oct: sección "Guías útiles" en la portada y enlaces "Guías" y "Mantenimiento" en el pie de todas las páginas.
+
+Pendiente: volumen de búsqueda real (Planificador de palabras clave de Google Ads, solo consulta) y repetir esta tabla con 28+ días de datos.
+
+---
+
 ## 1. Portada del dominio — `/index.html`
 
 | Campo | Valor |
