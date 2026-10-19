@@ -42,19 +42,22 @@ jobs:
               print("Sin páginas indexables cambiadas."); raise SystemExit(0)
           # GitHub Pages tarda en publicar: esperamos a que la clave esté visible (máx. ~10 min).
           key_url = f"https://{host}/{key}.txt"
-          for _ in range(40):
+          UA = {"User-Agent": "Mozilla/5.0 (compatible; ZervitecnicsIndexNow/1.0; +https://zervitecnics.es/)"}
+          for intento in range(40):
               try:
-                  if urllib.request.urlopen(key_url, timeout=15).read().decode().strip() == key:
-                      break
-              except Exception:
-                  pass
+                  txt = urllib.request.urlopen(urllib.request.Request(key_url, headers=UA), timeout=15).read().decode().strip()
+                  if txt == key:
+                      print("Clave publicada."); break
+                  print("La URL de la clave responde otro contenido:", txt[:60])
+              except Exception as e:
+                  print("Clave aún no disponible:", repr(e)[:120])
               time.sleep(15)
           else:
               print("La clave no está publicada todavía; no se envía nada."); raise SystemExit(1)
           time.sleep(30)
           body = {"host": host, "key": key, "keyLocation": f"https://{host}/{key}.txt", "urlList": urls[:10000]}
           req = urllib.request.Request("https://api.indexnow.org/indexnow", data=json.dumps(body).encode(),
-                                       headers={"Content-Type": "application/json; charset=utf-8"})
+                                       headers={"Content-Type": "application/json; charset=utf-8", **UA})
           for intento in range(3):
               try:
                   with urllib.request.urlopen(req, timeout=30) as r:
