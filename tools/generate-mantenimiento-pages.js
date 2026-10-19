@@ -99,7 +99,7 @@ const PHONE_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" style="width:16p
 
 function garantiasBloque(marcaNombre) {
   const nota = marcaNombre
-    ? `<strong>no es requisito para conservar la garantía oficial ${marcaNombre}</strong>`
+    ? `<strong>no es requisito para conservar la garantía del fabricante ${marcaNombre}</strong>`
     : `<strong>no es requisito para conservar la garantía</strong>`;
   const fabricante = marcaNombre
     ? `<strong>3 años de garantía directamente con ${marcaNombre}.</strong> El fabricante gestiona y cubre todos los defectos de fabricación del equipo. Zervitecnics te acompaña en el proceso de reclamación si fuera necesario.`
@@ -647,10 +647,10 @@ ${MAINT_STYLES}
       },
       {
         "@type": "Question",
-        "name": "¿El mantenimiento afecta a la garantía oficial de ${nombre}?",
+        "name": "¿El mantenimiento afecta a la garantía del fabricante de ${nombre}?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. La garantía oficial ${nombre} (3 años del fabricante) se mantiene siempre que el mantenimiento lo realice un técnico frigorista con carné habilitante y quede documentado. Te entregamos parte de trabajo firmado con las lecturas y tareas realizadas, válido a efectos de garantía."
+          "text": "No. La garantía del fabricante ${nombre} (3 años del fabricante) se mantiene siempre que el mantenimiento lo realice un técnico frigorista con carné habilitante y quede documentado. Te entregamos parte de trabajo firmado con las lecturas y tareas realizadas, válido a efectos de garantía."
         }
       }
     ]
@@ -860,8 +860,8 @@ ${garantiasBloque(nombre)}
         <div class="faq-answer"><div class="faq-answer-inner">Sí. El diagnóstico técnico (<strong>70€ +IVA</strong>) incluye lectura del código de error, revisión de las causas típicas asociadas al código (${m.faqErrorCausas}) y un informe con qué requiere resolverlo. Si es una avería en garantía te derivamos al SAT oficial de ${nombre} con toda la información recogida.</div></div>
       </div>
       <div class="faq-item">
-        <div class="faq-question" tabindex="0">¿El mantenimiento afecta a la garantía oficial de ${nombre}?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M6 1v10M1 6h10"/></svg></div></div>
-        <div class="faq-answer"><div class="faq-answer-inner">No. La garantía oficial ${nombre} (<strong>3 años del fabricante</strong>) se mantiene siempre que el mantenimiento lo realice un técnico frigorista con carné habilitante y quede documentado. Te entregamos parte de trabajo firmado con las lecturas y tareas realizadas, válido a efectos de garantía.</div></div>
+        <div class="faq-question" tabindex="0">¿El mantenimiento afecta a la garantía del fabricante de ${nombre}?<div class="faq-icon"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M6 1v10M1 6h10"/></svg></div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">No. La garantía del fabricante ${nombre} (<strong>3 años del fabricante</strong>) se mantiene siempre que el mantenimiento lo realice un técnico frigorista con carné habilitante y quede documentado. Te entregamos parte de trabajo firmado con las lecturas y tareas realizadas, válido a efectos de garantía.</div></div>
       </div>
     </div>
   </div>

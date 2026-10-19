@@ -163,7 +163,7 @@ function paginaMarcaCiudad(marca, ciudad) {
   const faqMC = [
     { q: `¿Cuánto tarda una instalación de ${marca.nombre} en ${ciudad.nombre}?`,
       a: `La mayoría de instalaciones de split 1×1 ${marca.nombre} en ${ciudad.nombre} se completan en 2-4 horas. Un sistema multisplit ${marca.nombre} puede requerir entre 4-8 horas dependiendo del número de unidades interiores. El aire por conductos puede llevar 1-2 días.` },
-    { q: `¿La garantía oficial de ${marca.nombre} sigue siendo válida si instaláis vosotros?`,
+    { q: `¿La garantía del fabricante (${marca.nombre}) sigue siendo válida si instaláis vosotros?`,
       a: `Sí. Somos instaladores profesionales y aplicamos los procedimientos recomendados por ${marca.nombre}: vacío, prueba de estanqueidad y carga complementaria de refrigerante si la línea supera la carga precargada. Entregamos parte de trabajo con el material utilizado y las pruebas realizadas — documento válido para reclamar la garantía del fabricante (3 años).` },
     { q: `¿Hacéis mantenimiento de equipos ${marca.nombre} en ${ciudad.nombre}?`,
       a: `Sí. Ofrecemos mantenimiento preventivo anual (70€ + IVA) — limpieza, revisión y ajuste — y diagnóstico técnico de averías (70€ + IVA) para equipos ${marca.nombre} en ${ciudad.nombre} y resto de ${ciudad.comarca}. Si tras el diagnóstico hace falta reparación, te derivamos al SAT oficial de ${marca.nombre} o a un técnico especializado.` }
@@ -301,7 +301,7 @@ function paginaCapacidadCiudad(cap, ciudad) {
     ],
     checklistHTML: [
       'Cálculo de carga térmica personalizado',
-      'Equipo de marca premium con garantía oficial',
+      'Equipo de marca premium con garantía del fabricante',
       'Instalación documentada con informe técnico',
       'Garantía: 1 año en la instalación y 3 años del fabricante en el equipo',
       `Servicio postventa en ${ciudad.nombre}`
