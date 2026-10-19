@@ -6,8 +6,8 @@
     "heroSub": "Instalamos en los 5 barrios de Gràcia, de la Vila a Vallcarca. Respuesta en menos de 2 h en horario de atención.",
     "imagen": {
       "archivo": "guia-ubicacion-terraza",
-      "w": 1448,
-      "h": 1086,
+      "w": 1200,
+      "h": 900,
       "alt": "Unidad exterior de aire acondicionado en una terraza (imagen ilustrativa)"
     },
     "intro": [
@@ -138,8 +138,8 @@
     "heroSub": "Instalamos en los 6 barrios del Eixample, de Sant Antoni al Fort Pienc. Respuesta en menos de 2 h en horario de atención.",
     "imagen": {
       "archivo": "guia-normativa-eixample",
-      "w": 1448,
-      "h": 1086,
+      "w": 1200,
+      "h": 900,
       "alt": "Fachada del Eixample con unidades exteriores en los balcones, lo que la normativa intenta evitar (imagen ilustrativa)"
     },
     "intro": [
@@ -688,8 +688,8 @@
     "heroSub": "Instalamos en los 13 barrios de Nou Barris, de Vilapicina a Vallbona. Respuesta en menos de 2 h en horario de atención.",
     "imagen": {
       "archivo": "guia-frigorias-salon",
-      "w": 1448,
-      "h": 1086,
+      "w": 1200,
+      "h": 900,
       "alt": "Salón de un piso con split de pared y mando en la mano (imagen ilustrativa)"
     },
     "intro": [
@@ -804,8 +804,8 @@
     "heroSub": "Instalamos en los 7 barrios de Sant Andreu, del casco antiguo a la Sagrera. Respuesta en menos de 2 h en horario de atención.",
     "imagen": {
       "archivo": "tecnico-medicion-laser",
-      "w": 1448,
-      "h": 1086,
+      "w": 1200,
+      "h": 900,
       "alt": "Técnico midiendo la pared antes de instalar un split (imagen ilustrativa)"
     },
     "intro": [
@@ -1200,8 +1200,8 @@
     "heroSub": "Instalamos en los 11 barrios de Horta-Guinardó, del Baix Guinardó a Sant Genís. Respuesta en menos de 2 h en horario de atención.",
     "imagen": {
       "archivo": "guia-consumo-mando-eco",
-      "w": 1448,
-      "h": 1086,
+      "w": 1200,
+      "h": 900,
       "alt": "Mando de aire acondicionado en modo eco en un salón (imagen ilustrativa)"
     },
     "intro": [
@@ -1446,8 +1446,8 @@
     "heroSub": "Instalamos en toda L'Hospitalet, de Collblanc a Bellvitge. Respuesta en menos de 2 h en horario de atención.",
     "imagen": {
       "archivo": "guia-frigorias-salon",
-      "w": 1448,
-      "h": 1086,
+      "w": 1200,
+      "h": 900,
       "alt": "Salón de un piso con split de pared y mando en la mano (imagen ilustrativa)"
     },
     "intro": [
@@ -1667,8 +1667,8 @@
     "heroSub": "Instalamos en todo Castelldefels, de la playa a las urbanizaciones de montaña. Respuesta en menos de 2 h en horario de atención.",
     "imagen": {
       "archivo": "guia-ubicacion-terraza",
-      "w": 1448,
-      "h": 1086,
+      "w": 1200,
+      "h": 900,
       "alt": "Unidad exterior de aire acondicionado en una terraza (imagen ilustrativa)"
     },
     "intro": [
@@ -1776,8 +1776,8 @@
     "heroSub": "Instalamos en toda Sabadell, de Torre-romeu a la Creu de Barberà. Respuesta en menos de 2 h en horario de atención.",
     "imagen": {
       "archivo": "guia-consumo-mando-eco",
-      "w": 1448,
-      "h": 1086,
+      "w": 1200,
+      "h": 900,
       "alt": "Mando de aire acondicionado en modo eco en un salón (imagen ilustrativa)"
     },
     "intro": [
@@ -1996,8 +1996,8 @@
     "heroSub": "Instalamos en toda Terrassa, del Centre a Can Parellada. Respuesta en menos de 2 h en horario de atención.",
     "imagen": {
       "archivo": "tecnico-medicion-laser",
-      "w": 1448,
-      "h": 1086,
+      "w": 1200,
+      "h": 900,
       "alt": "Técnico midiendo la pared antes de instalar un split (imagen ilustrativa)"
     },
     "intro": [
