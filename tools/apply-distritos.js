@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-/* Reescribe las páginas de distrito de Barcelona (aires-acondicionados/zonas/*.html)
-   con contenido propio de cada distrito: barrios, viviendas, normativa, preguntas
+/* Reescribe las páginas de zona (aires-acondicionados/zonas/*.html) de los distritos
+   de Barcelona y de los municipios con zona propia, con contenido propio de cada uno: barrios, viviendas, normativa, preguntas
    frecuentes, distritos vecinos y fuentes.
 
-   Datos: tools/data/distritos.json (uno por distrito, investigados y con fuentes).
+   Datos: tools/data/distritos.json (uno por zona, investigados y con fuentes;
+   "tipo": "municipio" cambia el schema y algunos títulos).
    Solo toca bloques concretos de la página; el resto (cabecera, reseñas, enlaces
    a marcas, pie) se queda igual. Se puede volver a ejecutar: los bloques nuevos
    van entre marcadores <!-- DISTRITO:... -->.
@@ -41,11 +42,9 @@ ${JSON.stringify({
     name: `Instalación de aire acondicionado en ${d.nombre}`,
     url: `${BASE}zonas/${d.slug}.html`,
     provider: { '@type': 'HVACBusiness', name: 'Zervitecnics Barcelona', url: BASE, telephone: '+34625215983' },
-    areaServed: {
-      '@type': 'AdministrativeArea',
-      name: `${d.nombre} (distrito de Barcelona)`,
-      containedInPlace: { '@type': 'City', name: 'Barcelona' }
-    }
+    areaServed: d.tipo === 'municipio'
+      ? { '@type': 'City', name: d.nombre }
+      : { '@type': 'AdministrativeArea', name: `${d.nombre} (distrito de Barcelona)`, containedInPlace: { '@type': 'City', name: 'Barcelona' } }
   }, null, 2)}
   </script>`;
 }
@@ -74,7 +73,7 @@ ${d.intro.map(p => `        <p>${rich(p)}</p>`).join('\n')}
         <div style="background:var(--gray-50);border-radius:var(--radius-lg);padding:20px;margin:20px 0">
           <div style="font-weight:700;color:var(--navy);margin-bottom:12px">Información de cobertura</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:.9rem">
-            <div><span style="color:var(--gray-500)">Barrios:</span><br><strong>${d.barrios.length} barrios, todos cubiertos</strong></div>
+            <div><span style="color:var(--gray-500)">Barrios:</span><br><strong>${d.tipo === 'municipio' ? 'todo el municipio' : `${d.barrios.length} barrios, todos cubiertos`}</strong></div>
             <div><span style="color:var(--gray-500)">Códigos postales más habituales:</span><br><strong style="font-size:.8rem">${esc(d.cp)}</strong></div>
             <div><span style="color:var(--gray-500)">Calles principales:</span><br><strong style="font-size:.85rem">${esc(d.ejes)}</strong></div>
             <div><span style="color:var(--gray-500)">Horario:</span><br><strong>Lun-Vie 8-20h · Sáb 9-14h</strong></div>
@@ -92,7 +91,7 @@ ${checks.map(c => `          <li class="service-check-item">${CHECK_SVG}${c}</li
 
 <section class="section section-gray" id="barrios" aria-labelledby="barrios-title">
   <div class="container">
-    <div class="text-center mb-32 fade-up"><span class="section-label">Barrios</span><h2 class="section-title" id="barrios-title">Los ${d.barrios.length} barrios de ${esc(d.nombre)} y cómo se instala en cada uno</h2><p class="section-subtitle">${rich(d.barriosIntro)}</p></div>
+    <div class="text-center mb-32 fade-up"><span class="section-label">Barrios</span><h2 class="section-title" id="barrios-title">${d.tipo === 'municipio' ? `Barrios de ${esc(d.nombre)} y cómo se instala en cada uno` : `Los ${d.barrios.length} barrios de ${esc(d.nombre)} y cómo se instala en cada uno`}</h2><p class="section-subtitle">${rich(d.barriosIntro)}</p></div>
     <div class="grid-auto fade-up" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
 ${d.barrios.map(b => `      <div class="diff-card" style="text-align:left">
         <h3 class="diff-title">${esc(b.nombre)}</h3>
@@ -133,10 +132,10 @@ ${d.faq.map(f => `      <div class="faq-item">
 <section class="section section-sm" id="cerca" aria-labelledby="cerca-title">
   <div class="container" style="max-width:860px">
     <h2 class="section-title" id="cerca-title" style="font-size:1.4rem">Cerca de ${esc(d.nombre)}</h2>
-    <p><strong>Distritos vecinos:</strong> ${d.vecinos.map(v => `<a href="${v.slug}.html" style="color:var(--blue)">${esc(v.nombre)}</a>`).join(' · ')}</p>
+    <p><strong>${d.tipo === 'municipio' ? 'Cerca' : 'Distritos vecinos'}:</strong> ${d.vecinos.map(v => `<a href="${v.slug}.html" style="color:var(--blue)">${esc(v.nombre)}</a>`).join(' · ')}</p>
     <p><strong>Guías útiles para ${esc(d.nombre)}:</strong> ${d.guias.map(g => `<a href="../guias/${g.slug}.html" style="color:var(--blue)">${esc(g.nombre)}</a>`).join(' · ')}</p>
     <p><strong>¿Ya tienes equipo?</strong> <a href="${d.mantenimientoUrl || `../mantenimiento-zonas/${d.slug}.html`}" style="color:var(--blue)">Mantenimiento de aire acondicionado en ${esc(d.nombre)}</a></p>
-    <details style="margin-top:12px;font-size:.85rem;color:var(--gray-500)"><summary style="cursor:pointer">Fuentes de esta página</summary>
+    ${d.fuentes.length ? '' : '<!-- sin fuentes externas -->'}<details style="margin-top:12px;font-size:.85rem;color:var(--gray-500)${d.fuentes.length ? '' : ';display:none'}"><summary style="cursor:pointer">Fuentes de esta página</summary>
       <ul style="margin:8px 0 0;padding-left:18px">
 ${d.fuentes.map(f => `        <li><a href="${f.url}" target="_blank" rel="noopener">${esc(f.nombre)}</a></li>`).join('\n')}
       </ul>

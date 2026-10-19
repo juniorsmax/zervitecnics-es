@@ -1320,5 +1320,777 @@
         "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/handle/11703/90379"
       }
     ]
+  },
+  {
+    "slug": "badalona",
+    "nombre": "Badalona",
+    "tipo": "municipio",
+    "metaDesc": "Aire acondicionado en Badalona: Dalt de la Vila, el Gorg, Llefià, la Salut, Sant Roc y Pomar. Pisos junto al mar y bloques en ladera. Presupuesto gratis.",
+    "heroSub": "Instalamos en toda Badalona, del Gorg a Pomar. Respuesta en menos de 2 h en horario de atención.",
+    "imagen": {
+      "archivo": "galeria_exterior",
+      "w": 800,
+      "h": 600,
+      "alt": "Unidades exteriores de aire acondicionado en una azotea (imagen ilustrativa)"
+    },
+    "intro": [
+      "Badalona es la tercera ciudad de Cataluña y está a unos 9 km de Barcelona, entre el mar y la Serralada de Marina. Tiene un casco antiguo, Dalt de la Vila, sobre la antigua ciudad romana de Baetulo; un frente marítimo con edificios nuevos en el Gorg; y barrios de bloques de los años 60 y 70 en la ladera, como Llefià, la Salut o Sant Roc.",
+      "Cerca del mar, el salitre desgasta antes la unidad exterior. En la ladera, muchos bloques tienen azotea comunitaria, pero hay que contar con la pendiente y, a veces, con edificios sin ascensor.",
+      "Hacemos visita previa en toda la ciudad: vemos el edificio, dónde va la unidad exterior y te damos un precio cerrado."
+    ],
+    "cp": "08911, 08912, 08913, 08914, 08915, 08916, 08917 y 08918",
+    "ejes": "Avinguda de Martí Pujol, Carrer del Mar, Rambla de Badalona, Avinguda del Marquès de Mont-roig",
+    "barriosIntro": "Algunos de los barrios de Badalona donde las viviendas cambian más la instalación.",
+    "barrios": [
+      {
+        "nombre": "Dalt de la Vila",
+        "vivienda": "el casco antiguo, con calles estrechas y casas antiguas.",
+        "instalacion": "unidad en el terrado o el patio, nunca a la vista de la calle.",
+        "referencias": "Museu de Badalona, Baetulo, Carrer de Sant Pere"
+      },
+      {
+        "nombre": "el Gorg",
+        "vivienda": "edificios recientes junto al puerto y la playa.",
+        "instalacion": "en obra nueva suele haber preinstalación; soportes resistentes al salitre.",
+        "referencias": "Port de Badalona, metro Gorg"
+      },
+      {
+        "nombre": "Llefià y la Salut",
+        "vivienda": "bloques de los años 60 y 70 en calles con pendiente.",
+        "instalacion": "azotea comunitaria o patio; revisamos la línea eléctrica en pisos antiguos.",
+        "referencias": "metro Llefià y La Salut"
+      },
+      {
+        "nombre": "Sant Roc",
+        "vivienda": "barrio de bloques de pisos de los años 60.",
+        "instalacion": "split o multisplit con la unidad donde lo apruebe la comunidad.",
+        "referencias": "metro Sant Roc"
+      },
+      {
+        "nombre": "Pomar",
+        "vivienda": "barrio alto junto a la Serralada de Marina, con bloques y casas.",
+        "instalacion": "suele haber sitio en azotea o terraza; planificamos el acceso.",
+        "referencias": "Parc de la Serralada de Marina"
+      }
+    ],
+    "normativa": {
+      "titulo": "Ruido y comunidad: qué dice la ordenanza de Badalona",
+      "parrafos": [
+        "La Ordenança municipal de civisme de Badalona (arts. 63 y 64) cita expresamente el aire acondicionado como posible foco de ruido. Fija el descanso vecinal de 22:00 a 08:00 entre semana y de 22:00 a 10:00 el fin de semana.",
+        "Además, la fachada, la azotea y el patio son elementos comunes: hace falta el acuerdo de la comunidad para instalar la unidad exterior."
+      ],
+      "consejos": [
+        "Usamos soportes antivibración y elegimos equipos silenciosos para no molestar de noche.",
+        "En primera línea de mar, tornillería y soportes resistentes a la corrosión.",
+        "Pregunta a la comunidad si ya hay sitio reservado en la azotea para unidades exteriores."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Vivo cerca de la playa en Badalona, ¿la unidad exterior se estropea antes?",
+        "r": "El salitre la desgasta antes si no se cuida. Usamos soportes resistentes a la corrosión y recomendamos el mantenimiento anual para revisar conexiones y carcasa."
+      },
+      {
+        "p": "¿Puede molestar el ruido de la unidad a mis vecinos?",
+        "r": "La ordenanza de civismo de Badalona cita el aire acondicionado como posible foco de ruido. Por eso usamos equipos silenciosos, soportes antivibración y buscamos una ubicación lejos de las ventanas de los dormitorios."
+      },
+      {
+        "p": "Mi piso de Llefià es de los años 70, ¿hace falta cambiar la instalación eléctrica?",
+        "r": "No siempre, pero conviene una línea propia para el aire. La revisamos en la visita y, si hace falta, va en el presupuesto."
+      },
+      {
+        "p": "¿Qué equipo conviene para un piso de 70 m²?",
+        "r": "Para salón y dos dormitorios suele ir bien un multisplit. Lo calculas en la guía [qué frigorías necesito](../guias/que-frigorias-necesito.html)."
+      },
+      {
+        "p": "¿Hacéis mantenimiento en Badalona?",
+        "r": "Sí. Mantenimiento preventivo anual (70 € + IVA) y diagnóstico técnico (70 € + IVA). Si hace falta reparar, te derivamos al SAT oficial de la marca o a un técnico especializado."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "sant-marti",
+        "nombre": "Sant Martí (Barcelona)"
+      },
+      {
+        "slug": "sant-andreu",
+        "nombre": "Sant Andreu (Barcelona)"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "mantenimiento-yo-mismo-o-profesional",
+        "nombre": "Mantenimiento: ¿yo mismo o un profesional?"
+      },
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Qué frigorías necesito"
+      },
+      {
+        "slug": "normativa-comunidad-vecinos-barcelona",
+        "nombre": "Normativa y comunidad de vecinos"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "BOPB · Ordenança municipal de civisme de Badalona",
+        "url": "https://bop.diba.cat/anuncis/antic/022014013639"
+      }
+    ]
+  },
+  {
+    "slug": "hospitalet",
+    "nombre": "L'Hospitalet de Llobregat",
+    "tipo": "municipio",
+    "metaDesc": "Aire acondicionado en L'Hospitalet: Collblanc, la Torrassa, Santa Eulàlia, Bellvitge, Sant Josep y el Centre. Pisos pequeños y bloques altos.",
+    "heroSub": "Instalamos en toda L'Hospitalet, de Collblanc a Bellvitge. Respuesta en menos de 2 h en horario de atención.",
+    "imagen": {
+      "archivo": "guia-frigorias-salon",
+      "w": 1448,
+      "h": 1086,
+      "alt": "Salón de un piso con split de pared y mando en la mano (imagen ilustrativa)"
+    },
+    "intro": [
+      "L'Hospitalet de Llobregat es la segunda ciudad más poblada de Cataluña y limita directamente con Barcelona. Es una ciudad muy densa: en Collblanc y la Torrassa predominan los pisos pequeños en calles estrechas, y en Bellvitge, los bloques altos de los años 60 y 70.",
+      "En pisos pequeños suele bastar un split por estancia, bien colocado. En bloques altos, la clave es dónde deja la comunidad poner la unidad exterior y cómo se evita que el ruido llegue a los vecinos.",
+      "Hacemos visita previa: medimos, vemos el edificio y te damos un precio cerrado."
+    ],
+    "cp": "08901, 08902, 08903, 08904, 08905, 08906, 08907 y 08908",
+    "ejes": "Rambla de Just Oliveras, Avinguda del Carrilet, Carretera de Collblanc, Gran Via",
+    "barriosIntro": "Algunos de los barrios de L'Hospitalet donde las viviendas cambian más la instalación.",
+    "barrios": [
+      {
+        "nombre": "el Centre y Sant Josep",
+        "vivienda": "el núcleo histórico y bloques de pisos de distintas épocas.",
+        "instalacion": "patio de luces o azotea; split compacto en pisos pequeños.",
+        "referencias": "Rambla de Just Oliveras, Ajuntament, metro Rambla Just Oliveras"
+      },
+      {
+        "nombre": "Collblanc y la Torrassa",
+        "vivienda": "pisos pequeños en calles estrechas, de los barrios más densos.",
+        "instalacion": "unidad compacta en el patio o la azotea; cuidamos mucho el ruido.",
+        "referencias": "Carretera de Collblanc, metro Collblanc y Torrassa"
+      },
+      {
+        "nombre": "Santa Eulàlia",
+        "vivienda": "bloques de pisos junto a la Gran Via y el límite con Barcelona.",
+        "instalacion": "multisplit con una unidad en la azotea si la comunidad lo aprueba.",
+        "referencias": "metro Santa Eulàlia, Gran Via"
+      },
+      {
+        "nombre": "Bellvitge",
+        "vivienda": "torres de pisos de los años 60 y 70.",
+        "instalacion": "las comunidades suelen pedir una ubicación común para las unidades; nos adaptamos.",
+        "referencias": "Hospital de Bellvitge, metro Bellvitge"
+      }
+    ],
+    "normativa": {
+      "titulo": "Ruido y medianeras: qué dice la ordenanza de L'Hospitalet",
+      "parrafos": [
+        "La Ordenança municipal sobre sorolls i vibracions de L'Hospitalet (art. 16.6) pide que la ubicación del aire acondicionado garantice que no se superan los niveles de ruido en los edificios cercanos. Y no permite anclar maquinaria directamente sobre medianeras sin elementos antivibratorios.",
+        "Además, la fachada y la azotea son elementos comunes: hace falta el acuerdo de la comunidad."
+      ],
+      "consejos": [
+        "Siempre montamos la unidad exterior con soportes antivibratorios, como pide la ordenanza.",
+        "En patios estrechos de Collblanc y la Torrassa elegimos unidades silenciosas.",
+        "En torres de Bellvitge, pregunta al administrador si hay normas de la comunidad para las unidades."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Mi piso de Collblanc es pequeño, ¿qué equipo necesito?",
+        "r": "En estancias de 15-20 m² suele bastar un split de 2,5 kW. Lo calculas en la guía [qué frigorías necesito](../guias/que-frigorias-necesito.html)."
+      },
+      {
+        "p": "¿Puedo colgar la unidad en la pared medianera?",
+        "r": "Solo con elementos antivibratorios: la ordenanza de L'Hospitalet no permite anclar maquinaria directamente sobre medianeras sin ellos. Nosotros siempre los usamos."
+      },
+      {
+        "p": "Vivo en una torre de Bellvitge, ¿dónde va la unidad exterior?",
+        "r": "Depende de lo que permita la comunidad: azotea, terraza o una zona común reservada. Lo vemos en la visita."
+      },
+      {
+        "p": "¿Cuánto tarda la instalación de un split?",
+        "r": "Un split normal se instala en un día. Un multisplit puede necesitar algo más, según las estancias."
+      },
+      {
+        "p": "¿Hacéis mantenimiento en L'Hospitalet?",
+        "r": "Sí. Mantenimiento preventivo anual (70 € + IVA) y diagnóstico técnico (70 € + IVA). Si hace falta reparar, te derivamos al SAT oficial de la marca o a un técnico especializado."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "sants",
+        "nombre": "Sants-Montjuïc (Barcelona)"
+      },
+      {
+        "slug": "les-corts",
+        "nombre": "Les Corts (Barcelona)"
+      },
+      {
+        "slug": "cornella",
+        "nombre": "Cornellà de Llobregat"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Qué frigorías necesito"
+      },
+      {
+        "slug": "ubicacion-unidad-exterior",
+        "nombre": "Dónde colocar la unidad exterior"
+      },
+      {
+        "slug": "consumo-real-aire-acondicionado",
+        "nombre": "Consumo real del aire acondicionado"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Ajuntament de L'Hospitalet · Ordenança municipal sobre sorolls i vibracions",
+        "url": "https://www.l-h.cat/gdocs/d4728676.pdf"
+      }
+    ]
+  },
+  {
+    "slug": "cornella",
+    "nombre": "Cornellà de Llobregat",
+    "tipo": "municipio",
+    "metaDesc": "Aire acondicionado en Cornellà: el Centre, la Riera, Sant Ildefons, Almeda, el Pedró y la Gavarra. Bloques de pisos y obra nueva. Presupuesto gratis.",
+    "heroSub": "Instalamos en toda Cornellà, de Sant Ildefons a Almeda. Respuesta en menos de 2 h en horario de atención.",
+    "imagen": {
+      "archivo": "multisplit_service",
+      "w": 1200,
+      "h": 675,
+      "alt": "Piso con multisplit: una unidad interior en el salón y otra en el dormitorio (imagen ilustrativa)"
+    },
+    "intro": [
+      "Cornellà de Llobregat está a unos 8 km de Barcelona y es un polo industrial y de servicios del Baix Llobregat. Creció mucho en los años 60 y 70, y por eso abundan los bloques de pisos, como en Sant Ildefons, junto a zonas antiguas como el Centre y barrios en transformación como Almeda.",
+      "En pisos de bloque lo más habitual es un multisplit con una sola unidad exterior, o un split por estancia. Lo que más cambia de un edificio a otro es dónde deja la comunidad poner la unidad exterior.",
+      "Hacemos visita previa: medimos, vemos el edificio y te damos un precio cerrado."
+    ],
+    "cp": "08940",
+    "ejes": "Carretera d'Esplugues, Avinguda de Sant Ildefons, Carrer de Mossèn Jacint Verdaguer, Avinguda del Baix Llobregat",
+    "barriosIntro": "Algunos de los barrios de Cornellà donde las viviendas cambian más la instalación.",
+    "barrios": [
+      {
+        "nombre": "el Centre y la Riera",
+        "vivienda": "el núcleo antiguo y bloques de pisos de distintas épocas.",
+        "instalacion": "patio o azotea; en casas antiguas, terrado propio.",
+        "referencias": "Parc de Can Mercader, Plaça de l'Església"
+      },
+      {
+        "nombre": "Sant Ildefons",
+        "vivienda": "bloques altos de los años 60 y 70.",
+        "instalacion": "azotea comunitaria; revisamos la línea eléctrica en pisos antiguos.",
+        "referencias": "Avinguda de Sant Ildefons, metro Sant Ildefons"
+      },
+      {
+        "nombre": "Almeda",
+        "vivienda": "antigua zona industrial con edificios nuevos.",
+        "instalacion": "en obra nueva suele haber preinstalación; la aprovechamos.",
+        "referencias": "FGC Almeda"
+      },
+      {
+        "nombre": "el Pedró y la Gavarra",
+        "vivienda": "bloques de pisos y algunas casas.",
+        "instalacion": "split o multisplit con la unidad donde lo apruebe la comunidad.",
+        "referencias": "metro Gavarra"
+      }
+    ],
+    "normativa": {
+      "titulo": "Comunidad y ruido en Cornellà",
+      "parrafos": [
+        "La fachada, la azotea y el patio son elementos comunes, así que hace falta el acuerdo de la comunidad para instalar la unidad exterior.",
+        "Además, el ruido de la unidad no debe molestar a los vecinos. Cada ayuntamiento tiene su ordenanza; en la visita te explicamos qué pide la de Cornellà para tu caso."
+      ],
+      "consejos": [
+        "Usamos soportes antivibración y equipos silenciosos.",
+        "En bloques altos, pregunta si la comunidad tiene una zona reservada en la azotea.",
+        "Si tu piso es nuevo, mira si tiene preinstalación: abarata la obra."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Vivo en un bloque de Sant Ildefons, ¿dónde va la unidad exterior?",
+        "r": "Normalmente en la azotea comunitaria o en el patio, con el acuerdo de la comunidad. Lo vemos en la visita."
+      },
+      {
+        "p": "Mi piso nuevo de Almeda tiene preinstalación, ¿qué me ahorro?",
+        "r": "La obra de tuberías y desagües ya está hecha, así que la instalación es más rápida y más barata. Revisamos la preinstalación antes de montar."
+      },
+      {
+        "p": "¿Split o multisplit para un piso de 3 habitaciones?",
+        "r": "Si quieres climatizar varias estancias, un multisplit evita poner varias unidades exteriores. Lo comparamos en la guía [split, multisplit o conductos](../guias/split-vs-multisplit-vs-conductos.html)."
+      },
+      {
+        "p": "¿Cobráis desplazamiento a Cornellà?",
+        "r": "No. Cornellà está dentro de nuestra zona de cobertura sin coste adicional."
+      },
+      {
+        "p": "¿Hacéis mantenimiento en Cornellà?",
+        "r": "Sí. Mantenimiento preventivo anual (70 € + IVA) y diagnóstico técnico (70 € + IVA). Si hace falta reparar, te derivamos al SAT oficial de la marca o a un técnico especializado."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "hospitalet",
+        "nombre": "L'Hospitalet de Llobregat"
+      },
+      {
+        "slug": "castelldefels",
+        "nombre": "Castelldefels"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "split-vs-multisplit-vs-conductos",
+        "nombre": "Split, multisplit o conductos"
+      },
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Qué frigorías necesito"
+      },
+      {
+        "slug": "subvenciones-como-solicitarlas",
+        "nombre": "Subvenciones y cómo pedirlas"
+      }
+    ],
+    "fuentes": []
+  },
+  {
+    "slug": "castelldefels",
+    "nombre": "Castelldefels",
+    "tipo": "municipio",
+    "metaDesc": "Aire acondicionado en Castelldefels: centro, zona de playa y urbanizaciones como Bellamar y Montmar. Chalets, pisos junto al mar y salitre.",
+    "heroSub": "Instalamos en todo Castelldefels, de la playa a las urbanizaciones de montaña. Respuesta en menos de 2 h en horario de atención.",
+    "imagen": {
+      "archivo": "guia-ubicacion-terraza",
+      "w": 1448,
+      "h": 1086,
+      "alt": "Unidad exterior de aire acondicionado en una terraza (imagen ilustrativa)"
+    },
+    "intro": [
+      "Castelldefels está a unos 20 km al suroeste de Barcelona, junto al macizo del Garraf, con una playa de unos 4,8 km. A mediados de los años 50 pasó de masías dispersas a segunda residencia de muchos barceloneses, y de ahí vienen sus urbanizaciones de chalets.",
+      "Por eso conviven el casco urbano, los pisos junto al mar y las casas unifamiliares en la montaña. En los chalets, la ubicación de la unidad exterior y la distancia de tubería suelen marcar el presupuesto. Cerca del mar, el salitre obliga a proteger mejor la unidad.",
+      "Hacemos visita previa: medimos, vemos la vivienda y te damos un precio cerrado."
+    ],
+    "cp": "08860",
+    "ejes": "Avinguda de la Constitució, Passeig Marítim, Autovia de Castelldefels (C-31)",
+    "barriosIntro": "Las zonas de Castelldefels donde la vivienda cambia más la instalación.",
+    "barrios": [
+      {
+        "nombre": "el centro",
+        "vivienda": "pisos y casas en el casco urbano, alrededor del castillo.",
+        "instalacion": "azotea o patio; split o multisplit según las estancias.",
+        "referencias": "Castell de Castelldefels, Plaça de l'Església"
+      },
+      {
+        "nombre": "la zona de playa",
+        "vivienda": "pisos y casas a pocos metros del mar.",
+        "instalacion": "soportes y tornillería resistentes al salitre; limpieza regular de la unidad exterior.",
+        "referencias": "Passeig Marítim, playa de Castelldefels"
+      },
+      {
+        "nombre": "las urbanizaciones de montaña (Bellamar, Montmar)",
+        "vivienda": "chalets y casas unifamiliares en pendiente, entre pinos.",
+        "instalacion": "conductos o multisplit; vigilamos que la unidad no se llene de hojas y agujas de pino.",
+        "referencias": "Bellamar, Montmar, macizo del Garraf"
+      }
+    ],
+    "normativa": {
+      "titulo": "Chalets, mar y comunidad en Castelldefels",
+      "parrafos": [
+        "En casas unifamiliares el trámite suele ser más sencillo que en un bloque, pero el ruido de la unidad no debe molestar a los vecinos. En pisos, la fachada y la azotea son elementos comunes y hace falta el acuerdo de la comunidad.",
+        "Cerca del mar, el aire salino corroe antes la carcasa y las conexiones de la unidad exterior. Conviene protegerla y limpiarla con regularidad."
+      ],
+      "consejos": [
+        "En chalets, colocamos la unidad lejos de los dormitorios del vecino.",
+        "En zonas con pinos, la ubicamos donde no caigan hojas ni agujas sobre la rejilla.",
+        "En primera línea de mar, el mantenimiento anual alarga mucho la vida del equipo."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Tengo un chalet en Bellamar, ¿conductos o multisplit?",
+        "r": "Si hay falso techo o se puede hacer, los conductos dan un frío uniforme y no se ven. Si no, un multisplit. Lo comparamos en la guía [split, multisplit o conductos](../guias/split-vs-multisplit-vs-conductos.html)."
+      },
+      {
+        "p": "Vivo junto a la playa, ¿la unidad exterior dura menos?",
+        "r": "El salitre la desgasta antes si no se cuida. Usamos soportes resistentes a la corrosión y recomendamos limpiarla y revisarla cada año."
+      },
+      {
+        "p": "La unidad exterior está lejos del salón, ¿encarece la instalación?",
+        "r": "Sí, cada metro de tubería suma. En chalets es habitual; lo medimos en la visita y va incluido en el precio cerrado."
+      },
+      {
+        "p": "¿Cobráis desplazamiento a Castelldefels?",
+        "r": "No. Castelldefels está dentro de nuestra zona de cobertura sin coste adicional."
+      },
+      {
+        "p": "¿Hacéis mantenimiento en Castelldefels?",
+        "r": "Sí. Mantenimiento preventivo anual (70 € + IVA) y diagnóstico técnico (70 € + IVA). Si hace falta reparar, te derivamos al SAT oficial de la marca o a un técnico especializado."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "cornella",
+        "nombre": "Cornellà de Llobregat"
+      },
+      {
+        "slug": "hospitalet",
+        "nombre": "L'Hospitalet de Llobregat"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "split-vs-multisplit-vs-conductos",
+        "nombre": "Split, multisplit o conductos"
+      },
+      {
+        "slug": "mantenimiento-yo-mismo-o-profesional",
+        "nombre": "Mantenimiento: ¿yo mismo o un profesional?"
+      },
+      {
+        "slug": "ubicacion-unidad-exterior",
+        "nombre": "Dónde colocar la unidad exterior"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Wikipedia · Castelldefels",
+        "url": "https://www.wikipedia.com/wiki/Castelldefels"
+      },
+      {
+        "nombre": "Fem Turisme · Castelldefels",
+        "url": "https://femturisme.cat/pobles/castelldefels"
+      }
+    ]
+  },
+  {
+    "slug": "sabadell",
+    "nombre": "Sabadell",
+    "tipo": "municipio",
+    "metaDesc": "Aire acondicionado en Sabadell: Ca n'Oriac, Torre-romeu, la Creu de Barberà, Can Puiggener, Can Rull y la Concòrdia. Veranos calurosos y bomba de calor.",
+    "heroSub": "Instalamos en toda Sabadell, de Torre-romeu a la Creu de Barberà. Respuesta en menos de 2 h en horario de atención.",
+    "imagen": {
+      "archivo": "guia-consumo-mando-eco",
+      "w": 1448,
+      "h": 1086,
+      "alt": "Mando de aire acondicionado en modo eco en un salón (imagen ilustrativa)"
+    },
+    "intro": [
+      "Sabadell está a unos 25 km de Barcelona y es, con Terrassa, co-capital del Vallès Occidental. Fue una gran ciudad textil, y todavía se ven antiguos vapores y naves junto a barrios de bloques que crecieron en los años 60 y 70.",
+      "Lejos del mar, el clima es más extremo que en Barcelona: veranos más calurosos e inviernos más fríos. Por eso aquí tiene mucho sentido un equipo con bomba de calor que también caliente bien en invierno.",
+      "Hacemos visita previa: medimos, vemos la vivienda y te damos un precio cerrado."
+    ],
+    "cp": "08201, 08202, 08203, 08204, 08205, 08206, 08207 y 08208",
+    "ejes": "Rambla de Sabadell, Gran Via de Sabadell, Avinguda de Barberà, Ronda de Zamenhof",
+    "barriosIntro": "Algunos de los barrios de Sabadell donde las viviendas cambian más la instalación.",
+    "barrios": [
+      {
+        "nombre": "la Concòrdia y Can Rull",
+        "vivienda": "bloques de pisos de distintas épocas cerca del centro.",
+        "instalacion": "azotea comunitaria o patio; multisplit para varias estancias.",
+        "referencias": "Rambla de Sabadell, Parc de Catalunya"
+      },
+      {
+        "nombre": "Ca n'Oriac y Torre-romeu",
+        "vivienda": "bloques de los años 60 y 70, en zonas con pendiente hacia el río Ripoll.",
+        "instalacion": "azotea o terraza; revisamos la línea eléctrica en pisos antiguos.",
+        "referencias": "río Ripoll, Torre-romeu"
+      },
+      {
+        "nombre": "la Creu de Barberà y Can Puiggener",
+        "vivienda": "bloques de pisos y algunas casas.",
+        "instalacion": "split o multisplit con la unidad donde lo apruebe la comunidad.",
+        "referencias": "Avinguda de Barberà, Can Puiggener"
+      }
+    ],
+    "normativa": {
+      "titulo": "Ruido y convivencia: qué dice la ordenanza de Sabadell",
+      "parrafos": [
+        "La Ordenança municipal reguladora del civisme i la convivència de Sabadell (art. 21) obliga a respetar el descanso vecinal, con especial cuidado entre las 21 h y las 8 h. El art. 19 pide evitar molestias innecesarias desde las viviendas. No menciona expresamente el aire acondicionado, pero el ruido de la unidad entra en esa obligación.",
+        "En pisos, la fachada y la azotea son elementos comunes: hace falta el acuerdo de la comunidad."
+      ],
+      "consejos": [
+        "Elegimos equipos silenciosos y soportes antivibración para no molestar de noche.",
+        "Con veranos más calurosos que en Barcelona, revisamos bien la potencia del equipo.",
+        "Para el invierno, un equipo con buen rendimiento en calefacción puede sustituir a otros sistemas."
+      ]
+    },
+    "faq": [
+      {
+        "p": "En Sabadell hace más calor en verano, ¿necesito más potencia?",
+        "r": "A veces, sí. Lo calculamos según los metros, la orientación y el aislamiento. Tienes una referencia en la guía [qué frigorías necesito](../guias/que-frigorias-necesito.html)."
+      },
+      {
+        "p": "¿El aire acondicionado sirve para calentar en invierno?",
+        "r": "Sí, los equipos que instalamos son bomba de calor. En Sabadell, con inviernos más fríos, conviene elegir un modelo con buen rendimiento en calefacción."
+      },
+      {
+        "p": "Vivo en un bloque de Torre-romeu, ¿dónde va la unidad?",
+        "r": "Normalmente en la azotea comunitaria o en la terraza, con el acuerdo de la comunidad."
+      },
+      {
+        "p": "¿Cobráis desplazamiento a Sabadell?",
+        "r": "No. Sabadell está dentro de nuestra zona de cobertura sin coste adicional."
+      },
+      {
+        "p": "¿Hacéis mantenimiento en Sabadell?",
+        "r": "Sí. Mantenimiento preventivo anual (70 € + IVA) y diagnóstico técnico (70 € + IVA). Si hace falta reparar, te derivamos al SAT oficial de la marca o a un técnico especializado."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "terrassa",
+        "nombre": "Terrassa"
+      },
+      {
+        "slug": "sant-cugat",
+        "nombre": "Sant Cugat del Vallès"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Qué frigorías necesito"
+      },
+      {
+        "slug": "consumo-real-aire-acondicionado",
+        "nombre": "Consumo real del aire acondicionado"
+      },
+      {
+        "slug": "subvenciones-como-solicitarlas",
+        "nombre": "Subvenciones y cómo pedirlas"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "BOPB · Ordenança municipal reguladora del civisme i la convivència a Sabadell",
+        "url": "https://bop.diba.cat/anuncio/descargar-pdf/3618683"
+      }
+    ]
+  },
+  {
+    "slug": "sant-cugat",
+    "nombre": "Sant Cugat del Vallès",
+    "tipo": "municipio",
+    "metaDesc": "Aire acondicionado en Sant Cugat: Centre, Eixample Sud, Volpelleres, Mira-sol, les Planes y la Floresta. Casas, obra nueva y ordenanza de fachadas.",
+    "heroSub": "Instalamos en todo Sant Cugat, de Volpelleres a la Floresta. Respuesta en menos de 2 h en horario de atención.",
+    "imagen": {
+      "archivo": "conductos_service",
+      "w": 1200,
+      "h": 675,
+      "alt": "Salón amplio con climatización por conductos (imagen ilustrativa)"
+    },
+    "intro": [
+      "Sant Cugat del Vallès está a unos 17 km de Barcelona, al otro lado de Collserola. Es una ciudad residencial, con un centro alrededor del monasterio, barrios de casas unifamiliares como Mira-sol, zonas nuevas como Volpelleres y barrios dentro del bosque, como les Planes y la Floresta.",
+      "Sant Cugat tiene una de las ordenanzas más claras sobre dónde poner la unidad exterior. En edificios nuevos o con reforma integral debe ir en la cubierta o en espacios previstos, nunca en fachada ni en patio de manzana.",
+      "Hacemos visita previa: vemos la vivienda, lo que permite la ordenanza y te damos un precio cerrado."
+    ],
+    "cp": "08172, 08173, 08174 y 08195 (Mira-sol)",
+    "ejes": "Rambla del Celler, Avinguda de Cerdanyola, Passeig de Torre Blanca, Avinguda de la Generalitat",
+    "barriosIntro": "Algunos de los barrios de Sant Cugat donde la vivienda cambia más la instalación.",
+    "barrios": [
+      {
+        "nombre": "el Centre",
+        "vivienda": "casas antiguas y bloques alrededor del monasterio.",
+        "instalacion": "cubierta o terrado; en fachada solo si no hay otra opción y respetando la composición.",
+        "referencias": "Monestir de Sant Cugat, Plaça Octavià"
+      },
+      {
+        "nombre": "Eixample Sud y Volpelleres",
+        "vivienda": "edificios recientes, muchos con preinstalación.",
+        "instalacion": "cubierta o espacio previsto, como pide la ordenanza; aprovechamos la preinstalación.",
+        "referencias": "FGC Volpelleres, Parc Central"
+      },
+      {
+        "nombre": "Mira-sol",
+        "vivienda": "casas unifamiliares con jardín.",
+        "instalacion": "conductos o multisplit; unidad en el jardín o la cubierta, lejos de los vecinos.",
+        "referencias": "FGC Mira-sol, Avinguda de Mira-sol"
+      },
+      {
+        "nombre": "les Planes y la Floresta",
+        "vivienda": "casas dentro del bosque de Collserola.",
+        "instalacion": "unidad protegida de hojas y humedad; revisamos el acceso por calles estrechas.",
+        "referencias": "FGC les Planes y la Floresta, Collserola"
+      }
+    ],
+    "normativa": {
+      "titulo": "La ordenanza de Sant Cugat: cubierta primero, fachada solo si no hay otra opción",
+      "parrafos": [
+        "La Ordenança municipal sobre sorolls, vibracions i olors de Sant Cugat (art. 31) dice que, en edificios nuevos o con reforma integral, las unidades van en la cubierta o en espacios previstos y nunca en fachada ni en patio de manzana. En edificios existentes se prefiere la cubierta; si no es posible, la unidad debe respetar la composición de la fachada, por ejemplo detrás de la barandilla del balcón, con las tuberías por dentro.",
+        "El mismo artículo pide que los equipos no superen los límites de ruido, y el art. 33 exige elementos antivibratorios."
+      ],
+      "consejos": [
+        "Siempre montamos la unidad con soportes antivibratorios, como pide el art. 33.",
+        "En edificios nuevos, buscamos el espacio previsto en la cubierta.",
+        "En casas con jardín, colocamos la unidad lejos de las ventanas del vecino."
+      ]
+    },
+    "faq": [
+      {
+        "p": "¿Puedo poner la unidad exterior en la fachada en Sant Cugat?",
+        "r": "En edificios nuevos o con reforma integral, no. En edificios existentes solo si no se puede en la cubierta, y respetando la fachada: por ejemplo, detrás de la barandilla del balcón y con las tuberías por dentro."
+      },
+      {
+        "p": "Tengo una casa en Mira-sol, ¿qué sistema me conviene?",
+        "r": "En casas grandes suelen ir bien los conductos o un multisplit. Lo comparamos en la guía [split, multisplit o conductos](../guias/split-vs-multisplit-vs-conductos.html)."
+      },
+      {
+        "p": "Vivo en la Floresta, ¿la humedad del bosque afecta al equipo?",
+        "r": "Puede acumular hojas y suciedad en la unidad exterior. La colocamos en un lugar protegido y recomendamos el mantenimiento anual."
+      },
+      {
+        "p": "¿Cobráis desplazamiento a Sant Cugat?",
+        "r": "No. Sant Cugat está dentro de nuestra zona de cobertura sin coste adicional."
+      },
+      {
+        "p": "¿Hacéis mantenimiento en Sant Cugat?",
+        "r": "Sí. Mantenimiento preventivo anual (70 € + IVA) y diagnóstico técnico (70 € + IVA). Si hace falta reparar, te derivamos al SAT oficial de la marca o a un técnico especializado."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "sarria",
+        "nombre": "Sarrià-Sant Gervasi (Barcelona)"
+      },
+      {
+        "slug": "sabadell",
+        "nombre": "Sabadell"
+      },
+      {
+        "slug": "terrassa",
+        "nombre": "Terrassa"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "split-vs-multisplit-vs-conductos",
+        "nombre": "Split, multisplit o conductos"
+      },
+      {
+        "slug": "ubicacion-unidad-exterior",
+        "nombre": "Dónde colocar la unidad exterior"
+      },
+      {
+        "slug": "normativa-comunidad-vecinos-barcelona",
+        "nombre": "Normativa y comunidad de vecinos"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Ajuntament de Sant Cugat · Ordenança municipal sobre sorolls, vibracions i olors (2018)",
+        "url": "https://xarxaenxarxa.diba.cat/sites/xarxaenxarxa.diba.cat/files/2018_ordenanca_soroll_vibracions_i_olors_sant_cugat_del_valles.pdf"
+      }
+    ]
+  },
+  {
+    "slug": "terrassa",
+    "nombre": "Terrassa",
+    "tipo": "municipio",
+    "metaDesc": "Aire acondicionado en Terrassa: Centre, Ca n'Anglada, Sant Pere, Can Parellada, Ca n'Aurell y Can Palet. Clima de interior y bomba de calor.",
+    "heroSub": "Instalamos en toda Terrassa, del Centre a Can Parellada. Respuesta en menos de 2 h en horario de atención.",
+    "imagen": {
+      "archivo": "tecnico-medicion-laser",
+      "w": 1448,
+      "h": 1086,
+      "alt": "Técnico midiendo la pared antes de instalar un split (imagen ilustrativa)"
+    },
+    "intro": [
+      "Terrassa está a unos 35 km de Barcelona y es co-capital del Vallès Occidental, junto al parque natural de Sant Llorenç del Munt. Como Sabadell, fue una gran ciudad textil: en el Centre se conservan edificios modernistas industriales, y alrededor crecieron barrios de bloques en los años 60 y 70.",
+      "Lejos del mar, Terrassa tiene veranos calurosos e inviernos fríos. Un equipo con bomba de calor que caliente bien en invierno es aquí especialmente útil.",
+      "Hacemos visita previa: medimos, vemos la vivienda y te damos un precio cerrado."
+    ],
+    "cp": "08221, 08222, 08223, 08224, 08225, 08226, 08227 y 08228",
+    "ejes": "Rambla d'Egara, Avinguda Jacquard, Carretera de Montcada, Avinguda de Barcelona",
+    "barriosIntro": "Algunos de los barrios de Terrassa donde las viviendas cambian más la instalación.",
+    "barrios": [
+      {
+        "nombre": "el Centre",
+        "vivienda": "fincas antiguas y modernistas, y bloques de pisos.",
+        "instalacion": "azotea o patio; en fincas protegidas, nunca a la vista de la calle.",
+        "referencias": "Rambla d'Egara, Masia Freixa, mNACTEC"
+      },
+      {
+        "nombre": "Ca n'Anglada y Sant Pere",
+        "vivienda": "bloques de pisos de los años 60 y 70.",
+        "instalacion": "azotea comunitaria; revisamos la línea eléctrica en pisos antiguos.",
+        "referencias": "Sant Pere, Ca n'Anglada"
+      },
+      {
+        "nombre": "Can Parellada, Ca n'Aurell y Can Palet",
+        "vivienda": "bloques, casas y zonas más recientes.",
+        "instalacion": "en casas, unidad en la cubierta o el patio; en obra nueva, preinstalación.",
+        "referencias": "Can Parellada, Ca n'Aurell, Can Palet"
+      }
+    ],
+    "normativa": {
+      "titulo": "Ruido: qué dice la ordenanza de Terrassa",
+      "parrafos": [
+        "La Ordenança reguladora dels sorolls i les vibracions de Terrassa (art. 27) pide que los equipos de aire acondicionado se instalen según la normativa y no superen los límites de ruido. El instalador y el propietario son responsables de su ubicación y funcionamiento.",
+        "En pisos, la fachada y la azotea son elementos comunes: hace falta el acuerdo de la comunidad."
+      ],
+      "consejos": [
+        "Como responsables de la instalación, elegimos una ubicación que no moleste y usamos soportes antivibración.",
+        "Con veranos calurosos, revisamos bien la potencia del equipo.",
+        "En invierno, un equipo con buen rendimiento en calefacción puede ahorrarte otros sistemas."
+      ]
+    },
+    "faq": [
+      {
+        "p": "En Terrassa los inviernos son fríos, ¿el aire acondicionado calienta bien?",
+        "r": "Sí, los equipos que instalamos son bomba de calor. Para Terrassa conviene un modelo con buen rendimiento en calefacción con temperaturas bajas."
+      },
+      {
+        "p": "¿Quién responde si la unidad hace ruido?",
+        "r": "Según la ordenanza de Terrassa (art. 27), el instalador y el propietario. Por eso buscamos una ubicación que no moleste y usamos soportes antivibración."
+      },
+      {
+        "p": "¿Qué potencia necesito para un piso de 80 m² en Terrassa?",
+        "r": "Depende de las estancias y la orientación. Tienes una referencia en la guía [qué frigorías necesito](../guias/que-frigorias-necesito.html), y lo afinamos en la visita."
+      },
+      {
+        "p": "¿Cobráis desplazamiento a Terrassa?",
+        "r": "No. Terrassa está dentro de nuestra zona de cobertura sin coste adicional."
+      },
+      {
+        "p": "¿Hacéis mantenimiento en Terrassa?",
+        "r": "Sí. Mantenimiento preventivo anual (70 € + IVA) y diagnóstico técnico (70 € + IVA). Si hace falta reparar, te derivamos al SAT oficial de la marca o a un técnico especializado."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "sabadell",
+        "nombre": "Sabadell"
+      },
+      {
+        "slug": "sant-cugat",
+        "nombre": "Sant Cugat del Vallès"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Qué frigorías necesito"
+      },
+      {
+        "slug": "consumo-real-aire-acondicionado",
+        "nombre": "Consumo real del aire acondicionado"
+      },
+      {
+        "slug": "subvenciones-como-solicitarlas",
+        "nombre": "Subvenciones y cómo pedirlas"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Ordenança reguladora dels sorolls i les vibracions de Terrassa (texto articulado)",
+        "url": "https://normatia.com/es/normativa/ruido-vibraciones-terrasa/2018/articulat/"
+      }
+    ]
   }
 ]
