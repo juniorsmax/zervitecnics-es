@@ -5,6 +5,7 @@ name: IndexNow
 on:
   push:
     branches: [main]
+  workflow_dispatch:   # lanzarlo a mano: envía todas las URL del sitemap
 
 jobs:
   indexnow:
@@ -19,12 +20,15 @@ jobs:
           BEFORE: ${{ github.event.before }}
           AFTER: ${{ github.sha }}
         run: |
-          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            git ls-files '*.html' > cambiados.txt
+          elif [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
             echo "Primer push: no hay diferencias que enviar."; exit 0
+          else
+            git diff --name-only --diff-filter=AM "$BEFORE" "$AFTER" -- '*.html' > cambiados.txt || true
           fi
-          git diff --name-only --diff-filter=AM "$BEFORE" "$AFTER" -- '*.html' > cambiados.txt || true
           python3 - <<'PY'
-          import json, os, re, urllib.request
+          import json, os, re, time, urllib.error, urllib.request
           host = "zervitecnics.es"; key = os.environ["INDEXNOW_KEY"]
           urls = []
           for f in open("cambiados.txt").read().split():
@@ -36,9 +40,27 @@ jobs:
               urls.append(f"https://{host}/{path}")
           if not urls:
               print("Sin páginas indexables cambiadas."); raise SystemExit(0)
+          # GitHub Pages tarda en publicar: esperamos a que la clave esté visible (máx. ~10 min).
+          key_url = f"https://{host}/{key}.txt"
+          for _ in range(40):
+              try:
+                  if urllib.request.urlopen(key_url, timeout=15).read().decode().strip() == key:
+                      break
+              except Exception:
+                  pass
+              time.sleep(15)
+          else:
+              print("La clave no está publicada todavía; no se envía nada."); raise SystemExit(1)
+          time.sleep(30)
           body = {"host": host, "key": key, "keyLocation": f"https://{host}/{key}.txt", "urlList": urls[:10000]}
           req = urllib.request.Request("https://api.indexnow.org/indexnow", data=json.dumps(body).encode(),
                                        headers={"Content-Type": "application/json; charset=utf-8"})
-          with urllib.request.urlopen(req, timeout=30) as r:
-              print("IndexNow:", r.status, "-", len(urls), "URL enviadas")
+          for intento in range(3):
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as r:
+                      print("IndexNow:", r.status, "-", len(urls), "URL enviadas"); break
+              except urllib.error.HTTPError as e:
+                  print("IndexNow respondió", e.code, "- reintento en 60 s")
+                  if intento == 2: raise
+                  time.sleep(60)
           PY
