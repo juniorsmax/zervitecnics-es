@@ -123,7 +123,7 @@ function paginaMarcaCiudad(marca, ciudad) {
   <ul class="price-features">
     <li class="price-feature">${CHECK_SVG} Equipo + instalación</li>
     <li class="price-feature">${CHECK_SVG} Certificación profesional</li>
-    <li class="price-feature">${CHECK_SVG} Doble garantía incluida</li>
+    <li class="price-feature">${CHECK_SVG} Garantía de instalación 1 año + garantía del fabricante</li>
   </ul>
   <a href="${marca.slug}-${cap.frig}-frigorias.html" class="btn btn-primary w-full">Ver ${cap.frig} frigorías</a>
 </div>`).join('\n');
@@ -228,7 +228,7 @@ function paginaCapacidadCiudad(cap, ciudad) {
   <ul class="price-features">
     <li class="price-feature">${CHECK_SVG} Equipo + instalación</li>
     <li class="price-feature">${CHECK_SVG} Certificación profesional</li>
-    <li class="price-feature">${CHECK_SVG} Doble garantía incluida</li>
+    <li class="price-feature">${CHECK_SVG} Garantía de instalación 1 año + garantía del fabricante</li>
   </ul>
   <a href="../marcas/${m.slug}-${cap.frig}-frigorias.html" class="btn btn-primary w-full">Ver ${m.nombre}</a>
 </div>`).join('\n');
@@ -303,7 +303,7 @@ function paginaCapacidadCiudad(cap, ciudad) {
       'Cálculo de carga térmica personalizado',
       'Equipo de marca premium con garantía oficial',
       'Instalación documentada con informe técnico',
-      'Doble garantía: fabricante + instalación',
+      'Garantía de instalación 1 año + garantía del fabricante',
       `Servicio postventa en ${ciudad.nombre}`
     ].map(item => `<li class="service-check-item">${CHECK_SVG}${item}</li>`).join('\n'),
     priceSectionLabel: `Precios orientativos 2026`,

@@ -932,19 +932,6 @@ function injectLocalBusinessSchema() {
     "url": "https://zervitecnics.es/aires-acondicionados/",
     "telephone": PHONE_RAW,
     "email": "formularios.zervitecnics@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Barcelona",
-      "addressLocality": "Barcelona",
-      "addressRegion": "Cataluña",
-      "postalCode": "08001",
-      "addressCountry": "ES"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 41.3851,
-      "longitude": 2.1734
-    },
     "areaServed": [
       "Barcelona", "L'Eixample", "Gràcia", "L'Hospitalet de Llobregat",
       "Badalona", "Sant Cugat del Vallès", "Cornellà de Llobregat",

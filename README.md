@@ -114,9 +114,12 @@ cumplir todos los puntos siguientes **antes de publicarse**:
 - **i) Servicios nuevos (reformas, electricidad, diseño web)**: solo se
   añaden a `llms.txt`, al schema de la portada y a la ficha de Google cuando
   **ya estén publicadas** con página real. Nada de prometer servicios futuros.
-- **j) No prometer reparaciones ni derivación al SAT oficial.** La web habla
-  exclusivamente de instalación y mantenimiento. Las keywords de avería,
-  recarga de gas o servicio técnico correctivo quedan fuera del mapa.
+- **j) Instalación y mantenimiento, sin prometer reparaciones.** La web se
+  centra en instalación y mantenimiento (preventivo, correctivo y diagnóstico
+  técnico). Si tras el diagnóstico hace falta una reparación, se puede decir
+  que se deriva al SAT oficial de la marca o a un técnico especializado, pero
+  sin nombrar empresas concretas. Las keywords de avería, recarga de gas o
+  reparación quedan fuera del mapa.
 
 ## Soporte técnico
 

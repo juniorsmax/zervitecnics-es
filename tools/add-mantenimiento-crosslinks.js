@@ -16,7 +16,7 @@ function crosslinkZona(slug, nombre) {
 <section style="padding:32px 0;background:#F0FDF4;border-top:1px solid #DCFCE7;border-bottom:1px solid #DCFCE7">
   <div class="container" style="text-align:center">
     <p style="font-size:1rem;color:#166534;margin-bottom:14px;max-width:640px;margin-left:auto;margin-right:auto">
-      <strong>¿Ya tienes aire acondicionado instalado?</strong> También hacemos mantenimiento preventivo (70€), correctivo (130€) y diagnóstico técnico en ${nombre}.
+      <strong>¿Ya tienes aire acondicionado instalado?</strong> También hacemos mantenimiento preventivo (70 € + IVA), correctivo (130 € + IVA) y diagnóstico técnico en ${nombre}.
     </p>
     <a href="../mantenimiento-zonas/${slug}.html" class="btn btn-secondary" data-location="crosslink-mant-${slug}">Ver mantenimiento en ${nombre} →</a>
   </div>
@@ -30,7 +30,7 @@ function crosslinkMarca(slug, nombre) {
 <section style="padding:32px 0;background:#F0FDF4;border-top:1px solid #DCFCE7;border-bottom:1px solid #DCFCE7">
   <div class="container" style="text-align:center">
     <p style="font-size:1rem;color:#166534;margin-bottom:14px;max-width:640px;margin-left:auto;margin-right:auto">
-      <strong>¿Ya tienes un ${nombre} instalado?</strong> También hacemos mantenimiento preventivo (70€), correctivo (130€) y diagnóstico técnico específico para equipos ${nombre}.
+      <strong>¿Ya tienes un ${nombre} instalado?</strong> También hacemos mantenimiento preventivo (70 € + IVA), correctivo (130 € + IVA) y diagnóstico técnico específico para equipos ${nombre}.
     </p>
     <a href="../mantenimiento-marcas/${slug}.html" class="btn btn-secondary" data-location="crosslink-mant-${slug}">Ver mantenimiento ${nombre} →</a>
   </div>

@@ -197,17 +197,17 @@ function renderZona(z) {
   }).join('\n');
 
   return `${HEAD_COMMON}
-  <title>Mantenimiento Aire Acondicionado ${nombre} — 70€ preventivo | Zervitecnics</title>
-  <meta name="description" content="Mantenimiento de aire acondicionado en ${nombre} (Barcelona): preventivo 70€, correctivo 130€, diagnóstico 70€. Cobertura ${cobertura}. Reserva por WhatsApp.">
+  <title>Mantenimiento Aire Acondicionado ${nombre} — preventivo 70 € + IVA | Zervitecnics</title>
+  <meta name="description" content="Mantenimiento de aire acondicionado en ${nombre} (Barcelona): preventivo 70 €, correctivo 130 € y diagnóstico 70 € (+ IVA). Cobertura ${cobertura}. Reserva por WhatsApp.">
   <link rel="canonical" href="https://zervitecnics.es/aires-acondicionados/mantenimiento-zonas/${slug}.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Mantenimiento Aire Acondicionado ${nombre} — desde 70€ | Zervitecnics">
-  <meta property="og:description" content="Preventivo 70€, correctivo 130€, diagnóstico 70€. Servicio en ${cobertura}.">
+  <meta property="og:title" content="Mantenimiento Aire Acondicionado ${nombre} — desde 70 € + IVA | Zervitecnics">
+  <meta property="og:description" content="Preventivo 70 €, correctivo 130 € y diagnóstico 70 € (+ IVA). Servicio en ${cobertura}.">
   <meta property="og:url" content="https://zervitecnics.es/aires-acondicionados/mantenimiento-zonas/${slug}.html">
   <meta property="og:image" content="https://zervitecnics.es/aires-acondicionados/img/tecnico-limpieza-filtro.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://zervitecnics.es/aires-acondicionados/img/tecnico-limpieza-filtro.jpg">
-  <meta name="twitter:title" content="Mantenimiento Aire Acondicionado ${nombre} — 70€">
+  <meta name="twitter:title" content="Mantenimiento Aire Acondicionado ${nombre} — 70 € + IVA">
   <meta name="twitter:description" content="Preventivo, correctivo y diagnóstico en ${nombre}. Precios claros, sin sorpresas.">
 ${FONTS}
 ${MAINT_STYLES}
@@ -229,7 +229,7 @@ ${MAINT_STYLES}
       "@type": "City",
       "name": "${nombre}"
     },
-    "description": "Mantenimiento preventivo (70€), correctivo (130€) y diagnóstico técnico (70€) de aire acondicionado en ${nombre} (Barcelona). Cobertura ${cobertura}.",
+    "description": "Mantenimiento preventivo (70 € + IVA), correctivo (130 € + IVA) y diagnóstico técnico (70 € + IVA) de aire acondicionado en ${nombre} (Barcelona). Cobertura ${cobertura}.",
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "EUR",
@@ -443,7 +443,7 @@ ${MAINT_STYLES}
       </div>
       <div class="info-block">
         <h3>Fallo o rendimiento bajo</h3>
-        <p>Menos frío, ruido raro, olor, goteo o el equipo enciende y para. Deriva en diagnóstico técnico (70€) con informe de causa y solución.</p>
+        <p>Menos frío, ruido raro, olor, goteo o el equipo enciende y para. Deriva en diagnóstico técnico (70 € + IVA) con informe de causa y solución.</p>
       </div>
     </div>
 
@@ -552,17 +552,17 @@ function renderMarca(m) {
   }).join('\n');
 
   return `${HEAD_COMMON}
-  <title>Mantenimiento ${nombre} Barcelona — 70€ preventivo | Zervitecnics</title>
-  <meta name="description" content="Mantenimiento de aires acondicionados ${nombre} en Barcelona: preventivo 70€, correctivo 130€, diagnóstico 70€. ${m.filtro}, tecnología inverter. Reserva por WhatsApp.">
+  <title>Mantenimiento ${nombre} Barcelona — preventivo 70 € + IVA | Zervitecnics</title>
+  <meta name="description" content="Mantenimiento de aires acondicionados ${nombre} en Barcelona: preventivo 70 €, correctivo 130 € y diagnóstico 70 € (+ IVA). ${m.filtro}, tecnología inverter. Reserva por WhatsApp.">
   <link rel="canonical" href="https://zervitecnics.es/aires-acondicionados/mantenimiento-marcas/${slug}.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Mantenimiento ${nombre} Barcelona — desde 70€ | Zervitecnics">
-  <meta property="og:description" content="Preventivo 70€, correctivo 130€, diagnóstico 70€ para equipos ${nombre} en Barcelona. Instaladores profesionales.">
+  <meta property="og:title" content="Mantenimiento ${nombre} Barcelona — desde 70 € + IVA | Zervitecnics">
+  <meta property="og:description" content="Preventivo 70 €, correctivo 130 € y diagnóstico 70 € (+ IVA) para equipos ${nombre} en Barcelona. Instaladores profesionales.">
   <meta property="og:url" content="https://zervitecnics.es/aires-acondicionados/mantenimiento-marcas/${slug}.html">
   <meta property="og:image" content="https://zervitecnics.es/aires-acondicionados/img/tecnico-limpieza-filtro.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://zervitecnics.es/aires-acondicionados/img/tecnico-limpieza-filtro.jpg">
-  <meta name="twitter:title" content="Mantenimiento ${nombre} Barcelona — 70€">
+  <meta name="twitter:title" content="Mantenimiento ${nombre} Barcelona — 70 € + IVA">
   <meta name="twitter:description" content="Preventivo, correctivo y diagnóstico técnico para equipos ${nombre} en Barcelona.">
 ${FONTS}
 ${MAINT_STYLES}
@@ -587,7 +587,7 @@ ${MAINT_STYLES}
       "@type": "Brand",
       "name": "${nombre}"
     },
-    "description": "Mantenimiento preventivo (70€), correctivo (130€) y diagnóstico técnico (70€) para equipos ${nombre} en Barcelona. ${m.filtro}, revisión app ${m.app}.",
+    "description": "Mantenimiento preventivo (70 € + IVA), correctivo (130 € + IVA) y diagnóstico técnico (70 € + IVA) para equipos ${nombre} en Barcelona. ${m.filtro}, revisión app ${m.app}.",
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "EUR",
