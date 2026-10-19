@@ -61,7 +61,7 @@ ${JSON.stringify({
 
 function intro(d) {
   const checks = ['Instalación en 1 día', 'Instalación documentada incluida',
-    'Garantía de instalación 1 año + 3 años de garantía del fabricante', 'Precio cerrado sin sorpresas'];
+    'Garantía: 1 año en la instalación y 3 años del fabricante en el equipo', 'Precio cerrado sin sorpresas'];
   return `<section class="section">
   <div class="container">
     <div class="service-detail-grid fade-up">

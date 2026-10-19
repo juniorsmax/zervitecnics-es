@@ -61,7 +61,7 @@ function buildPage(marca, cap) {
   <ul class="price-features">
     <li class="price-feature">${CHECK_SVG} Equipo + instalación</li>
     <li class="price-feature">${CHECK_SVG} Certificación profesional</li>
-    <li class="price-feature">${CHECK_SVG} Garantía de instalación 1 año + 3 años de garantía del fabricante</li>
+    <li class="price-feature">${CHECK_SVG} Garantía: 1 año en la instalación y 3 años del fabricante en el equipo</li>
   </ul>
   <a href="../index.html#presupuesto" class="btn btn-primary w-full">Solicitar presupuesto</a>
 </div>`;
