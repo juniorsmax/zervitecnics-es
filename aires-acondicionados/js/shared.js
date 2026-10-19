@@ -46,55 +46,10 @@ const WA_NUMBER = '34625215983';
 const BUSINESS_NAME = 'Zervitecnics Barcelona';
 const COOKIE_VERSION = '1.3';
 
-/* ── IDs analytics / antibot ── */
+/* ── IDs analytics ── */
 const GTM_ID = 'GTM-P6C8L3VX';
 const GA4_ID = 'G-N4C8H8KMFD';
 const CLARITY_ID = 'xbowxa66oa';
-const RECAPTCHA_SITE_KEY = '6LcESzAtAAAAAEhvnT0Zmh07PJUOkjYiC0qeed4S';
-const EMAILJS_PUBLIC_KEY = 'PEZWRWdtVVWVZhl9R';
-const EMAILJS_SERVICE_ID = 'service_tfuzhfr';
-const EMAILJS_TEMPLATE_ID = 'template_wcjvjy3';
-window.RECAPTCHA_SITE_KEY = RECAPTCHA_SITE_KEY;
-window.EMAILJS_SERVICE_ID = EMAILJS_SERVICE_ID;
-window.EMAILJS_TEMPLATE_ID = EMAILJS_TEMPLATE_ID;
-
-/* ── reCAPTCHA v3: ejecuta y devuelve token, o '' si falla o tarda más de 3s ── */
-let recaptchaLoading = null;
-/* Carga el script de Google reCAPTCHA solo cuando el usuario usa un formulario
-   (no al entrar en la página). Se declara en la política de privacidad y cookies. */
-function loadRecaptcha() {
-  if (typeof grecaptcha !== 'undefined' && grecaptcha.execute) return Promise.resolve();
-  if (recaptchaLoading) return recaptchaLoading;
-  recaptchaLoading = new Promise(resolve => {
-    const s = document.createElement('script');
-    s.src = 'https://www.google.com/recaptcha/api.js?render=' + RECAPTCHA_SITE_KEY;
-    s.async = true; s.defer = true;
-    s.onload = () => resolve(); s.onerror = () => resolve();
-    document.head.appendChild(s);
-  });
-  return recaptchaLoading;
-}
-window.loadRecaptcha = loadRecaptcha;
-document.addEventListener('focusin', function (e) {
-  if (e.target && e.target.closest && e.target.closest('form')) loadRecaptcha();
-}, { once: true });
-
-async function getRecaptchaToken(action) {
-  try {
-    await Promise.race([loadRecaptcha(), new Promise(r => setTimeout(r, 3000))]);
-    if (typeof grecaptcha === 'undefined' || !grecaptcha.execute) return '';
-    const run = (async () => {
-      await new Promise(r => grecaptcha.ready(r));
-      return await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: action || 'submit' });
-    })();
-    const timeout = new Promise(r => setTimeout(() => r(''), 3000));
-    return (await Promise.race([run, timeout])) || '';
-  } catch (e) {
-    console.warn('reCAPTCHA error', e);
-    return '';
-  }
-}
-window.getRecaptchaToken = getRecaptchaToken;
 
 /* ── Turnstile (Cloudflare) + envío al receptor del formulario ──
    El formulario ya no habla con EmailJS desde el navegador: manda los datos
@@ -1080,20 +1035,6 @@ document.addEventListener('DOMContentLoaded', () => {
   animateCounters();
   detectZoneFromURL();
 
-  // EmailJS init con reintento — el <script> lleva defer, puede no estar listo
-  // en el momento del DOMContentLoaded. Reintentamos cada 100ms hasta 3s.
-  (function initEmailJSWhenReady(attempt) {
-    if (typeof emailjs !== 'undefined') {
-      try { emailjs.init(EMAILJS_PUBLIC_KEY); }
-      catch (e) { console.error('[Zervitecnics] EmailJS init falló:', e); }
-      return;
-    }
-    if (attempt >= 30) {
-      console.error('[Zervitecnics] EmailJS SDK no cargó tras 3s (¿bloqueador / CSP?)');
-      return;
-    }
-    setTimeout(() => initEmailJSWhenReady(attempt + 1), 100);
-  })(0);
 
   renderDynPrices();
 });
