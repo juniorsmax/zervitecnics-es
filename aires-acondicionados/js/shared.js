@@ -204,6 +204,9 @@ window.formRateLimited = formRateLimited;
 window.markFormSubmitted = markFormSubmitted;
 
 /* ── Skip Link (accesibilidad) ── */
+// Páginas en catalán (/ca/): textos que inyecta este script.
+const IS_CA = document.documentElement.lang === 'ca';
+
 function injectSkipLink() {
   if (document.querySelector('.skip-link')) return;
   const target = document.querySelector('main, [role="main"], .hero, section');
@@ -212,7 +215,7 @@ function injectSkipLink() {
   const link = document.createElement('a');
   link.className = 'skip-link';
   link.href = '#' + target.id;
-  link.textContent = 'Saltar al contenido';
+  link.textContent = IS_CA ? 'Salta al contingut' : 'Saltar al contenido';
   document.body.insertBefore(link, document.body.firstChild);
 }
 
@@ -372,6 +375,7 @@ function waWithRef(msg) { return msg + '\n\n(' + waRef() + ')'; }
 
 function getWAMessage() {
   const path = window.location.pathname;
+  if (IS_CA) return "Hola, m'interessa instal·lar aire condicionat. Em podeu donar més informació?";
   const slug = _waSlugFromPath(path);
   if (!slug) return 'Hola, estoy interesado en instalar aire acondicionado en Barcelona. ¿Pueden darme más información?';
 
@@ -428,14 +432,14 @@ function initCallButtons() {
   const modalHTML = `
     <div class="call-modal-overlay" id="callModal" role="dialog" aria-labelledby="callModalTitle" aria-modal="true">
       <div class="call-modal-card">
-        <button class="call-modal-close" id="callModalClose" aria-label="Cerrar">&times;</button>
+        <button class="call-modal-close" id="callModalClose" aria-label="${IS_CA ? 'Tanca' : 'Cerrar'}">&times;</button>
         <div class="call-modal-icon" aria-hidden="true">📞</div>
-        <h3 class="call-modal-title" id="callModalTitle">Llamar por teléfono</h3>
+        <h3 class="call-modal-title" id="callModalTitle">${IS_CA ? 'Truca per telèfon' : 'Llamar por teléfono'}</h3>
         <div class="call-modal-phone">625 215 983</div>
-        <p class="call-modal-text">Llama desde tu móvil, o escríbenos por WhatsApp y te respondemos al instante.</p>
+        <p class="call-modal-text">${IS_CA ? 'Truca des del mòbil o escriu-nos per WhatsApp i et responem de seguida.' : 'Llama desde tu móvil, o escríbenos por WhatsApp y te respondemos al instante.'}</p>
         <div class="call-modal-actions">
-          <a href="https://wa.me/${WA_NUMBER}" class="btn btn-green" id="callModalWA" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-          <button class="btn btn-secondary" id="callModalCopy" type="button">Copiar número</button>
+          <a href="https://wa.me/${WA_NUMBER}" class="btn btn-green" id="callModalWA" target="_blank" rel="noopener">${IS_CA ? 'Escriu per WhatsApp' : 'Escribir por WhatsApp'}</a>
+          <button class="btn btn-secondary" id="callModalCopy" type="button">${IS_CA ? 'Copia el número' : 'Copiar número'}</button>
         </div>
         <div class="call-modal-copy-msg" id="callModalCopyMsg" role="status" aria-live="polite"></div>
       </div>
@@ -478,11 +482,11 @@ function initCallButtons() {
   copyBtn.addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText('625215983');
-      copyMsg.textContent = 'Número copiado ✓';
+      copyMsg.textContent = IS_CA ? 'Número copiat ✓' : 'Número copiado ✓';
       copyMsg.classList.add('show');
       setTimeout(() => copyMsg.classList.remove('show'), 2200);
     } catch (e) {
-      copyMsg.textContent = 'No se pudo copiar — márcalo manualmente';
+      copyMsg.textContent = IS_CA ? "No s'ha pogut copiar — marca'l manualment" : 'No se pudo copiar — márcalo manualmente';
       copyMsg.classList.add('show');
     }
   });

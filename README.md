@@ -67,6 +67,11 @@ alternativos lo indican. Se pueden sustituir por fotos reales manteniendo los no
 
 - `tools/apply-distritos.js` + `tools/data/distritos.json`: páginas de zona (10 distritos y
   7 municipios) con barrios, viviendas, normativa, preguntas y fuentes.
+- `tools/build-catala.js` + `tools/data/distritos-ca.json`: páginas en catalán
+  (`/ca/aire-condicionat/` y los 10 distritos), con hreflang es/ca en las dos versiones.
+- `tools/apply-noindex.js` + `tools/data/noindex-temporal.json`: noindex temporal
+  (quitar una página de la lista y volver a ejecutar para que vuelva a indexarse).
+- `tools/shorten-titles.js`: acorta títulos de más de 65 caracteres.
 - `tools/apply-mantenimiento-local.js` + `tools/data/mantenimiento-zonas-local.json`:
   bloque local de las páginas de mantenimiento por zona.
 - `tools/build-opiniones-section.js` + `data/reviews.json`: reseñas reales en carrusel.

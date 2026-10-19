@@ -1,0 +1,1300 @@
+[
+  {
+    "slug": "gracia",
+    "nombre": "Gràcia",
+    "title": "Instal·lació d'aire condicionat a Gràcia | Zervitecnics",
+    "metaDesc": "Aire condicionat a Gràcia: Vila de Gràcia, la Salut, el Coll, Vallcarca i el Camp d'en Grassot. Terrats, patis i finques protegides. Pressupost gratuït.",
+    "heroSub": "Instal·lem als 5 barris de Gràcia, de la Vila a Vallcarca. Resposta en menys de 2 h en horari d'atenció.",
+    "imagen": {
+      "archivo": "guia-ubicacion-terraza",
+      "w": 1200,
+      "h": 900,
+      "alt": "Unitat exterior d'aire condicionat en una terrassa (imatge il·lustrativa)"
+    },
+    "intro": [
+      "Gràcia va ser una vila independent fins al 1897 i encara es nota: carrers estrets, places com la del Sol o la de la Virreina i moltes cases baixes de dues o tres plantes amb terrat. També és un dels districtes més densos de Barcelona: uns 123.000 veïns en 4,2 km².",
+      "Aquesta barreja canvia molt la instal·lació. A la Vila de Gràcia la unitat exterior sol anar al terrat o al pati de llums, perquè la façana al carrer gairebé mai és una opció. A la Salut, el Coll i Vallcarca, al vessant de Collserola, hi ha més cases amb jardí i més espai, però els accessos tenen pujades i escales que convé veure abans.",
+      "Per això sempre fem visita prèvia: mesurem, busquem una ubicació per a la unitat exterior que permetin la normativa i la teva comunitat, i et donem un preu tancat."
+    ],
+    "cp": "08012, 08024, 08025 i 08023 (Vallcarca i el Coll); alguns carrers a tocar de la Diagonal, 08006",
+    "ejes": "Gran de Gràcia, Travessera de Gràcia, Torrent de l'Olla, Avinguda de Vallcarca",
+    "barriosIntro": "Són els 5 barris oficials del districte segons l'Ajuntament de Barcelona. Cadascun té un tipus d'habitatge diferent, i això decideix on va la unitat exterior.",
+    "barrios": [
+      {
+        "nombre": "la Vila de Gràcia",
+        "vivienda": "cases baixes i finques de principis del segle XX, moltes amb terrat. És la zona amb més edificis protegits.",
+        "instalacion": "unitat exterior al terrat o al pati de llums. La façana al carrer gairebé mai es permet.",
+        "referencias": "Plaça del Sol, Plaça de la Virreina, Mercat de la Llibertat, Mercat de l'Abaceria"
+      },
+      {
+        "nombre": "el Camp d'en Grassot i Gràcia Nova",
+        "vivienda": "blocs de pisos entre la Travessera de Gràcia i la Sagrada Família, molts amb balcó i pati d'illa.",
+        "instalacion": "un multisplit amb una sola unitat exterior al terrat o al pati, si la comunitat ho aprova, evita omplir els balcons d'aparells.",
+        "referencias": "Travessera de Gràcia, Carrer de Sant Antoni Maria Claret, metro Joanic"
+      },
+      {
+        "nombre": "la Salut",
+        "vivienda": "vessant del Park Güell, amb cases unifamiliars, torres i blocs en carrers amb pendent.",
+        "instalacion": "sol haver-hi lloc al jardí o al terrat. En pisos amb molt de sol de tarda convé revisar bé la potència.",
+        "referencias": "Park Güell, Travessera de Dalt, metro Lesseps"
+      },
+      {
+        "nombre": "el Coll",
+        "vivienda": "barri de vessant, amb carrers costeruts, cases antigues i blocs petits.",
+        "instalacion": "cal planificar com pujar l'equip: de vegades la furgoneta no arriba fins a la porta. Ho veiem a la visita.",
+        "referencias": "Parc de la Creueta del Coll, Carrer de la Mare de Déu del Coll"
+      },
+      {
+        "nombre": "Vallcarca i els Penitents",
+        "vivienda": "barri en transformació, amb edificis nous al costat de cases antigues.",
+        "instalacion": "en obra nova sol haver-hi preinstal·lació; en cases antigues, la unitat va al terrat, a la terrassa o al jardí.",
+        "referencias": "Avinguda de Vallcarca, metro Vallcarca i Penitents"
+      }
+    ],
+    "normativa": {
+      "titulo": "Finques protegides a Gràcia: on pot anar la unitat exterior",
+      "parrafos": [
+        "Gràcia té molts edificis protegits. El 2019 l'Ajuntament va aprovar inicialment ampliar el catàleg de patrimoni del districte de 564 a 1.021 finques, amb un conjunt protegit d'unes 390 cases a la Vila de Gràcia.",
+        "En un edifici protegit, la unitat exterior no es pot veure des del carrer: va al terrat, al pati de llums o en un pati interior. I a qualsevol finca, la façana i el terrat comú són elements comuns, així que cal l'acord de la comunitat."
+      ],
+      "consejos": [
+        "Si no saps si la teva finca està protegida, demana la fitxa a l'administrador. Ho revisem amb tu a la visita.",
+        "En patis de llums estrets fem servir suports antivibració perquè el soroll no reboti cap als veïns.",
+        "Durant la Festa Major d'agost molts carrers de la Vila es tanquen i es guarneixen. Si el teu carrer hi participa, fixa la data d'instal·lació amb antelació."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Visc en una casa baixa de la Vila de Gràcia amb terrat, on va la unitat exterior?",
+        "r": "Gairebé sempre al terrat, amb suports antivibració i l'aigua de condensació ben conduïda. Si el terrat és comú, cal l'acord de la comunitat. És l'opció que encaixa millor amb les normes de paisatge urbà."
+      },
+      {
+        "p": "La meva finca és al catàleg de patrimoni, puc posar aire condicionat?",
+        "r": "Sí, però la unitat exterior no es pot veure des del carrer. Les opcions són el terrat, el pati de llums o un pati interior. A la visita revisem la ubicació i t'expliquem què demana l'Ajuntament."
+      },
+      {
+        "p": "Quin equip convé per als pisos petits de Gràcia?",
+        "r": "Per a estances de 15-20 m², un split compacte de 2,5 kW és suficient. Triem models silenciosos perquè als carrers estrets i als patis de llums el soroll es nota més. Ho pots calcular a la guia [quantes frigories necessito](/aires-acondicionados/guias/que-frigorias-necesito.html) (en castellà)."
+      },
+      {
+        "p": "Visc a la Salut o al Coll i el carrer té molta pendent, és un problema?",
+        "r": "No, però cal planificar l'accés: de vegades la furgoneta no arriba a la porta i pugem l'equip a mà. Ho veiem a la visita perquè el dia de la instal·lació no hi hagi sorpreses."
+      },
+      {
+        "p": "Podeu instal·lar a l'agost, durant la Festa Major de Gràcia?",
+        "r": "Sí. Però alguns carrers de la Vila es tanquen i es guarneixen durant la festa. Si el teu carrer hi participa, convé fixar la data amb antelació."
+      },
+      {
+        "p": "Feu manteniment i diagnòstic d'equips a Gràcia?",
+        "r": "Sí. Fem manteniment preventiu anual (70 € + IVA) i diagnòstic tècnic (70 € + IVA) a tot el districte. Si després del diagnòstic cal una reparació, et derivem al SAT oficial de la marca o a un tècnic especialitzat, amb tota la informació recollida."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "eixample",
+        "nombre": "l'Eixample"
+      },
+      {
+        "slug": "sarria",
+        "nombre": "Sarrià-Sant Gervasi"
+      },
+      {
+        "slug": "horta-guinardo",
+        "nombre": "Horta-Guinardó"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "normativa-comunidad-vecinos-barcelona",
+        "nombre": "Normativa i comunitat de veïns"
+      },
+      {
+        "slug": "ubicacion-unidad-exterior",
+        "nombre": "On col·locar la unitat exterior"
+      },
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Quantes frigories necessito"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Ajuntament de Barcelona · Districte de Gràcia: el districte i els seus barris",
+        "url": "https://ajuntament.barcelona.cat/gracia/es/el-distrito-y-sus-barrios"
+      },
+      {
+        "nombre": "Ajuntament de Barcelona · Estadística: fitxa de barri 2019",
+        "url": "https://ajuntament.barcelona.cat/estadistica/catala/Estadistiques_per_territori/Barris/Fitxes/a2019/barri31.pdf"
+      },
+      {
+        "nombre": "Ajuntament de Barcelona · Nota de premsa: revisió del catàleg de patrimoni de Gràcia (2019)",
+        "url": "https://ajuntament.barcelona.cat/premsa/wp-content/uploads/2019/12/GRACIA.pdf"
+      }
+    ]
+  },
+  {
+    "slug": "eixample",
+    "nombre": "l'Eixample",
+    "title": "Instal·lació d'aire condicionat a l'Eixample | Zervitecnics",
+    "metaDesc": "Aire condicionat a l'Eixample: Dreta, Esquerra, Sant Antoni, Fort Pienc i Sagrada Família. Patis d'illa, finques modernistes i sostres alts.",
+    "heroSub": "Instal·lem als 6 barris de l'Eixample, de Sant Antoni al Fort Pienc. Resposta en menys de 2 h en horari d'atenció.",
+    "imagen": {
+      "archivo": "guia-normativa-eixample",
+      "w": 1200,
+      "h": 900,
+      "alt": "Façana de l'Eixample amb unitats exteriors als balcons, el que la normativa intenta evitar (imatge il·lustrativa)"
+    },
+    "intro": [
+      "L'Eixample és la quadrícula d'Ildefons Cerdà: illes de cantonades xamfranades, carrers amples i, al centre de cada illa, un pati interior. Moltes finques són de finals del segle XIX i principis del XX, amb sostres alts, motllures i pisos llargs que van de la façana al pati.",
+      "Aquest tipus de pis marca la instal·lació. La façana al carrer està molt protegida, així que la unitat exterior sol anar al terrat, a la galeria que dona al pati d'illa o al pati de llums. I en pisos llargs, un multisplit o uns conductes aprofitant el fals sostre del passadís reparteixen millor el fred que un sol split.",
+      "Sempre fem visita prèvia: mesurem el recorregut de les canonades, comprovem si la finca està catalogada i et donem un preu tancat."
+    ],
+    "cp": "08007, 08008, 08009, 08010, 08011, 08013, 08015, 08029, 08036 i 08037",
+    "ejes": "Gran Via, Passeig de Gràcia, Aragó, Consell de Cent, Diagonal",
+    "barriosIntro": "Són els 6 barris oficials del districte segons l'Ajuntament de Barcelona. Tots tenen la mateixa quadrícula, però no les mateixes finques.",
+    "barrios": [
+      {
+        "nombre": "la Dreta de l'Eixample",
+        "vivienda": "finques senyorials i modernistes al voltant del Passeig de Gràcia, moltes catalogades.",
+        "instalacion": "unitat exterior al terrat o al pati interior; en finques catalogades, mai a la vista des del carrer.",
+        "referencias": "Passeig de Gràcia, Rambla de Catalunya, Casa Batlló, La Pedrera"
+      },
+      {
+        "nombre": "l'Antiga Esquerra de l'Eixample",
+        "vivienda": "pisos amplis de finals del XIX i principis del XX, amb galeria al pati d'illa.",
+        "instalacion": "la galeria del darrere sol ser la millor ubicació, amb l'acord de la comunitat.",
+        "referencias": "Hospital Clínic, Mercat del Ninot, Carrer d'Enric Granados"
+      },
+      {
+        "nombre": "la Nova Esquerra de l'Eixample",
+        "vivienda": "finques una mica més recents, amb més blocs de mitjan segle XX.",
+        "instalacion": "més terrats comunitaris disponibles; multisplit amb una sola unitat exterior per a tot el pis.",
+        "referencias": "Parc de Joan Miró, Carrer del Comte Borrell, Plaça d'Espanya (límit)"
+      },
+      {
+        "nombre": "Sant Antoni",
+        "vivienda": "finques antigues i patis d'illa recuperats, amb molta vida de carrer.",
+        "instalacion": "pati de llums o terrat; cuidem el soroll perquè molts dormitoris donen a patis tancats.",
+        "referencias": "Mercat de Sant Antoni, Ronda de Sant Antoni, Carrer del Parlament"
+      },
+      {
+        "nombre": "la Sagrada Família",
+        "vivienda": "illes denses amb blocs de diferents èpoques, molts amb balcó.",
+        "instalacion": "als balcons la unitat no pot sobresortir; preferim terrat o pati.",
+        "referencias": "Sagrada Família, Avinguda de Gaudí, Mercat de la Sagrada Família"
+      },
+      {
+        "nombre": "el Fort Pienc",
+        "vivienda": "barreja de finques antigues i edificis recents a tocar de l'Estació del Nord.",
+        "instalacion": "en obra recent sol haver-hi preinstal·lació; en finques antigues, terrat o galeria.",
+        "referencias": "Estació del Nord, Plaça de les Glòries (límit), Mercat del Fort Pienc"
+      }
+    ],
+    "normativa": {
+      "titulo": "Façanes de l'Eixample: per què la unitat gairebé mai va al carrer",
+      "parrafos": [
+        "Barcelona va aprovar l'any 2000 un pla especial de patrimoni per a cadascun dels seus 10 districtes. A l'Eixample hi ha moltes finques catalogades, sobretot modernistes, i la normativa de paisatge urbà evita que es vegin aparells des del carrer.",
+        "A més, la façana, el terrat i el pati són elements comuns: necessites l'acord de la comunitat. Moltes comunitats de l'Eixample ja tenen normes pròpies sobre on i com posar les unitats."
+      ],
+      "consejos": [
+        "Pregunta a l'administrador si la teva comunitat té normes per a l'aire condicionat. Si en té, ens hi adaptem.",
+        "En sostres alts amb motllures evitem regates: portem les canonades per una canaleta discreta o pel fals sostre del passadís.",
+        "En carrers amb zona de càrrega i descàrrega limitada, coordinem l'horari per no deixar la furgoneta mal aparcada."
+      ]
+    },
+    "faq": [
+      {
+        "p": "El meu pis de l'Eixample és llarg i estret, n'hi ha prou amb un split?",
+        "r": "Normalment no. Un split al menjador no arriba bé a les habitacions del fons. Per a pisos llargs sol anar millor un multisplit o uns conductes pel fals sostre del passadís. Ho expliquem a la guia [split, multisplit o conductes](/aires-acondicionados/guias/split-vs-multisplit-vs-conductos.html) (en castellà)."
+      },
+      {
+        "p": "Puc posar la unitat exterior al balcó que dona al carrer?",
+        "r": "A l'Eixample gairebé mai. La normativa de paisatge urbà evita els aparells visibles des del carrer, i encara més en finques catalogades. Les opcions habituals són el terrat, la galeria al pati d'illa o el pati de llums."
+      },
+      {
+        "p": "Tinc sostres alts amb motllures, es fan malbé en instal·lar?",
+        "r": "No té per què. Passem les canonades per una canaleta del color de la paret o pel fals sostre del passadís, sense tocar les motllures."
+      },
+      {
+        "p": "La comunitat no em deixa fer servir el terrat, quines alternatives hi ha?",
+        "r": "La galeria del darrere o el pati de llums, sempre que la comunitat ho aprovi. A la visita veiem les opcions reals de la teva finca i t'ajudem a explicar-les a la junta."
+      },
+      {
+        "p": "Feu manteniment i diagnòstic a l'Eixample?",
+        "r": "Sí. Manteniment preventiu anual (70 € + IVA) i diagnòstic tècnic (70 € + IVA) als 6 barris. Si cal una reparació, et derivem al SAT oficial de la marca o a un tècnic especialitzat, amb tot l'informe."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "gracia",
+        "nombre": "Gràcia"
+      },
+      {
+        "slug": "sarria",
+        "nombre": "Sarrià-Sant Gervasi"
+      },
+      {
+        "slug": "les-corts",
+        "nombre": "les Corts"
+      },
+      {
+        "slug": "sants",
+        "nombre": "Sants-Montjuïc"
+      },
+      {
+        "slug": "sant-marti",
+        "nombre": "Sant Martí"
+      },
+      {
+        "slug": "ciutat-vella",
+        "nombre": "Ciutat Vella"
+      },
+      {
+        "slug": "horta-guinardo",
+        "nombre": "Horta-Guinardó"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "normativa-comunidad-vecinos-barcelona",
+        "nombre": "Normativa i comunitat de veïns"
+      },
+      {
+        "slug": "split-vs-multisplit-vs-conductos",
+        "nombre": "Split, multisplit o conductes"
+      },
+      {
+        "slug": "ubicacion-unidad-exterior",
+        "nombre": "On col·locar la unitat exterior"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Ajuntament de Barcelona · Districte de l'Eixample: el districte i els seus barris",
+        "url": "https://ajuntament.barcelona.cat/eixample/es/el-distrito-y-sus-barrios"
+      },
+      {
+        "nombre": "Ajuntament de Barcelona · Nova divisió territorial de Barcelona (2010)",
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/handle/11703/90379"
+      }
+    ]
+  },
+  {
+    "slug": "sants",
+    "nombre": "Sants-Montjuïc",
+    "title": "Instal·lació d'aire condicionat a Sants-Montjuïc | Zervitecnics",
+    "metaDesc": "Aire condicionat a Sants-Montjuïc: Sants, Hostafrancs, la Bordeta, el Poble-sec, la Font de la Guatlla i la Marina. Finques antigues i obra nova.",
+    "heroSub": "Instal·lem als 8 barris de Sants-Montjuïc, del Poble-sec a la Marina. Resposta en menys de 2 h en horari d'atenció.",
+    "imagen": {
+      "archivo": "galeria_exterior",
+      "w": 800,
+      "h": 600,
+      "alt": "Unitats exteriors d'aire condicionat en un terrat (imatge il·lustrativa)"
+    },
+    "intro": [
+      "Sants-Montjuïc és el districte més gran de Barcelona: unes 2.090 hectàrees, bona part a la muntanya de Montjuïc i a la zona del port. Sants va ser un municipi propi fins al 1897, i el seu nucli antic, al voltant del Carrer de Sants, encara té carrers estrets i finques de poques plantes.",
+      "Per això hi ha habitatges molt diferents: finques antigues amb pati de llums a Sants, Hostafrancs i la Bordeta; carrers en pendent al Poble-sec, als peus de Montjuïc; cases baixes a la Font de la Guatlla; i blocs nous a la Marina.",
+      "A la visita prèvia veiem el tipus de finca, on pot anar la unitat exterior i et donem un preu tancat."
+    ],
+    "cp": "08014, 08028 (Sants-Badal), 08004 (Poble-sec), 08038 (Montjuïc i la Marina) i 08040 (Zona Franca)",
+    "ejes": "Carrer de Sants, Gran Via, Carrer de la Creu Coberta, Avinguda del Paral·lel",
+    "barriosIntro": "Són els 8 barris oficials del districte segons l'Ajuntament de Barcelona, del nucli antic de Sants als barris nous a tocar del port.",
+    "barrios": [
+      {
+        "nombre": "Sants",
+        "vivienda": "nucli antic amb finques de poques plantes i blocs més alts a prop de l'estació.",
+        "instalacion": "pati de llums o terrat; als carrers estrets cuidem molt el soroll.",
+        "referencias": "Estació de Sants, Carrer de Sants, Parc de l'Espanya Industrial"
+      },
+      {
+        "nombre": "Sants-Badal",
+        "vivienda": "blocs de pisos de mitjan segle XX, molts amb balcó.",
+        "instalacion": "multisplit amb una unitat exterior al terrat comunitari si la comunitat ho aprova.",
+        "referencias": "Carrer de Badal, metro Badal"
+      },
+      {
+        "nombre": "Hostafrancs",
+        "vivienda": "finques antigues i estretes entre la Creu Coberta i la Gran Via.",
+        "instalacion": "pati de llums o terrassa del darrere; split compacte en pisos petits.",
+        "referencias": "Mercat d'Hostafrancs, Carrer de la Creu Coberta, Plaça d'Espanya (límit)"
+      },
+      {
+        "nombre": "la Bordeta",
+        "vivienda": "pisos dels anys 50 als 70 i alguna casa baixa.",
+        "instalacion": "terrat comunitari o terrassa; revisem la instal·lació elèctrica en pisos antics.",
+        "referencias": "Carrer de la Constitució, Can Batlló"
+      },
+      {
+        "nombre": "la Font de la Guatlla",
+        "vivienda": "barri petit de cases baixes amb pati, als peus de Montjuïc.",
+        "instalacion": "sol haver-hi lloc al pati o al terrat propi; obra senzilla.",
+        "referencias": "Carrer de la Font de la Guatlla, Montjuïc"
+      },
+      {
+        "nombre": "el Poble-sec",
+        "vivienda": "finques antigues en carrers amb pendent cap a Montjuïc, moltes sense ascensor.",
+        "instalacion": "planifiquem la pujada de l'equip; unitat exterior al terrat o al pati de llums.",
+        "referencias": "Avinguda del Paral·lel, Carrer de Blai, metro Poble Sec"
+      },
+      {
+        "nombre": "la Marina de Port",
+        "vivienda": "blocs dels anys 50 i 60 i edificis recents.",
+        "instalacion": "terrat comunitari o terrassa; en obra nova, preinstal·lació.",
+        "referencias": "Passeig de la Zona Franca, metro Foneria"
+      },
+      {
+        "nombre": "la Marina del Prat Vermell",
+        "vivienda": "barri en desenvolupament amb edificis nous a tocar de la Zona Franca.",
+        "instalacion": "en obra nova solem aprofitar la preinstal·lació de conductes o split.",
+        "referencias": "Zona Franca, Carrer del Cisell"
+      }
+    ],
+    "normativa": {
+      "titulo": "Finques antigues i obra nova: què canvia a Sants-Montjuïc",
+      "parrafos": [
+        "Com a tot Barcelona, la normativa de paisatge urbà evita que la unitat exterior es vegi des del carrer, i la façana és un element comú que necessita l'acord de la comunitat.",
+        "Al nucli antic de Sants i al Poble-sec hi ha finques catalogades al pla de patrimoni del districte. A la Marina, en canvi, molts edificis són nous i ja preveuen on va la climatització."
+      ],
+      "consejos": [
+        "Si vius en obra nova a la Marina, mira si el pis té preinstal·lació: abarateix molt l'obra.",
+        "Al Poble-sec moltes finques no tenen ascensor. Ho tenim en compte en planificar el dia de la instal·lació.",
+        "En patis de llums estrets fem servir suports antivibració perquè el soroll no reboti."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Visc al Poble-sec, en un cinquè sense ascensor, podeu pujar l'equip?",
+        "r": "Sí. El pugem a mà entre dos tècnics. Ho planifiquem a la visita perquè el dia de la instal·lació vagi ràpid."
+      },
+      {
+        "p": "El meu pis nou de la Marina té preinstal·lació, què m'estalvio?",
+        "r": "L'obra de canonades i desguassos ja està feta, així que la instal·lació és més ràpida i més barata. Revisem la preinstal·lació abans de muntar per confirmar que està bé."
+      },
+      {
+        "p": "Al nucli antic de Sants la meva finca té un pati de llums molt petit, hi cap la unitat?",
+        "r": "Gairebé sempre, amb suports de paret i una unitat compacta. Si no hi cap, busquem el terrat. Ho veiem a la visita."
+      },
+      {
+        "p": "Tinc una casa baixa a la Font de la Guatlla, quin sistema em convé?",
+        "r": "Depèn de les estances. En cases de dues plantes sol funcionar bé un multisplit amb una sola unitat exterior al pati o al terrat. T'ho expliquem a la guia [split, multisplit o conductes](/aires-acondicionados/guias/split-vs-multisplit-vs-conductos.html) (en castellà)."
+      },
+      {
+        "p": "Feu manteniment a Sants-Montjuïc?",
+        "r": "Sí. Manteniment preventiu anual (70 € + IVA) i diagnòstic tècnic (70 € + IVA) als 8 barris. Si cal una reparació, et derivem al SAT oficial de la marca o a un tècnic especialitzat."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "eixample",
+        "nombre": "l'Eixample"
+      },
+      {
+        "slug": "les-corts",
+        "nombre": "les Corts"
+      },
+      {
+        "slug": "ciutat-vella",
+        "nombre": "Ciutat Vella"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "ubicacion-unidad-exterior",
+        "nombre": "On col·locar la unitat exterior"
+      },
+      {
+        "slug": "split-vs-multisplit-vs-conductos",
+        "nombre": "Split, multisplit o conductes"
+      },
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Quantes frigories necessito"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Ajuntament de Barcelona · Districte de Sants-Montjuïc: el districte i els seus barris",
+        "url": "https://ajuntament.barcelona.cat/sants-montjuic/ca/el-districte-i-els-seus-barris"
+      },
+      {
+        "nombre": "Arxiu Municipal de Barcelona · Els pobles agregats",
+        "url": "https://ajuntament.barcelona.cat/arxiumunicipal/sites/default/files/poblesagregats.873.pdf"
+      }
+    ]
+  },
+  {
+    "slug": "les-corts",
+    "nombre": "les Corts",
+    "title": "Instal·lació d'aire condicionat a les Corts | Zervitecnics",
+    "metaDesc": "Aire condicionat a les Corts: les Corts, la Maternitat i Sant Ramon i Pedralbes. Pisos amb balcó, torres amb jardí i oficines a la Diagonal.",
+    "heroSub": "Instal·lem als 3 barris de les Corts, de Pedralbes a la Maternitat. Resposta en menys de 2 h en horari d'atenció.",
+    "imagen": {
+      "archivo": "multisplit_service",
+      "w": 1200,
+      "h": 675,
+      "alt": "Pis amb multisplit: una unitat interior al menjador i una altra al dormitori (imatge il·lustrativa)"
+    },
+    "intro": [
+      "Les Corts va ser un municipi propi fins al 1897. És un districte petit, de només 3 barris, però molt variat: l'antic nucli de les Corts, els blocs de pisos al voltant del Camp Nou i la Maternitat, i les torres amb jardí de Pedralbes.",
+      "En els blocs amb balcó el més habitual és un multisplit amb una sola unitat exterior al terrat. A Pedralbes, amb cases grans i jardí, solen encaixar millor els conductes o un multisplit de diverses unitats, amb la unitat exterior al jardí.",
+      "Fem visita prèvia a tot el districte: veiem l'espai, el tipus d'edifici i et donem un preu tancat."
+    ],
+    "cp": "08028, 08029 i 08034",
+    "ejes": "Avinguda Diagonal, Travessera de les Corts, Carrer de Numància, Avinguda de Sarrià",
+    "barriosIntro": "Són els 3 barris oficials del districte segons l'Ajuntament de Barcelona.",
+    "barrios": [
+      {
+        "nombre": "les Corts",
+        "vivienda": "l'antic nucli, amb carrers petits, i blocs de pisos de mitjan segle XX.",
+        "instalacion": "multisplit amb una unitat exterior al terrat comunitari, o split al pati de llums.",
+        "referencias": "Plaça de la Concòrdia, Travessera de les Corts, Mercat de les Corts"
+      },
+      {
+        "nombre": "la Maternitat i Sant Ramon",
+        "vivienda": "blocs de pisos a tocar del Camp Nou i el recinte de la Maternitat.",
+        "instalacion": "terrat comunitari; els dies de partit coordinem l'horari pel trànsit i els talls de carrer.",
+        "referencias": "Spotify Camp Nou, recinte de la Maternitat, metro Collblanc"
+      },
+      {
+        "nombre": "Pedralbes",
+        "vivienda": "torres i cases amb jardí, i edificis de pisos grans amb terrassa.",
+        "instalacion": "conductes o multisplit; la unitat exterior sol anar al jardí o al terrat, lluny dels dormitoris.",
+        "referencias": "Monestir de Pedralbes, Palau de Pedralbes, Zona Universitària"
+      }
+    ],
+    "normativa": {
+      "titulo": "Blocs amb balcó i cases amb jardí: què demana la normativa a les Corts",
+      "parrafos": [
+        "La normativa de paisatge urbà de Barcelona evita que la unitat exterior es vegi des del carrer. En els blocs amb balcó de les Corts i la Maternitat, això sol portar la unitat al terrat o al pati.",
+        "A Pedralbes hi ha cases i edificis protegits al pla de patrimoni del districte. En una casa amb jardí és més fàcil amagar la unitat, però cal cuidar el soroll cap als veïns."
+      ],
+      "consejos": [
+        "En blocs grans, pregunta si la comunitat ja té una zona del terrat per a unitats exteriors.",
+        "En cases amb jardí, col·loquem la unitat lluny de les finestres dels dormitoris, teus i del veí.",
+        "Els dies de partit al Camp Nou evitem programar instal·lacions a prop de l'estadi."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Visc a prop del Camp Nou, hi ha problema per instal·lar en dia de partit?",
+        "r": "Preferim no programar instal·lacions a prop de l'estadi en dia de partit, pels talls de carrer i el trànsit. Triem un altre dia amb tu."
+      },
+      {
+        "p": "Tinc una casa a Pedralbes, conductes o multisplit?",
+        "r": "Si hi ha fals sostre o es pot fer, els conductes donen un fred més uniforme i no es veuen. Si no, un multisplit és més ràpid d'instal·lar. Ho comparem a la guia [split, multisplit o conductes](/aires-acondicionados/guias/split-vs-multisplit-vs-conductos.html) (en castellà)."
+      },
+      {
+        "p": "El meu bloc de les Corts té balcons, puc posar-hi la unitat?",
+        "r": "En la majoria de casos no, perquè es veuria des del carrer. El més habitual és el terrat comunitari o el pati, amb l'acord de la comunitat."
+      },
+      {
+        "p": "Instal·leu també a oficines de la Diagonal?",
+        "r": "Sí, fem instal·lacions a oficines i locals. Et donem pressupost després de la visita."
+      },
+      {
+        "p": "Feu manteniment a les Corts?",
+        "r": "Sí. Manteniment preventiu anual (70 € + IVA) i diagnòstic tècnic (70 € + IVA) als 3 barris. Si cal reparar, et derivem al SAT oficial de la marca o a un tècnic especialitzat."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "sarria",
+        "nombre": "Sarrià-Sant Gervasi"
+      },
+      {
+        "slug": "eixample",
+        "nombre": "l'Eixample"
+      },
+      {
+        "slug": "sants",
+        "nombre": "Sants-Montjuïc"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "split-vs-multisplit-vs-conductos",
+        "nombre": "Split, multisplit o conductes"
+      },
+      {
+        "slug": "ubicacion-unidad-exterior",
+        "nombre": "On col·locar la unitat exterior"
+      },
+      {
+        "slug": "consumo-real-aire-acondicionado",
+        "nombre": "Consum real de l'aire condicionat"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Ajuntament de Barcelona · Nova divisió territorial de Barcelona (2010)",
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/handle/11703/90379"
+      },
+      {
+        "nombre": "Arxiu Municipal de Barcelona · Els pobles agregats",
+        "url": "https://ajuntament.barcelona.cat/arxiumunicipal/sites/default/files/poblesagregats.873.pdf"
+      }
+    ]
+  },
+  {
+    "slug": "sarria",
+    "nombre": "Sarrià-Sant Gervasi",
+    "title": "Instal·lació d'aire condicionat a Sarrià-Sant Gervasi",
+    "metaDesc": "Aire condicionat a Sarrià-Sant Gervasi: Sarrià, les Tres Torres, la Bonanova, Galvany, el Putxet i Vallvidrera. Cases, àtics i pisos amplis.",
+    "heroSub": "Instal·lem als 6 barris de Sarrià-Sant Gervasi, de Galvany a Vallvidrera. Resposta en menys de 2 h en horari d'atenció.",
+    "imagen": {
+      "archivo": "conductos_service",
+      "w": 1200,
+      "h": 675,
+      "alt": "Menjador ampli amb climatització per conductes (imatge il·lustrativa)"
+    },
+    "intro": [
+      "Sarrià-Sant Gervasi és el districte menys dens de Barcelona. Sarrià va ser l'últim municipi que es va unir a la ciutat, el 1921, i Sant Gervasi ho va fer el 1897. Aquí hi ha cases amb jardí, torres, àtics amb terrassa i pisos amplis, i a la part alta comença el parc de Collserola.",
+      "En habitatges grans, moltes vegades el millor són els conductes o un multisplit, i la unitat exterior sol tenir lloc al terrat, a la terrassa o al jardí. A Vallvidrera, el Tibidabo i les Planes, ja dins de la muntanya, cal tenir en compte els accessos estrets i més humitat a l'hivern.",
+      "Fem visita prèvia: mesurem estances, veiem on amagar la unitat exterior i et donem un preu tancat."
+    ],
+    "cp": "08017, 08021, 08022, 08006, 08023 (el Putxet) i 08017/08035 a Vallvidrera i el Tibidabo",
+    "ejes": "Via Augusta, Passeig de la Bonanova, Carrer Major de Sarrià, Carrer de Balmes, Ronda del General Mitre",
+    "barriosIntro": "Són els 6 barris oficials del districte segons l'Ajuntament de Barcelona, de la Diagonal a la serra de Collserola.",
+    "barrios": [
+      {
+        "nombre": "Sarrià",
+        "vivienda": "l'antic poble, amb cases baixes i carrers per a vianants, i edificis de pisos al voltant.",
+        "instalacion": "en cases, unitat exterior al terrat o al pati del darrere; al nucli antic, mai a la vista del carrer.",
+        "referencias": "Carrer Major de Sarrià, Plaça de Sarrià, mercat de Sarrià"
+      },
+      {
+        "nombre": "les Tres Torres",
+        "vivienda": "pisos amplis i cases amb jardí en carrers tranquils.",
+        "instalacion": "conductes o multisplit; la unitat exterior sol cabre al terrat o al jardí.",
+        "referencias": "Via Augusta, Carrer de Ganduxer, FGC Tres Torres"
+      },
+      {
+        "nombre": "Sant Gervasi - la Bonanova",
+        "vivienda": "torres, edificis senyorials i blocs amb terrassa en pendent.",
+        "instalacion": "en torres, conductes amb la màquina al terrat; en pisos, multisplit.",
+        "referencias": "Passeig de la Bonanova, Plaça de la Bonanova"
+      },
+      {
+        "nombre": "Sant Gervasi - Galvany",
+        "vivienda": "pisos grans a tocar de la Diagonal i el Turó Park, molts amb porteria.",
+        "instalacion": "multisplit o conductes amb la unitat al terrat comunitari, amb l'acord de la comunitat.",
+        "referencias": "Turó Park, Carrer de Muntaner, mercat de Galvany"
+      },
+      {
+        "nombre": "el Putxet i el Farró",
+        "vivienda": "carrers amb pendent, cases amb jardí i blocs de pisos.",
+        "instalacion": "sol haver-hi lloc per a la unitat exterior; planifiquem l'accés a les pujades.",
+        "referencias": "Parc del Putxet, Carrer de Balmes"
+      },
+      {
+        "nombre": "Vallvidrera, el Tibidabo i les Planes",
+        "vivienda": "cases a la muntanya de Collserola, amb accessos estrets.",
+        "instalacion": "unitat exterior protegida del sol i la pluja; revisem l'accés de la furgoneta abans.",
+        "referencias": "Parc de Collserola, Funicular de Vallvidrera, Tibidabo"
+      }
+    ],
+    "normativa": {
+      "titulo": "Cases, àtics i Collserola: què cal tenir en compte",
+      "parrafos": [
+        "La normativa de paisatge urbà de Barcelona evita que la unitat exterior es vegi des del carrer. Al nucli antic de Sarrià i en moltes torres de la Bonanova hi ha edificis protegits al pla de patrimoni del districte.",
+        "A Vallvidrera, el Tibidabo i les Planes ets dins del parc natural de Collserola. Abans de fer obres exteriors convé consultar què permeten el parc i l'Ajuntament."
+      ],
+      "consejos": [
+        "En àtics, la unitat exterior va bé a la terrassa, protegida del sol directe perquè treballi millor.",
+        "En cases amb jardí, la col·loquem lluny dels dormitoris del veí per evitar queixes per soroll.",
+        "A Collserola, revisem l'accés per carreteres estretes abans del dia de la instal·lació."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Tinc una casa de dues plantes a Sarrià, quin sistema em convé?",
+        "r": "Si hi ha fals sostre o es pot abaixar el sostre del passadís, els conductes donen un fred uniforme i no es veuen. Si no, un multisplit amb una sola unitat exterior. Ho comparem a la guia [split, multisplit o conductes](/aires-acondicionados/guias/split-vs-multisplit-vs-conductos.html) (en castellà)."
+      },
+      {
+        "p": "Visc en un àtic a Galvany, la unitat pot anar a la meva terrassa?",
+        "r": "Sí, si la terrassa és privativa i la unitat no es veu des del carrer. Li busquem un racó amb ombra perquè gasti menys."
+      },
+      {
+        "p": "Visc a Vallvidrera, hi arribeu?",
+        "r": "Sí, sense cost addicional de desplaçament. Revisem l'accés abans, perquè alguns carrers són estrets i amb revolts."
+      },
+      {
+        "p": "I la bomba de calor per a l'hivern a la part alta?",
+        "r": "Els equips que instal·lem també donen calor. A la part alta del districte, més fresca, convé triar un equip amb bon rendiment en calefacció."
+      },
+      {
+        "p": "Feu manteniment a Sarrià-Sant Gervasi?",
+        "r": "Sí. Manteniment preventiu anual (70 € + IVA) i diagnòstic tècnic (70 € + IVA) als 6 barris. Si cal una reparació, et derivem al SAT oficial de la marca o a un tècnic especialitzat."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "les-corts",
+        "nombre": "les Corts"
+      },
+      {
+        "slug": "gracia",
+        "nombre": "Gràcia"
+      },
+      {
+        "slug": "eixample",
+        "nombre": "l'Eixample"
+      },
+      {
+        "slug": "horta-guinardo",
+        "nombre": "Horta-Guinardó"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "split-vs-multisplit-vs-conductos",
+        "nombre": "Split, multisplit o conductes"
+      },
+      {
+        "slug": "consumo-real-aire-acondicionado",
+        "nombre": "Consum real de l'aire condicionat"
+      },
+      {
+        "slug": "ubicacion-unidad-exterior",
+        "nombre": "On col·locar la unitat exterior"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Ajuntament de Barcelona · Programa d'actuació del districte de Sarrià-Sant Gervasi 2016-2019",
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/bitstream/11703/113897/3/2016_2019_PAD_sant_gervasi.pdf.txt"
+      },
+      {
+        "nombre": "Barcelona.cat · Cent anys de l'agregació de Sarrià (1921)",
+        "url": "https://barcelona.cat/infobarcelona/en/remembering-a-hundred-years-since-sarria-became-part-of-the-city_1116687.html"
+      }
+    ]
+  },
+  {
+    "slug": "nou-barris",
+    "nombre": "Nou Barris",
+    "title": "Instal·lació d'aire condicionat a Nou Barris | Zervitecnics",
+    "metaDesc": "Aire condicionat a Nou Barris: Porta, la Prosperitat, Verdun, la Guineueta, les Roquetes, la Trinitat Nova i més. Pisos de bloc i carrers en pendent.",
+    "heroSub": "Instal·lem als 13 barris de Nou Barris, de Vilapicina a Vallbona. Resposta en menys de 2 h en horari d'atenció.",
+    "imagen": {
+      "archivo": "guia-frigorias-salon",
+      "w": 1200,
+      "h": 900,
+      "alt": "Menjador d'un pis amb split de paret i comandament a la mà (imatge il·lustrativa)"
+    },
+    "intro": [
+      "Nou Barris és el districte amb més barris de Barcelona: 13, als peus de la serra de Collserola. La majoria va créixer entre els anys 50 i 70, amb blocs de pisos de 55 a 80 m², i a la part alta, com les Roquetes o Torre Baró, els carrers tenen molta pendent.",
+      "En un pis de bloc el més habitual és un split per estança o un multisplit amb una sola unitat exterior. La clau sol ser la ubicació: moltes comunitats demanen el terrat o el pati, i als barris de vessant cal pensar com es puja l'equip.",
+      "A la visita prèvia revisem també la instal·lació elèctrica, perquè en pisos d'aquella època de vegades cal una línia nova per a l'aire."
+    ],
+    "cp": "08016, 08031, 08033 i 08042",
+    "ejes": "Avinguda Meridiana, Via Júlia, Passeig de Valldaura, Passeig de Fabra i Puig",
+    "barriosIntro": "Són els 13 barris oficials del districte segons l'Ajuntament de Barcelona. Els agrupem per zones semblants.",
+    "barrios": [
+      {
+        "nombre": "Vilapicina i la Torre Llobeta, Porta i el Turó de la Peira",
+        "vivienda": "blocs de pisos dels anys 50 als 70, a prop del centre del districte.",
+        "instalacion": "split o multisplit amb la unitat al terrat o al pati, segons demani la comunitat.",
+        "referencias": "Passeig de Fabra i Puig, Parc del Turó de la Peira, mercat de Porta"
+      },
+      {
+        "nombre": "la Prosperitat, Verdun i la Guineueta",
+        "vivienda": "blocs i algunes cases baixes, amb molta vida de barri.",
+        "instalacion": "en cases baixes, unitat al terrat; en blocs, terrat comunitari.",
+        "referencias": "Via Júlia, Parc Central de Nou Barris, Plaça Llucmajor"
+      },
+      {
+        "nombre": "Can Peguera i Canyelles",
+        "vivienda": "Can Peguera són cases barates de 1929, d'una planta; Canyelles, blocs dels anys 70.",
+        "instalacion": "en cases baixes hi ha lloc al pati; en blocs, revisem la línia elèctrica.",
+        "referencias": "Ronda de Dalt, Parc de Canyelles"
+      },
+      {
+        "nombre": "les Roquetes, la Trinitat Nova i Torre Baró",
+        "vivienda": "barris de vessant amb carrers costeruts i escales.",
+        "instalacion": "planifiquem l'accés: de vegades pugem l'equip a mà.",
+        "referencias": "Castell de Torre Baró, metro Trinitat Nova, les Roquetes"
+      },
+      {
+        "nombre": "Ciutat Meridiana i Vallbona",
+        "vivienda": "Ciutat Meridiana, blocs alts en pendent; Vallbona, barri petit a tocar del riu Besòs.",
+        "instalacion": "terrat o terrassa; unitats compactes en balcons interiors si la comunitat ho permet.",
+        "referencias": "Avinguda Meridiana, Rodalies Torre del Baró"
+      }
+    ],
+    "normativa": {
+      "titulo": "Pisos de bloc a Nou Barris: comunitat, terrat i electricitat",
+      "parrafos": [
+        "Com a tot Barcelona, la normativa de paisatge urbà evita que la unitat exterior es vegi des del carrer, i la façana és un element comú: cal l'acord de la comunitat.",
+        "En molts blocs dels anys 50 als 70 la instal·lació elèctrica és antiga. Un aire condicionat modern consumeix poc, però convé que tingui la seva pròpia línia i la seva protecció al quadre."
+      ],
+      "consejos": [
+        "Pregunta a la comunitat si ja hi ha lloc reservat al terrat per a unitats exteriors.",
+        "Si el teu quadre elèctric és antic, el revisem a la visita i et diem si cal una línia nova.",
+        "En pisos de 55 a 80 m², un multisplit amb una sola unitat exterior evita omplir la façana d'aparells."
+      ]
+    },
+    "faq": [
+      {
+        "p": "El meu pis de Nou Barris fa uns 60 m², quin equip necessito?",
+        "r": "Depèn de quantes estances vulguis climatitzar. Per al menjador i un dormitori sol n'hi haver prou amb un multisplit 2x1. Pots calcular la potència a la guia [quantes frigories necessito](/aires-acondicionados/guias/que-frigorias-necesito.html) (en castellà)."
+      },
+      {
+        "p": "Visc a les Roquetes, en un carrer amb escales, podeu instal·lar?",
+        "r": "Sí. Si la furgoneta no arriba a la porta, pugem l'equip a mà. Ho planifiquem a la visita."
+      },
+      {
+        "p": "La meva instal·lació elèctrica és antiga, és un problema?",
+        "r": "No sol ser-ho, però convé una línia pròpia per a l'aire. La revisem a la visita i, si cal, l'incloem al pressupost."
+      },
+      {
+        "p": "Tinc una casa baixa a Can Peguera, on va la unitat exterior?",
+        "r": "Normalment al pati o al terrat, on no es veu des del carrer. És una obra senzilla."
+      },
+      {
+        "p": "Feu manteniment a Nou Barris?",
+        "r": "Sí. Manteniment preventiu anual (70 € + IVA) i diagnòstic tècnic (70 € + IVA) als 13 barris. Si cal reparar, et derivem al SAT oficial de la marca o a un tècnic especialitzat."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "sant-andreu",
+        "nombre": "Sant Andreu"
+      },
+      {
+        "slug": "horta-guinardo",
+        "nombre": "Horta-Guinardó"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Quantes frigories necessito"
+      },
+      {
+        "slug": "consumo-real-aire-acondicionado",
+        "nombre": "Consum real de l'aire condicionat"
+      },
+      {
+        "slug": "subvenciones-como-solicitarlas",
+        "nombre": "Subvencions i com demanar-les"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Ajuntament de Barcelona · Nova divisió territorial de Barcelona (2010)",
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/handle/11703/90379"
+      }
+    ]
+  },
+  {
+    "slug": "sant-andreu",
+    "nombre": "Sant Andreu",
+    "title": "Instal·lació d'aire condicionat a Sant Andreu | Zervitecnics",
+    "metaDesc": "Aire condicionat a Sant Andreu: nucli antic, la Sagrera, Navas, el Congrés, el Bon Pastor, Baró de Viver i la Trinitat Vella. Cases baixes i blocs.",
+    "heroSub": "Instal·lem als 7 barris de Sant Andreu, del nucli antic a la Sagrera. Resposta en menys de 2 h en horari d'atenció.",
+    "imagen": {
+      "archivo": "tecnico-medicion-laser",
+      "w": 1200,
+      "h": 900,
+      "alt": "Tècnic mesurant la paret abans d'instal·lar un split (imatge il·lustrativa)"
+    },
+    "intro": [
+      "Sant Andreu de Palomar va ser un municipi propi fins al 1897, i el seu nucli antic encara té carrers de cases baixes i finques petites al voltant del Carrer Gran de Sant Andreu. Al seu voltant van créixer barris molt diferents: els blocs del Congrés, dels anys 50, els pisos de Navas i la Sagrera, i el Bon Pastor, on els antics blocs de cases barates de 1929 s'han anat substituint per edificis nous.",
+      "Això fa que hi convisquin cases baixes amb terrat, pisos de bloc i obra nova amb preinstal·lació. Cada cas demana una solució diferent per a la unitat exterior.",
+      "Sempre fem visita prèvia: veiem el tipus de finca, l'espai i et donem un preu tancat."
+    ],
+    "cp": "08030, 08027 (la Sagrera i Navas) i 08033 (la Trinitat Vella)",
+    "ejes": "Carrer Gran de Sant Andreu, Passeig de Fabra i Puig, Avinguda Meridiana, Carrer de la Sagrera",
+    "barriosIntro": "Són els 7 barris oficials del districte segons l'Ajuntament de Barcelona.",
+    "barrios": [
+      {
+        "nombre": "Sant Andreu",
+        "vivienda": "nucli antic amb cases baixes, patis i finques petites.",
+        "instalacion": "unitat al terrat o al pati del darrere; al carrer, mai a la vista.",
+        "referencias": "Carrer Gran de Sant Andreu, Plaça d'Orfila, mercat de Sant Andreu"
+      },
+      {
+        "nombre": "la Sagrera",
+        "vivienda": "pisos de diferents èpoques a tocar de les obres de la nova estació i el parc lineal.",
+        "instalacion": "terrat comunitari o pati; en obra nova, preinstal·lació.",
+        "referencias": "Carrer de la Sagrera, metro Sagrera, Parc del Camí Comtal"
+      },
+      {
+        "nombre": "el Congrés i els Indians",
+        "vivienda": "els blocs del Congrés Eucarístic de 1952 i les casetes del barri dels Indians.",
+        "instalacion": "en blocs, multisplit amb la unitat al terrat; en casetes, pati o terrat.",
+        "referencias": "Plaça del Congrés Eucarístic, metro Congrés"
+      },
+      {
+        "nombre": "Navas",
+        "vivienda": "blocs de pisos a tocar de la Meridiana.",
+        "instalacion": "multisplit o split per estança, amb la unitat on ho aprovi la comunitat.",
+        "referencias": "Avinguda Meridiana, metro Navas"
+      },
+      {
+        "nombre": "el Bon Pastor",
+        "vivienda": "edificis nous que han substituït les antigues cases barates de 1929.",
+        "instalacion": "en obra nova sol haver-hi preinstal·lació; l'aprofitem.",
+        "referencias": "MUHBA Bon Pastor, Carrer de Sant Adrià"
+      },
+      {
+        "nombre": "Baró de Viver",
+        "vivienda": "barri petit de blocs a tocar del riu Besòs.",
+        "instalacion": "terrat o terrassa; unitats compactes si hi ha poc espai.",
+        "referencias": "Ronda Litoral, riu Besòs"
+      },
+      {
+        "nombre": "la Trinitat Vella",
+        "vivienda": "blocs de pisos entre la Meridiana i la Ronda.",
+        "instalacion": "terrat comunitari; revisem la línia elèctrica en pisos antics.",
+        "referencias": "metro Trinitat Vella, Avinguda Meridiana"
+      }
+    ],
+    "normativa": {
+      "titulo": "Cases baixes, blocs i obra nova a Sant Andreu",
+      "parrafos": [
+        "Com a tot Barcelona, la normativa de paisatge urbà evita que la unitat exterior es vegi des del carrer. Al nucli antic de Sant Andreu hi ha edificis inclosos al pla de patrimoni del districte.",
+        "La façana, el terrat i el pati són elements comuns, així que cal l'acord de la comunitat. En les cases baixes amb terrat propi el tràmit sol ser més senzill."
+      ],
+      "consejos": [
+        "Si el teu pis del Bon Pastor o la Sagrera és nou, mira si té preinstal·lació: abarateix l'obra.",
+        "Al nucli antic, la unitat va al terrat o al pati del darrere per no tocar la façana.",
+        "En blocs dels anys 50 i 60, revisem el quadre elèctric a la visita."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Tinc una casa baixa al nucli antic de Sant Andreu, on va la unitat?",
+        "r": "Normalment al terrat o al pati del darrere, on no es veu des del carrer. Si el terrat és només teu, el tràmit és més senzill."
+      },
+      {
+        "p": "El meu pis nou del Bon Pastor té preinstal·lació, què feu?",
+        "r": "Revisem que la preinstal·lació estigui bé i muntem l'equip. És més ràpid i més barat que una instal·lació des de zero."
+      },
+      {
+        "p": "Visc en un bloc del Congrés, quin sistema em convé?",
+        "r": "Per climatitzar diverses estances, un multisplit amb una sola unitat exterior al terrat. Ho comparem a la guia [split, multisplit o conductes](/aires-acondicionados/guias/split-vs-multisplit-vs-conductos.html) (en castellà)."
+      },
+      {
+        "p": "Les obres de la Sagrera afecten la instal·lació?",
+        "r": "De vegades hi ha talls de carrer o accessos canviats a prop de les obres. Ho tenim en compte en fixar el dia."
+      },
+      {
+        "p": "Feu manteniment a Sant Andreu?",
+        "r": "Sí. Manteniment preventiu anual (70 € + IVA) i diagnòstic tècnic (70 € + IVA) als 7 barris. Si cal reparar, et derivem al SAT oficial de la marca o a un tècnic especialitzat."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "nou-barris",
+        "nombre": "Nou Barris"
+      },
+      {
+        "slug": "sant-marti",
+        "nombre": "Sant Martí"
+      },
+      {
+        "slug": "horta-guinardo",
+        "nombre": "Horta-Guinardó"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "split-vs-multisplit-vs-conductos",
+        "nombre": "Split, multisplit o conductes"
+      },
+      {
+        "slug": "ubicacion-unidad-exterior",
+        "nombre": "On col·locar la unitat exterior"
+      },
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Quantes frigories necessito"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Ajuntament de Barcelona · MUHBA Bon Pastor (cases barates de 1929)",
+        "url": "https://www.barcelona.cat/setmanesarquitectura/en/venues/muhba-bon-pastor"
+      },
+      {
+        "nombre": "Arxiu Municipal de Barcelona · Els pobles agregats",
+        "url": "https://ajuntament.barcelona.cat/arxiumunicipal/sites/default/files/poblesagregats.873.pdf"
+      }
+    ]
+  },
+  {
+    "slug": "sant-marti",
+    "nombre": "Sant Martí",
+    "title": "Instal·lació d'aire condicionat a Sant Martí | Zervitecnics",
+    "metaDesc": "Aire condicionat a Sant Martí: Poblenou, el Clot, el Camp de l'Arpa, Diagonal Mar, la Vila Olímpica, el Besòs, Provençals i la Verneda.",
+    "heroSub": "Instal·lem als 10 barris de Sant Martí, del Clot al Besòs. Resposta en menys de 2 h en horari d'atenció.",
+    "imagen": {
+      "archivo": "galeria_conductos",
+      "w": 800,
+      "h": 600,
+      "alt": "Tècnic instal·lant conductes al sostre (imatge il·lustrativa)"
+    },
+    "intro": [
+      "Sant Martí de Provençals va ser un municipi propi fins al 1897. El seu gran barri, el Poblenou, va ser el centre industrial de la ciutat, i avui moltes antigues fàbriques són lofts i oficines del districte 22@. A tocar del mar hi ha la Vila Olímpica, construïda per al 1992, i les torres de Diagonal Mar.",
+      "Per això hi ha habitatges molt diferents: lofts amb sostres alts, pisos en torres amb terrassa, blocs del Besòs i la Verneda, i finques antigues al Clot i al Camp de l'Arpa. I a prop del mar, l'aire salí desgasta abans les unitats exteriors.",
+      "Fem visita prèvia a tot el districte: mesurem, triem on va la unitat exterior i et donem un preu tancat."
+    ],
+    "cp": "08005, 08018, 08019, 08020 i 08026",
+    "ejes": "Rambla del Poblenou, Avinguda Diagonal, Carrer de Pere IV, Gran Via, Rambla de Prim",
+    "barriosIntro": "Són els 10 barris oficials del districte segons l'Ajuntament de Barcelona. Els agrupem per zones semblants.",
+    "barrios": [
+      {
+        "nombre": "el Poblenou i el Parc i la Llacuna del Poblenou",
+        "vivienda": "antigues fàbriques convertides en lofts, cases baixes i edificis nous del 22@.",
+        "instalacion": "en lofts amb sostres alts, conductes vistos o splits potents; la unitat exterior a la coberta.",
+        "referencias": "Rambla del Poblenou, Parc del Centre del Poblenou, Can Framis"
+      },
+      {
+        "nombre": "la Vila Olímpica i Diagonal Mar i el Front Marítim",
+        "vivienda": "pisos en torres i blocs amb terrassa, molt a prop del mar.",
+        "instalacion": "unitat a la terrassa o a la coberta, amb cargols i suports que aguanten el salnitre.",
+        "referencias": "Port Olímpic, Parc de Diagonal Mar, platges del Poblenou"
+      },
+      {
+        "nombre": "el Clot i el Camp de l'Arpa del Clot",
+        "vivienda": "finques antigues i blocs de mitjan segle XX en illes denses.",
+        "instalacion": "pati de llums o terrat; cuidem el soroll en patis tancats.",
+        "referencias": "Mercat del Clot, Parc del Clot, Carrer de Rogent"
+      },
+      {
+        "nombre": "el Besòs i el Maresme i Provençals del Poblenou",
+        "vivienda": "blocs de pisos dels anys 60 i 70 i edificis nous.",
+        "instalacion": "multisplit amb una unitat al terrat comunitari; revisem la línia elèctrica.",
+        "referencias": "Rambla de Prim, Parc del Besòs (límit), metro Selva de Mar"
+      },
+      {
+        "nombre": "Sant Martí de Provençals i la Verneda i la Pau",
+        "vivienda": "blocs de pisos amb patis interiors i zones verdes.",
+        "instalacion": "split o multisplit; la unitat on ho aprovi la comunitat.",
+        "referencias": "Parc de Sant Martí, metro Sant Martí, la Pau"
+      }
+    ],
+    "normativa": {
+      "titulo": "Lofts, torres i aire de mar: què cal tenir en compte a Sant Martí",
+      "parrafos": [
+        "La normativa de paisatge urbà de Barcelona evita que la unitat exterior es vegi des del carrer. Al Poblenou hi ha naus i xemeneies industrials protegides al pla de patrimoni del districte.",
+        "A prop de la platja, el salnitre corroeix abans la carcassa i les connexions de la unitat exterior. Convé protegir-la i revisar-la al manteniment anual."
+      ],
+      "consejos": [
+        "A primera línia de mar fem servir suports i cargols que aguanten la corrosió.",
+        "En lofts amb sostres alts, calculem la potència pel volum, no només pels metres quadrats.",
+        "A les torres de Diagonal Mar, moltes comunitats tenen normes pròpies sobre on posar les unitats: ens hi adaptem."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Visc en un loft del Poblenou amb sostres de 4 metres, quina potència necessito?",
+        "r": "Més que en un pis normal dels mateixos metres, perquè hi ha més volum d'aire. Ho calculem a la visita. Tens una referència a la guia [quantes frigories necessito](/aires-acondicionados/guias/que-frigorias-necesito.html) (en castellà)."
+      },
+      {
+        "p": "El meu pis és a primera línia de mar, la unitat exterior dura menys?",
+        "r": "El salnitre la desgasta abans si no se'n té cura. Fem servir suports resistents a la corrosió i recomanem el manteniment anual per revisar connexions i carcassa."
+      },
+      {
+        "p": "La meva torre de Diagonal Mar té normes sobre les unitats exteriors, què faig?",
+        "r": "Demana a l'administrador les normes de la comunitat. Ens adaptem a la ubicació, el color o el model que demanin."
+      },
+      {
+        "p": "Instal·leu a oficines del 22@?",
+        "r": "Sí, fem instal·lacions a oficines i locals. Et donem pressupost després de la visita."
+      },
+      {
+        "p": "Feu manteniment a Sant Martí?",
+        "r": "Sí. Manteniment preventiu anual (70 € + IVA) i diagnòstic tècnic (70 € + IVA) als 10 barris. Si cal reparar, et derivem al SAT oficial de la marca o a un tècnic especialitzat."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "eixample",
+        "nombre": "l'Eixample"
+      },
+      {
+        "slug": "sant-andreu",
+        "nombre": "Sant Andreu"
+      },
+      {
+        "slug": "ciutat-vella",
+        "nombre": "Ciutat Vella"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Quantes frigories necessito"
+      },
+      {
+        "slug": "mantenimiento-yo-mismo-o-profesional",
+        "nombre": "Manteniment: jo mateix o un professional?"
+      },
+      {
+        "slug": "ubicacion-unidad-exterior",
+        "nombre": "On col·locar la unitat exterior"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Arxiu Municipal de Barcelona · Els pobles agregats",
+        "url": "https://ajuntament.barcelona.cat/arxiumunicipal/sites/default/files/poblesagregats.873.pdf"
+      },
+      {
+        "nombre": "Ajuntament de Barcelona · Nova divisió territorial de Barcelona (2010)",
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/handle/11703/90379"
+      }
+    ]
+  },
+  {
+    "slug": "ciutat-vella",
+    "nombre": "Ciutat Vella",
+    "title": "Instal·lació d'aire condicionat a Ciutat Vella | Zervitecnics",
+    "metaDesc": "Aire condicionat a Ciutat Vella: el Raval, el Gòtic, la Barceloneta i Sant Pere, Santa Caterina i la Ribera. Finques protegides i pisos petits.",
+    "heroSub": "Instal·lem als 4 barris de Ciutat Vella, del Raval a la Barceloneta. Resposta en menys de 2 h en horari d'atenció.",
+    "imagen": {
+      "archivo": "hero_split",
+      "w": 1200,
+      "h": 900,
+      "alt": "Split de paret en un pis petit (imatge il·lustrativa)"
+    },
+    "intro": [
+      "Ciutat Vella és el centre històric de Barcelona: el Raval, el Gòtic, el Born i la Barceloneta. Aquí hi ha els edificis més antics de la ciutat, moltes finques sense ascensor i carrers estrets, per a vianants o d'accés restringit.",
+      "És el districte on més compta la normativa. Hi ha un pla especial de protecció del patrimoni des de l'any 2000 i moltes façanes catalogades, així que la unitat exterior gairebé sempre va al terrat o al pati de llums. I els pisos solen ser petits: a la Barceloneta molts són «quarts de casa» d'uns 35 m².",
+      "Per això la visita prèvia és imprescindible: veiem l'accés, la ubicació possible de la unitat exterior i et donem un preu tancat."
+    ],
+    "cp": "08001 (el Raval), 08002 (el Gòtic) i 08003 (Sant Pere, Santa Caterina, la Ribera i la Barceloneta)",
+    "ejes": "La Rambla, Via Laietana, Carrer de Ferran, Carrer de la Princesa, Passeig de Joan de Borbó",
+    "barriosIntro": "Són els 4 barris oficials del districte segons l'Ajuntament de Barcelona. Tots comparteixen carrers estrets i finques antigues, però no els mateixos problemes.",
+    "barrios": [
+      {
+        "nombre": "el Raval",
+        "vivienda": "finques antigues i estretes, moltes sense ascensor, amb patis de llums petits.",
+        "instalacion": "unitat compacta al terrat o al pati de llums; pugem l'equip a mà.",
+        "referencias": "Rambla del Raval, MACBA, Mercat de la Boqueria"
+      },
+      {
+        "nombre": "el Barri Gòtic",
+        "vivienda": "edificis molt antics i protegits en carrers per a vianants.",
+        "instalacion": "només terrat o pati interior; la façana queda descartada. Comprovem la fitxa de patrimoni.",
+        "referencias": "Catedral, Plaça de Sant Jaume, Plaça Reial"
+      },
+      {
+        "nombre": "la Barceloneta",
+        "vivienda": "«quarts de casa» d'uns 35 m², molts sense ascensor, a pocs metres del mar.",
+        "instalacion": "sol n'hi haver prou amb un split compacte; suports resistents al salnitre al terrat.",
+        "referencias": "Passeig de Joan de Borbó, Mercat de la Barceloneta, platja de Sant Sebastià"
+      },
+      {
+        "nombre": "Sant Pere, Santa Caterina i la Ribera",
+        "vivienda": "finques antigues del Born, algunes rehabilitades amb sostres alts i bigues vistes.",
+        "instalacion": "en pisos amb bigues vistes, splits o conductes petits sense tocar l'estructura; unitat al terrat.",
+        "referencias": "Mercat de Santa Caterina, Santa Maria del Mar, Palau de la Música"
+      }
+    ],
+    "normativa": {
+      "titulo": "El districte més protegit: on pot anar la unitat exterior",
+      "parrafos": [
+        "El pla especial de protecció del patrimoni de Ciutat Vella es va aprovar l'any 2000 i s'ha modificat després. Moltes finques del Gòtic, el Born i el Raval estan catalogades, i en elles la unitat exterior no es pot veure des del carrer.",
+        "A més, el terrat i el pati són elements comuns: cal l'acord de la comunitat. En finques catalogades pot caldre un tràmit amb l'Ajuntament abans d'instal·lar."
+      ],
+      "consejos": [
+        "Abans de demanar pressupost, pregunta a l'administrador si la teva finca està catalogada. Si no ho sap, ho mirem amb tu.",
+        "Molts carrers són per a vianants o d'accés restringit: aparquem fora i portem l'equip a mà.",
+        "A la Barceloneta, el salnitre desgasta la unitat exterior: convé el manteniment anual."
+      ]
+    },
+    "faq": [
+      {
+        "p": "La meva finca del Gòtic està catalogada, puc posar aire condicionat?",
+        "r": "Sí, però la unitat exterior no es pot veure des del carrer: va al terrat o en un pati interior. A la visita revisem la ubicació i t'expliquem si cal algun tràmit amb l'Ajuntament."
+      },
+      {
+        "p": "Visc en un quart de casa de la Barceloneta, quin equip necessito?",
+        "r": "En uns 35 m² sol n'hi haver prou amb un split compacte de 2,5 kW a l'estança principal. Ho calcules a la guia [quantes frigories necessito](/aires-acondicionados/guias/que-frigorias-necesito.html) (en castellà)."
+      },
+      {
+        "p": "El meu carrer és per a vianants i no hi poden entrar furgonetes, com ho feu?",
+        "r": "Aparquem a la zona permesa més propera i portem l'equip a mà. Ho organitzem a la visita perquè la instal·lació sigui ràpida."
+      },
+      {
+        "p": "El meu pis del Born té bigues vistes, es poden passar les canonades sense fer-les malbé?",
+        "r": "Sí. Passem les canonades per una canaleta discreta o per racons que no toquen les bigues. Si hi ha fals sostre al passadís, també es pot fer servir."
+      },
+      {
+        "p": "Feu manteniment a Ciutat Vella?",
+        "r": "Sí. Manteniment preventiu anual (70 € + IVA) i diagnòstic tècnic (70 € + IVA) als 4 barris. Si cal reparar, et derivem al SAT oficial de la marca o a un tècnic especialitzat."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "eixample",
+        "nombre": "l'Eixample"
+      },
+      {
+        "slug": "sant-marti",
+        "nombre": "Sant Martí"
+      },
+      {
+        "slug": "sants",
+        "nombre": "Sants-Montjuïc"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "normativa-comunidad-vecinos-barcelona",
+        "nombre": "Normativa i comunitat de veïns"
+      },
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Quantes frigories necessito"
+      },
+      {
+        "slug": "ubicacion-unidad-exterior",
+        "nombre": "On col·locar la unitat exterior"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Ajuntament de Barcelona · Pla especial de protecció del patrimoni arquitectònic de Ciutat Vella",
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/handle/11703/89288"
+      },
+      {
+        "nombre": "Ajuntament de Barcelona · Estudi sobre la Barceloneta i els «quarts de casa»",
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/bitstream/11703/86903/1/17434.pdf"
+      }
+    ]
+  },
+  {
+    "slug": "horta-guinardo",
+    "nombre": "Horta-Guinardó",
+    "title": "Instal·lació d'aire condicionat a Horta-Guinardó | Zervitecnics",
+    "metaDesc": "Aire condicionat a Horta-Guinardó: Horta, el Carmel, el Guinardó, la Font d'en Fargues, la Vall d'Hebron, Montbau i més. Barris de vessant.",
+    "heroSub": "Instal·lem als 11 barris d'Horta-Guinardó, del Baix Guinardó a Sant Genís. Resposta en menys de 2 h en horari d'atenció.",
+    "imagen": {
+      "archivo": "guia-consumo-mando-eco",
+      "w": 1200,
+      "h": 900,
+      "alt": "Comandament d'aire condicionat en mode eco en un menjador (imatge il·lustrativa)"
+    },
+    "intro": [
+      "Horta-Guinardó és el districte de les pujades. Els seus 11 barris pugen des del Baix Guinardó, a tocar de l'Eixample, fins a la serra de Collserola, amb carrers costeruts al Carmel, Can Baró o la Teixonera. Horta va ser un municipi propi fins al 1904.",
+      "Els habitatges són molt variats: cases antigues al nucli d'Horta, torres amb jardí a la Font d'en Fargues, blocs dels anys 60 a Montbau i pisos en pendent al Carmel. Als vessants, molts pisos tenen terrassa o terrat, però l'accés per pujar l'equip cal planificar-lo.",
+      "Fem visita prèvia a tot el districte: veiem l'accés, on va la unitat exterior i et donem un preu tancat."
+    ],
+    "cp": "08032 (Horta i el Carmel), 08035 (la Vall d'Hebron, Montbau i Sant Genís), 08041 (el Guinardó) i 08024-08025 (Baix Guinardó)",
+    "ejes": "Ronda del Guinardó, Passeig de Maragall, Carrer de Lepant, Ronda de Dalt, Carrer de Fulton",
+    "barriosIntro": "Són els 11 barris oficials del districte segons l'Ajuntament de Barcelona. Els agrupem per zones semblants.",
+    "barrios": [
+      {
+        "nombre": "el Baix Guinardó i el Guinardó",
+        "vivienda": "finques i blocs de pisos a tocar de l'Eixample i al voltant del Parc del Guinardó.",
+        "instalacion": "terrat comunitari o pati; multisplit si vols diverses estances.",
+        "referencias": "Parc del Guinardó, Ronda del Guinardó, metro Guinardó | Hospital de Sant Pau"
+      },
+      {
+        "nombre": "el Carmel, Can Baró i la Teixonera",
+        "vivienda": "pisos i cases en carrers amb molta pendent, de vegades amb escales.",
+        "instalacion": "planifiquem la pujada de l'equip; la unitat sol anar a la terrassa o al terrat.",
+        "referencias": "Turó de la Rovira (búnquers del Carmel), metro El Carmel, metro El Coll | La Teixonera"
+      },
+      {
+        "nombre": "Horta i la Clota",
+        "vivienda": "l'antic poble, amb cases baixes i carrers tranquils, i blocs al voltant.",
+        "instalacion": "en cases baixes, unitat al pati o al terrat propi.",
+        "referencias": "Carrer d'Aiguafreda, Plaça d'Eivissa, metro Horta"
+      },
+      {
+        "nombre": "la Font d'en Fargues",
+        "vivienda": "ciutat jardí de torres de principis del segle XX.",
+        "instalacion": "conductes o multisplit; sol haver-hi lloc per a la unitat al jardí.",
+        "referencias": "Passeig de la Font d'en Fargues, metro Maragall (a prop)"
+      },
+      {
+        "nombre": "la Vall d'Hebron, Montbau i Sant Genís dels Agudells",
+        "vivienda": "blocs dels anys 50 i 60 i cases als peus de Collserola.",
+        "instalacion": "terrat comunitari; a la part alta, bomba de calor per a l'hivern.",
+        "referencias": "Hospital Vall d'Hebron, Velòdrom d'Horta, metro Montbau"
+      }
+    ],
+    "normativa": {
+      "titulo": "Barris de vessant: accés, terrasses i comunitat",
+      "parrafos": [
+        "Com a tot Barcelona, la normativa de paisatge urbà evita que la unitat exterior es vegi des del carrer, i la façana és un element comú que necessita l'acord de la comunitat.",
+        "Als vessants, les terrasses i els terrats donen més opcions per amagar la unitat. El que més canvia és la logística: carrers estrets, pujades i edificis sense ascensor."
+      ],
+      "consejos": [
+        "En carrers amb escales, pugem l'equip a mà. Ho planifiquem a la visita.",
+        "A la Font d'en Fargues i a Horta hi ha cases protegides: revisem la fitxa de patrimoni si cal.",
+        "A la part alta, més fresca a l'hivern, convé un equip amb bon rendiment en calefacció."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Visc al Carmel, en un carrer amb escales, podeu instal·lar?",
+        "r": "Sí. Si la furgoneta no arriba a la porta, pugem l'equip a mà. Ho planifiquem a la visita perquè la instal·lació vagi ràpida."
+      },
+      {
+        "p": "Tinc una torre a la Font d'en Fargues, conductes o multisplit?",
+        "r": "Si hi ha fals sostre o es pot fer, els conductes donen un fred uniforme i no es veuen. Si no, un multisplit. Ho comparem a la guia [split, multisplit o conductes](/aires-acondicionados/guias/split-vs-multisplit-vs-conductos.html) (en castellà)."
+      },
+      {
+        "p": "El meu pis de Montbau és dels anys 60, cal canviar la instal·lació elèctrica?",
+        "r": "No sempre, però convé una línia pròpia per a l'aire. La revisem a la visita i, si cal, l'incloem al pressupost."
+      },
+      {
+        "p": "L'aire condicionat serveix també per escalfar a l'hivern?",
+        "r": "Sí, els equips que instal·lem són bomba de calor. A la part alta del districte és una bona opció per a l'hivern."
+      },
+      {
+        "p": "Feu manteniment a Horta-Guinardó?",
+        "r": "Sí. Manteniment preventiu anual (70 € + IVA) i diagnòstic tècnic (70 € + IVA) als 11 barris. Si cal reparar, et derivem al SAT oficial de la marca o a un tècnic especialitzat."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "gracia",
+        "nombre": "Gràcia"
+      },
+      {
+        "slug": "eixample",
+        "nombre": "l'Eixample"
+      },
+      {
+        "slug": "nou-barris",
+        "nombre": "Nou Barris"
+      },
+      {
+        "slug": "sant-andreu",
+        "nombre": "Sant Andreu"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "split-vs-multisplit-vs-conductos",
+        "nombre": "Split, multisplit o conductes"
+      },
+      {
+        "slug": "consumo-real-aire-acondicionado",
+        "nombre": "Consum real de l'aire condicionat"
+      },
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Quantes frigories necessito"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Arxiu Municipal de Barcelona · Els pobles agregats (Horta, 1904)",
+        "url": "https://ajuntament.barcelona.cat/arxiumunicipal/sites/default/files/poblesagregats.873.pdf"
+      },
+      {
+        "nombre": "Ajuntament de Barcelona · Nova divisió territorial de Barcelona (2010)",
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/handle/11703/90379"
+      }
+    ]
+  }
+]
