@@ -931,7 +931,7 @@ function injectLocalBusinessSchema() {
     "description": "Empresa especializada en instalación de aire acondicionado en Barcelona. Técnico HVAC certificado con carnet de gases fluorados y habilitación RITE.",
     "url": "https://zervitecnics.es/aires-acondicionados/",
     "telephone": PHONE_RAW,
-    "email": "formularios.zervitecnics@gmail.com",
+    "email": "info@zervitecnics.es",
     "areaServed": [
       "Barcelona", "L'Eixample", "Gràcia", "L'Hospitalet de Llobregat",
       "Badalona", "Sant Cugat del Vallès", "Cornellà de Llobregat",
