@@ -168,6 +168,8 @@ input, textarea, select { font-family: inherit; }
 .main-nav a.active { color: var(--blue); }
 
 .header-cta { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+/* Entre 1161 y 1340 px el menú del hub (7 enlaces) no cabía junto a los botones: más compacto */
+@media (min-width: 1161px) and (max-width: 1340px) { .header-inner { gap: 12px; } .main-nav a { padding-left: 9px; padding-right: 9px; font-size: .88rem; } }
 .btn-phone {
   display: flex;
   align-items: center;
