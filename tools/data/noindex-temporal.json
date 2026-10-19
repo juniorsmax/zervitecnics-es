@@ -349,7 +349,6 @@
   "aires-acondicionados/marcas/toshiba-argentona.html",
   "aires-acondicionados/marcas/toshiba-badalona.html",
   "aires-acondicionados/marcas/toshiba-barbera-del-valles.html",
-  "aires-acondicionados/marcas/toshiba-barcelona.html",
   "aires-acondicionados/marcas/toshiba-cabrils.html",
   "aires-acondicionados/marcas/toshiba-caldes-de-montbui.html",
   "aires-acondicionados/marcas/toshiba-calella.html",
@@ -376,5 +375,8 @@
   "aires-acondicionados/marcas/toshiba-sitges.html",
   "aires-acondicionados/marcas/toshiba-terrassa.html",
   "aires-acondicionados/marcas/toshiba-viladecans.html"
- ]
+ ],
+ "excepciones": {
+  "aires-acondicionados/marcas/toshiba-barcelona.html": "Se mantiene indexable por la prueba C1 (marca Toshiba frente a instalación Toshiba en Barcelona)."
+ }
 }
