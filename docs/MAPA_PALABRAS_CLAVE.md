@@ -152,9 +152,11 @@ Pendiente: volumen de búsqueda real (Planificador de palabras clave de Google A
 | Intención | Comparación/transaccional + local |
 | Posiciona para | Usuario que sabe el tamaño pero no la marca. Complementa §10 (marca+ciudad). |
 
-## 13. Zonas de instalación — `/aires-acondicionados/zonas/{zona}.html` (15 páginas)
+## 13. Zonas de instalación — `/aires-acondicionados/zonas/{zona}.html` (17 páginas)
 
-Zonas publicadas: Eixample, Gràcia, Sants, Sarrià, Les Corts, Sant Andreu, Sant Martí, Nou Barris, Badalona, Hospitalet, Castelldefels, Cornellà, Sabadell, Terrassa, Sant Cugat.
+Zonas publicadas: los 10 distritos de Barcelona (Ciutat Vella, Eixample, Sants-Montjuïc, Les Corts, Sarrià-Sant Gervasi, Gràcia, Horta-Guinardó, Nou Barris, Sant Andreu, Sant Martí) y 7 municipios (Badalona, Hospitalet, Castelldefels, Cornellà, Sabadell, Terrassa, Sant Cugat).
+
+Las páginas de distrito se generan con `tools/apply-distritos.js` a partir de `tools/data/distritos.json` (barrios oficiales, viviendas, normativa, preguntas propias y fuentes). Ciutat Vella y Horta-Guinardó se añadieron en octubre de 2026; su keyword principal es `instalación aire acondicionado ciutat vella` y `instalación aire acondicionado horta guinardó`, sin solapamiento con otras páginas.
 
 | Campo | Valor |
 |---|---|

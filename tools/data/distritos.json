@@ -96,6 +96,10 @@
       {
         "slug": "sarria",
         "nombre": "Sarrià-Sant Gervasi"
+      },
+      {
+        "slug": "horta-guinardo",
+        "nombre": "Horta-Guinardó"
       }
     ],
     "guias": [
@@ -238,6 +242,14 @@
       {
         "slug": "sant-marti",
         "nombre": "Sant Martí"
+      },
+      {
+        "slug": "ciutat-vella",
+        "nombre": "Ciutat Vella"
+      },
+      {
+        "slug": "horta-guinardo",
+        "nombre": "Horta-Guinardó"
       }
     ],
     "guias": [
@@ -380,6 +392,10 @@
       {
         "slug": "hospitalet",
         "nombre": "L'Hospitalet de Llobregat"
+      },
+      {
+        "slug": "ciutat-vella",
+        "nombre": "Ciutat Vella"
       }
     ],
     "guias": [
@@ -630,6 +646,10 @@
       {
         "slug": "sant-cugat",
         "nombre": "Sant Cugat del Vallès"
+      },
+      {
+        "slug": "horta-guinardo",
+        "nombre": "Horta-Guinardó"
       }
     ],
     "guias": [
@@ -750,6 +770,10 @@
       {
         "slug": "sant-andreu",
         "nombre": "Sant Andreu"
+      },
+      {
+        "slug": "horta-guinardo",
+        "nombre": "Horta-Guinardó"
       }
     ],
     "guias": [
@@ -878,6 +902,10 @@
       {
         "slug": "sant-marti",
         "nombre": "Sant Martí"
+      },
+      {
+        "slug": "horta-guinardo",
+        "nombre": "Horta-Guinardó"
       }
     ],
     "guias": [
@@ -1006,6 +1034,10 @@
       {
         "slug": "badalona",
         "nombre": "Badalona"
+      },
+      {
+        "slug": "ciutat-vella",
+        "nombre": "Ciutat Vella"
       }
     ],
     "guias": [
@@ -1025,6 +1057,262 @@
     "fuentes": [
       {
         "nombre": "Arxiu Municipal de Barcelona · Els pobles agregats",
+        "url": "https://ajuntament.barcelona.cat/arxiumunicipal/sites/default/files/poblesagregats.873.pdf"
+      },
+      {
+        "nombre": "Ajuntament de Barcelona · Nova divisió territorial de Barcelona (2010)",
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/handle/11703/90379"
+      }
+    ]
+  },
+  {
+    "slug": "ciutat-vella",
+    "nombre": "Ciutat Vella",
+    "emoji": "🏛️",
+    "mantenimientoUrl": "../mantenimiento.html",
+    "xlinkSub": "Fincas del Raval, el Gòtic, el Born y la Barceloneta: toda la red de marcas y potencias de Barcelona disponible en el distrito.",
+    "metaDesc": "Aire acondicionado en Ciutat Vella: el Raval, el Gòtic, la Barceloneta y Sant Pere, Santa Caterina i la Ribera. Fincas protegidas y pisos pequeños.",
+    "heroSub": "Instalamos en los 4 barrios de Ciutat Vella, del Raval a la Barceloneta. Respuesta en menos de 2 h en horario de atención.",
+    "imagen": {
+      "archivo": "hero_split",
+      "w": 1200,
+      "h": 900,
+      "alt": "Split de pared en un piso pequeño (imagen ilustrativa)"
+    },
+    "intro": [
+      "Ciutat Vella es el centro histórico de Barcelona: el Raval, el Gòtic, el Born y la Barceloneta. Aquí están los edificios más antiguos de la ciudad, muchas fincas sin ascensor y calles estrechas, peatonales o de acceso restringido.",
+      "Es el distrito donde más cuenta la normativa. Hay un plan especial de protección del patrimonio desde el año 2000 y muchas fachadas catalogadas, así que la unidad exterior casi siempre va en el terrat o en el patio de luces. Y los pisos suelen ser pequeños: en la Barceloneta muchos son «quarts de casa» de unos 35 m².",
+      "Por eso la visita previa es imprescindible: vemos el acceso, la ubicación posible de la unidad exterior y te damos un precio cerrado."
+    ],
+    "cp": "08001 (el Raval), 08002 (el Gòtic) y 08003 (Sant Pere, Santa Caterina, la Ribera y la Barceloneta)",
+    "ejes": "La Rambla, Via Laietana, Carrer de Ferran, Carrer de la Princesa, Passeig de Joan de Borbó",
+    "barriosIntro": "Son los 4 barrios oficiales del distrito según el Ajuntament de Barcelona. Todos comparten calles estrechas y fincas antiguas, pero no los mismos problemas.",
+    "barrios": [
+      {
+        "nombre": "el Raval",
+        "vivienda": "fincas antiguas y estrechas, muchas sin ascensor, con patios de luces pequeños.",
+        "instalacion": "unidad compacta en el terrat o el patio de luces; subimos el equipo a mano.",
+        "referencias": "Rambla del Raval, MACBA, Mercat de la Boqueria"
+      },
+      {
+        "nombre": "el Barri Gòtic",
+        "vivienda": "edificios muy antiguos y protegidos en calles peatonales.",
+        "instalacion": "solo terrat o patio interior; la fachada está descartada. Comprobamos la ficha de patrimonio.",
+        "referencias": "Catedral, Plaça de Sant Jaume, Plaça Reial"
+      },
+      {
+        "nombre": "la Barceloneta",
+        "vivienda": "«quarts de casa» de unos 35 m², muchos sin ascensor, a pocos metros del mar.",
+        "instalacion": "un split compacto suele bastar; soportes resistentes al salitre en el terrat.",
+        "referencias": "Passeig de Joan de Borbó, Mercat de la Barceloneta, playa de Sant Sebastià"
+      },
+      {
+        "nombre": "Sant Pere, Santa Caterina i la Ribera",
+        "vivienda": "fincas antiguas del Born, algunas rehabilitadas con techos altos y vigas vistas.",
+        "instalacion": "en pisos con vigas vistas, splits o conductos pequeños sin tocar la estructura; unidad en terrat.",
+        "referencias": "Mercat de Santa Caterina, Santa Maria del Mar, Palau de la Música"
+      }
+    ],
+    "normativa": {
+      "titulo": "El distrito más protegido: dónde puede ir la unidad exterior",
+      "parrafos": [
+        "El plan especial de protección del patrimonio de Ciutat Vella se aprobó en el año 2000 y se ha modificado después. Muchas fincas del Gòtic, el Born y el Raval están catalogadas, y en ellas la unidad exterior no puede verse desde la calle.",
+        "Además, el terrat y el patio son elementos comunes: necesitas el acuerdo de la comunidad. En fincas catalogadas puede hacer falta un trámite con el Ajuntament antes de instalar."
+      ],
+      "consejos": [
+        "Antes de pedir presupuesto, pregunta al administrador si tu finca está catalogada. Si no lo sabe, lo miramos contigo.",
+        "Muchas calles son peatonales o de acceso restringido: aparcamos fuera y llevamos el equipo a mano.",
+        "En la Barceloneta, el salitre desgasta la unidad exterior: conviene el mantenimiento anual."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Mi finca del Gòtic está catalogada, ¿puedo poner aire acondicionado?",
+        "r": "Sí, pero la unidad exterior no puede verse desde la calle: va en el terrat o en un patio interior. En la visita revisamos la ubicación y te explicamos si hace falta algún trámite con el Ajuntament."
+      },
+      {
+        "p": "Vivo en un quart de casa de la Barceloneta, ¿qué equipo necesito?",
+        "r": "En unos 35 m² suele bastar un split compacto de 2,5 kW en la estancia principal. Lo calculas en la guía [qué frigorías necesito](../guias/que-frigorias-necesito.html)."
+      },
+      {
+        "p": "Mi calle es peatonal y no pueden entrar furgonetas, ¿cómo lo hacéis?",
+        "r": "Aparcamos en la zona permitida más cercana y llevamos el equipo a mano. Lo organizamos en la visita para que la instalación sea rápida."
+      },
+      {
+        "p": "Mi piso del Born tiene vigas vistas, ¿se pueden pasar las tuberías sin estropearlas?",
+        "r": "Sí. Pasamos las tuberías por canaleta discreta o por rincones que no tocan las vigas. Si hay falso techo en el pasillo, también se puede usar."
+      },
+      {
+        "p": "¿Hacéis mantenimiento en Ciutat Vella?",
+        "r": "Sí. Mantenimiento preventivo anual (70 € + IVA) y diagnóstico técnico (70 € + IVA) en los 4 barrios. Si hace falta reparar, te derivamos al SAT oficial de la marca o a un técnico especializado."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "eixample",
+        "nombre": "Eixample"
+      },
+      {
+        "slug": "sant-marti",
+        "nombre": "Sant Martí"
+      },
+      {
+        "slug": "sants",
+        "nombre": "Sants-Montjuïc"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "normativa-comunidad-vecinos-barcelona",
+        "nombre": "Normativa y comunidad de vecinos"
+      },
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Qué frigorías necesito"
+      },
+      {
+        "slug": "ubicacion-unidad-exterior",
+        "nombre": "Dónde colocar la unidad exterior"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Ajuntament de Barcelona · Pla especial de protecció del patrimoni arquitectònic de Ciutat Vella (BCNROC)",
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/handle/11703/89288"
+      },
+      {
+        "nombre": "Ajuntament de Barcelona · Estudio sobre la Barceloneta y los «quarts de casa» (BCNROC)",
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/bitstream/11703/86903/1/17434.pdf"
+      },
+      {
+        "nombre": "Ajuntament de Barcelona · Nova divisió territorial de Barcelona (2010)",
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/handle/11703/90379"
+      }
+    ]
+  },
+  {
+    "slug": "horta-guinardo",
+    "nombre": "Horta-Guinardó",
+    "emoji": "⛰️",
+    "mantenimientoUrl": "../mantenimiento.html",
+    "xlinkSub": "Fincas del Guinardó, el Carmel y Horta: toda la red de marcas y potencias de Barcelona disponible en el distrito.",
+    "metaDesc": "Aire acondicionado en Horta-Guinardó: Horta, el Carmel, el Guinardó, la Font d'en Fargues, Vall d'Hebron, Montbau y más. Barrios de ladera.",
+    "heroSub": "Instalamos en los 11 barrios de Horta-Guinardó, del Baix Guinardó a Sant Genís. Respuesta en menos de 2 h en horario de atención.",
+    "imagen": {
+      "archivo": "guia-consumo-mando-eco",
+      "w": 1448,
+      "h": 1086,
+      "alt": "Mando de aire acondicionado en modo eco en un salón (imagen ilustrativa)"
+    },
+    "intro": [
+      "Horta-Guinardó es el distrito de las cuestas. Sus 11 barrios suben desde el Baix Guinardó, junto al Eixample, hasta la sierra de Collserola, con calles empinadas en el Carmel, Can Baró o la Teixonera. Horta fue un municipio propio hasta 1904.",
+      "Las viviendas son muy variadas: casas antiguas en el núcleo de Horta, torres con jardín en la Font d'en Fargues, bloques de los años 60 en Montbau y pisos en pendiente en el Carmel. En las laderas, muchos pisos tienen terraza o azotea, pero el acceso para subir el equipo hay que planificarlo.",
+      "Hacemos visita previa en todo el distrito: vemos el acceso, dónde va la unidad exterior y te damos un precio cerrado."
+    ],
+    "cp": "08032 (Horta y el Carmel), 08035 (Vall d'Hebron, Montbau y Sant Genís), 08041 (el Guinardó) y 08024-08025 (Baix Guinardó)",
+    "ejes": "Ronda del Guinardó, Passeig de Maragall, Carrer de Lepant, Ronda de Dalt, Carrer de Fulton",
+    "barriosIntro": "Son los 11 barrios oficiales del distrito según el Ajuntament de Barcelona. Los agrupamos por zonas parecidas.",
+    "barrios": [
+      {
+        "nombre": "el Baix Guinardó y el Guinardó",
+        "vivienda": "fincas y bloques de pisos junto al Eixample y alrededor del Parc del Guinardó.",
+        "instalacion": "azotea comunitaria o patio; multisplit si quieres varias estancias.",
+        "referencias": "Parc del Guinardó, Ronda del Guinardó, metro Guinardó | Hospital de Sant Pau"
+      },
+      {
+        "nombre": "el Carmel, Can Baró y la Teixonera",
+        "vivienda": "pisos y casas en calles con mucha pendiente, a veces con escaleras.",
+        "instalacion": "planificamos la subida del equipo; la unidad suele ir en la terraza o la azotea.",
+        "referencias": "Turó de la Rovira (búnkers del Carmel), metro El Carmel, metro El Coll | La Teixonera"
+      },
+      {
+        "nombre": "Horta y la Clota",
+        "vivienda": "el antiguo pueblo, con casas bajas y calles tranquilas, y bloques alrededor.",
+        "instalacion": "en casas bajas, unidad en el patio o la azotea propia.",
+        "referencias": "Carrer d'Aiguafreda, Plaça d'Eivissa, metro Horta"
+      },
+      {
+        "nombre": "la Font d'en Fargues",
+        "vivienda": "ciudad jardín de torres de principios del siglo XX.",
+        "instalacion": "conductos o multisplit; suele haber sitio para la unidad en el jardín.",
+        "referencias": "Passeig de la Font d'en Fargues, metro Maragall (cerca)"
+      },
+      {
+        "nombre": "la Vall d'Hebron, Montbau y Sant Genís dels Agudells",
+        "vivienda": "bloques de los años 50 y 60 y casas al pie de Collserola.",
+        "instalacion": "azotea comunitaria; en la parte alta, bomba de calor para el invierno.",
+        "referencias": "Hospital Vall d'Hebron, Velòdrom d'Horta, metro Montbau"
+      }
+    ],
+    "normativa": {
+      "titulo": "Barrios de ladera: acceso, terrazas y comunidad",
+      "parrafos": [
+        "Como en todo Barcelona, la normativa de paisaje urbano evita que la unidad exterior se vea desde la calle, y la fachada es un elemento común que necesita el acuerdo de la comunidad.",
+        "En las laderas, las terrazas y azoteas dan más opciones para esconder la unidad. Lo que más cambia es la logística: calles estrechas, cuestas y edificios sin ascensor."
+      ],
+      "consejos": [
+        "En calles con escaleras, subimos el equipo a mano. Lo planificamos en la visita.",
+        "En la Font d'en Fargues y Horta hay casas protegidas: revisamos la ficha de patrimonio si hace falta.",
+        "En la parte alta, más fresca en invierno, conviene un equipo con buen rendimiento en calefacción."
+      ]
+    },
+    "faq": [
+      {
+        "p": "Vivo en el Carmel, en una calle con escaleras, ¿podéis instalar?",
+        "r": "Sí. Si la furgoneta no llega a la puerta, subimos el equipo a mano. Lo planificamos en la visita para que la instalación vaya rápida."
+      },
+      {
+        "p": "Tengo una torre en la Font d'en Fargues, ¿conductos o multisplit?",
+        "r": "Si hay falso techo o se puede hacer, los conductos dan un frío uniforme y no se ven. Si no, un multisplit. Lo comparamos en la guía [split, multisplit o conductos](../guias/split-vs-multisplit-vs-conductos.html)."
+      },
+      {
+        "p": "Mi piso de Montbau es de los años 60, ¿hay que cambiar la instalación eléctrica?",
+        "r": "No siempre, pero conviene una línea propia para el aire. La revisamos en la visita y te lo incluimos en el presupuesto si hace falta."
+      },
+      {
+        "p": "¿El aire acondicionado sirve también para calentar en invierno?",
+        "r": "Sí, los equipos que instalamos son bomba de calor. En la parte alta del distrito es una buena opción para el invierno."
+      },
+      {
+        "p": "¿Hacéis mantenimiento en Horta-Guinardó?",
+        "r": "Sí. Mantenimiento preventivo anual (70 € + IVA) y diagnóstico técnico (70 € + IVA) en los 11 barrios. Si hace falta reparar, te derivamos al SAT oficial de la marca o a un técnico especializado."
+      }
+    ],
+    "vecinos": [
+      {
+        "slug": "gracia",
+        "nombre": "Gràcia"
+      },
+      {
+        "slug": "eixample",
+        "nombre": "Eixample"
+      },
+      {
+        "slug": "nou-barris",
+        "nombre": "Nou Barris"
+      },
+      {
+        "slug": "sant-andreu",
+        "nombre": "Sant Andreu"
+      }
+    ],
+    "guias": [
+      {
+        "slug": "split-vs-multisplit-vs-conductos",
+        "nombre": "Split, multisplit o conductos"
+      },
+      {
+        "slug": "consumo-real-aire-acondicionado",
+        "nombre": "Consumo real del aire acondicionado"
+      },
+      {
+        "slug": "que-frigorias-necesito",
+        "nombre": "Qué frigorías necesito"
+      }
+    ],
+    "fuentes": [
+      {
+        "nombre": "Arxiu Municipal de Barcelona · Els pobles agregats (Horta, 1904)",
         "url": "https://ajuntament.barcelona.cat/arxiumunicipal/sites/default/files/poblesagregats.873.pdf"
       },
       {

@@ -135,7 +135,7 @@ ${d.faq.map(f => `      <div class="faq-item">
     <h2 class="section-title" id="cerca-title" style="font-size:1.4rem">Cerca de ${esc(d.nombre)}</h2>
     <p><strong>Distritos vecinos:</strong> ${d.vecinos.map(v => `<a href="${v.slug}.html" style="color:var(--blue)">${esc(v.nombre)}</a>`).join(' · ')}</p>
     <p><strong>Guías útiles para ${esc(d.nombre)}:</strong> ${d.guias.map(g => `<a href="../guias/${g.slug}.html" style="color:var(--blue)">${esc(g.nombre)}</a>`).join(' · ')}</p>
-    <p><strong>¿Ya tienes equipo?</strong> <a href="../mantenimiento-zonas/${d.slug}.html" style="color:var(--blue)">Mantenimiento de aire acondicionado en ${esc(d.nombre)}</a></p>
+    <p><strong>¿Ya tienes equipo?</strong> <a href="${d.mantenimientoUrl || `../mantenimiento-zonas/${d.slug}.html`}" style="color:var(--blue)">Mantenimiento de aire acondicionado en ${esc(d.nombre)}</a></p>
     <details style="margin-top:12px;font-size:.85rem;color:var(--gray-500)"><summary style="cursor:pointer">Fuentes de esta página</summary>
       <ul style="margin:8px 0 0;padding-left:18px">
 ${d.fuentes.map(f => `        <li><a href="${f.url}" target="_blank" rel="noopener">${esc(f.nombre)}</a></li>`).join('\n')}
