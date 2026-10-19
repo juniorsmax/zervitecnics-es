@@ -1036,6 +1036,7 @@ document.addEventListener('DOMContentLoaded', () => {
   detectZoneFromURL();
 
 
+  initReviewMarquee();
   renderDynPrices();
 });
 
@@ -1079,3 +1080,21 @@ function renderDynPrices() {
   });
 }
 
+
+/* ════════════════════════════════════════════════
+   CARRUSEL DE RESEÑAS — bucle infinito y lento
+   Repite las tarjetas hasta cubrir dos anchos de pantalla y añade una copia
+   completa, para que el desplazamiento de -50% (CSS) enlace sin saltos.
+════════════════════════════════════════════════ */
+function initReviewMarquee() {
+  document.querySelectorAll('.rev-marquee .rev-track').forEach(track => {
+    const items = Array.from(track.children);
+    if (!items.length) return;
+    const minWidth = track.parentElement.clientWidth * 2;
+    for (let i = 0; i < 20 && track.scrollWidth < minWidth; i++) items.forEach(li => track.appendChild(li.cloneNode(true)));
+    Array.from(track.children).forEach(li => track.appendChild(li.cloneNode(true)));
+    const pxPerSecond = 30;
+    track.style.setProperty('--rev-dur', Math.round(track.scrollWidth / 2 / pxPerSecond) + 's');
+    track.classList.add('is-ready');
+  });
+}

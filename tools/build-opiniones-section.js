@@ -83,15 +83,17 @@ function renderSection(data) {
     : '';
 
   return `<section class="section" id="opiniones" aria-labelledby="opiniones-title">
-  <div class="container-sm">
+  <div class="container">
     <div class="text-center mb-32 fade-up">
       <span class="section-label">Opiniones de clientes</span>
       <h2 class="section-title" id="opiniones-title">Lo que dicen sobre nosotros</h2>
       ${header}
     </div>
-    <ul class="rev-list fade-up">
+    <div class="rev-marquee">
+      <ul class="rev-list rev-track">
 ${list}
-    </ul>
+      </ul>
+    </div>
 ${cta}
     <p class="rev-attrib">Reseñas publicadas por los autores en Google. Zervitecnics no modifica el contenido.</p>
   </div>
