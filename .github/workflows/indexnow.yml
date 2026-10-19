@@ -1,0 +1,44 @@
+# Avisa a IndexNow (Bing, Yandex, Seznam…) de las páginas que cambian en cada publicación.
+# Google no usa IndexNow; para Google sigue contando el sitemap.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Enviar URLs cambiadas
+        env:
+          INDEXNOW_KEY: 0a0c5999a70121f4eef1d1517d3bc5e8
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+        run: |
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            echo "Primer push: no hay diferencias que enviar."; exit 0
+          fi
+          git diff --name-only --diff-filter=AM "$BEFORE" "$AFTER" -- '*.html' > cambiados.txt || true
+          python3 - <<'PY'
+          import json, os, re, urllib.request
+          host = "zervitecnics.es"; key = os.environ["INDEXNOW_KEY"]
+          urls = []
+          for f in open("cambiados.txt").read().split():
+              if not os.path.exists(f) or f.startswith(("tools/", "interno/")):
+                  continue
+              if re.search(r'<meta[^>]+robots[^>]+noindex', open(f, encoding="utf-8").read(), re.I):
+                  continue
+              path = f[:-len("index.html")] if f.endswith("index.html") else f
+              urls.append(f"https://{host}/{path}")
+          if not urls:
+              print("Sin páginas indexables cambiadas."); raise SystemExit(0)
+          body = {"host": host, "key": key, "keyLocation": f"https://{host}/{key}.txt", "urlList": urls[:10000]}
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=json.dumps(body).encode(),
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          with urllib.request.urlopen(req, timeout=30) as r:
+              print("IndexNow:", r.status, "-", len(urls), "URL enviadas")
+          PY

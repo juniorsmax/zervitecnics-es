@@ -37,46 +37,46 @@ zervitecnics-es/
     └── *.js                         # Scripts de generación de páginas y sitemap
 ```
 
-## Configuración necesaria antes del despliegue
+## Configuración actual
 
-### 1. EmailJS (formulario de presupuesto)
+### 1. Formulario de presupuesto
 
-1. Crear cuenta en [emailjs.com](https://www.emailjs.com)
-2. Crear un servicio de email (Gmail, SMTP, etc.)
-3. Crear una plantilla con las variables: `{{nombre}}`, `{{telefono}}`, `{{zona}}`, `{{tipo}}`, `{{obs}}`
-4. En `aires-acondicionados/js/shared.js`, buscar y reemplazar:
-   - `TU_PUBLIC_KEY` → tu Public Key de EmailJS
-   - `TU_SERVICE_ID` → tu Service ID
-   - `TU_TEMPLATE_ID` → tu Template ID
+El formulario está solo en el hub (`aires-acondicionados/index.html#presupuesto`); el resto
+de páginas enlazan a él. Envía los datos a un Worker de Cloudflare
+(`FORM_ENDPOINT` en `aires-acondicionados/js/shared.js`), que comprueba Cloudflare
+Turnstile en el servidor y manda el correo. Ya no se usan EmailJS ni reCAPTCHA.
 
 ### 2. Google Tag Manager / Analytics
 
-El GTM ya está integrado con el ID `GTM-TF473QQQ`. Para usar tu propio:
-1. En `index.html`, reemplaza `GTM-TF473QQQ` por tu ID de GTM
-2. Configura en GTM: GA4, eventos de conversión (llamadas, WhatsApp, formulario)
+- GTM: `GTM-P6C8L3VX` · GA4: `G-N4C8H8KMFD` · Clarity: `xbowxa66oa` (en `shared.js` y en
+  la cabecera de cada página).
+- Consent Mode por defecto en `denied`; se actualiza al aceptar cookies.
 
-### 3. Teléfono y datos de contacto
+### 3. Datos de contacto
 
-Busca y reemplaza en todos los archivos:
-- `625 215 983` → tu número real
-- `+34625215983` → tu número en formato internacional
-- `info@zervitecnics.es` → tu email real
-- `zervitecnics.es` → tu dominio real
+- Teléfono: `625 215 983` (`+34625215983`).
+- Correo: `info@zervitecnics.es`.
+- Sin dirección postal (negocio de área de servicio).
 
 ### 4. Imágenes
 
-Las imágenes en `aires-acondicionados/img/` son generadas con IA. Puedes reemplazarlas por fotos reales de tus instalaciones manteniendo los mismos nombres de archivo.
+Las imágenes en `aires-acondicionados/img/` son ilustrativas (generadas con IA) y sus textos
+alternativos lo indican. Se pueden sustituir por fotos reales manteniendo los nombres.
+
+### 5. Generadores de contenido
+
+- `tools/apply-distritos.js` + `tools/data/distritos.json`: páginas de zona (10 distritos y
+  7 municipios) con barrios, viviendas, normativa, preguntas y fuentes.
+- `tools/apply-mantenimiento-local.js` + `tools/data/mantenimiento-zonas-local.json`:
+  bloque local de las páginas de mantenimiento por zona.
+- `tools/build-opiniones-section.js` + `data/reviews.json`: reseñas reales en carrusel.
+- `tools/generate-sitemap.js`: sitemaps con `lastmod` del último commit de cada página.
+- `npm run check:seo` (en `tools/`): comprobador de títulos, canónicas y sitemaps.
 
 ## Despliegue
 
-### Opción A: Hosting estático (recomendado)
-- **Netlify**: Arrastra la carpeta a [app.netlify.com](https://app.netlify.com)
-- **Vercel**: `vercel --prod` desde la carpeta del proyecto
-- **GitHub Pages**: Sube a un repositorio y activa Pages
-
-### Opción B: Hosting tradicional (FTP)
-- Sube todos los archivos al directorio raíz de tu hosting
-- Asegúrate de que el servidor sirve `index.html` como página principal
+GitHub Pages publica la rama `main` en `zervitecnics.es` (archivo `CNAME`). Cada push a
+`main` publica la web: trabajar en otra rama y publicar solo con el visto bueno del titular.
 
 ## SEO — Mapa de palabras clave
 
