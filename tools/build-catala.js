@@ -108,15 +108,37 @@ function header({ urgency, esHref, loc, waMsg }) {
 </header>`;
 }
 
+// Reseñas en su idioma original (data/reviews.json → "original"). Si falta alguna en catalán
+// (solo tenemos la traducción), se muestra la nota y el enlace a Google, sin carrusel.
 function opinions() {
   const p = REV.place || {};
   const n = p.userRatingCount, avg = p.rating ? Number(p.rating).toFixed(1) : null;
-  return `<section class="section section-sm" id="opinions">
-  <div class="container text-center">
-    <span class="section-label">Opinions de clients</span>
-    <h2 class="section-title">Què diuen de nosaltres</h2>
-    ${avg ? `<p class="rev-summary"><strong>${avg}/5</strong>${n ? ` amb ${n} ressenyes` : ''} a Google.</p>` : ''}
-    <p class="rev-cta"><a class="btn btn-outline" href="${esc(p.googleMapsUri || REV.reviewUrl)}" rel="nofollow noopener" target="_blank">Llegeix les ressenyes a Google</a></p>
+  const revs = REV.reviews || [];
+  const complete = revs.length && revs.every(r => r.original);
+  const mes = s => String(s || '').replace(/\s*·.*$/, '').replace(/^(\w+) (\d{4})$/, '$1 de $2');
+  const item = r => `  <li class="rev-item">
+    <div class="rev-head">
+      <span class="rev-avatar" aria-hidden="true">${esc(r.author.name.trim().charAt(0).toUpperCase())}</span>
+      <div class="rev-who"><cite class="rev-author">${esc(r.author.name)}</cite><span class="rev-when">${esc(mes(r.relative))}</span></div>
+      <span class="rev-g" aria-label="Google" title="Google">G</span>
+    </div>
+    <span class="rev-stars" aria-label="${r.rating} de 5 estrelles">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</span>
+    <blockquote class="rev-text"${r.idioma && r.idioma !== 'ca' ? ` lang="${r.idioma}"` : ''}>${esc(r.original)}</blockquote>
+  </li>`;
+  return `<section class="section" id="opinions" aria-labelledby="opinions-title">
+  <div class="container">
+    <div class="text-center mb-32 fade-up">
+      <span class="section-label">Opinions de clients</span>
+      <h2 class="section-title" id="opinions-title">Què diuen de nosaltres</h2>
+      ${avg ? `<p class="rev-summary"><strong>${avg}/5</strong>${n ? ` amb ${n} ressenyes` : ''} a <a href="${esc(p.googleMapsUri || REV.reviewUrl)}" rel="nofollow noopener" target="_blank">Google</a>.</p>` : ''}
+    </div>
+${complete ? `    <div class="rev-marquee">
+      <ul class="rev-list rev-track">
+${revs.map(item).join('\n')}
+      </ul>
+    </div>
+    <p class="rev-cta"><a class="btn btn-outline" href="${esc(REV.reviewUrl)}" rel="nofollow noopener" target="_blank">Deixa la teva ressenya a Google</a></p>
+    <p class="rev-attrib">Ressenyes publicades pels autors a Google, en la llengua original. Zervitecnics no en modifica el contingut.</p>` : `    <p class="rev-cta text-center"><a class="btn btn-outline" href="${esc(p.googleMapsUri || REV.reviewUrl)}" rel="nofollow noopener" target="_blank">Llegeix les ressenyes a Google</a></p>`}
   </div>
 </section>`;
 }
