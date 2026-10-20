@@ -1097,8 +1097,15 @@ function initReviewMarquee() {
     const minWidth = track.parentElement.clientWidth * 2;
     for (let i = 0; i < 20 && track.scrollWidth < minWidth; i++) items.forEach(li => track.appendChild(li.cloneNode(true)));
     Array.from(track.children).forEach(li => track.appendChild(li.cloneNode(true)));
-    const pxPerSecond = 30;
-    track.style.setProperty('--rev-dur', Math.round(track.scrollWidth / 2 / pxPerSecond) + 's');
+    // El ciclo se mide en píxeles exactos (inicio de la 2.ª mitad), así el reinicio no salta.
+    const half = track.children.length / 2;
+    const setCycle = () => {
+      const shift = track.children[half].offsetLeft - track.children[0].offsetLeft;
+      track.style.setProperty('--rev-shift', shift + 'px');
+      track.style.setProperty('--rev-dur', Math.round(shift / 30) + 's');
+    };
+    setCycle();
+    let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(setCycle, 200); });
     track.classList.add('is-ready');
   });
 }

@@ -1374,8 +1374,8 @@ h1, h2, h3, .section-title, .cta-title {
 .rev-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
 .rev-marquee .rev-track { display: flex; gap: 20px; padding-right: 20px; width: max-content; pointer-events: none; }
 .rev-marquee .rev-item { flex: 0 0 320px; max-width: 80vw; }
-.rev-marquee .rev-track.is-ready { animation: rev-scroll var(--rev-dur, 60s) linear infinite; }
-@keyframes rev-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.rev-marquee .rev-track.is-ready { animation: rev-scroll var(--rev-dur, 60s) linear infinite; will-change: transform; backface-visibility: hidden; }
+@keyframes rev-scroll { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(calc(var(--rev-shift, 50%) * -1), 0, 0); } }
 
 /* Cabeceras de marca-ciudad y capacidad: el degradado terminaba casi transparente (sobre blanco)
    y el color de marca oscuro no se leía sobre el azul marino. Se aclara solo dentro de la cabecera. */
