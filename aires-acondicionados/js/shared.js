@@ -1091,21 +1091,33 @@ function renderDynPrices() {
    completa, para que el desplazamiento de -50% (CSS) enlace sin saltos.
 ════════════════════════════════════════════════ */
 function initReviewMarquee() {
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('.rev-marquee .rev-track').forEach(track => {
     const items = Array.from(track.children);
     if (!items.length) return;
+    const clone = li => { const c = li.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); };
     const minWidth = track.parentElement.clientWidth * 2;
-    for (let i = 0; i < 20 && track.scrollWidth < minWidth; i++) items.forEach(li => track.appendChild(li.cloneNode(true)));
-    Array.from(track.children).forEach(li => track.appendChild(li.cloneNode(true)));
-    // El ciclo se mide en píxeles exactos (inicio de la 2.ª mitad), así el reinicio no salta.
-    const half = track.children.length / 2;
-    const setCycle = () => {
-      const shift = track.children[half].offsetLeft - track.children[0].offsetLeft;
-      track.style.setProperty('--rev-shift', shift + 'px');
-      track.style.setProperty('--rev-dur', Math.round(shift / 30) + 's');
-    };
-    setCycle();
-    let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(setCycle, 200); });
+    for (let i = 0; i < 20 && track.scrollWidth < minWidth; i++) items.forEach(clone);
+    Array.from(track.children).forEach(clone);
     track.classList.add('is-ready');
+    if (still) return;
+    // Movimiento continuo con requestAnimationFrame: al llegar a la 2.ª mitad se resta un ciclo
+    // exacto en el mismo fotograma, sin reiniciar ninguna animación CSS (lo que parpadeaba en iPhone).
+    const half = track.children.length / 2;
+    const pxPerSecond = 30;
+    let shift = 0, x = 0, last = null;
+    const measure = () => { shift = track.children[half].offsetLeft - track.children[0].offsetLeft; };
+    measure();
+    let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(measure, 200); });
+    const frame = ts => {
+      if (last !== null && shift > 0) {
+        x -= pxPerSecond * Math.min(ts - last, 100) / 1000;
+        if (x <= -shift) x += shift;
+        track.style.transform = `translate3d(${x.toFixed(2)}px, 0, 0)`;
+      }
+      last = ts;
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
   });
 }

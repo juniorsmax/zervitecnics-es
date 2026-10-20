@@ -59,7 +59,7 @@ const FONTS = `  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"></noscript>
   <!-- /ZRV-FONTS -->
-  <link rel="stylesheet" href="../css/shared.css?v=20261008b">
+  <link rel="stylesheet" href="../css/shared.css?v=20261020b">
   <link rel="stylesheet" href="../css/pages.css?v=20260902a">`;
 
 const MAINT_STYLES = `  <style>
@@ -128,7 +128,7 @@ function garantiasBloque(marcaNombre) {
 
 const COOKIE_FOOTER_END = `<a class="whatsapp-float" href="https://wa.me/34625215983" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">${WA_SVG_FLOAT}</a>
 <div class="cookie-banner"><div class="cookie-text">Usamos cookies. <a href="../legal/cookies.html">Más info</a></div><div class="cookie-actions"><button class="btn-cookie-accept">Aceptar</button><button class="btn-cookie-necessary">Solo necesarias</button></div></div>
-<script src="../js/shared.js?v=20261007a"></script>
+<script src="../js/shared.js?v=20261020b"></script>
 <script src="../js/pages.js?v=20260625a"></script>
 
 </body>
