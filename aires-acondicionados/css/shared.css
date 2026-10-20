@@ -1270,8 +1270,9 @@ input, textarea, select { font-family: inherit; }
 /* ── Títulos en móvil: la fuente Syne es muy ancha y «acondicionado» no cabía ── */
 h1, h2, h3, .section-title, .cta-title {
   overflow-wrap: break-word;
-  hyphens: auto;
+  hyphens: manual;
 }
+.page-hero h1 { hyphens: auto; }
 @media (max-width: 600px) {
   .page-hero h1 { font-size: clamp(1.45rem, 6.6vw, 2rem); }
   .section-title,
@@ -1371,7 +1372,21 @@ h1, h2, h3, .section-title, .cta-title {
 /* Carrusel infinito de reseñas: se mueve solo, despacio, sin flechas ni arrastre.
    shared.js duplica las tarjetas para que el bucle no tenga cortes (.is-ready). */
 .rev-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-.rev-marquee .rev-track { display: flex; gap: 20px; width: max-content; pointer-events: none; }
+.rev-marquee .rev-track { display: flex; gap: 20px; padding-right: 20px; width: max-content; pointer-events: none; }
 .rev-marquee .rev-item { flex: 0 0 320px; max-width: 80vw; }
 .rev-marquee .rev-track.is-ready { animation: rev-scroll var(--rev-dur, 60s) linear infinite; }
 @keyframes rev-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* Cabeceras de marca-ciudad y capacidad: el degradado terminaba casi transparente (sobre blanco)
+   y el color de marca oscuro no se leía sobre el azul marino. Se aclara solo dentro de la cabecera. */
+.page-hero[style*="linear-gradient"] { background-color: var(--navy) !important; }
+.page-hero [style*="color:#0067B1"] { color: #4DB4FF !important; }
+.page-hero [style*="color:#E60012"] { color: #FF5B6B !important; }
+.page-hero [style*="color:#E4002B"] { color: #FF6B7A !important; }
+.page-hero [style*="color:#A50034"] { color: #E64D8B !important; }
+.page-hero [style*="color:#1428A0"] { color: #8593E5 !important; }
+.page-hero [style*="color:#003087"] { color: #7A9EE0 !important; }
+.page-hero [style*="color:#0066CC"] { color: #5BA3F5 !important; }
+.page-hero [style*="color:#E31837"] { color: #FF8080 !important; }
+.page-hero [style*="color:#00A0E9"] { color: #5BC5FF !important; }
+.page-hero [style*="color:#0066FF"] { color: #4DA3FF !important; }
