@@ -47,11 +47,9 @@ const PHONE_SVG = pick(ref, /<svg viewBox="0 0 24 24" fill="currentColor" style=
 const WA_SVG = pick(ref, /<svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px">[\s\S]*?<\/svg>/, 'icono WhatsApp');
 const WA_FLOAT_SVG = pick(ref, /<svg viewBox="0 0 24 24" fill="white">[\s\S]*?<\/svg>/, 'icono WhatsApp flotante');
 const BRANDS = pick(ref, /<div class="brands-grid">[\s\S]*?\n    <\/div>/, 'marcas').replace(/href="\.\.\//g, `href="${A}`);
-const EMOJI = {};
-for (const d of DATA) {
-  const es = fs.readFileSync(path.join(ES, 'zonas', `${d.slug}.html`), 'utf8');
-  EMOJI[d.slug] = (es.match(/font-size:2\.5rem;margin-bottom:12px">([^<]*)</) || [, '📍'])[1];
-}
+// Iconos de las tarjetas de zona de la portada (los mismos que el hub en castellano).
+const EMOJI = { gracia: '🌳', eixample: '🏙️', sants: '🎨', 'les-corts': '🌺', sarria: '🏡', 'nou-barris': '🏘️',
+  'sant-andreu': '🚂', 'sant-marti': '🌆', 'ciutat-vella': '🏛️', 'horta-guinardo': '⛰️' };
 
 const wa = msg => `https://wa.me/34625215983?text=${encodeURIComponent(msg)}`;
 const esUrl = slug => slug ? `${SITE}${A}zonas/${slug}.html` : `${SITE}${A}`;
@@ -174,7 +172,7 @@ ${header({ urgency: `Reserva ja la teva instal·lació a ${n}.`, esHref: `${A}zo
 <section class="page-hero">
   <div class="page-hero-content">
     <nav class="breadcrumb"><a href="${CA_HUB}">Inici</a><span class="sep">›</span><a href="${CA_HUB}#zones">Zones</a><span class="sep">›</span><span class="current">${n}</span></nav>
-    <div style="font-size:2.5rem;margin-bottom:12px">${EMOJI[d.slug]}</div>
+    <div class="zona-tag">${n} · Barcelona</div>
     <h1>Instal·lació d'aire condicionat<br>a ${n}</h1>
     <p></p>
     <div style="display:flex;gap:14px;flex-wrap:wrap">
@@ -252,7 +250,7 @@ ${header({ urgency: "Reserva ja la teva instal·lació a Barcelona.", esHref: A,
 
 <section class="page-hero">
   <div class="page-hero-content">
-    <div style="font-size:2.5rem;margin-bottom:12px">❄️</div>
+    <div class="zona-tag">Barcelona i àrea metropolitana</div>
     <h1>Instal·lació d'aire condicionat<br>a Barcelona</h1>
     <p>El tècnic que instal·la és el que certifica. Sense intermediaris. Resposta en menys de 2 h en horari d'atenció.</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap">

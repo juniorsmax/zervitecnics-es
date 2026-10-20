@@ -1206,6 +1206,12 @@ input, textarea, select { font-family: inherit; }
 }
 .page-hero-dark::after { background: var(--gray-50); }
 .page-hero-content { position: relative; z-index: 1; max-width: var(--max-width); margin: 0 auto; }
+/* Migas justo debajo de la cabecera, sin hueco azul (oct-2026) */
+.page-hero { padding-top: 24px; }
+.page-hero .breadcrumb { padding: 0; margin-bottom: 14px; }
+.page-hero .zona-tag { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #7FC4FF; line-height: 1.4; margin: -8px 0 4px; }
+.page-hero-content > .zona-tag:first-child { margin-top: 8px; }
+@media (max-width: 768px) { .page-hero { padding-top: 14px; } }
 .page-hero h1 { font-family: var(--font-title); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; color: var(--white); margin-bottom: 16px; line-height: 1.15; }
 .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,.8); max-width: 600px; line-height: 1.7; margin-bottom: 28px; }
 
