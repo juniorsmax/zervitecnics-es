@@ -27,7 +27,7 @@ const OUT = path.join(REPO, 'ca', 'aire-condicionat');
 const SITE = 'https://zervitecnics.es';
 const A = '/aires-acondicionados/';
 const CA_HUB = '/ca/aire-condicionat/';
-const V_CSS = '20261020b', V_JS = '20261021a';
+const V_CSS = '20261021a', V_JS = '20261021a';
 
 const DATA = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'distritos-ca.json'), 'utf8'));
 // Zonas sin página propia de mantenimiento (Ciutat Vella, Horta-Guinardó): se toma de la versión en castellano.

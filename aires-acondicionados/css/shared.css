@@ -241,6 +241,9 @@ input, textarea, select { font-family: inherit; }
 .mobile-nav a:hover { color: var(--blue); }
 .mobile-nav-cta { display: flex; gap: 12px; margin-top: 16px; }
 .mobile-nav-cta a { flex: 1; text-align: center; }
+/* Los botones del menú no llevan la línea fina de los enlaces (cortaba el borde de «Llamar») */
+.mobile-nav .mobile-nav-cta a { border: 2px solid transparent; padding: 12px 20px; }
+.mobile-nav .mobile-nav-cta a.btn-secondary { border-color: rgba(255,255,255,.4); }
 
 /* ── Buttons ── */
 .btn {
