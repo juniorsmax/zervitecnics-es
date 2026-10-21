@@ -241,6 +241,8 @@ input, textarea, select { font-family: inherit; }
 .mobile-nav a:hover { color: var(--blue); }
 .mobile-nav-cta { display: flex; gap: 12px; margin-top: 16px; }
 .mobile-nav-cta a { flex: 1; text-align: center; }
+/* Con el menú abierto, sin la línea de la cabecera debajo de los botones */
+.site-header:has(.mobile-nav.open) { border-bottom: 0; box-shadow: none; background: var(--navy); -webkit-backdrop-filter: none; backdrop-filter: none; }
 /* Los botones del menú no llevan la línea fina de los enlaces (cortaba el borde de «Llamar») */
 .mobile-nav .mobile-nav-cta a { border: 2px solid transparent; padding: 12px 20px; }
 .mobile-nav .mobile-nav-cta a.btn-secondary { border-color: rgba(255,255,255,.4); }
@@ -1273,9 +1275,9 @@ input, textarea, select { font-family: inherit; }
 /* ── Títulos en móvil: la fuente Syne es muy ancha y «acondicionado» no cabía ── */
 h1, h2, h3, .section-title, .cta-title {
   overflow-wrap: break-word;
+  -webkit-hyphens: manual;
   hyphens: manual;
 }
-.page-hero h1 { hyphens: auto; }
 @media (max-width: 600px) {
   .page-hero h1 { font-size: clamp(1.45rem, 6.6vw, 2rem); }
   .section-title,
