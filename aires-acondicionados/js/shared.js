@@ -1040,9 +1040,10 @@ document.addEventListener('DOMContentLoaded', () => {
   detectZoneFromURL();
 
 
-  initReviewMarquee();
   renderDynPrices();
 });
+// Aparte: si otra función de arriba falla, el carrusel sigue funcionando.
+document.addEventListener('DOMContentLoaded', () => { try { initReviewMarquee(); } catch (e) { console.error(e); } });
 
 /* ════════════════════════════════════════════════
    PRECIOS DINÁMICOS — Anti-scraping
@@ -1090,8 +1091,8 @@ function renderDynPrices() {
    Repite las tarjetas hasta cubrir dos anchos de pantalla y añade una copia
    completa, para que el desplazamiento de -50% (CSS) enlace sin saltos.
 ════════════════════════════════════════════════ */
+// Se mueve siempre (también con «Reducir movimiento» del iPhone): es lento y sin interacción.
 function initReviewMarquee() {
-  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('.rev-marquee .rev-track').forEach(track => {
     const items = Array.from(track.children);
     if (!items.length) return;
@@ -1100,7 +1101,6 @@ function initReviewMarquee() {
     for (let i = 0; i < 20 && track.scrollWidth < minWidth; i++) items.forEach(clone);
     Array.from(track.children).forEach(clone);
     track.classList.add('is-ready');
-    if (still) return;
     // Movimiento continuo con requestAnimationFrame: al llegar a la 2.ª mitad se resta un ciclo
     // exacto en el mismo fotograma, sin reiniciar ninguna animación CSS (lo que parpadeaba en iPhone).
     const half = track.children.length / 2;
@@ -1110,6 +1110,7 @@ function initReviewMarquee() {
     measure();
     let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(measure, 200); });
     const frame = ts => {
+      if (shift <= 0) measure();
       if (last !== null && shift > 0) {
         x -= pxPerSecond * Math.min(ts - last, 100) / 1000;
         if (x <= -shift) x += shift;
