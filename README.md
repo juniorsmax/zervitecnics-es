@@ -56,7 +56,7 @@ Turnstile en el servidor y manda el correo. Ya no se usan EmailJS ni reCAPTCHA.
 
 - Teléfono: `625 215 983` (`+34625215983`).
 - Correo: `info@zervitecnics.es`.
-- Sin dirección postal (negocio de área de servicio).
+- Sin dirección postal en la ficha de negocio (área de servicio). El titular (Filiberto Martínez Medina, NIF y domicilio fiscal) figura en el aviso legal, la privacidad, el pie de página y la portada: lo exige la LSSI y lo comprueba Meta al verificar el dominio.
 
 ### 4. Imágenes
 
