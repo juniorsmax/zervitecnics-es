@@ -292,6 +292,32 @@ function initZonasMenu() {
   });
 }
 
+/* ── Barra fija inferior en móvil (Presupuesto gratis / Llamar) en todas las páginas ──
+   La portada ya la trae (con su ventana de presupuesto); en el resto se crea aquí y
+   «Presupuesto gratis» lleva al formulario de la portada. */
+function initStickyCta() {
+  if (document.getElementById('sticky-cta-bar')) return;
+  if (/\/(legal|interno)\//.test(location.pathname) || /gracias\.html$|404\.html$/.test(location.pathname)) return;
+  const bar = document.createElement('div');
+  bar.className = 'sticky-cta-bar zrv-auto';
+  bar.id = 'sticky-cta-bar';
+  const presup = document.createElement('a');
+  presup.className = 'btn-sticky-presup';
+  presup.href = '/aires-acondicionados/#presupuesto';
+  presup.textContent = IS_CA ? 'Pressupost gratuït' : 'Presupuesto gratis';
+  presup.addEventListener('click', () => trackEvent('sticky_presupuesto_click', { page: location.pathname }));
+  const call = document.createElement('a');
+  call.className = 'btn-sticky-call';
+  call.href = 'tel:+34625215983';
+  call.dataset.location = 'sticky-bar';
+  call.textContent = IS_CA ? 'Truca' : 'Llamar';
+  call.addEventListener('click', () => trackEvent('phone_click', { location: 'sticky-bar' }));
+  bar.appendChild(presup);
+  bar.appendChild(call);
+  document.body.appendChild(bar);
+  document.body.classList.add('zrv-sticky-cta');
+}
+
 /* ── Mobile Nav ── */
 function initMobileNav() {
   const hamburger = $('.hamburger');
@@ -1116,7 +1142,7 @@ function animateCounters() {
    Cada parte arranca por separado: si una falla en algún móvil, las demás siguen
    (antes un fallo cortaba el aviso de cookies y las animaciones de las secciones). */
 document.addEventListener('DOMContentLoaded', () => {
-  [initHeader, initZonasMenu, initMobileNav, initScrollAnimations, initWhatsApp, initCallButtons,
+  [initHeader, initZonasMenu, initStickyCta, initMobileNav, initScrollAnimations, initWhatsApp, initCallButtons,
    initFAQ, initCarousel, initCookies, initTracking, initPriceTabs, initForm, deobfuscateEmails,
    protectImages, injectLocalBusinessSchema, injectFAQSchema, animateCounters, detectZoneFromURL,
    renderDynPrices].forEach(fn => {
