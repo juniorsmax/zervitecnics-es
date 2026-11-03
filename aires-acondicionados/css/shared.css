@@ -60,6 +60,10 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   font-size: 16px;
+  /* iPhone: al estirar al final de la página se veía un gran espacio blanco.
+     Fondo azul oscuro detrás (como el pie) y sin rebote al llegar al final. */
+  background: var(--navy);
+  overscroll-behavior-y: none;
 }
 
 body {
