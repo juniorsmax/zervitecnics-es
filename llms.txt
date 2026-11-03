@@ -1,8 +1,8 @@
 # Zervitecnics
 
 > Servicio profesional de instalación y mantenimiento de aire acondicionado
-> en Barcelona y alrededores. Presupuesto gratuito en 24 h, atención directa
-> por teléfono o WhatsApp al 625 215 983.
+> en Barcelona y alrededores. Respuesta en menos de 2 h en horario de atención,
+> presupuesto gratuito y atención directa por teléfono o WhatsApp al 625 215 983.
 
 Zervitecnics opera hoy una sola línea de servicio publicada: aire
 acondicionado (instalación, mantenimiento preventivo, diagnóstico de averías
@@ -17,7 +17,26 @@ Dicore y marca blanca).
 
 - Teléfono y WhatsApp: +34 625 215 983
 - Email: info@zervitecnics.es
+- Horario de atención: lunes a viernes de 8:00 a 20:00 y sábados de 9:00 a 14:00
 - Zona de servicio: Barcelona y alrededores (área metropolitana y Vallès)
+- TikTok: https://www.tiktok.com/@zervitecnics.clima
+
+## Precios orientativos (+ IVA, actualizados en noviembre de 2026)
+
+- Split 1×1 de 2,5 kW con equipo e instalación: desde 908 €
+- Multisplit 2×1 con equipo e instalación: desde 1.487 €
+- Solo instalación (el cliente aporta el equipo): desde 247 €
+- Revisión anual de mantenimiento: desde 70 €
+- Hay que consultar siempre la disponibilidad del equipo. El precio final se
+  confirma por escrito tras la visita. No incluye obras ni albañilería,
+  reposición de paredes, azulejos o cerámica, pintura ni nuevos puntos
+  eléctricos, salvo que aparezcan en el presupuesto.
+
+## Garantía
+
+- Instalación: 1 año (fallos de la instalación, como fugas de gas o problemas
+  de desagüe, con un uso normal del equipo).
+- Equipo: 3 años de garantía legal.
 
 ## Servicio activo hoy
 

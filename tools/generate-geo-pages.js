@@ -122,7 +122,7 @@ function paginaMarcaCiudad(marca, ciudad) {
   <div class="price-from">Pack completo · precio orientativo</div>
   <ul class="price-features">
     <li class="price-feature">${CHECK_SVG} Equipo + instalación</li>
-    <li class="price-feature">${CHECK_SVG} Certificación profesional</li>
+    <li class="price-feature">${CHECK_SVG} Informe técnico con el presupuesto</li>
     <li class="price-feature">${CHECK_SVG} Garantía: 1 año en la instalación y 3 años del fabricante en el equipo</li>
   </ul>
   <a href="${marca.slug}-${cap.frig}-frigorias.html" class="btn btn-primary w-full">Ver ${cap.frig} frigorías</a>
@@ -136,7 +136,7 @@ function paginaMarcaCiudad(marca, ciudad) {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://zervitecnics.es/' },
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://zervitecnics.es/aires-acondicionados/' },
         { '@type': 'ListItem', position: 2, name: marca.nombre, item: `https://zervitecnics.es/aires-acondicionados/marcas/${marca.slug}.html` },
         { '@type': 'ListItem', position: 3, name: ciudad.nombre }
       ]
@@ -227,7 +227,7 @@ function paginaCapacidadCiudad(cap, ciudad) {
   <div class="price-from">Pack completo · precio orientativo</div>
   <ul class="price-features">
     <li class="price-feature">${CHECK_SVG} Equipo + instalación</li>
-    <li class="price-feature">${CHECK_SVG} Certificación profesional</li>
+    <li class="price-feature">${CHECK_SVG} Informe técnico con el presupuesto</li>
     <li class="price-feature">${CHECK_SVG} Garantía: 1 año en la instalación y 3 años del fabricante en el equipo</li>
   </ul>
   <a href="../marcas/${m.slug}-${cap.frig}-frigorias.html" class="btn btn-primary w-full">Ver ${m.nombre}</a>
@@ -246,9 +246,8 @@ function paginaCapacidadCiudad(cap, ciudad) {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://zervitecnics.es/' },
-        { '@type': 'ListItem', position: 2, name: 'Aire acondicionado', item: 'https://zervitecnics.es/aires-acondicionados/' },
-        { '@type': 'ListItem', position: 3, name: `${cap.frig} frigorías en ${ciudad.nombre}` }
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://zervitecnics.es/aires-acondicionados/' },
+        { '@type': 'ListItem', position: 2, name: `${cap.frig} frigorías en ${ciudad.nombre}` }
       ]
     },
     {
@@ -302,7 +301,7 @@ function paginaCapacidadCiudad(cap, ciudad) {
     checklistHTML: [
       'Cálculo de carga térmica personalizado',
       'Equipo de marca premium con garantía del fabricante',
-      'Instalación documentada con informe técnico',
+      'Informe técnico con el presupuesto',
       'Garantía: 1 año en la instalación y 3 años del fabricante en el equipo',
       `Servicio postventa en ${ciudad.nombre}`
     ].map(item => `<li class="service-check-item">${CHECK_SVG}${item}</li>`).join('\n'),
@@ -439,7 +438,7 @@ ${p.checklistHTML}
     <div class="text-center mb-32 fade-up">
       <span class="section-label">${p.priceSectionLabel}</span>
       <h2 class="section-title">${p.priceSectionTitle}</h2>
-      <p class="section-subtitle">Pack completo: equipo + instalación + informe técnico incluido. Precio orientativo + IVA. El precio final dependerá del modelo concreto y la complejidad de la instalación.</p>
+      <p class="section-subtitle">Pack completo: equipo + instalación. Informe técnico con el presupuesto. Precio orientativo + IVA. El precio final dependerá del modelo concreto y la complejidad de la instalación.</p>
     </div>
     <div class="grid grid-3 fade-up">
 ${p.priceCardsHTML}

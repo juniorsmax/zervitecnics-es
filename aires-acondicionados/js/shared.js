@@ -43,7 +43,7 @@
 const PHONE = '625 215 983';
 const PHONE_RAW = '+34625215983';
 const WA_NUMBER = '34625215983';
-const BUSINESS_NAME = 'Zervitecnics Barcelona';
+const BUSINESS_NAME = 'Zervitecnics Aire Acondicionado';
 const COOKIE_VERSION = '1.3';
 
 /* ── IDs analytics ── */
@@ -99,6 +99,22 @@ function resetTurnstile(containerId) {
   const w = tsWidgets[containerId];
   if (w) { w.token = ''; try { window.turnstile.reset(w.id); } catch (e) {} }
 }
+
+/* ── Teléfono ── solo números, espacios y «+» al inicio; máx. 15 caracteres */
+function telFiltro(v) {
+  v = String(v || '');
+  const mas = v.trim().startsWith('+') ? '+' : '';
+  return (mas + v.replace(/[^\d ]/g, '')).slice(0, 15);
+}
+/* Deja solo los 9 números: quita espacios y el prefijo +34 / 0034 */
+function telNorm(v) {
+  let d = String(v || '').replace(/\D/g, '');
+  if (d.length > 9 && d.startsWith('0034')) d = d.slice(4);
+  else if (d.length === 11 && d.startsWith('34')) d = d.slice(2);
+  return d;
+}
+window.telFiltro = telFiltro;
+window.telNorm = telNorm;
 
 async function sendLead(data, containerId) {
   const token = await getTurnstileToken(containerId);
@@ -689,16 +705,48 @@ function initPriceTabs() {
   const tabs = $$('.price-tab');
   const panels = $$('.price-panel');
   if (!tabs.length) return;
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      panels.forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      const target = document.getElementById(tab.dataset.panel);
-      if (target) {
-        target.classList.add('active');
-        trackEvent('price_view', { tab: tab.dataset.panel });
-      }
+  // Accesibilidad: une cada pestaña con su panel y mantiene «seleccionada» al día para lectores de pantalla
+  if (tabs[0].parentElement && !tabs[0].parentElement.getAttribute('role')) tabs[0].parentElement.setAttribute('role', 'tablist');
+  tabs.forEach((tab, i) => {
+    if (!tab.getAttribute('role')) tab.setAttribute('role', 'tab');
+    if (!tab.id) tab.id = 'tab-' + (tab.dataset.panel || i);
+    const panel = document.getElementById(tab.dataset.panel);
+    if (panel) {
+      if (!panel.getAttribute('role')) panel.setAttribute('role', 'tabpanel');
+      tab.setAttribute('aria-controls', panel.id);
+      panel.setAttribute('aria-labelledby', tab.id);
+      panel.setAttribute('tabindex', '0');
+    }
+    const on = tab.classList.contains('active');
+    tab.setAttribute('aria-selected', on ? 'true' : 'false');
+    tab.setAttribute('tabindex', on ? '0' : '-1');
+  });
+  function activate(tab, focus) {
+    tabs.forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+      t.setAttribute('tabindex', '-1');
+    });
+    panels.forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    tab.setAttribute('tabindex', '0');
+    if (focus) tab.focus();
+    const target = document.getElementById(tab.dataset.panel);
+    if (target) {
+      target.classList.add('active');
+      trackEvent('price_view', { tab: tab.dataset.panel });
+    }
+  }
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => activate(tab, false));
+    tab.addEventListener('keydown', e => {
+      let j = null;
+      if (e.key === 'ArrowRight') j = (i + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft') j = (i - 1 + tabs.length) % tabs.length;
+      else if (e.key === 'Home') j = 0;
+      else if (e.key === 'End') j = tabs.length - 1;
+      if (j !== null) { e.preventDefault(); activate(tabs[j], true); }
     });
   });
 }
@@ -717,10 +765,11 @@ function initForm() {
   let formStarted = false;
   const formLoadedAt = Date.now();
 
-  // Teléfono: solo números, máximo 9 (se borran letras y espacios al escribir o pegar)
+  // Teléfono: solo números, espacios y «+» al inicio, máximo 15 caracteres (se borran letras al escribir o pegar).
+  // Al enviar se limpia con telNorm(): quita +34/0034 y espacios y quedan los 9 números.
   const telInput = document.getElementById('f-telefono');
   if (telInput) telInput.addEventListener('input', () => {
-    const limpio = telInput.value.replace(/\D/g, '').slice(0, 9);
+    const limpio = telFiltro(telInput.value);
     if (telInput.value !== limpio) telInput.value = limpio;
   });
 
@@ -740,7 +789,7 @@ function initForm() {
       const val = el.value.trim();
       let msg = '';
       if (!val) msg = 'Este campo es obligatorio.';
-      else if (id === 'f-telefono' && !/^[6-9]\d{8}$/.test(val.replace(/\s/g,''))) msg = 'Introduce un teléfono válido.';
+      else if (id === 'f-telefono' && !/^[6-9]\d{8}$/.test(telNorm(val))) msg = 'Introduce un teléfono válido.';
       if (msg) { el.classList.add('error'); if(err){ err.textContent = msg; err.classList.add('visible'); } ok = false; }
       else { el.classList.remove('error'); if(err) err.classList.remove('visible'); }
     });
@@ -805,7 +854,7 @@ function initForm() {
 
     const data = {
       nombre: (document.getElementById('f-nombre')?.value || '').slice(0, 30),
-      telefono: (document.getElementById('f-telefono')?.value || '').replace(/\D/g, '').slice(0, 9),
+      telefono: telNorm(document.getElementById('f-telefono')?.value || '').slice(0, 9),
       zona: document.getElementById('f-zona')?.value || '',
       codigo_postal: (document.getElementById('f-postal')?.value || '').replace(/\D/g, '').slice(0, 5),
       tipo_equipo: document.getElementById('f-tipo')?.value || '',
@@ -813,6 +862,8 @@ function initForm() {
       problema: document.getElementById('f-problema')?.value || '',
       distancia_exterior: document.getElementById('f-dist-ext')?.value || '',
       planta: document.getElementById('f-planta')?.value || '',
+      superficie_m2: (document.getElementById('f-m2')?.value || '').slice(0, 4),
+      estancias: document.getElementById('f-estancias')?.value || '',
       observaciones: (document.getElementById('f-obs')?.value || '').slice(0, 1000),
     };
 
@@ -884,26 +935,20 @@ function injectLocalBusinessSchema() {
   if (hasSchemaType('LocalBusiness') || hasSchemaType('HVACBusiness')) return;
   const schema = {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "HVACBusiness"],
-    "name": "Zervitecnics Barcelona",
-    "alternateName": "Aires Zervitecnics",
-    "description": "Empresa especializada en instalación de aire acondicionado en Barcelona. Técnico HVAC certificado con carnet de gases fluorados y habilitación RITE.",
+    "@type": "HVACBusiness",
+    "name": "Zervitecnics Aire Acondicionado",
+    "description": "Empresa especializada en instalación y mantenimiento de aire acondicionado en Barcelona. Técnico especializado.",
     "url": "https://zervitecnics.es/aires-acondicionados/",
     "telephone": PHONE_RAW,
     "email": "info@zervitecnics.es",
     "areaServed": [
       "Barcelona", "L'Eixample", "Gràcia", "L'Hospitalet de Llobregat",
       "Badalona", "Sant Cugat del Vallès", "Cornellà de Llobregat",
-      "Terrassa", "Sabadell"
+      "Terrassa", "Sabadell", "Castelldefels"
     ],
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "20:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00" }
-    ],
-    "hasCredential": [
-      "Carnet Gases Fluorados",
-      "Habilitación RITE",
-      "Instalador HVAC Certificado"
     ],
     "priceRange": "€€",
     "currenciesAccepted": "EUR",
@@ -911,8 +956,7 @@ function injectLocalBusinessSchema() {
     "image": "https://zervitecnics.es/aires-acondicionados/img/logo_zervitecnics.png",
     "logo": "https://zervitecnics.es/aires-acondicionados/img/logo_zervitecnics.png",
     "sameAs": [
-      "https://www.instagram.com/zervitecnics",
-      "https://www.facebook.com/zervitecnics"
+      "https://www.tiktok.com/@zervitecnics.clima"
     ]
   };
   const script = document.createElement('script');

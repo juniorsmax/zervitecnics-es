@@ -60,7 +60,7 @@ function buildPage(marca, cap) {
   <div class="price-from">Pack completo · precio orientativo</div>
   <ul class="price-features">
     <li class="price-feature">${CHECK_SVG} Equipo + instalación</li>
-    <li class="price-feature">${CHECK_SVG} Certificación profesional</li>
+    <li class="price-feature">${CHECK_SVG} Informe técnico con el presupuesto</li>
     <li class="price-feature">${CHECK_SVG} Garantía: 1 año en la instalación y 3 años del fabricante en el equipo</li>
   </ul>
   <a href="../index.html#presupuesto" class="btn btn-primary w-full">Solicitar presupuesto</a>
@@ -122,6 +122,7 @@ function buildPage(marca, cap) {
   {
     "@context": "https://schema.org",
     "@type": "Product",
+    "image": "https://zervitecnics.es/aires-acondicionados/img/hero_split.jpg",
     "name": "Aire acondicionado ${marca.nombre} ${cap.frig} frigorías",
     "description": "${desc.replace(/"/g, '\\"')}",
     "brand": { "@type": "Brand", "name": "${marca.nombre}" },
@@ -131,7 +132,7 @@ function buildPage(marca, cap) {
       "priceCurrency": "EUR",
       "offerCount": "1",
       "url": "${url}",
-      "seller": { "@type": "LocalBusiness", "name": "Zervitecnics Barcelona" }
+      "seller": { "@type": "LocalBusiness", "name": "Zervitecnics Aire Acondicionado" }
     }
   }
   </script>
@@ -144,7 +145,7 @@ function buildPage(marca, cap) {
       "@type": "ListItem",
       "position": 1,
       "name": "Inicio",
-      "item": "https://zervitecnics.es/"
+      "item": "https://zervitecnics.es/aires-acondicionados/"
     },
     {
       "@type": "ListItem",
@@ -182,7 +183,7 @@ function buildPage(marca, cap) {
     <nav class="breadcrumb"><a href="../index.html">Inicio</a><span class="sep">›</span><a href="${marca.slug}.html">${marca.nombre}</a><span class="sep">›</span><span class="current">${cap.frig} frigorías</span></nav>
     <div style="display:inline-block;background:${lightBg};border:1px solid ${borderBg};border-radius:9999px;padding:6px 16px;font-size:.8rem;font-weight:700;color:${marca.color};margin-bottom:16px;letter-spacing:.06em;text-transform:uppercase">${marca.tagline}</div>
     <h1>${h1}</h1>
-    <p>Instalación de aire acondicionado <strong>${marca.nombre} ${cap.frig} frigorías</strong> (${cap.btu.toLocaleString('es-ES')} BTU · ${cap.kw} kW) en Barcelona. Capacidad ideal para ${cap.descripcionUso} de ${cap.m2Min} a ${cap.m2Max} m². Instalación documentada con informe técnico incluido.</p>
+    <p>Instalación de aire acondicionado <strong>${marca.nombre} ${cap.frig} frigorías</strong> (${cap.btu.toLocaleString('es-ES')} BTU · ${cap.kw} kW) en Barcelona. Capacidad ideal para ${cap.descripcionUso} de ${cap.m2Min} a ${cap.m2Max} m². Informe técnico con el presupuesto.</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap">
       <a href="../index.html#presupuesto" class="btn btn-primary">Pedir presupuesto gratis</a>
       <a href="tel:+34625215983" class="btn btn-secondary" data-location="hero-${marca.slug}-${cap.frig}">625 215 983</a>
@@ -213,7 +214,7 @@ ${checklistHTML}
     <div class="text-center mb-32 fade-up">
       <span class="section-label">Precios orientativos 2026</span>
       <h2 class="section-title">Modelos ${marca.nombre} de ${cap.frig} frigorías en Barcelona</h2>
-      <p class="section-subtitle">Pack completo: equipo + instalación + informe técnico incluido. Precio orientativo + IVA. El precio final dependerá del modelo concreto y la complejidad de la instalación.</p>
+      <p class="section-subtitle">Pack completo: equipo + instalación. Informe técnico con el presupuesto. Precio orientativo + IVA. El precio final dependerá del modelo concreto y la complejidad de la instalación.</p>
     </div>
     <div class="fade-up" style="display:flex;justify-content:center">
       <div style="max-width:360px;width:100%">

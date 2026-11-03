@@ -34,7 +34,7 @@ const TXT = {
     info: 'Información de cobertura', barriosK: 'Barrios:', municipio: 'todo el municipio', todos: n => `${n} barrios, todos cubiertos`,
     cp: 'Códigos postales más habituales:', calles: 'Calles principales:', horarioK: 'Horario:', horario: 'Lun-Vie 8-20h · Sáb 9-14h',
     nota: 'Un código postal puede incluir calles de distritos vecinos. Sin coste adicional de desplazamiento.',
-    checks: ['Instalación en 1 día', 'Instalación documentada incluida',
+    checks: ['Instalación en 1 día', 'Informe técnico con el presupuesto',
       'Garantía: 1 año en la instalación y 3 años del fabricante en el equipo', 'Precio cerrado sin sorpresas'],
     pedir: 'Solicitar presupuesto gratis', barriosLabel: 'Barrios',
     barriosMuni: n => `Barrios de ${n} y cómo se instala en cada uno`, barriosDist: (k, n) => `Los ${k} barrios de ${n} y cómo se instala en cada uno`,
@@ -52,7 +52,7 @@ const TXT = {
     info: 'Informació de cobertura', barriosK: 'Barris:', municipio: 'tot el municipi', todos: n => `${n} barris, tots coberts`,
     cp: 'Codis postals més habituals:', calles: 'Carrers principals:', horarioK: 'Horari:', horario: 'Dl-Dv 8-20 h · Ds 9-14 h',
     nota: 'Un codi postal pot incloure carrers de districtes veïns. Sense cost addicional de desplaçament.',
-    checks: ["Instal·lació en 1 dia", "Instal·lació documentada inclosa",
+    checks: ["Instal·lació en 1 dia", "Informe tècnic amb el pressupost",
       "Garantia: 1 any a la instal·lació i 3 anys del fabricant a l'equip", 'Preu tancat sense sorpreses'],
     pedir: 'Demana pressupost gratuït', barriosLabel: 'Barris',
     barriosMuni: n => `Barris ${deCa(n)} i com s'hi instal·la`, barriosDist: (k, n) => `Els ${k} barris ${deCa(n)} i com s'instal·la a cadascun`,
@@ -87,7 +87,7 @@ ${JSON.stringify({
     name: `${T.servicio} ${lang === 'ca' ? 'a' : 'en'} ${d.nombre}`,
     url: T.url(d.slug),
     inLanguage: lang,
-    provider: { '@type': 'HVACBusiness', name: 'Zervitecnics Barcelona', url: BASE, telephone: '+34625215983' },
+    provider: { '@type': 'HVACBusiness', name: 'Zervitecnics Aire Acondicionado', url: BASE, telephone: '+34625215983' },
     areaServed: d.tipo === 'municipio'
       ? { '@type': 'City', name: d.nombre }
       : { '@type': 'AdministrativeArea', name: `${d.nombre} (${T.distrito})`, containedInPlace: { '@type': 'City', name: 'Barcelona' } }

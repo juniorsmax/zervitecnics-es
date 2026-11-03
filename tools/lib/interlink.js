@@ -116,7 +116,14 @@ function tpl(str, vars) {
 // ─── Builders de bloque HTML ───
 
 // Grid uniforme usado por todos los bloques (igual look & feel que las zone-cards)
+// Páginas con noindex temporal: no se enlazan desde los bloques (decisión 3-nov-2026).
+const NOINDEX_BASENAMES = new Set(
+  (require(path.join(__dirname, '..', 'data', 'noindex-temporal.json')).paginas || []).map(p => path.basename(p))
+);
+
 function linkGrid(items) {
+  items = items.filter(it => !NOINDEX_BASENAMES.has(path.basename(String(it.href).split('#')[0])));
+  if (!items.length) return '';
   const rows = items.map(it => {
     const dl = it.dataLoc ? ` data-location="${it.dataLoc}"` : '';
     return `      <a href="${it.href}" class="xlink-item"${dl}>${it.anchor}</a>`;

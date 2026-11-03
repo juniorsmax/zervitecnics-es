@@ -19,7 +19,7 @@ const PRECIOS = {
       features: [
         'Equipo inverter A++',
         'Instalación completa',
-        'Informe técnico de instalación',
+        'Informe técnico con el presupuesto',
         'Garantía 3 años fabricante',
         'Garantía 1 año instalación',
         'Soporte post-instalación'
@@ -35,7 +35,7 @@ const PRECIOS = {
       features: [
         'Equipo inverter A+++',
         'Instalación completa',
-        'Informe técnico de instalación',
+        'Informe técnico con el presupuesto',
         'Garantía 3 años fabricante',
         'Garantía 1 año instalación',
         'Soporte prioritario 24h'
@@ -51,7 +51,7 @@ const PRECIOS = {
       features: [
         'Equipo inverter A++',
         'Instalación completa',
-        'Informe técnico de instalación',
+        'Informe técnico con el presupuesto',
         'Garantía 3 años fabricante',
         'Garantía 1 año instalación',
         'Soporte post-instalación'
@@ -67,7 +67,7 @@ const PRECIOS = {
       features: [
         'Equipo inverter A++',
         'Instalación completa',
-        'Informe técnico de instalación',
+        'Informe técnico con el presupuesto',
         'Garantía 3 años fabricante',
         'Garantía 1 año instalación',
         'Soporte post-instalación'
@@ -86,7 +86,7 @@ const PRECIOS = {
         'Instalación del equipo',
         'Carga de gas refrigerante',
         'Prueba de funcionamiento',
-        'Informe técnico de instalación',
+        'Informe técnico con el presupuesto',
         'Garantía 1 año instalación'
       ]
     }
@@ -102,7 +102,7 @@ const PRECIOS = {
       features: [
         '2 habitaciones climatizadas',
         'Instalación completa',
-        'Informe técnico de instalación',
+        'Informe técnico con el presupuesto',
         'Garantía 3 años fabricante',
         'Garantía 1 año instalación',
         'Control independiente por zona'
@@ -118,7 +118,7 @@ const PRECIOS = {
       features: [
         '3 habitaciones climatizadas',
         'Instalación completa',
-        'Informe técnico de instalación',
+        'Informe técnico con el presupuesto',
         'Garantía 3 años fabricante',
         'Garantía 1 año instalación',
         'Control independiente por zona'
@@ -134,7 +134,7 @@ const PRECIOS = {
       features: [
         '4 habitaciones climatizadas',
         'Instalación completa',
-        'Informe técnico de instalación',
+        'Informe técnico con el presupuesto',
         'Garantía 3 años fabricante',
         'Garantía 1 año instalación',
         'Control independiente por zona'
@@ -184,7 +184,7 @@ function injectServiceSchema(serviceName, description) {
     "description": description,
     "provider": {
       "@type": "LocalBusiness",
-      "name": "Zervitecnics Barcelona",
+      "name": "Zervitecnics Aire Acondicionado",
       "telephone": "+34625215983",
       "address": {
         "@type": "PostalAddress",

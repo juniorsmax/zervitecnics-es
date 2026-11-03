@@ -90,7 +90,7 @@ function breadcrumbsFor(relPath) {
 
   // aires-acondicionados/index.html
   if (relPath === 'aires-acondicionados/index.html') {
-    return [inicio];  // solo Inicio (es el propio hub)
+    return null;  // el hub no lleva migas de pan (solo tendría «Inicio»)
   }
 
   const rest = relPath.replace(/^aires-acondicionados\//, '');
@@ -120,7 +120,6 @@ function breadcrumbsFor(relPath) {
   if (dir === 'categorias' && CATEGORIAS_NOMBRE[slug]) {
     return [
       inicio,
-      { name: 'Servicios', item: `${BASE}/aires-acondicionados/#servicios` },
       { name: CATEGORIAS_NOMBRE[slug], item: url },
     ];
   }
@@ -128,7 +127,6 @@ function breadcrumbsFor(relPath) {
   if (dir === 'zonas' && ZONAS_NOMBRE[slug]) {
     return [
       inicio,
-      { name: 'Zonas', item: `${BASE}/aires-acondicionados/#zonas` },
       { name: ZONAS_NOMBRE[slug], item: url },
     ];
   }
@@ -138,7 +136,6 @@ function breadcrumbsFor(relPath) {
     if (MARCAS_NOMBRE[slug]) {
       return [
         inicio,
-        { name: 'Marcas', item: `${BASE}/aires-acondicionados/#marcas` },
         { name: MARCAS_NOMBRE[slug], item: url },
       ];
     }
@@ -149,7 +146,6 @@ function breadcrumbsFor(relPath) {
       const cap = m[2];
       return [
         inicio,
-        { name: 'Marcas', item: `${BASE}/aires-acondicionados/#marcas` },
         { name: MARCAS_NOMBRE[marca], item: `${BASE}/aires-acondicionados/marcas/${marca}.html` },
         { name: `${cap} frigorías`, item: url },
       ];

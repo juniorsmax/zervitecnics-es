@@ -27,7 +27,7 @@ const OUT = path.join(REPO, 'ca', 'aire-condicionat');
 const SITE = 'https://zervitecnics.es';
 const A = '/aires-acondicionados/';
 const CA_HUB = '/ca/aire-condicionat/';
-const V_CSS = '20261021b', V_JS = '20261021a';
+const V_CSS = '20261021b', V_JS = '20261103a';
 
 const DATA = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'distritos-ca.json'), 'utf8'));
 // Zonas sin página propia de mantenimiento (Ciutat Vella, Horta-Guinardó): se toma de la versión en castellano.
@@ -155,7 +155,7 @@ function footer() {
 <a class="whatsapp-float" href="https://wa.me/34625215983" target="_blank" rel="noopener" aria-label="Contacta per WhatsApp">${WA_FLOAT_SVG}</a>
 <div class="cookie-banner"><div class="cookie-text">Fem servir galetes. <a href="${A}legal/cookies.html">Més informació</a></div><div class="cookie-actions"><button class="btn-cookie-accept">Accepta</button><button class="btn-cookie-necessary">Només les necessàries</button></div></div>
 <script src="${A}js/shared.js?v=${V_JS}"></script>
-<script src="${A}js/pages.js?v=20260625a"></script>
+<script src="${A}js/pages.js?v=20261103a"></script>
 
 <!-- ── NOTA LEGAL MARQUES ── -->
 <div style="background:#F8F9FA;border-top:1px solid #E5E7EB;padding:16px 0;font-size:.75rem;color:#6B7280;line-height:1.6">
@@ -187,7 +187,7 @@ function zonePage(d) {
   const waMsg = `Hola, m'interessa instal·lar aire condicionat a ${d.nombre}.`;
   const html = `${head({
     title: d.title, desc: d.metaDesc, canonical: caUrl(d.slug), slug: d.slug,
-    schemas: `${slot('schema-servicio')}\n${slot('schema-faq')}\n${breadcrumb([['Inici', caUrl()], ['Zones', `${caUrl()}#zones`], [d.nombre, caUrl(d.slug)]])}`
+    schemas: `${slot('schema-servicio')}\n${slot('schema-faq')}\n${breadcrumb([['Inici', caUrl()], [d.nombre, caUrl(d.slug)]])}`
   })}
 ${header({ urgency: `Reserva ja la teva instal·lació a ${n}.`, esHref: `${A}zonas/${d.slug}.html`, loc, waMsg })}
 
@@ -230,7 +230,7 @@ ${slot('contenido')}
 <section class="section" id="com-triar" aria-labelledby="triar-title">
   <div class="container">
     <h2 class="section-title" id="triar-title">Empresa instal·ladora d'aire condicionat a ${n}: com triar un bon instal·lador</h2>
-    <p class="section-subtitle">Abans de contractar, comprova que l'instal·lador que et visita sigui el mateix que instal·la i certifica, que valori l'habitatge abans de donar un preu tancat i que ofereixi garantia per escrit. A ${n} treballem així: visita prèvia, preu clar, garantia d'instal·lació d'1 any i resposta en menys de 2 h en horari d'atenció.</p>
+    <p class="section-subtitle">Abans de contractar, comprova que l'instal·lador que et visita sigui el mateix que instal·la, que valori l'habitatge abans de donar un preu tancat i que ofereixi garantia per escrit. A ${n} treballem així: visita prèvia, preu clar, garantia d'instal·lació d'1 any i resposta en menys de 2 h en horari d'atenció.</p>
   </div>
 </section>
 ${opinions()}
@@ -266,7 +266,7 @@ ${footer()}`;
 function hubPage() {
   const title = "Instal·lació d'aire condicionat a Barcelona | Zervitecnics";
   const desc = "Instal·lació d'aire condicionat a Barcelona, districte per districte: barris, tipus d'habitatge i normativa. Pressupost gratuït. ☎ 625 215 983";
-  const schemas = breadcrumb([['Inici', caUrl()]]);
+  const schemas = '';  // el hub no lleva migas de pan (solo tendría «Inici»)
   return `${head({ title, desc, canonical: caUrl(), slug: null, schemas })}
 ${header({ urgency: "Reserva ja la teva instal·lació a Barcelona.", esHref: A, loc: 'ca-hub', waMsg: "Hola, m'interessa instal·lar aire condicionat a Barcelona." })}
 
@@ -274,7 +274,7 @@ ${header({ urgency: "Reserva ja la teva instal·lació a Barcelona.", esHref: A,
   <div class="page-hero-content">
     <div class="zona-tag">Barcelona i àrea metropolitana</div>
     <h1>Instal·lació d'aire condicionat<br>a Barcelona</h1>
-    <p>El tècnic que instal·la és el que certifica. Sense intermediaris. Resposta en menys de 2 h en horari d'atenció.</p>
+    <p>El tècnic que avalua és el que instal·la. Sense intermediaris. Resposta en menys de 2 h en horari d'atenció.</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap">
       <a href="${A}index.html#presupuesto" class="btn btn-primary">Demana pressupost gratuït</a>
       <a href="tel:+34625215983" class="btn btn-secondary" data-location="hero-ca-hub">625 215 983</a>
@@ -286,12 +286,21 @@ ${header({ urgency: "Reserva ja la teva instal·lació a Barcelona.", esHref: A,
   <div class="container" style="max-width:860px">
     <h2 class="section-title">Com treballem</h2>
     <ul class="service-checklist">
-      <li class="service-check-item">Visita prèvia i preu tancat abans de començar.</li>
-      <li class="service-check-item">Instal·lació en 1 dia en la majoria d'habitatges.</li>
+      <li class="service-check-item">Visita prèvia, informe i preu tancat per escrit abans de començar.</li>
+      <li class="service-check-item">Instal·lació normalment el mateix dia.</li>
       <li class="service-check-item">Garantia: 1 any a la instal·lació i 3 anys del fabricant a l'equip.</li>
       <li class="service-check-item">Split, multisplit i conductes de totes les marques líders.</li>
+      <li class="service-check-item">Preus des de 908 € + IVA (split 1×1 de 2,5 kW amb equip i instal·lació). Consulta sempre la disponibilitat de l'equip.</li>
     </ul>
     <p style="margin-top:16px">Cada districte de Barcelona té els seus edificis, els seus barris i les seves normes de comunitat. A la pàgina de cada districte t'expliquem com s'instal·la a cada barri i què has de tenir en compte abans de començar.</p>
+  </div>
+</section>
+
+<section class="section" id="qui-som" aria-labelledby="qui-som-title">
+  <div class="container" style="max-width:860px">
+    <h2 class="section-title" id="qui-som-title">Qui som</h2>
+    <p>Zervitecnics es dedica a la instal·lació i el manteniment d'aire condicionat a Barcelona i l'àrea metropolitana. Al darrere hi ha un tècnic amb més de 20 anys d'experiència en climatització i refrigeració, que porta cada feina de principi a fi: visita el teu habitatge, et lliura per escrit l'informe i el pressupost, i instal·la l'equip. Sense intermediaris ni subcontractes.</p>
+    <p style="margin-top:12px">Treballem amb les principals marques (Daikin, Mitsubishi Electric, Fujitsu, LG, Samsung, Hisense, Panasonic, Toshiba, Haier i Midea) i també instal·lem equips que ja tinguis. Atenem de dilluns a divendres de 8:00 a 20:00 i els dissabtes de 9:00 a 14:00.</p>
   </div>
 </section>
 
