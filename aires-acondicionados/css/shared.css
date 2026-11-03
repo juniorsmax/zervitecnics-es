@@ -1399,3 +1399,18 @@ h1, h2, h3, .section-title, .cta-title {
 .page-hero [style*="color:#E31837"] { color: #FF8080 !important; }
 .page-hero [style*="color:#00A0E9"] { color: #5BC5FF !important; }
 .page-hero [style*="color:#0066FF"] { color: #4DA3FF !important; }
+
+/* ── Desplegable «Zonas de cobertura» del menú (3-nov-2026) ── */
+.nav-zonas summary { cursor: pointer; list-style: none; }
+.nav-zonas summary::-webkit-details-marker { display: none; }
+.nav-zonas summary::after { content: '▾'; margin-left: 6px; font-size: .8em; opacity: .8; }
+.nav-zonas[open] summary::after { content: '▴'; }
+.mobile-nav .nav-zonas summary { color: rgba(255,255,255,.85); font-size: 1rem; font-weight: 500; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+.mobile-nav .nav-zonas-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; padding: 4px 0 8px 12px; }
+.mobile-nav .nav-zonas-list a { font-size: .92rem; padding: 8px 0; border-bottom: 0; }
+.main-nav .nav-zonas { position: relative; }
+.main-nav .nav-zonas summary { color: rgba(255,255,255,.8); font-size: .9rem; font-weight: 500; padding: 8px 14px; border-radius: var(--radius-sm); }
+.main-nav .nav-zonas summary:hover { color: var(--white); background: rgba(255,255,255,.08); }
+.main-nav .nav-zonas-list { position: absolute; top: calc(100% + 8px); left: 0; z-index: 600; background: var(--white); border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,.18); padding: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px; min-width: 360px; }
+.main-nav .nav-zonas-list a { color: var(--navy); font-size: .88rem; padding: 6px 10px; }
+.main-nav .nav-zonas-list a:hover { background: var(--gray-50); color: var(--blue); }

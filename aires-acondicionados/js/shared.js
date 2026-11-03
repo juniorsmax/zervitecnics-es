@@ -247,6 +247,51 @@ function initHeader() {
   onScroll();
 }
 
+/* ── Zonas de cobertura en el menú ──
+   El enlace «Zonas» del menú (antes bajaba a la sección de zonas de la portada)
+   se convierte en un desplegable con las páginas de zona. Así las zonas solo están
+   en el menú y no se repiten en la portada (decisión 3-nov-2026). */
+const ZONAS_MENU = [
+  ['eixample', "L'Eixample"], ['gracia', 'Gràcia'], ['sants', 'Sants-Montjuïc'], ['les-corts', 'Les Corts'],
+  ['sarria', 'Sarrià-St. Gervasi'], ['ciutat-vella', 'Ciutat Vella'], ['horta-guinardo', 'Horta-Guinardó'],
+  ['nou-barris', 'Nou Barris'], ['sant-andreu', 'Sant Andreu'], ['sant-marti', 'Sant Martí'],
+  ['hospitalet', "L'Hospitalet"], ['badalona', 'Badalona'], ['cornella', 'Cornellà'],
+  ['castelldefels', 'Castelldefels'], ['sant-cugat', 'Sant Cugat'], ['sabadell', 'Sabadell'], ['terrassa', 'Terrassa']
+];
+function initZonasMenu() {
+  if (IS_CA) return;
+  // Si el menú de la página no tiene «Zonas», se añade (así está en todas las páginas)
+  document.querySelectorAll('.mobile-nav, .main-nav').forEach(nav => {
+    if (nav.querySelector('a[href$="#zonas"]')) return;
+    const a = document.createElement('a');
+    a.href = '/aires-acondicionados/#zonas';
+    a.textContent = 'Zonas';
+    const cta = nav.querySelector('.mobile-nav-cta');
+    if (cta) nav.insertBefore(a, cta); else nav.appendChild(a);
+  });
+  document.querySelectorAll('.mobile-nav a[href$="#zonas"], .main-nav a[href$="#zonas"]').forEach(a => {
+    const d = document.createElement('details');
+    d.className = 'nav-zonas';
+    const s = document.createElement('summary');
+    s.textContent = a.closest('.mobile-nav') ? 'Zonas de cobertura' : (a.textContent.trim() || 'Zonas');
+    d.appendChild(s);
+    const list = document.createElement('div');
+    list.className = 'nav-zonas-list';
+    ZONAS_MENU.forEach(([slug, name]) => {
+      const l = document.createElement('a');
+      l.href = '/aires-acondicionados/zonas/' + slug + '.html';
+      l.textContent = name;
+      list.appendChild(l);
+    });
+    d.appendChild(list);
+    a.replaceWith(d);
+  });
+  // En escritorio, cerrar el desplegable al pulsar fuera
+  document.addEventListener('click', e => {
+    document.querySelectorAll('.main-nav .nav-zonas[open]').forEach(d => { if (!d.contains(e.target)) d.removeAttribute('open'); });
+  });
+}
+
 /* ── Mobile Nav ── */
 function initMobileNav() {
   const hamburger = $('.hamburger');
@@ -270,6 +315,10 @@ function initMobileNav() {
 function initScrollAnimations() {
   const elements = $$('.fade-up, .fade-in, .slide-left, .slide-right');
   if (!elements.length) return;
+  const showAll = () => elements.forEach(el => el.classList.add('visible'));
+  if (!('IntersectionObserver' in window)) { showAll(); return; }
+  // Seguridad: pase lo que pase, a los 3 s todo queda visible (nunca secciones en blanco)
+  setTimeout(showAll, 3000);
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -277,7 +326,7 @@ function initScrollAnimations() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
   elements.forEach(el => observer.observe(el));
 }
 
@@ -1063,28 +1112,16 @@ function animateCounters() {
   counters.forEach(c => observer.observe(c));
 }
 
-/* ── Init ── */
+/* ── Init ──
+   Cada parte arranca por separado: si una falla en algún móvil, las demás siguen
+   (antes un fallo cortaba el aviso de cookies y las animaciones de las secciones). */
 document.addEventListener('DOMContentLoaded', () => {
-  initHeader();
-  initMobileNav();
-  initScrollAnimations();
-  initWhatsApp();
-  initCallButtons();
-  initFAQ();
-  initCarousel();
-  initCookies();
-  initTracking();
-  initPriceTabs();
-  initForm();
-  deobfuscateEmails();
-  protectImages();
-  injectLocalBusinessSchema();
-  injectFAQSchema();
-  animateCounters();
-  detectZoneFromURL();
-
-
-  renderDynPrices();
+  [initHeader, initZonasMenu, initMobileNav, initScrollAnimations, initWhatsApp, initCallButtons,
+   initFAQ, initCarousel, initCookies, initTracking, initPriceTabs, initForm, deobfuscateEmails,
+   protectImages, injectLocalBusinessSchema, injectFAQSchema, animateCounters, detectZoneFromURL,
+   renderDynPrices].forEach(fn => {
+    try { fn(); } catch (e) { console.error('[Zervitecnics]', fn.name, e); }
+  });
 });
 // Aparte: si otra función de arriba falla, el carrusel sigue funcionando.
 document.addEventListener('DOMContentLoaded', () => { try { initReviewMarquee(); } catch (e) { console.error(e); } });

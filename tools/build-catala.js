@@ -27,7 +27,7 @@ const OUT = path.join(REPO, 'ca', 'aire-condicionat');
 const SITE = 'https://zervitecnics.es';
 const A = '/aires-acondicionados/';
 const CA_HUB = '/ca/aire-condicionat/';
-const V_CSS = '20261021b', V_JS = '20261103a';
+const V_CSS = '20261103b', V_JS = '20261103b';
 
 const DATA = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'distritos-ca.json'), 'utf8'));
 // Zonas sin página propia de mantenimiento (Ciutat Vella, Horta-Guinardó): se toma de la versión en castellano.
@@ -293,14 +293,6 @@ ${header({ urgency: "Reserva ja la teva instal·lació a Barcelona.", esHref: A,
       <li class="service-check-item">Preus des de 908 € + IVA (split 1×1 de 2,5 kW amb equip i instal·lació). Consulta sempre la disponibilitat de l'equip.</li>
     </ul>
     <p style="margin-top:16px">Cada districte de Barcelona té els seus edificis, els seus barris i les seves normes de comunitat. A la pàgina de cada districte t'expliquem com s'instal·la a cada barri i què has de tenir en compte abans de començar.</p>
-  </div>
-</section>
-
-<section class="section" id="qui-som" aria-labelledby="qui-som-title">
-  <div class="container" style="max-width:860px">
-    <h2 class="section-title" id="qui-som-title">Qui som</h2>
-    <p>Zervitecnics es dedica a la instal·lació i el manteniment d'aire condicionat a Barcelona i l'àrea metropolitana. Al darrere hi ha un tècnic amb més de 20 anys d'experiència en climatització i refrigeració, que porta cada feina de principi a fi: visita el teu habitatge, et lliura per escrit l'informe i el pressupost, i instal·la l'equip. Sense intermediaris ni subcontractes.</p>
-    <p style="margin-top:12px">Treballem amb les principals marques (Daikin, Mitsubishi Electric, Fujitsu, LG, Samsung, Hisense, Panasonic, Toshiba, Haier i Midea) i també instal·lem equips que ja tinguis. Atenem de dilluns a divendres de 8:00 a 20:00 i els dissabtes de 9:00 a 14:00.</p>
   </div>
 </section>
 
