@@ -129,3 +129,7 @@ cumplir todos los puntos siguientes **antes de publicarse**:
 ## Soporte técnico
 
 Para cualquier modificación o soporte, contacta con el desarrollador.
+
+## Seguridad
+
+Hay protecciones pendientes que GitHub Pages no permite. Ver [docs/PENDIENTES_SEGURIDAD.md](docs/PENDIENTES_SEGURIDAD.md).

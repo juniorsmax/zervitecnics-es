@@ -70,6 +70,7 @@ function head({ title, desc, canonical, slug, schemas }) {
   <meta name="theme-color" content="#1E90FF">
   ${ANALYTICS}
   ${CSP}
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(desc)}">
   <link rel="canonical" href="${canonical}">
